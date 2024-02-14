@@ -1,0 +1,212 @@
+@prefix cgpm: <http://si-digital-framework.org/bodies/CGPM#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prefixes: <http://si-digital-framework.org/SI/prefixes/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix si: <http://si-digital-framework.org/SI#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+prefixes: a owl:Ontology ;
+    dcterms:created "2024-02-14"^^xsd:date ;
+    rdfs:comment "Ontology, part of the SI Reference Point, covering prefixes for the SI measurement units." ;
+    skos:prefLabel "SI Reference Point - Prefixes"^^xsd:string .
+
+prefixes:atto a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM12-Res8 ;
+    si:hasScalingFactor "1e-18"^^xsd:float ;
+    si:hasSymbol "a"^^xsd:string ;
+    skos:prefLabel "atto"@en,
+        "atto"@fr .
+
+prefixes:centi a si:SIPrefix ;
+    si:hasDatatype xsd:decimal ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 0.01 ;
+    si:hasSymbol "c"^^xsd:string ;
+    skos:prefLabel "centi"@en,
+        "centi"@fr .
+
+prefixes:deca a si:SIPrefix ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 10 ;
+    si:hasSymbol "da"^^xsd:string ;
+    skos:prefLabel "deca"@en,
+        "déca"@fr .
+
+prefixes:deci a si:SIPrefix ;
+    si:hasDatatype xsd:decimal ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 0.1 ;
+    si:hasSymbol "d"^^xsd:string ;
+    skos:prefLabel "deci"@en,
+        "déci"@fr .
+
+prefixes:exa a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM15-Res10 ;
+    si:hasScalingFactor "1e+18"^^xsd:float ;
+    si:hasSymbol "E"^^xsd:string ;
+    skos:prefLabel "exa"@en,
+        "exa"@fr .
+
+prefixes:femto a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM12-Res8 ;
+    si:hasScalingFactor "1e-15"^^xsd:float ;
+    si:hasSymbol "f"^^xsd:string ;
+    skos:prefLabel "femto"@en,
+        "femto"@fr .
+
+prefixes:giga a si:SIPrefix ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 1000000000 ;
+    si:hasSymbol "G"^^xsd:string ;
+    skos:prefLabel "giga"@en,
+        "giga"@fr .
+
+prefixes:hecto a si:SIPrefix ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 100 ;
+    si:hasSymbol "h"^^xsd:string ;
+    skos:prefLabel "hecto"@en,
+        "hecto"@fr .
+
+prefixes:kilo a si:SIPrefix ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 1000 ;
+    si:hasSymbol "k"^^xsd:string ;
+    skos:prefLabel "kilo"@en,
+        "kilo"@fr .
+
+prefixes:mega a si:SIPrefix ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 1000000 ;
+    si:hasSymbol "M"^^xsd:string ;
+    skos:prefLabel "mega"@en,
+        "méga"@fr .
+
+prefixes:micro a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor "1e-06"^^xsd:float ;
+    si:hasSymbol "µ"^^xsd:string ;
+    skos:prefLabel "micro"@en,
+        "micro"@fr .
+
+prefixes:milli a si:SIPrefix ;
+    si:hasDatatype xsd:decimal ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 0.001 ;
+    si:hasSymbol "m"^^xsd:string ;
+    skos:prefLabel "milli"@en,
+        "milli"@fr .
+
+prefixes:nano a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor "1e-09"^^xsd:float ;
+    si:hasSymbol "n"^^xsd:string ;
+    skos:prefLabel "nano"@en,
+        "nano"@fr .
+
+prefixes:none a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasScalingFactor "1e0"^^xsd:float ;
+    skos:prefLabel "none"@en,
+        "aucun"@fr .
+
+prefixes:peta a si:SIPrefix ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM15-Res10 ;
+    si:hasScalingFactor 1000000000000000 ;
+    si:hasSymbol "P"^^xsd:string ;
+    skos:prefLabel "peta"@en,
+        "péta"@fr .
+
+prefixes:pico a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor "1e-12"^^xsd:float ;
+    si:hasSymbol "p"^^xsd:string ;
+    skos:prefLabel "pico"@en,
+        "pico"@fr .
+
+prefixes:quecto a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM27-Res3 ;
+    si:hasScalingFactor "1e-30"^^xsd:float ;
+    si:hasSymbol "q"^^xsd:string ;
+    skos:prefLabel "quecto"@en,
+        "quecto"@fr .
+
+prefixes:quetta a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM27-Res3 ;
+    si:hasScalingFactor "1e+30"^^xsd:float ;
+    si:hasSymbol "Q"^^xsd:string ;
+    skos:prefLabel "quetta"@en,
+        "quetta"@fr .
+
+prefixes:ronna a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM27-Res3 ;
+    si:hasScalingFactor "1e+27"^^xsd:float ;
+    si:hasSymbol "R"^^xsd:string ;
+    skos:prefLabel "ronna"@en,
+        "ronna"@fr .
+
+prefixes:ronto a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM27-Res3 ;
+    si:hasScalingFactor "1e-27"^^xsd:float ;
+    si:hasSymbol "r"^^xsd:string ;
+    skos:prefLabel "ronto"@en,
+        "ronto"@fr .
+
+prefixes:tera a si:SIPrefix ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM11-Res12 ;
+    si:hasScalingFactor 1000000000000 ;
+    si:hasSymbol "T"^^xsd:string ;
+    skos:prefLabel "tera"@en,
+        "téra"@fr .
+
+prefixes:yocto a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM19-Res4 ;
+    si:hasScalingFactor "1e-24"^^xsd:float ;
+    si:hasSymbol "y"^^xsd:string ;
+    skos:prefLabel "yocto"@en,
+        "yocto"@fr .
+
+prefixes:yotta a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM19-Res4 ;
+    si:hasScalingFactor "1e+24"^^xsd:float ;
+    si:hasSymbol "Y"^^xsd:string ;
+    skos:prefLabel "yotta"@en,
+        "yotta"@fr .
+
+prefixes:zepto a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM19-Res4 ;
+    si:hasScalingFactor "1e-21"^^xsd:float ;
+    si:hasSymbol "z"^^xsd:string ;
+    skos:prefLabel "zepto"@en,
+        "zepto"@fr .
+
+prefixes:zetta a si:SIPrefix ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM19-Res4 ;
+    si:hasScalingFactor "1e+21"^^xsd:float ;
+    si:hasSymbol "Z"^^xsd:string ;
+    skos:prefLabel "zetta"@en,
+        "zetta"@fr .
+

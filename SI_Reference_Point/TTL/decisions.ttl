@@ -1,0 +1,906 @@
+@prefix cctf: <http://si-digital-framework.org/bodies/CCTF#> .
+@prefix cgpm: <http://si-digital-framework.org/bodies/CGPM#> .
+@prefix cipm: <http://si-digital-framework.org/bodies/CIPM#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix decisions: <http://si-digital-framework.org/SI/decisions/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix si: <http://si-digital-framework.org/SI#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+decisions: a owl:Ontology ;
+    dcterms:created "2024-02-14"^^xsd:date ;
+    rdfs:comment "Ontology, part of the SI reference point, covering decisions"^^xsd:string ;
+    skos:prefLabel "SI Reference Point - Decisions"^^xsd:string .
+
+decisions:SI-A-1 a si:SIDecisionScope ;
+    rdfs:label "Decisions relating to the establishment of the SI "@en,
+        "Décisions concernant l’établissement du SI"@fr ;
+    si:hasTarget decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.1 a si:SIDecision ;
+    rdfs:label "Decision to establish the SI"@en,
+        "Décision d’établir le SI "@fr ;
+    si:correspondingResolution cgpm:CGPM9-Res6 ;
+    si:isDecisionOf decisions:SI-A-1.0 ;
+    skos:related decisions:SI-A-4.2.1 .
+
+decisions:SI-A-1.0.10 a si:SIDecision ;
+    rdfs:label "On progress towards the redefinition of the SI"@en,
+        "Sur les progrès réalisés en vue d’une éventuelle révision du SI"@fr ;
+    si:correspondingResolution cipm:CIPM106-Dec106-10 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.11 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.2 a si:SIDecision ;
+    rdfs:label "Decision on the first six base units"@en,
+        "Décision d’adopter les six premières unités de base"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res6 ;
+    si:isDecisionOf decisions:SI-A-1.0 ;
+    skos:related decisions:SI-A-2.1.3,
+        decisions:SI-A-2.2.3,
+        decisions:SI-A-2.3.1,
+        decisions:SI-A-2.4.2,
+        decisions:SI-A-2.5.3,
+        decisions:SI-A-2.7.2 .
+
+decisions:SI-A-1.0.3 a si:SIDecision ;
+    rdfs:label "Decision to adopt the name \"Systeme international d'Unites\""@en,
+        "Décision d’adopter le nom Système international d’unités"@fr ;
+    si:correspondingResolution cipm:CIPM46-Res3 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.4 a si:SIDecision ;
+    rdfs:label "Confirms the name and the abbreviation \"SI\"; names prefixes from tera to pico; establishes the supplementary units rad and sr; lists some derived units"@en,
+        "Confirmation du nom et de l’abréviation SI ; noms des préfixes téra à pico ; établissement des unités supplémentaires rad et sr : établissement de la liste de certaines unités dérivées"@fr ;
+    si:correspondingResolution cgpm:CGPM11-Res12 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.5 a si:SIDecision ;
+    rdfs:label "Declarations concerning base, supplementary, derived and coherent units, and the use of prefixes"@en,
+        "Déclarations concernant les unités de base, supplémentaires, dérivées et cohérentes, et utilisation des préfixes"@fr ;
+    si:correspondingResolution cipm:CIPM58-Rec1 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.6 a si:SIDecision ;
+    rdfs:label "\"SI units\" and \"units of the SI\""@en,
+        "« unités SI » et « unités du SI » "@fr ;
+    si:correspondingResolution cipm:CIPM90-Decl2001 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.7 a si:SIDecision ;
+    rdfs:label "Possible redefinition of certain base units of the SI"@en,
+        "Éventuelle redéfinition de certaines unités de base du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res12 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.8 a si:SIDecision ;
+    rdfs:label "Possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res1 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-1.0.9 a si:SIDecision ;
+    rdfs:label "Future revision of the SI"@en,
+        "Révision à venir du SI "@fr ;
+    si:correspondingResolution cgpm:CGPM25-Res1 ;
+    si:isDecisionOf decisions:SI-A-1.0 .
+
+decisions:SI-A-2.1.1 a si:SIDecision ;
+    rdfs:label "Sanction of the prototype metre"@en,
+        "Sanction du Prototype du mètre"@fr ;
+    si:correspondingResolution cgpm:CGPM1-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.10 a si:SIDecision ;
+    rdfs:label "Revision of the list of recommended radiations [96th CIPM]"@en,
+        "Révision de la liste des radiations recommandées [96ᵉ CIPM]"@fr ;
+    si:correspondingResolution cipm:CIPM96-Rec1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.11 a si:SIDecision ;
+    rdfs:label "Revision of the mise en pratique of the definition of the metre and development of new optical frequency standards"@en,
+        "Révision de la mise en pratique de la définition du mètre et mise au point de nouveaux étalons optiques de fréquence"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res9 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.12 a si:SIDecision ;
+    rdfs:label "On updates to the list of standard frequencies"@en,
+        "Mises à jour de la liste des fréquences étalons"@fr ;
+    si:correspondingResolution cipm:CIPM98-Rec2 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.13 a si:SIDecision ;
+    rdfs:label "On the possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.14 a si:SIDecision ;
+    rdfs:label "Revision of the mise en pratique of the definition of the metre and development of new optical frequency standards"@en,
+        "Révision de la mise en pratique de la définition du mètre et mise au point de nouveaux étalons optiques de fréquence"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res8 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.15 a si:SIDecision ;
+    rdfs:label "Updates to the list of standard frequencies"@en,
+        "Mises à jour de la liste des fréquences étalons "@fr ;
+    si:correspondingResolution cipm:CIPM102-1-Rec1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.16 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.2 a si:SIDecision ;
+    rdfs:label "Definition and use of the prototype metre"@en,
+        "Définition du mètre par le Prototype international "@fr ;
+    si:correspondingResolution cgpm:CGPM7-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.4 a si:SIDecision ;
+    rdfs:label "Redefinition of the metre in terms of krypton-86 radiation"@en,
+        "Redéfinition du mètre au moyen de la radiation du krypton 86"@fr ;
+    si:correspondingResolution cgpm:CGPM11-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.5 a si:SIDecision ;
+    rdfs:label "Recommendation of the value for the speed of light"@en,
+        "Recommandation de la valeur de la vitesse de la lumière"@fr ;
+    si:correspondingResolution cgpm:CGPM15-Res2 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.6 a si:SIDecision ;
+    rdfs:label "Redefinition of the metre using the speed of light, realization of the definition of the metre"@en,
+        "Redéfinition du mètre en fonction de la vitesse de la lumière, mise en pratique de la définition du mètre"@fr ;
+    si:correspondingResolution cgpm:CGPM17-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.7 a si:SIDecision ;
+    rdfs:label "Specification of the rules for the practical realization of the definition of the metre "@en,
+        "Révision de la mise en pratique de la définition du mètre"@fr ;
+    si:correspondingResolution cipm:CIPM91-Rec1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.8 a si:SIDecision ;
+    rdfs:label "Revision of the list of recommended radiations [92nd CIPM]"@en,
+        "Révision de la liste des radiations recommandées [92ᵉ CIPM]"@fr ;
+    si:correspondingResolution cipm:CIPM92-Rec1 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.1.9 a si:SIDecision ;
+    rdfs:label "Revision of the list of recommended radiationsi [94th CIPM]"@en,
+        "Révision de la liste des radiations recommandées [94ᵉ CIPM]"@fr ;
+    si:correspondingResolution cipm:CIPM94-Rec3 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.2.1 a si:SIDecision ;
+    rdfs:label "Sanction of the prototype kilogram"@en,
+        "Sanction du Prototype du kilogramme"@fr ;
+    si:correspondingResolution cgpm:CGPM1-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.2.2 a si:SIDecision ;
+    rdfs:label "Declaration on distinguishing mass and weight, and on the conventional value of gₙ"@en,
+        "Déclaration au sujet de la différence entre masse et poids, et valeur conventionnelle de gₙ"@fr ;
+    si:correspondingResolution cgpm:CGPM3-Decl2 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.2.4 a si:SIDecision ;
+    rdfs:label "Declaration on applying prefixes to the gram"@en,
+        "Déclaration sur les préfixes du gramme"@fr ;
+    si:correspondingResolution cipm:CIPM56-Rec2 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.2.5 a si:SIDecision ;
+    rdfs:label "On the future redefinition of the kilogram"@en,
+        "Redéfinition éventuelle du kilogramme"@fr ;
+    si:correspondingResolution cgpm:CGPM21-Res7 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.2.6 a si:SIDecision ;
+    rdfs:label "Possible redefinition of certain base units of the SI"@en,
+        "Éventuelle redéfinition de certaines unités de base du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res12 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.2.7 a si:SIDecision ;
+    rdfs:label "On the possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.2.8 a si:SIDecision ;
+    rdfs:label "On the future revision of the SI"@en,
+        "Révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM25-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.2.9 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.3.10 a si:SIDecision ;
+    rdfs:label "On secondary representations of the second"@en,
+        "Représentations secondaires de la seconde"@fr ;
+    si:correspondingResolution cipm:CIPM95-Rec1 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.11 a si:SIDecision ;
+    rdfs:label "On the revision of the mise en pratique of the definition of the metre and the development of new optical frequency standards"@en,
+        "Révision de la mise en pratique de la définition du mètre et mise au point de nouveaux étalons optiques de fréquence"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res9 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.12 a si:SIDecision ;
+    rdfs:label "Updates to the list of standard frequencies [98th CIPM]"@en,
+        "Mises à jour de la liste des fréquences étalons [98ᵉ CIPM]"@fr ;
+    si:correspondingResolution cipm:CIPM98-Rec2 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.13 a si:SIDecision ;
+    rdfs:label "Possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res12 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.15 a si:SIDecision ;
+    rdfs:label "Updates to the list of standard frequencies [102nd CIPM]"@en,
+        "Mises à jour de la liste des fréquences étalons [102ᵉ CIPM]"@fr ;
+    si:correspondingResolution cipm:CIPM102-1-Rec1 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.16 a si:SIDecision ;
+    rdfs:label "Updates to the list of standard frequencies [104th CIPM]"@en,
+        "Mises à jour de la liste des fréquences étalons [104ᵉ CIPM]"@fr ;
+    si:correspondingResolution cipm:CIPM104-1-Rec2 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.17 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.2 a si:SIDecision ;
+    rdfs:label "Definition of the second as a fraction of the tropical year 1900"@en,
+        "Définition de la seconde comme la fraction de l’année tropique 1900"@fr ;
+    si:correspondingResolution cipm:CIPM46-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.3 a si:SIDecision ;
+    rdfs:label "Ratification of the CIPM 1956 definition of the second"@en,
+        "Ratification de la définition de la seconde donnée par le CIPM en 1956"@fr ;
+    si:correspondingResolution cgpm:CGPM11-Res9 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.4 a si:SIDecision ;
+    rdfs:label "Declaration of the caesium-133 hyperfine transition to be the recommended standard"@en,
+        "Déclaration selon laquelle l’étalon à employer est la transition hyperfine du césium 133"@fr ;
+    si:correspondingResolution cipm:CIPM53-Decl1964 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.5 a si:SIDecision ;
+    rdfs:label "Request to the CIPM to investigate atomic and molecular frequency standards"@en,
+        "Pouvoir au CIPM de désigner les étalons de fréquence atomique et moléculaire à employer"@fr ;
+    si:correspondingResolution cgpm:CGPM12-Res5 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.6 a si:SIDecision ;
+    rdfs:label "Definition of the second in terms of the caesium transition "@en,
+        "Définition de la seconde au moyen de la transition du césium"@fr ;
+    si:correspondingResolution cgpm:CGPM13-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.7 a si:SIDecision ;
+    rdfs:label "Definition of International Atomic Time (TAI)"@en,
+        "Définition du Temps atomique international (TAI)"@fr ;
+    si:correspondingResolution cctf:CCTF5-Rec2 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.8 a si:SIDecision ;
+    rdfs:label "Request to the CIPM to define and establish International Atomic Time (TAI)"@en,
+        "Demande au CIPM de définir et d’établir le Temps atomique international (TAI)"@fr ;
+    si:correspondingResolution cgpm:CGPM14-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.3.9 a si:SIDecision ;
+    rdfs:label "Endorsement of the use of Coordinated Universal Time (UTC)"@en,
+        "Sanction du Temps universel coordonné (UTC)"@fr ;
+    si:correspondingResolution cgpm:CGPM15-Res5 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.4.1 a si:SIDecision ;
+    rdfs:label "Definition of coherent electrical units in the metre-kilogram-second (MKS) system of units (to enter into force on 1 January 1948)"@en,
+        "Définition des unités électriques cohérentes dans le système d’unités MKS (mètre-kilogramme-seconde) (mise en œuvre le 1er janvier 1948)"@fr ;
+    si:correspondingResolution cipm:CIPM41-Res2 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.10 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.3 a si:SIDecision ;
+    rdfs:label "Adoption of the siemens, symbol S, for electical conductance"@en,
+        "Adoption du nom siemens, symbole S, pour la conductance électrique"@fr ;
+    si:correspondingResolution cgpm:CGPM14-Decl ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.4 a si:SIDecision ;
+    rdfs:label "On the forthcoming adjustment to the representations of the volt and of the ohm"@en,
+        "Sur l'ajustement prévu des représentations du volt et de l’ohm"@fr ;
+    si:correspondingResolution cgpm:CGPM18-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.5 a si:SIDecision ;
+    rdfs:label "Definition of the conventional value of the Josephson constant (to enter into force on 1 January 1990)"@en,
+        "Définition de la valeur conventionnelle de la constante de Josephson (mise en œuvre le 1er janvier 1990)"@fr ;
+    si:correspondingResolution cipm:CIPM77-Rec1 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.6 a si:SIDecision ;
+    rdfs:label "Definition of the conventional value of the von Klitzing constant (to enter into force on 1 January 1990)"@en,
+        "Définition de la valeur conventionnelle de la constante de von Klitzing (mise en œuvre le 1er janvier 1990)"@fr ;
+    si:correspondingResolution cipm:CIPM77-Rec2 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.7 a si:SIDecision ;
+    rdfs:label "Possible redefinition of certain base units of the SI"@en,
+        "Éventuelle redéfinition de certaines unités de base du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res12 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.8 a si:SIDecision ;
+    rdfs:label "Possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.4.9 a si:SIDecision ;
+    rdfs:label "Future revision of the SI"@en,
+        "Révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM25-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.5.1 a si:SIDecision ;
+    rdfs:label "Adoption of the triple point of water as the thermodynamic reference point; adoption of the zero of Celsius temperature to be 0.01 degrees below the triple point"@en,
+        "Adoption du point triple de l’eau comme point de référence pour la température thermodynamique, adoption du degré Celsius, et définition du zéro comme étant la température de référence inférieure de 0,01 degré à celle du point triple de l’eau"@fr ;
+    si:correspondingResolution cgpm:CGPM9-Res3 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.10 a si:SIDecision ;
+    rdfs:label "Possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.11 a si:SIDecision ;
+    rdfs:label "Future revision of the SI"@en,
+        "Révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM25-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.12 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.2 a si:SIDecision ;
+    rdfs:label "Adoption of the name degree Celsius for the Celsius temperature scale"@en,
+        "Adoption du nom degré Celsius pour l’échelle de température Celsius"@fr ;
+    si:correspondingResolution cipm:CIPM42-Res1948 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.4 a si:SIDecision ;
+    rdfs:label "Adoption of degree Kelvin as a base unit"@en,
+        "Adoption du degré Kelvin comme unité de base"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.5 a si:SIDecision ;
+    rdfs:label "Formal definition of the kelvin, symbol K"@en,
+        "Définition officielle du kelvin, symbole K"@fr ;
+    si:correspondingResolution cgpm:CGPM13-Res3 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.6 a si:SIDecision ;
+    rdfs:label "Definition of the International Temperature Scale of 1990 (ITS-90)"@en,
+        "Définition de l'Échelle internationale de température de 1990 (EIT-90)"@fr ;
+    si:correspondingResolution cipm:CIPM78-Rec5 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.7 a si:SIDecision ;
+    rdfs:label "Addition of a note to the definition of the kelvin"@en,
+        "Ajout d'une note à la définition du kelvin à propos de la composition isotopique de l’eau"@fr ;
+    si:correspondingResolution cipm:CIPM94-Rec2 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.8 a si:SIDecision ;
+    rdfs:label "Clarification of the definition of the kelvin"@en,
+        "Clarification de la définition du kelvin, unité de température thermodynamique"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res10 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.5.9 a si:SIDecision ;
+    rdfs:label "Possible redefinition of certain base units of the SI"@en,
+        "Éventuelle redéfinition de certaines unités de base du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res12 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.6.1 a si:SIDecision ;
+    rdfs:label "Definition of the mole, symbol mol, as a seventh base unit, and rules for its use"@en,
+        "Définition de la mole, symbole mol, comme 7ᵉ unité de base, et règles d’utilisation"@fr ;
+    si:correspondingResolution cgpm:CGPM14-Res3 ;
+    si:isDecisionOf decisions:SI-A-2.6 .
+
+decisions:SI-A-2.6.2 a si:SIDecision ;
+    rdfs:label "Adoption of the special name katal, kat"@en,
+        "Adoption du nom spécial katal, kat"@fr ;
+    si:correspondingResolution cgpm:CGPM21-Res12 ;
+    si:isDecisionOf decisions:SI-A-2.6 .
+
+decisions:SI-A-2.6.3 a si:SIDecision ;
+    rdfs:label "On the possible future redefinition of certain base units of the SI"@en,
+        "Éventuelle redéfinition de certaines unités de base du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM23-Res12 ;
+    si:isDecisionOf decisions:SI-A-2.6 .
+
+decisions:SI-A-2.6.4 a si:SIDecision ;
+    rdfs:label "Possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.6 .
+
+decisions:SI-A-2.6.5 a si:SIDecision ;
+    rdfs:label "Future revision of the SI"@en,
+        "Révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM25-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.6 .
+
+decisions:SI-A-2.6.6 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.6 .
+
+decisions:SI-A-2.7.1 a si:SIDecision ;
+    rdfs:label "Definition of photometric units: new candle and new lumen (to enter into force on 1 January 1948)"@en,
+        "Définition des unités photométriques, bougie nouvelle et lumen nouveau (mise en œuvre le 1er janvier 1948)"@fr ;
+    si:correspondingResolution cipm:CIPM41-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.7 .
+
+decisions:SI-A-2.7.3 a si:SIDecision ;
+    rdfs:label "Definition of the candela, symbol cd, in terms of a black body radiator"@en,
+        "Définition de la candela, symbole cd, en fonction du corps noir"@fr ;
+    si:correspondingResolution cgpm:CGPM13-Res5 ;
+    si:isDecisionOf decisions:SI-A-2.7 .
+
+decisions:SI-A-2.7.4 a si:SIDecision ;
+    rdfs:label "Redefinition of the candela in terms of monochromatic radiation"@en,
+        "Redéfinition de la candela à partir d’un rayonnement monochromatique"@fr ;
+    si:correspondingResolution cgpm:CGPM16-Res3 ;
+    si:isDecisionOf decisions:SI-A-2.7 .
+
+decisions:SI-A-2.7.5 a si:SIDecision ;
+    rdfs:label "Possible future revision of the SI"@en,
+        "Éventuelle révision à venir du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM24-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.7 .
+
+decisions:SI-A-2.7.6 a si:SIDecision ;
+    rdfs:label "Revision of the SI (to enter into force on 20 May 2019)"@en,
+        "Révision du SI (mise en œuvre le 20 mai 2019)"@fr ;
+    si:correspondingResolution cgpm:CGPM26-Res1 ;
+    si:isDecisionOf decisions:SI-A-2.7 .
+
+decisions:SI-A-3.1.1 a si:SIDecision ;
+    rdfs:label "Acceptance of the continued use of the curie as a non-SI unit"@en,
+        "Décision d’accepter de continuer à utiliser le curie comme unité en dehors du SI"@fr ;
+    si:correspondingResolution cgpm:CGPM12-Res7 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.2 a si:SIDecision ;
+    rdfs:label "Presentation of a list of examples of SI derived units and adoption of special names for 14 of them "@en,
+        "Présentation d’une liste d’exemples d’unités SI dérivées et adoption d’un nom spécial pour 14 d’entre elles"@fr ;
+    si:correspondingResolution cgpm:CGPM11-Res12 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.3 a si:SIDecision ;
+    rdfs:label "Lists some examples of derived units"@en,
+        "Exemples d’unités dérivées"@fr ;
+    si:correspondingResolution cgpm:CGPM13-Res6 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.4 a si:SIDecision ;
+    rdfs:label "Adoption of the special name becquerel (Bq)"@en,
+        "Adoption du nom spécial becquerel (Bq)"@fr ;
+    si:correspondingResolution cgpm:CGPM15-Res8 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.5 a si:SIDecision ;
+    rdfs:label "Adoption of the special name gray (Gy)"@en,
+        "Adoption du nom spécial gray (Gy)"@fr ;
+    si:correspondingResolution cgpm:CGPM15-Res9 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.6 a si:SIDecision ;
+    rdfs:label "Adoption of the special name sievert (Sv)"@en,
+        "Adoption du nom spécial sievert (Sv)"@fr ;
+    si:correspondingResolution cgpm:CGPM16-Res5 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.7 a si:SIDecision ;
+    rdfs:label "Clarification of the relationship between absorbed dose (SI unit gray) and dose equivalent (SI unit sievert)"@en,
+        "Clarification de la relation entre la dose absorbée (unité SI gray) et l’équivalent de dose (unité SI sievert)"@fr ;
+    si:correspondingResolution cipm:CIPM73-Rec1 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.8 a si:SIDecision ;
+    rdfs:label "Adoption of the special name katal, kat"@en,
+        "Adoption du nom spécial katal, kat"@fr ;
+    si:correspondingResolution cgpm:CGPM21-Res12 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.1.9 a si:SIDecision ;
+    rdfs:label "Modification of the relationship between absorbed dose and dose equivalent"@en,
+        "Modification de la relation entre la dose absorbée et l’équivalent de dose"@fr ;
+    si:correspondingResolution cipm:CIPM91-Rec2 ;
+    si:isDecisionOf decisions:SI-A-3.1 .
+
+decisions:SI-A-3.2.1 a si:SIDecision ;
+    rdfs:label "Adoption of the term supplementary unit to describe the radian and steradian"@en,
+        "Adoption du terme « unité supplémentaire » pour désigner le radian et le stéradian"@fr ;
+    si:correspondingResolution cgpm:CGPM11-Res12 ;
+    si:isDecisionOf decisions:SI-A-3.2 .
+
+decisions:SI-A-3.2.2 a si:SIDecision ;
+    rdfs:label "Decision to interpret supplementary units as dimensionless derived unit"@en,
+        "Décision d’interpréter les unités supplémentaires comme des unités dérivées sans dimension"@fr ;
+    si:correspondingResolution cipm:CIPM69-Rec1 ;
+    si:isDecisionOf decisions:SI-A-3.2 .
+
+decisions:SI-A-3.2.3 a si:SIDecision ;
+    rdfs:label "Decision to abrogate the class of supplementary units; confirmation of the CIPM interpretation that they are dimensionless derived units"@en,
+        "Décision de supprimer la classe des unités supplémentaires, et confirmation de l’interprétation du CIPM selon laquelle ce sont des unités dérivées sans dimension"@fr ;
+    si:correspondingResolution cgpm:CGPM20-Res8 ;
+    si:isDecisionOf decisions:SI-A-3.2 .
+
+decisions:SI-A-4.1.1 a si:SIDecision ;
+    rdfs:label "Adoption of the SI prefixes from tera to pico"@en,
+        "Adoption des préfixes SI de tera à pico"@fr ;
+    si:correspondingResolution cgpm:CGPM11-Res12 ;
+    si:isDecisionOf decisions:SI-A-4.1 .
+
+decisions:SI-A-4.1.2 a si:SIDecision ;
+    rdfs:label "Decision to add femto and atto to the list of prefixes"@en,
+        "Décision d’ajouter femto et atto à la liste des préfixes"@fr ;
+    si:correspondingResolution cgpm:CGPM12-Res8 ;
+    si:isDecisionOf decisions:SI-A-4.1 .
+
+decisions:SI-A-4.1.3 a si:SIDecision ;
+    rdfs:label "Decision to add peta and exa to the list of prefixes"@en,
+        "Décision d’ajouter péta et exa à la liste des préfixes"@fr ;
+    si:correspondingResolution cgpm:CGPM15-Res10 ;
+    si:isDecisionOf decisions:SI-A-4.1 .
+
+decisions:SI-A-4.1.4 a si:SIDecision ;
+    rdfs:label "Decision to add zetta, zepto, yotta and yocto to the list of prefixes"@en,
+        "Décision d’ajouter zetta, zepto, yotta et yocto à la liste des préfixes"@fr ;
+    si:correspondingResolution cgpm:CGPM19-Res4 ;
+    si:isDecisionOf decisions:SI-A-4.1 .
+
+decisions:SI-A-4.1.5 a si:SIDecision ;
+    rdfs:label "Decision to add ronna, ronto, quetta and quecto to the list of prefixes"@en,
+        "Décision d’ajouter ronna, ronto, quetta et quecto à la liste des préfixes"@fr ;
+    si:correspondingResolution cgpm:CGPM27-Res3 ;
+    si:isDecisionOf decisions:SI-A-4.1 .
+
+decisions:SI-A-4.3.1 a si:SIDecision ;
+    rdfs:label "Abrogation of the use of the micron and new candle as units accepted for use with the SI"@en,
+        "Abrogation de l’utilisation du micron et de la bougie nouvelle comme unités en usage avec le SI"@fr ;
+    si:correspondingResolution cgpm:CGPM13-Res7 ;
+    si:isDecisionOf decisions:SI-A-4.3 .
+
+decisions:SI-A-4.4.1 a si:SIDecision ;
+    rdfs:label "Decision to allow the use of the point or the comma as the decimal marker"@en,
+        "Décision d’autoriser l’usage du point ou de la virgule sur la ligne comme séparateur décimal"@fr ;
+    si:correspondingResolution cgpm:CGPM22-Res10 ;
+    si:isDecisionOf decisions:SI-A-4.4 .
+
+decisions:SI-A-4.5.1 a si:SIDecision ;
+    rdfs:label "Definition of the litre as the volume of 1 kg of water"@en,
+        "Définition du litre comme le volume d’1 kg d’eau"@fr ;
+    si:correspondingResolution cgpm:CGPM3-Decl1 ;
+    si:isDecisionOf decisions:SI-A-4.5 .
+
+decisions:SI-A-4.5.2 a si:SIDecision ;
+    rdfs:label "Request to the CIPM to report on the difference between the litre and the cubic decimetre"@en,
+        "Demande au CIPM d’étudier la différence entre le décimètre cube et le litre"@fr ;
+    si:correspondingResolution cgpm:CGPM11-Res13 ;
+    si:isDecisionOf decisions:SI-A-4.5 .
+
+decisions:SI-A-4.5.3 a si:SIDecision ;
+    rdfs:label "Recommendation that volume be expressed in SI units and not in litres"@en,
+        "Recommandation d’exprimer les volumes en unités SI et non en litres"@fr ;
+    si:correspondingResolution cipm:CIPM50-Rec1961 ;
+    si:isDecisionOf decisions:SI-A-4.5 .
+
+decisions:SI-A-4.5.4 a si:SIDecision ;
+    rdfs:label "Abrogation of the former definition of the litre; recommendation that litre may be used as a special name for the cubic decimetre"@en,
+        "Abrogation de la précédente définition du litre et recommandation d’utiliser le litre comme nom spécial donné au décimètre cube"@fr ;
+    si:correspondingResolution cgpm:CGPM12-Res6 ;
+    si:isDecisionOf decisions:SI-A-4.5 .
+
+decisions:SI-A-4.5.5 a si:SIDecision ;
+    rdfs:label "Decision, as an exception, to allow both l and L as symbols for the litre "@en,
+        "Décision, à titre exceptionnel, d’autoriser les deux symboles L et l pour le litre"@fr ;
+    si:correspondingResolution cgpm:CGPM16-Res6 ;
+    si:isDecisionOf decisions:SI-A-4.5 .
+
+decisions:SI-A-2.1.3 a si:SIDecision ;
+    rdfs:label "Adoption of the metre as a base unit"@en,
+        "Adoption du mètre comme unité de base"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.1 .
+
+decisions:SI-A-2.2.3 a si:SIDecision ;
+    rdfs:label "Adoption of the kilogram as a base unit"@en,
+        "Adoption du kilogramme comme unité de base"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.2 .
+
+decisions:SI-A-2.3.1 a si:SIDecision ;
+    rdfs:label "Adoption of the second as a base unit"@en,
+        "Adoption de la seconde comme unité de base"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.3 .
+
+decisions:SI-A-2.4.2 a si:SIDecision ;
+    rdfs:label "Adoption of the ampere as a base unit"@en,
+        "Adoption de l’ampère comme unité de base"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.4 .
+
+decisions:SI-A-2.5.3 a si:SIDecision ;
+    rdfs:label "Definition of thermodynamic temperature such that the triple point of water is 273.16 degrees Kelvin exactly; definition of standard atmosphere"@en,
+        "Définition de la température thermodynamique du point triple de l’eau à 273,16 degrés Kelvin exactement, définition de l’atmosphère normale"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res3 ;
+    si:isDecisionOf decisions:SI-A-2.5 .
+
+decisions:SI-A-2.7.2 a si:SIDecision ;
+    rdfs:label "Adoption of the candela as a base unit"@en,
+        "Adoption de la candela comme unité de base"@fr ;
+    si:correspondingResolution cgpm:CGPM10-Res6 ;
+    si:isDecisionOf decisions:SI-A-2.7 .
+
+decisions:SI-A-3 a si:SIDecisionScope ;
+    rdfs:label "Decisions relating to  SI derived and supplementary units"@en,
+        "Décisions concernant les unités SI dérivées et les unités supplémentaires"@fr ;
+    si:hasTarget decisions:SI-A-3.1,
+        decisions:SI-A-3.2 .
+
+decisions:SI-A-4.2 a si:SIDecisionTarget ;
+    rdfs:label "Unit symbols and numbers"@en,
+        "Symboles d’unités et nombres"@fr ;
+    si:hasDecision decisions:SI-A-4.2.1 ;
+    si:isTargetOf decisions:SI-A-4 .
+
+decisions:SI-A-4.2.1 a si:SIDecision ;
+    rdfs:label "Adoption of rules for printing unit symbols and numbers"@en,
+        "Décision sur les règles d’écriture des symboles d’unités et des nombres"@fr ;
+    si:correspondingResolution cgpm:CGPM9-Res7 ;
+    si:isDecisionOf decisions:SI-A-4.2 .
+
+decisions:SI-A-4.3 a si:SIDecisionTarget ;
+    rdfs:label "Unit names"@en,
+        "Noms d’unités"@fr ;
+    si:hasDecision decisions:SI-A-4.3.1 ;
+    si:isTargetOf decisions:SI-A-4 .
+
+decisions:SI-A-4.4 a si:SIDecisionTarget ;
+    rdfs:label "The decimal marker"@en,
+        "Séparateur décimal"@fr ;
+    si:hasDecision decisions:SI-A-4.4.1 ;
+    si:isTargetOf decisions:SI-A-4 .
+
+decisions:SI-A-3.2 a si:SIDecisionTarget ;
+    rdfs:label "Supplementary units"@en,
+        "Unités supplémentaires"@fr ;
+    si:hasDecision decisions:SI-A-3.2.1,
+        decisions:SI-A-3.2.2,
+        decisions:SI-A-3.2.3 ;
+    si:isTargetOf decisions:SI-A-3 .
+
+decisions:SI-A-4 a si:SIDecisionScope ;
+    rdfs:label "Decisions concerning terminology and the acceptance of units for use with the SI"@en,
+        "Décisions concernant la terminologie et approbation des unités en usage avec le SI"@fr ;
+    si:hasTarget decisions:SI-A-4.1,
+        decisions:SI-A-4.2,
+        decisions:SI-A-4.3,
+        decisions:SI-A-4.4,
+        decisions:SI-A-4.5 .
+
+decisions:SI-A-4.1 a si:SIDecisionTarget ;
+    rdfs:label "SI prefixes"@en,
+        "Préfixes SI"@fr ;
+    si:hasDecision decisions:SI-A-4.1.1,
+        decisions:SI-A-4.1.2,
+        decisions:SI-A-4.1.3,
+        decisions:SI-A-4.1.4,
+        decisions:SI-A-4.1.5 ;
+    si:isTargetOf decisions:SI-A-4 .
+
+decisions:SI-A-4.5 a si:SIDecisionTarget ;
+    rdfs:label "Units accepted for use with the SI: an example, the litre"@en,
+        "Unités en usage avec le SI : un exemple, le litre"@fr ;
+    si:hasDecision decisions:SI-A-4.5.1,
+        decisions:SI-A-4.5.2,
+        decisions:SI-A-4.5.3,
+        decisions:SI-A-4.5.4,
+        decisions:SI-A-4.5.5 ;
+    si:isTargetOf decisions:SI-A-4 .
+
+decisions:SI-A-2 a si:SIDecisionScope ;
+    rdfs:label "Decisions relating to the base units of the SI"@en,
+        "Décisions concernant les unités de base du SI"@fr ;
+    si:hasTarget decisions:SI-A-2.1,
+        decisions:SI-A-2.2,
+        decisions:SI-A-2.3,
+        decisions:SI-A-2.4,
+        decisions:SI-A-2.5,
+        decisions:SI-A-2.6,
+        decisions:SI-A-2.7 .
+
+decisions:SI-A-2.6 a si:SIDecisionTarget ;
+    rdfs:label "Amount of substance"@en,
+        "Quantité de matière"@fr ;
+    si:hasDecision decisions:SI-A-2.6.1,
+        decisions:SI-A-2.6.2,
+        decisions:SI-A-2.6.3,
+        decisions:SI-A-2.6.4,
+        decisions:SI-A-2.6.5,
+        decisions:SI-A-2.6.6 ;
+    si:isTargetOf decisions:SI-A-2 .
+
+decisions:SI-A-2.7 a si:SIDecisionTarget ;
+    rdfs:label "Luminous intensity"@en,
+        "Intensité lumineuse"@fr ;
+    si:hasDecision decisions:SI-A-2.7.1,
+        decisions:SI-A-2.7.2,
+        decisions:SI-A-2.7.3,
+        decisions:SI-A-2.7.4,
+        decisions:SI-A-2.7.5,
+        decisions:SI-A-2.7.6 ;
+    si:isTargetOf decisions:SI-A-2 .
+
+decisions:SI-A-2.2 a si:SIDecisionTarget ;
+    rdfs:label "Mass"@en,
+        "Masse"@fr ;
+    si:hasDecision decisions:SI-A-2.2.1,
+        decisions:SI-A-2.2.2,
+        decisions:SI-A-2.2.3,
+        decisions:SI-A-2.2.4,
+        decisions:SI-A-2.2.5,
+        decisions:SI-A-2.2.6,
+        decisions:SI-A-2.2.7,
+        decisions:SI-A-2.2.8,
+        decisions:SI-A-2.2.9 ;
+    si:isTargetOf decisions:SI-A-2 .
+
+decisions:SI-A-3.1 a si:SIDecisionTarget ;
+    rdfs:label "SI derived units"@en,
+        "Unités SI dérivées"@fr ;
+    si:hasDecision decisions:SI-A-3.1.1,
+        decisions:SI-A-3.1.2,
+        decisions:SI-A-3.1.3,
+        decisions:SI-A-3.1.4,
+        decisions:SI-A-3.1.5,
+        decisions:SI-A-3.1.6,
+        decisions:SI-A-3.1.7,
+        decisions:SI-A-3.1.8,
+        decisions:SI-A-3.1.9 ;
+    si:isTargetOf decisions:SI-A-3 .
+
+decisions:SI-A-2.4 a si:SIDecisionTarget ;
+    rdfs:label "Electrical units"@en,
+        "Unités électriques"@fr ;
+    si:hasDecision decisions:SI-A-2.4.1,
+        decisions:SI-A-2.4.10,
+        decisions:SI-A-2.4.2,
+        decisions:SI-A-2.4.3,
+        decisions:SI-A-2.4.4,
+        decisions:SI-A-2.4.5,
+        decisions:SI-A-2.4.6,
+        decisions:SI-A-2.4.7,
+        decisions:SI-A-2.4.8,
+        decisions:SI-A-2.4.9 ;
+    si:isTargetOf decisions:SI-A-2 .
+
+decisions:SI-A-1.0 a si:SIDecisionTarget ;
+    rdfs:label "Establishment of the SI"@en,
+        "Établissement du SI"@fr ;
+    si:hasDecision decisions:SI-A-1.0.1,
+        decisions:SI-A-1.0.10,
+        decisions:SI-A-1.0.11,
+        decisions:SI-A-1.0.2,
+        decisions:SI-A-1.0.3,
+        decisions:SI-A-1.0.4,
+        decisions:SI-A-1.0.5,
+        decisions:SI-A-1.0.6,
+        decisions:SI-A-1.0.7,
+        decisions:SI-A-1.0.8,
+        decisions:SI-A-1.0.9 ;
+    si:isTargetOf decisions:SI-A-1 .
+
+decisions:SI-A-2.5 a si:SIDecisionTarget ;
+    rdfs:label "Thermodynamic temperature"@en,
+        "Température thermodynamique"@fr ;
+    si:hasDecision decisions:SI-A-2.5.1,
+        decisions:SI-A-2.5.10,
+        decisions:SI-A-2.5.11,
+        decisions:SI-A-2.5.12,
+        decisions:SI-A-2.5.2,
+        decisions:SI-A-2.5.3,
+        decisions:SI-A-2.5.4,
+        decisions:SI-A-2.5.5,
+        decisions:SI-A-2.5.6,
+        decisions:SI-A-2.5.7,
+        decisions:SI-A-2.5.8,
+        decisions:SI-A-2.5.9 ;
+    si:isTargetOf decisions:SI-A-2 .
+
+decisions:SI-A-2.1 a si:SIDecisionTarget ;
+    rdfs:label "Length"@en,
+        "Longueur"@fr ;
+    si:hasDecision decisions:SI-A-2.1.1,
+        decisions:SI-A-2.1.10,
+        decisions:SI-A-2.1.11,
+        decisions:SI-A-2.1.12,
+        decisions:SI-A-2.1.13,
+        decisions:SI-A-2.1.14,
+        decisions:SI-A-2.1.15,
+        decisions:SI-A-2.1.16,
+        decisions:SI-A-2.1.2,
+        decisions:SI-A-2.1.3,
+        decisions:SI-A-2.1.4,
+        decisions:SI-A-2.1.5,
+        decisions:SI-A-2.1.6,
+        decisions:SI-A-2.1.7,
+        decisions:SI-A-2.1.8,
+        decisions:SI-A-2.1.9 ;
+    si:isTargetOf decisions:SI-A-2 .
+
+decisions:SI-A-2.3 a si:SIDecisionTarget ;
+    rdfs:label "Time"@en,
+        "Temps"@fr ;
+    si:hasDecision decisions:SI-A-2.3.1,
+        decisions:SI-A-2.3.10,
+        decisions:SI-A-2.3.11,
+        decisions:SI-A-2.3.12,
+        decisions:SI-A-2.3.13,
+        decisions:SI-A-2.3.15,
+        decisions:SI-A-2.3.16,
+        decisions:SI-A-2.3.17,
+        decisions:SI-A-2.3.2,
+        decisions:SI-A-2.3.3,
+        decisions:SI-A-2.3.4,
+        decisions:SI-A-2.3.5,
+        decisions:SI-A-2.3.6,
+        decisions:SI-A-2.3.7,
+        decisions:SI-A-2.3.8,
+        decisions:SI-A-2.3.9 ;
+    si:isTargetOf decisions:SI-A-2 .
+

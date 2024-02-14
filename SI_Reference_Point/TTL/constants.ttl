@@ -1,0 +1,115 @@
+@prefix cgpm: <http://si-digital-framework.org/bodies/CGPM#> .
+@prefix constants: <http://si-digital-framework.org/constants/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix si: <http://si-digital-framework.org/SI#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix units: <http://si-digital-framework.org/SI/units/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+constants: a owl:Ontology ;
+    dcterms:created "2024-02-14"^^xsd:date ;
+    rdfs:comment "Ontology, part of the SI reference point, covering the seven underpinning constants of the SI"^^xsd:string ;
+    skos:prefLabel "SI Reference Point - Constants"^^xsd:string .
+
+constants:AvogadroConstant a si:Constant ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM26-Res1 ;
+    si:hasSymbol "${N_{\\rm{A}}}$"^^xsd:string ;
+    si:hasUnit [ a si:UnitPower ;
+            si:hasNumericExponent "-1"^^xsd:short ;
+            si:hasUnitBase units:mole ] ;
+    si:hasUpdatedDate "2019-05-20"^^xsd:date ;
+    si:hasValue "6.02214076e+23"^^xsd:float ;
+    si:hasValueAsString "6.022 140 76 x 10²³"^^xsd:string ;
+    skos:hiddenLabel "Avogadro"^^xsd:string ;
+    skos:prefLabel "Avogadro constant"@en,
+        "constante d'Avogadro"@fr .
+
+constants:BoltzmannConstant a si:Constant ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM26-Res1 ;
+    si:hasSymbol "${k}$"^^xsd:string ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:joule ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-1"^^xsd:short ;
+                    si:hasUnitBase units:kelvin ] ] ;
+    si:hasUpdatedDate "2019-05-20"^^xsd:date ;
+    si:hasValue "1.380649e-23"^^xsd:float ;
+    si:hasValueAsString "1.380 649 x 10⁻²³"^^xsd:string ;
+    skos:hiddenLabel "Boltzmann"^^xsd:string ;
+    skos:prefLabel "Boltzmann constant"@en,
+        "constante de Boltzmann"@fr .
+
+constants:ElementaryCharge a si:Constant ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM26-Res1 ;
+    si:hasSymbol "${e}$"^^xsd:string ;
+    si:hasUnit units:coulomb ;
+    si:hasUpdatedDate "2019-05-20"^^xsd:date ;
+    si:hasValue "1.602176634e-19"^^xsd:float ;
+    si:hasValueAsString "1.602 176 634 x 10⁻¹⁹"^^xsd:string ;
+    skos:hiddenLabel "ElementaryCharge"^^xsd:string ;
+    skos:prefLabel "elementary charge"@en,
+        "charge élementaire"@fr .
+
+constants:HyperfineTransitionFrequencyOfCs-133 a si:Constant ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM13-Res1 ;
+    si:hasSymbol "$\\Delta\\nu_{\\rm{Cs}}$"^^xsd:string ;
+    si:hasUnit units:hertz ;
+    si:hasUpdatedDate "1967-10-13"^^xsd:date ;
+    si:hasValue 9192631770 ;
+    si:hasValueAsString "9 192 631 770"^^xsd:string ;
+    skos:hiddenLabel "HyperfineSplitting"^^xsd:string ;
+    skos:prefLabel "hyperfine transition frequency of Cs-133"@en,
+        "fréquence de la transition hyperfine du césium"@fr .
+
+constants:LuminousEfficacy a si:Constant ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM16-Res3 ;
+    si:hasSymbol "${K_{\\rm{cd}}}$"^^xsd:string ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:lumen ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-1"^^xsd:short ;
+                    si:hasUnitBase units:watt ] ] ;
+    si:hasUpdatedDate "1979-10-11"^^xsd:date ;
+    si:hasValue 683 ;
+    si:hasValueAsString "683"^^xsd:string ;
+    skos:hiddenLabel "LuminousEfficacy"^^xsd:string ;
+    skos:prefLabel "luminous efficacy"@en,
+        "efficacité lumineuse"@fr .
+
+constants:PlanckConstant a si:Constant ;
+    si:hasDatatype xsd:float ;
+    si:hasDefiningResolution cgpm:CGPM26-Res1 ;
+    si:hasSymbol "${h}$"^^xsd:string ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:joule ;
+            si:hasRightUnitTerm units:second ] ;
+    si:hasUpdatedDate "2019-05-20"^^xsd:date ;
+    si:hasValue "6.62607015e-34"^^xsd:float ;
+    si:hasValueAsString "6.626 070 15 x 10⁻³⁴"^^xsd:string ;
+    skos:hiddenLabel "Planck"^^xsd:string ;
+    skos:prefLabel "Planck constant"@en,
+        "constante de Planck"@fr .
+
+constants:SpeedOfLight a si:Constant ;
+    si:hasDatatype xsd:integer ;
+    si:hasDefiningResolution cgpm:CGPM15-Res2 ;
+    si:hasSymbol "$c$"^^xsd:string ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:metre ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-1"^^xsd:short ;
+                    si:hasUnitBase units:second ] ] ;
+    si:hasUpdatedDate "1975-06-03"^^xsd:date ;
+    si:hasValue 299792458 ;
+    si:hasValueAsString "299 792 458"^^xsd:string ;
+    skos:hiddenLabel "SpeedOfLight"^^xsd:string ;
+    skos:prefLabel "speed of light"@en,
+        "vitesse de la lumière dans le vide"@fr .
+

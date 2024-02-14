@@ -1,0 +1,1717 @@
+@prefix cctf: <http://si-digital-framework.org/bodies/CCTF#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rb: <http://si-digital-framework.org/bodies#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cctf: a owl:Ontology ;
+    dcterms:created "2024-02-14"^^xsd:date ;
+    rdfs:comment "Ontology, part of the SI Reference Point, covering the resolutions, decisions, etc of the CCTF."^^xsd:string ;
+    skos:prefLabel "SI Reference Point - CCTF meetings and outcomes"^^xsd:string .
+
+cctf:CCTF14 a rb:Event ;
+    rb:hasEventDate "1999-04-22"^^xsd:date ;
+    rb:hasEventNr "14" ;
+    skos:hiddenLabel "CCTF14"^^xsd:string ;
+    skos:prefLabel "14th meeting of the CCTF"@en,
+        "14e réunion du CCTF"@fr .
+
+cctf:CCTF15-Rec1Action rb:hasActionText "*intends* to examine and approve accurate frequency measurements of atom and ion transition frequencies made relative to the caesium frequency standard as secondary representations of the second,"@en,
+        "recommends that a list of such secondary representations of the second be established,"@en,
+        "recommends that the requirements for documentation of uncertainty that apply to secondary representations of the second be the same as those for primary caesium standards for use in International Atomic Time."@en,
+        "*a l'intention* d’examiner et d’adopter des mesures exactes de fréquences de transitions atomiques d’atomes et d’ions étalonnées par rapport à la fréquence de l’atome de césium 133 comme représentations secondaires de la seconde,"@fr,
+        "recommande de documenter l’incertitude de ces représentations secondaires de la seconde en leur appliquant les mêmes exigences qu’aux étalons primaires à césium, pour leur utilisation dans le Temps atomique international."@fr,
+        "recommande d’établir une liste de représentations secondaires de la seconde, étant entendu que la définition de la seconde fondée sur l’atome de césium 133 n’est pas modifiée pour le moment,"@fr .
+
+cctf:CCTF15-Rec1Considering rb:hasConsideringText """*considering that*
+
+* the present definition of the second, based on the caesium-133 atom, remains unchanged,
+ +
+* there are a number of new atoms and ions being studied as potential bases for atomic frequency standards,
+ +
+* new optical-frequency measurement concepts may allow the use of optical transitions as practical frequency standards, since they provide for a direct microwave output from such standards,
+ +
+* new frequency standards based on other microwave transitions are being studied,
+ +
+* one of these new standards could eventually be considered as the basis for a new definition of the second;"""@en,
+        "considérant que de nouveaux étalons de fréquence fondés sur d’autres transitions micro-ondes sont à l’étude,"@fr,
+        "considérant que des dispositifs nouvellement conçus pour la mesure des fréquences optiques fournissent directement un signal de sortie micro-onde et donc peuvent permettre d’utiliser des transitions optiques comme étalons de fréquence,"@fr,
+        "considérant que la définition actuelle de la seconde, fondée sur l’atome de césium 133, n’est pas modifiée,"@fr,
+        "considérant que l’un d’entre eux pourrait servir de fondement à une nouvelle définition de la seconde ;"@fr,
+        "considérant qu’un certain nombre d’études sont menées pour réaliser des étalons atomiques de fréquence fondés sur de nouveaux atomes et ions,"@fr .
+
+cctf:CCTF15-Rec2Action rb:hasActionText "*fully supports* the joint IGS/BIPM Pilot Project;"@en,
+        "and recommends that appropriate methods be exploited to calibrate the instrumental delays relating the receiver internal reference to the external clock,"@en,
+        "and recommends that the IGS reference for clock products be aligned as much as possible with Coordinated Universal Time (UTC),"@en,
+        "and recommends that the timing laboratories and the BIPM take the necessary steps to allow the IGS to achieve this goal."@en,
+        "and recommends that timing laboratories participate in the IGS by installing appropriate GPS receivers and by following the IGS standards and procedures to the greatest extent possible,"@en,
+        "*approuve* sans réserve le projet commun IGS/BIPM ;"@fr,
+        "et recommande que des méthodes appropriées soient appliquées à l’étalonnage des retards instrumentaux entre la référence interne des récepteurs et l'horloge externe,"@fr,
+        "et recommande que la référence de l'IGS utilisée pour les produits horaires soit alignée autant que possible sur le Temps universel coordonné (UTC),"@fr,
+        "et recommande que les laboratoires de temps et le BIPM prennent les dispositions nécessaires pour aider l'IGS à atteindre cet objectif."@fr,
+        "et recommande que les laboratoires de temps participent à l'IGS en installant des récepteurs GPS appropriés et en suivant autant que possible les normes et les procédures de l'IGS,"@fr .
+
+cctf:CCTF15-Rec2Considering rb:hasConsideringText "considering that a joint IGS/BIPM Pilot Project has been established to study time and frequency comparisons using GPS phase and code measurements,"@en,
+        "considering that calibration methods are being developed to exploit fully the capabilities of these techniques for time comparisons;"@en,
+        "considering that the International GPS Service (IGS) has established an infrastructure of a global observing network, a data distribution system, a robust analysis methodology and high-quality products,"@en,
+        "considérant que des méthodes d'étalonnage sont en cours de mise au point pour tirer totalement profit des possibilités de ces techniques pour les comparaisons horaires ;"@fr,
+        "considérant que le Service international du GPS (IGS) a mis en place une infrastructure comprenant un réseau global d'observation, un système de distribution des données, des méthodes d'analyse robustes et des produits de grande qualité,"@fr,
+        "considérant qu’un projet pilote commun IGS/BIPM a été créé pour étudier les comparaisons de temps et de fréquences utilisant des mesures de phase et de code des signaux du GPS,"@fr .
+
+cctf:CCTF15-Rec3Action rb:hasActionText "*concurs with* Recommendation ITU-R stem:[\"TF\"].536-1 (1978, 1998) “Time Scale Notations”; but"@en,
+        "*recommends* that henceforth the designation of the institute “stem:[k]” refers only to those institutes that participate in the formation of TAI and appear in Section 1, [stem:[UTC - UTC(k)]], of the monthly BIPM _Circular T_;"@en,
+        """*requests* the Director of the BIPM to write to the Director of the ITU-R to notify ITU-R of the recommendation above, and to seek ITU-R consideration for the adoption of nomenclature TAIstem:[(k)] analogous to that of stem:["UTC" (k)].
+
+ """@en,
+        "*approuve* la Recommandation UIT-R stem:[\"TF\"].536-1 (1978, 1998) « Notations à utiliser pour désigner les échelles de temps » ; mais"@fr,
+        """*demande* tau directeur du BIPM d’écrire au directeur de l’UIT-R pour l’informer de la présente Recommandation et demander que l’UIT-R prenne en considération l’établissement de la notation TAIstem:[(k)] de manière analogue à la notation stem:["UTC" (k)].
+
+ """@fr,
+        "*recommande* qu’à l’avenir, la notation « stem:[k] » pour désigner une institution ne s’applique qu’à celles qui participent à la formation du TAI et donc à celles qui apparaissent dans la section 1, [stem:[UTC - UTC(k)]], de la _Circulaire T_ du BIPM ;"@fr .
+
+cctf:CCTF15-Rec3Considering rb:hasConsideringText """*Notes appended to Recommendation CCTF 3 (2001)*
+
+. The institutes participating in the formation of TAI are:
+.. the national metrology institutes and designated laboratories participating in the CIPM Mutual Recognition Arrangement (MRA) and
+.. other institutes and observatories of the Member States of the Metre Convention and Associates of the CGPM officially nominated to keep time scales for scientific, navigational or astronomical purposes.
+. It is suggested that TAIstem:[(k)] be defined by the relation stem:[TAI(k) = UTC(k)] + _DTAI_, where _DTAI_ is the number of integral seconds specified by the IERS as being the difference between UTC and TAI."""@en,
+        "considering that Recommendation ITU-R stem:[\"TF\"].536-1 (1978, 1998) “Time Scale Notations” has established notation UTC(k) for time scales realized by institute “stem:[k]”;"@en,
+        "considering that the International Bureau of Weights and Measures (BIPM) forms International Atomic Time (TAI) and, together with the International Earth Rotation Service (IERS), maintains Coordinated Universal Time (UTC) through the contributed timing data from institutes throughout the world,"@en,
+        "considering that there is a need for a specific international notation for time scales to avoid all ambiguity as to their traceability to the international time references of the BIPM,"@en,
+        """*Notes annexées à la Recommandation CCTF 3 (2001)*
+
+. Les institutions participant à l’établissement du TAI sont :
+.. les laboratoires nationaux de métrologie et les laboratoires désignés qui participent à l’arrangement de reconnaissance mutuelle (MRA) du CIPM, et
+.. d’autres institutions et observatoires des États membres de la Convention du Mètre ainsi que des associés à la Conférence générale officiellement désignés pour maintenir des échelles de temps pour des applications scientifiques, astronomiques ou de navigation.
+. Il est suggéré que TAIstem:[(k)] soit défini comme stem:[TAI(k) = UTC(k)] + _DTAI_, où _DTAI_ est le nombre de secondes entières spécifié par l’IERS comme étant la différence entre l’UTC et le TAI."""@fr,
+        "considérant que la Recommandation UIT-R stem:[\"TF\"].536-1 (1978, 1998) « Notations à utiliser pour désigner les échelles de temps » a établi la notation UTC(k) pour les échelles de temps réalisées par l’institution « stem:[k] » ;"@fr,
+        "considérant que le Bureau international des poids et mesures (BIPM) établit le Temps atomique international (TAI) et, avec le Service international de la rotation terrestre (IERS), maintient le Temps universel coordonné (UTC), à partir des données horaires provenant de laboratoires de temps répartis dans le monde,"@fr,
+        "considérant qu’une notation spécifique internationale pour les échelles de temps est nécessaire afin d’éviter toute ambiguïté quant à leur traçabilité aux références de temps du BIPM,"@fr .
+
+cctf:CCTF15-Rec4Action rb:hasActionText "recommends that absolute and differential calibration methods be continued to be developed and put into operation for all time transfer techniques used in TAI computation, with the aim of achieving 1 ns standard uncertainty,"@en,
+        "recommends that laboratories participating in TAI carry out regular calibration exercises and continuous monitoring of time-transfer equipment,"@en,
+        "recommends that techniques used for the time links of TAI be independently calibrated."@en,
+        "recommande que des méthodes absolues et différentielles d’étalonnage continuent d’être étudiées et mises en œuvre pour toutes les techniques de comparaison d’horloges utilisées pour le TAI, dans le but d’obtenir une incertitude-type d’une nanoseconde,"@fr,
+        "recommande que les diverses techniques de comparaison d’horloges utilisées pour le TAI soient étalonnées de manière indépendante les unes des autres."@fr,
+        "recommande que les laboratoires qui contribuent au TAI participent régulièrement à des campagnes d’étalonnage et contrôlent de manière continue leurs équipements de comparaison d’horloges,"@fr .
+
+cctf:CCTF15-Rec4Considering rb:hasConsideringText "considering that improvements in clock technology and in time transfer techniques have resulted in better stability for ensemble time scales, particularly for International Atomic Time (TAI),"@en,
+        "considering that previous recommendations of the Consultative Committee for the Definition of the Second (CCDS) and the Consultative Committee for Time and Frequency (CCTF) have stressed the importance of the calibration of time-transfer equipment to ensure the accuracy of time links,"@en,
+        "considering that uncompensated changes of the hardware delays in a time link may cause a significant instability in an ensemble time scale like TAI;"@en,
+        "considérant que des recommandations antérieures du Comité consultatif pour la définition de la seconde (CCDS) et du Comité consultatif du temps et des fréquences (CCTF) avaient déjà mis en évidence l’importance d’étalonner les équipements de comparaison d’horloges afin de garantir l’exactitude des liaisons horaires,"@fr,
+        "considérant que l’amélioration des horloges et des techniques de comparaison horaire a accru la stabilité des échelles de temps fondées sur des ensembles d’horloges, en particulier celle du Temps atomique international (TAI),"@fr,
+        "considérant que ne pas prendre en compte les variations des retards instrumentaux des équipements de comparaison d’horloges peut dégrader de manière significative la stabilité d’une échelle de temps fondée sur des ensembles d’horloges telle que le TAI ;"@fr .
+
+cctf:CCTF15-Rec5Action rb:hasActionText "recommends that the manufacturers of receivers used for timing adopt the CCTF Group on Global navigation satellite systems Time Transfer Standards (CGGTTS) technical guidelines for receiver hardware for use in time and frequency transfer,"@en,
+        "recommends that timing laboratories pay particular attention to the conditions under which their time receiving equipment operates."@en,
+        "recommande que les fabricants de récepteurs de temps mettent en application les instructions techniques que le Groupe de travail du CCTF sur la normalisation des comparaisons d’horloges utilisant des systèmes de satellites de navigation à couverture globale (CGGTTS) a élaborées pour la partie instrumentale des récepteurs utilisés pour les comparaisons de temps et de fréquence,"@fr,
+        "recommande que les laboratoires de temps accordent une attention particulière aux conditions dans lesquelles fonctionnent leurs récepteurs de temps."@fr .
+
+cctf:CCTF15-Rec5Considering rb:hasConsideringText """*Note appended to Recommendation CCTF 5 (2001)*
+
+The CGGTTS technical guidelines are available in working documents of the 15th CCTF meeting."""@en,
+        "*_Note:_* The guidelines have since been updated again. The latest version is available at https://doi.org/10.1088/0026-1394/52/6/G1[_Metrologia_ (2015) *52* G1]"@en,
+        "considering that other methods using global navigation satellite systems data for time and frequency transfer are under development that may provide even smaller uncertainty,"@en,
+        "considering that the common-view method for observing satellites in the Global Positioning System (GPS) and the Global Navigation Satellite System (GLONASS) provides one of the most precise and accurate methods of time comparison between remote clocks on and close to the Earth, and is used for the formation of the international time references International Atomic Time (TAI) and Cordinated Universal Time (UTC),"@en,
+        "considering that the main source of uncertainty of these methods is instability of time receiving hardware, being frequently of several nanoseconds for short periods (several days) and in extreme cases reaching up to tens of nanoseconds;"@en,
+        "considering that the uncertainty of this method due to space factors, such as satellite ephemerides and ionospheric delays, and other sources of uncertainty, with the exception of receiver hardware, is close to 1 ns,"@en,
+        """*Note annexée à la Recommandation CCTF 5 (2001)*
+
+Les instructions techniques du CGGTTS figurent dans la liste des documents de travail de la 15^e^ session du CCTF."""@fr,
+        "*_Note:_* The guidelines have since been updated again. The latest version is available at https://doi.org/10.1088/0026-1394/52/6/G1[_Metrologia_ (2015) *52* G1]"@fr,
+        "considérant que d’autres méthodes utilisant des systèmes de satellites de navigation à couverture globale pour les comparaisons de temps et de fréquence, actuellement en cours de mise au point, pourraient permettre d’obtenir des incertitudes encore plus petites,"@fr,
+        "considérant que la méthode d’observation en vue simultanée des satellites du Global Positioning System (GPS) et du Global Navigation Satellite System (GLONASS) est l’une des méthodes les plus précises et les plus exactes de comparaison d’horloges sur la Terre et à son voisinage, et qu’elle est utilisée pour établir les échelles de temps internationales de référence du Temps atomique international (TAI) et du Temps universel coordonné (UTC),"@fr,
+        "considérant que la principale source d’incertitude de ces méthodes est l’instabilité des retards instrumentaux des récepteurs, qui peut fréquemment atteindre plusieurs nanosecondes en quelques jours et, dans certains cas, plusieurs dizaines de nanosecondes ;"@fr,
+        "considérant que l’incertitude de cette méthode liée aux effets spatiaux, tels que les éphémérides des satellites et les retards ionosphériques et autres effets, à l’exception de l’incertitude provenant des retards instrumentaux du récepteur lui-même, est proche de 1 ns,"@fr .
+
+cctf:CCTF16-Rec1Action rb:hasActionText "*recommends that* the unperturbed ground-state hyperfine quantum transition of ^87^Rb may be used as a secondary representation of the second with a frequency of stem:[f_(Rb) = 6 834 682 610.904 324 \"Hz\"] and an estimated relative standard uncertainty (1 _σ_) of 3 × 10^−15^,"@en,
+        "*supports this action,*"@en,
+        """*recommande* que la transition quantique hyperfine non perturbée de l’état fondamental du ^87^Rb pourrait servir de représentation secondaire de la seconde, à la fréquence de stem:[f_(Rb) = 6 834 682 610","904 324 "Hz"], avec une incertitude-type relative estimée (1 _σ_) de 3 × 10^−15^,
+
+et *reconnaît* que plusieurs étalons de fréquence optique ont été examinés par ce groupe de travail. Bien qu’aucun d’entre eux ne soit recommandé pour le moment, le groupe"""@fr,
+        "*soutient cette action,*"@fr .
+
+cctf:CCTF16-Rec1Considering rb:hasConsideringText "*and recognizes that* several optical frequency standards have been reviewed by the JWG. Although none has been proposed at this stage, the JWG believes that the rapid progress with these optical frequency standards requires that they should again be reviewed at its next meeting for their possible use as secondary representations of the second."@en,
+        "considering that the CCL/CCTF Joint Working Group (JWG) on Secondary Representations of the Second in its meeting at the BIPM on 30 March 2004 discussed possible candidates to be included in the list for secondary representations of the second,"@en,
+        "considering that this group has recommended a transition for this list,"@en,
+        "considérant que ce groupe a recommandé une transition pour cette liste,"@fr,
+        "considérant que le Groupe de travail commun au CCL et au CCTF sur les représentations secondaires de la seconde a discuté, lors de sa réunion au Bureau international des poids et mesures du 30 mars 2004, des radiations candidates potentielles en vue de leur inclusion dans la liste des représentations secondaires de la seconde,"@fr,
+        "estime que les progrès rapides des étalons de fréquence optique rendent nécessaire d’examiner à nouveau la possibilité de les utiliser comme représentations secondaires de la seconde."@fr .
+
+cctf:CCTF16-Rec2Action rb:hasActionText "recommends that all successive evaluations of a primary frequency standard be accompanied by a report describing any changes since the first referenced full evaluation, as well as all elements which are specific to each evaluation,"@en,
+        "recommends that laboratories that develop primary frequency standards operate them on a regular basis to realize the SI second and provide to the International Bureau of Weights and Measures (BIPM) results of comparisons of the primary frequency standard with a clock contributing to TAI,"@en,
+        "recommends that the Working Group on the Expression of Uncertainties in Primary Frequency Standards (PFS) reviews the use of all reported evaluations of PFS."@en,
+        "recommends that the evaluations be used for steering of TAI, unless deemed detrimental to TAI in a mutual decision by the concerned laboratory and the BIPM"@en,
+        "recommends that the uncertainty statements of each primary standard either refer to the publication of all corrections, their methods of evaluation and descriptions of all instrumentation, or itself constitute such a publication [Recommendation S 3 (1999)],"@en,
+        "recommends that this documentation be archived by the BIPM and made publicly available,"@en,
+        "recommande que cette documentation soit archivée par le BIPM et rendue accessible au public,"@fr,
+        "recommande que le Groupe de travail sur l’expression des incertitudes des étalons primaires de fréquence examine comment chacune des évaluations publiées des étalons primaires de fréquence est utilisée."@fr,
+        "recommande que les laboratoires qui possèdent des étalons primaires de fréquence les utilisent de manière régulière afin de réaliser la seconde du Système international d’unités (SI) et fournissent au Bureau international des poids et mesures (BIPM) des résultats de comparaison entre ces étalons primaires de fréquence et une horloge qui contribue au TAI,"@fr,
+        "recommande que les évaluations soient utilisées pour le pilotage du TAI, à moins qu’elles ne soient considérées comme préjudiciables au TAI par décision mutuelle du laboratoire concerné et du BIPM,"@fr,
+        "recommande que pour chaque étalon primaire, l’incertitude déclarée fasse référence à une publication déjà existante décrivant toutes les corrections, les méthodes d’évaluation et la description de tous les instruments utilisés, ou qu’elle soit elle-même l’objet d’une telle publication [Recommandation S 3 (1999)],"@fr,
+        "recommande que toutes les évaluations successives d’un étalon primaire de fréquence soient accompagnées d’un rapport décrivant les changements depuis la première évaluation complète publiée, ainsi que tous les éléments spécifiques à chaque évaluation,"@fr .
+
+cctf:CCTF16-Rec2Considering rb:hasConsideringText "considering that CCTF Recommendation S 3 (1999) provides guidelines to report the results of primary frequency standards and their uncertainties,"@en,
+        "considering that it is desirable that all primary frequency data be archived and made available publicly,"@en,
+        "considering that it is desirable that this estimation be based on a sufficient number of measurements from different primary frequency standards,"@en,
+        "considering that the proper usage of primary frequency standards measurements is essential to ensure a correct estimation of the scale unit of International Atomic Time (TAI),"@en,
+        "considering that the uncertainty of each measurement should be adequately documented and the methods of its estimation should be described,"@en,
+        "considérant que il est fondamental de faire un usage approprié des résultats de mesure des étalons primaires de fréquence pour assurer une estimation correcte de l’unité d’échelle du Temps atomique international (TAI),"@fr,
+        "considérant que il est souhaitable que cette estimation soit fondée sur un nombre suffisant de mesures de différents étalons primaires de fréquence,"@fr,
+        "considérant que il est souhaitable que toutes les valeurs des fréquences primaires soient archivées et rendues accessibles au public,"@fr,
+        "considérant que la Recommandation S 3 (1999) du CCTF fournit des directives pour rendre compte des résultats obtenus avec les étalons primaires de fréquence et de leurs incertitudes,"@fr,
+        "considérant que l’incertitude de chaque mesure doit être établie au moyen d’une documentation convenable et les méthodes utilisées pour son estimation doivent être décrites,"@fr .
+
+cctf:CCTF16-Rec3Action rb:hasActionText "recommends that the procedure of TAI frequency steering be adapted with the aim of ensuring that the estimation of the TAI scale unit conforms to its definition within 3 σ uncertainty,"@en,
+        "recommends that this procedure be designed, in collaboration with the Working Group on TAI, to minimize the impact on TAI stability."@en,
+        "recommande que cette procédure soit établie, en collaboration avec le Groupe de travail sur le TAI, afin de minimiser l’impact sur la stabilité du TAI."@fr,
+        "recommande que la procédure de pilotage de fréquence du TAI soit adaptée afin de s’assurer que l’estimation de l’unité d’échelle du TAI telle qu’estimée soit conforme à sa définition dans la limité de trois fois l’incertitude-type,"@fr .
+
+cctf:CCTF16-Rec3Considering rb:hasConsideringText "considering that TAI is a realization of Terrestrial Time stem:[(\"TT\")] as defined, most recently, in Resolution B1.9 (2000) of the International Astronomical Union,"@en,
+        "considering that TAI was defined by the General Conference on Weights and Measures in 1971, complemented by the Consultative Committee for the Definition of the Second in 1980,"@en,
+        "considering that it is advantageous that TAI provides direct traceability to the SI second,"@en,
+        "considering that new primary frequency standards permit the determination of this deviation with adequate uncertainty,"@en,
+        "considering that the scale unit of TAI has significantly deviated from its definition over the past years,"@en,
+        "considérant que il est avantageux que le TAI établisse directement la traçabilité à la seconde du SI,"@fr,
+        "considérant que le TAI a été défini par la Conférence générale des poids et mesures en 1971, et que cette définition a été complétée par le Comité consultatif pour la définition de la seconde en 1980,"@fr,
+        "considérant que le TAI est une réalisation du Temps terrestre stem:[(\"TT\")] tel qu’il a été défini récemment dans la Résolution B1.9 (2000) de l’Union astronomique internationale,"@fr,
+        "considérant que les nouveaux étalons primaires de fréquence permettent de déterminer cet écart avec une incertitude convenable,"@fr,
+        "considérant que l’unité d’échelle du TAI s’est écartée de façon significative de sa définition au cours des années passées,"@fr .
+
+cctf:CCTF18-Rec1Action rb:hasActionText """*recommends*
+
+that the following transition frequencies shall be included or updated in the list of recommended standard frequencies:
+
+* the unperturbed optical transition 5s^2^ ^1^S~0~ - 5s 5p ^3^P~0~ of the ^87^Sr neutral atom with a frequency of stem:[429 228 004 229 873.7 "Hz"] and a relative standard uncertainty of stem:[1 * 10^(-15)] (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 5s^2^ ^1^S~0~ - 5s 5p ^3^P~0~ of the ^88^Sr neutral atom with a frequency of stem:[429 228 066 418 012 "Hz"] and a relative standard uncertainty of stem:[1 * 10^(-14)];
+* the unperturbed optical transition 4s ^2^S~1/2~ - 3d ^2^D~5/2~ of the ^stem:[40^(Ca)]+^ ion with a frequency of stem:[411 042 129 776 393 "Hz"] and a relative standard uncertainty of stem:[4 * 10^(-14)];
+* the unperturbed optical transition ^2^S~1/2~ stem:[(F = 0)] - ^2^stem:["F"]~7/2~ (stem:[F = 3], _m~stem:["F"]~_ = 0) of the ^stem:[171^(Yb)]+^ ion with a frequency of stem:[642 121 496 772 657 "Hz"] and a relative standard uncertainty of stem:[6 * 10^(-14)];
+* the unperturbed optical transition 6s^2^ ^1^S~0~ (stem:[F = 1/2]) - 6s 6p ^3^P~0~ (stem:[F = 1/2]) of the ^171^Yb neutral atom with a frequency of stem:[518 295 836 590 864 "Hz"] and a relative standard uncertainty of stem:[1.6 * 10^(-13)]."""@en,
+        """*recommande*
+
+que les fréquences de transition suivantes soient incluses ou mises à jour dans la liste des fréquences étalons recommandées
+
+* la transition optique non perturbée 5s^2^ ^1^S~0~ - 5s 5p ^3^P~0~ de l’atome neutre de ^87^, à la fréquence de stem:[429 228 004 229 873","7 "Hz"], avec une incertitude-type relative de stem:[1 * 10^(-15)] (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 5s^2^ ^1^S~0~ - 5s 5p ^3^P~0~ de l’atome neutre de ^88^Sr, à la fréquence de stem:[429 228 066 418 012 "Hz"], avec une incertitude-type relative de stem:[1 * 10^(-14)] ;
+* la transition optique non perturbée 4s ^2^S~1/2~ - 3d ^2^D~5/2~ de l'ion de ^stem:[40^(Ca)]+^, à la fréquence de stem:[411 042 129 776 393 "Hz"], avec une incertitude-type relative de stem:[4 * 10^(-14)] ;
+* la transition optique non perturbée ^2^S~1/2~ stem:[(F = 0)] - ^2^stem:["F"]~7/2~ (stem:[F = 3], _m~stem:["F"]~_ = 0) de l'ion de ^stem:[171^(Yb)]+^, à la fréquence de stem:[642 121 496 772 657 "Hz"], avec une incertitude-type relative de stem:[6 * 10^(-14)] ;
+* la transition optique non perturbée 6s^2^ ^1^S~0~ (stem:[F = 1/2]) - 6s 6p ^3^P~0~ (stem:[F = 1/2]) de l’atome neutre de ^171^Yb, à la fréquence de stem:[518 295 836 590 864 "Hz"], avec une incertitude-type relative de stem:[1","6 * 10^(-13)]."""@fr .
+
+cctf:CCTF18-Rec1Considering rb:hasConsideringText "considering that a common list of “Recommended values of standard frequencies for applications including the practical realization of the metre and secondary representations of the second” has been established;"@en,
+        "considering that the CCL-CCTF Frequency Standards Working Group (FSWG) has reviewed several promising candidates for inclusion in the list;"@en,
+        "considérant que que le Groupe de travail commun au CCL et au CCTF sur les étalons de fréquence a examiné plusieurs fréquences candidates en vue de leur inclusion dans cette liste ;"@fr,
+        "considérant que qu’une liste commune des « valeurs recommandées de fréquences étalons destinées à la mise en pratique de la définition du mètre et aux représentations secondaires de la seconde » a été établie ;"@fr .
+
+cctf:CCTF18-Rec2Action rb:hasActionText "recommends that the BIPM continues to organize and run campaigns to measure delays in GNSS equipment in laboratories;"@en,
+        "recommends that the BIPM develop guidelines for this, in consultation with the RMOs."@en,
+        "recommends that the Regional Metrology Organizations (RMOs) support the BIPM by organizing campaigns of measurement delays within the frame of regional comparisons to be linked to those conducted by the BIPM;"@en,
+        "recommends that the principal objective of these campaigns be principally organized to calibrate the equipment in a selected subset of laboratories;"@en,
+        "recommande que le BIPM continue d’organiser et de conduire des campagnes de mesure des retards des équipements des systèmes globaux de navigation par satellite en fonctionnement dans les laboratoires ;"@fr,
+        "recommande que le BIPM élabore des directives à ce sujet, en concertation avec les organisations régionales de métrologie."@fr,
+        "recommande que les organisations régionales de métrologie apportent leur soutien au BIPM en organisant des campagnes de mesure des retards au niveau régional, qui seront liées à celles menées par le BIPM ;"@fr,
+        "recommande que l’objectif principal de ces campagnes soit d’étalonner les équipements d’un sous-ensemble de laboratoires sélectionnés ;"@fr .
+
+cctf:CCTF18-Rec2Considering rb:hasConsideringText "aware that considerable human resources and equipment are necessary to calibrate all the GNSS equipment involved in the formation of the TAI, and to keep these calibrations up to date;"@en,
+        "aware that the Time, Frequency and Gravimetry Section of the BIPM devotes effort to measuring the relative delays of GNSS equipment in laboratories contributing data to the formation of TAI;"@en,
+        "considering that the Consultative Committee for the Definition of the Second (CCDS) and subsequently the Consultative Committee for Time and Frequency (CCTF) have stressed the importance of calibrating the time-transfer equipment in laboratories contributing data for the calculation of TAI at the BIPM;"@en,
+        "considering that the characterization of the delays of time-transfer equipment is essential to ensure the accuracy of the time links for International Atomic Time (TAI);"@en,
+        "considering that uncompensated changes of the hardware delays in a time link may cause significant instability in TAI;"@en,
+        "considérant que la détermination des caractéristiques des retards des équipements de comparaison de temps est essentielle pour garantir l’exactitude des liens horaires du TAI ;"@fr,
+        "considérant que le Comité consultatif pour la définition de la seconde (CCDS), puis le Comité consultatif du temps et des fréquences (CCTF) ont souligné l’importance d’étalonner les équipements de comparaison de temps des laboratoires participant au calcul du TAI effectué au BIPM ;"@fr,
+        "considérant que les changements non corrigés des retards des équipements impliqués dans un lien horaire donné peuvent générer une instabilité significative du TAI ;"@fr,
+        "sachant que des ressources considérables, tant en personnel qu’en matériel, sont nécessaires pour étalonner l’ensemble des équipements des systèmes globaux de navigation par satellite utilisés pour le calcul du TAI, ainsi que pour maintenir à jour ces étalonnages ;"@fr,
+        "sachant que la section du temps, des fréquences et de la gravimétrie du BIPM s’applique à mesurer les retards relatifs des équipements des systèmes globaux de navigation par satellite des laboratoires fournissant des données pour le calcul du TAI ;"@fr .
+
+cctf:CCTF18-Rec3Action rb:hasActionText """*recommends that*
+
+national and international agencies and relevant scientific unions concerned with the definition of international time scales urgently consider decisions regarding the future definition of UTC so that international agreement can be reached as soon as possible."""@en,
+        """*recommande*
+
+que les agences nationales et internationales, ainsi que les unions scientifiques concernées par la définition des échelles de temps internationales, réfléchissent de toute urgence aux décisions à prendre concernant la définition à venir de l’UTC, afin de parvenir dès que possible à un accord international à ce sujet."""@fr .
+
+cctf:CCTF18-Rec3Considering rb:hasConsideringText "considering that UT1 can fully satisfy needs related to the determination of the Earth rotation angle;"@en,
+        "considering that alternative time scales, not affected by leap seconds, are being developed and have started to proliferate;"@en,
+        "considering that over the last ten years a number of national and international technical organizations have expressed increasing concern about the present definition of UTC and the concomitant proliferation of alternate time scales;"@en,
+        "considering that sufficient lead time must be allowed for developers of satellite- and land-based navigation system software to accommodate any change in the definition of UTC;"@en,
+        """considering that the need to represent the Earth’s rotation angle in celestial reference systems for use in maritime celestial navigation is either no longer required or can easily be met through values of +
+ [_UT1 - UTC_] as published by the International Earth Rotation and Reference Systems Service (IERS);"""@en,
+        "considering that the use of Coordinated Universal Time (UTC) as defined in 1972 is negatively affected by steps caused by the unpredictable insertion of an unpredictable number of leap seconds;"@en,
+        "considering that this definition of UTC can not meet the requirements of many existing and future navigation systems needing uniform time;"@en,
+        "considérant que cette définition de l’UTC ne peut répondre aux exigences des nombreux systèmes de navigation, actuels et à venir, qui nécessitent une échelle de temps uniforme ;"@fr,
+        "considérant que d’autres échelles de temps, non affectées par l’insertion de secondes intercalaires, sont élaborées et prolifèrent"@fr,
+        "considérant que la nécessité de connaître l’angle de rotation de la Terre dans des systèmes de référence célestes, destinés à être utilisés dans le domaine de la navigation maritime céleste, n’est plus d’actualité ou peut facilement être satisfaite par les valeurs de [stem:[UT1 - UTC]] telles que évaluées et publiées par le Service international de la rotation terrestre et des systèmes de référence (IERS) ;"@fr,
+        "considérant que l’UT1 peut entièrement satisfaire aux besoins liés à la détermination de l’angle de rotation terrestre ;"@fr,
+        "considérant que l’insertion non prévisible de secondes intercalaires, dont on ne connaît pas à l’avance le nombre, génère des sauts du Temps universel coordonné (UTC), tel qu’il a été défini en 1972, qui affectent de manière défavorable son utilisation ;"@fr,
+        "considérant qu’au cours des dix dernières années, un certain nombre d’organisations techniques nationales et internationales ont exprimé leur inquiétude croissante concernant la définition actuelle de l’UTC et la prolifération simultanée d’autres échelles de temps"@fr,
+        "considérant qu’il est nécessaire de disposer d’un délai suffisant pour permettre la mise en place de programmes informatisés pour les systèmes de navigation terrestre ou par satellite, adaptés à tout changement de la définition de l’UTC ;"@fr .
+
+cctf:CCTF18-Rec4Action rb:hasActionText """*recommends that*
+
+after agreement with the relevant scientific unions, the Director of the BIPM formally discuss with the CIPM the steps that must be taken such that the 24th CGPM be asked to adopt the ITRS, as defined by the IUGG and realized by the IERS and IGS, as the international standard for terrestrial reference frames used for all metrological applications."""@en,
+        """*recommande*
+
+que le directeur du BIPM, après concertation avec les unions scientifiques concernées, discute de façon formelle avec le CIPM des mesures nécessaires à prendre afin de demander à la Conférence générale des poids et mesures, lors de sa 23^e^ réunion, d’adopter l’ITRS, tel que défini par l’Union géodésique et géophysique internationale (UGGI), et réalisé de manière pratique par le Service international de la rotation terrestre et des systèmes de référence (IERS) et le Service international GNSS (IGS), comme système de référence international terrestre unique pour toutes les applications métrologiques."""@fr .
+
+cctf:CCTF18-Rec4Considering rb:hasConsideringText """*noting that*
+
+one of the key factors that led to the creation of the Metre Convention and the BIPM was the recommendation of the Second International Conference on Geodesy for the Measurement of Degrees in Europe, held in Berlin in 1867, that a European international bureau of weights and measures be set up in order to unify European geodesy standards;"""@en,
+        "considering that although use of international terrestrial reference system (ITRS) is recommended by relevant scientific unions, it has not yet been adopted by an intergovernmental organization;"@en,
+        "considering that at present there exist only a few global satellite navigation systems, but that new ones are being created and in the future there may be many more;"@en,
+        "considering that such an adoption by the appropriate intergovernmental organization would benefit users in terms of unifying navigation and timing solutions and facilitating systems interoperability;"@en,
+        "considering that the various time and geodesy reference systems in use in these navigation systems give rise to additional ambiguities with regard to the interpretation of navigation and timing solutions and makes interoperability between the systems more difficult;"@en,
+        """*notant*
+
+que l’un des facteurs clés ayant conduit à la création de la Convention du Mètre et du BIPM fut la recommandation adoptée lors de la deuxième Conférence géodésique internationale pour la mesure des degrés en Europe, réunie à Berlin en 1867, pour qu’un Bureau international des poids et mesures, situé en Europe, soit fondé afin d’unifier les étalons géodésiques européens ;"""@fr,
+        "considérant que les différents systèmes de référence temporels et géodésiques, utilisés par ces systèmes globaux de navigation, rendent l’interprétation des solutions de positionnement et de temps plus ambiguë pour les utilisateurs, et l’interopérabilité des systèmes plus compliquée ;"@fr,
+        "considérant que l’adoption d’un système commun par l’organisation intergouvernementale appropriée serait un avantage pour les utilisateurs en termes d’unification des solutions globales de positionnement et de temps, et de l’interopérabilité des systèmes globaux ;"@fr,
+        "considérant que, même si les unions scientifiques concernées recommandent l’utilisation du système international de référence terrestre (ITRS), ce système n’est à l’heure actuelle adopté par aucune organisation intergouvernementale ;"@fr,
+        "considérant qu’il n’existe à l’heure actuelle que quelques systèmes globaux de navigation par satellite (GNSS), mais que de nouveaux systèmes sont mis au point et que beaucoup d’autres le seront probablement à l’avenir ;"@fr .
+
+cctf:CCTF18-Rec5Action rb:hasActionText """*recommends that*
+
+* the geodetic references for GNSSs be aligned as closely as possible to the ITRS;
+* the internal system times (ST) of the GNSS be synchronized as closely as possible to UTC (modulo stem:[1 "s"]);
+* the GNSS broadcast, in addition to their own ST: +
+ +
+ the difference between the ST and a real-time realization of UTC, +
+ +
+ the differences between the time scales of the various GNSS;
+
+and"""@en,
+        "requests the BIPM to coordinate actions within the ICG for the accomplishment of this recommendation."@en,
+        """*recommande*
+
+* que les références géodésiques utilisées pour les systèmes globaux de navigation par satellite soient alignées le plus exactement possible sur l’ITRS ;
+* que les échelles de temps internes des systèmes globaux de navigation par satellite soient synchronisées le plus exactement possible sur l’UTC (modulo stem:[1 "s"]) ;
+* que les systèmes globaux de navigation par satellite diffusent, outre leurs propres échelles de temps :
+** l’écart entre leur échelle de temps et une réalisation en temps réel de l’UTC,
+** les écarts entre les échelles de temps des divers systèmes globaux ;"""@fr,
+        "et demande que le BIPM coordonne les actions nécessaires pour ce faire au sein du Comité international sur le GNSS (ICG)."@fr .
+
+cctf:CCTF18-Rec5Considering rb:hasConsideringText "aware that civil and scientific activities world-wide need to refer to common internationally recognized geodetic and time references;"@en,
+        "aware that interoperability of the various GNSS would be facilitated by the adoption of international geodetic and time references in the various GNSS;"@en,
+        "aware that new global navigation satellite systems (GNSS) are being designed and developed;"@en,
+        "considering that GPS time is steered to UTC(USNO) (modulo stem:[1 \"s\"]), GLONASS time is steered to UTC(SU), and Galileo time will be steered to an ensemble of European realizations of UTC, keeping the same number of seconds as GPS time;"@en,
+        "considering that access to the ITRS is primarily achieved through the International Terrestrial Reference Frame (ITRF), and with an uncertainty of between stem:[3 \"cm\"] and stem:[40 \"cm\"] by WGS84, PZ-90, the Galileo Terrestrial Reference Frame (GTRF), the China Geodetic System 2000 (CGS’2000), and regional densifications;"@en,
+        "considering that the BIPM participates as observer in the International Committee on GNSS (ICG);"@en,
+        "considering that the BIPM provides coordination for the maintenance and dissemination of UTC;"@en,
+        "considering that the International Terrestrial Reference System (ITRS) has been recommended by the International Astronomical Union (IAU) and the International Union of Geodesy and Geophysics (IUGG) for applications in space and Earth sciences;"@en,
+        "considering that the time scale endorsed by the 15th General Conference of Weights and Measures (1975) for world-wide time coordination and dissemination is Coordinated Universal Time (UTC);"@en,
+        "recognizes that the ICG is a unique structure to enable GNSS Service Providers to align their geodetic and time references to the ITRS and UTC for the operation of their systems;"@en,
+        "considérant que le BIPM assure la collaboration nécessaire afin de maintenir et de disséminer l’UTC ;"@fr,
+        "considérant que le BIPM participe au Comité international sur le GNSS (ICG) en tant qu’observateur ;"@fr,
+        "considérant que le Repère international de référence terrestre (ITRF) fournit l’accès primaire à l’ITRS, et que les systèmes géodésiques globaux WGS84, PZ-90, GTRF (Galileo Terrestrial Reference Frame), CGS’2000 (China Geodetic System 2000), assortis de densifications régionales, y donnent également accès avec une incertitude estimée de stem:[3 \"cm\"] à stem:[40 \"cm\"] ;"@fr,
+        "considérant que le Système international de référence terrestre (ITRS) a été recommandé par l’Union astronomique internationale (UAI) et l’Union géodésique et géophysique internationale (UGGI) pour les applications dans le domaine des sciences de la terre et de l’espace ;"@fr,
+        "considérant que le temps du GPS est asservi à la réalisation en temps réel de l’UTC maintenue par l’Observatoire naval des États-Unis d’Amérique, UTC(USNO) (modulo stem:[1 \"s\"]), et le temps du GLONASS asservi à la réalisation en temps réel de l’UTC maintenue par le VNIIFTRI, UTC(SU) ; et que le temps de Galileo sera asservi à un ensemble de réalisations européennes de l’UTC, en conservant le même décalage en nombre de secondes que le temps du GPS ;"@fr,
+        "considérant que l’échelle de temps approuvée par la Conférence générale des poids et mesures, lors de sa 15^e^ réunion en 1975, afin d’assurer la coordination et la dissémination du temps dans le monde est le Temps universel coordonnée (UTC) ;"@fr,
+        "reconnaît que le Comité international sur le GNSS (ICG) procure une structure unique qui permet aux fournisseurs de services globaux de navigation par satellite d’aligner leurs références de temps et géodésiques sur l’UTC et l’ITRS de manière opérationnelle ;"@fr,
+        "sachant que de nouveaux systèmes globaux de navigation par satellite (GNSS) sont actuellement conçus et mis au point ;"@fr,
+        "sachant que des références temporelles et géodésiques, communes et reconnues au niveau international, sont nécessaires aux activités scientifiques et civiles partout dans le monde ;"@fr,
+        "sachant que l’interopérabilité des différents systèmes globaux de navigation par satellite serait facilitée par l’adoption de références internationales temporelles et géodésiques ;"@fr .
+
+cctf:CCTF18-Rec6Action rb:hasActionText """*aiming to*
+
+* facilitate access for all users to predictions of stem:["UTC" (k)] as disseminated by existing and future GNSS;"""@en,
+        "recommends that Section 5 of _Circular T_ be renamed “Relations of UTC and TAI with predictions of stem:[\"UTC\" (k)] disseminated by the GNSS and their System Times”."@en,
+        "recommends that Section 5 of _Circular T_ include information on the relationship of UTC and TAI with the predicted stem:[\"UTC\" (k)] disseminated by the GNSS;"@en,
+        "recommande que la Section 5 de la _Circulaire T_ intègre des données sur la relation entre l’UTC et le TAI et les échelles de temps locales prédites UTC(k), disséminées par les systèmes globaux de navigation par satellite ;"@fr,
+        "recommande que la Section 5 de la _Circulaire T_ soit renommée « Relation entre l’UTC et le TAI et les prédictions des échelles de temps locales UTC(k) disséminées par les systèmes globaux de navigation par satellite, ainsi que leurs échelles de temps »."@fr .
+
+cctf:CCTF18-Rec6Considering rb:hasConsideringText "considering that Section 5 of BIPM _Circular T_ publishes the relationship between UTC, TAI and the GNSS System Times (ST);"@en,
+        "considering that existing operational GNSS disseminate predictions of local timescales stem:[\"UTC\" (k)], e.stem:[\"g\"]. GPS disseminates predictions of UTC(USNO) and GLONASS disseminates predictions of UTC(SU);"@en,
+        "considering that the task of the BIPM is to ensure world-wide uniformity of measurements and their traceability to the International System of Units (SI);"@en,
+        "considering that two Global Navigation Satellite Systems (GNSS) already exist and others are under development;"@en,
+        """*ayant pour objectif*
+
+* de faciliter l’accès, pour tout utilisateur, aux prédictions des échelles de temps locales stem:["UTC" (k)] disséminées par les systèmes globaux de navigation par satellite actuels et à venir ;"""@fr,
+        "considérant que la Section 5 de la _Circulaire T_ du BIPM publie la relation entre l’UTC et le TAI et les échelles de temps de ces systèmes globaux de navigation par satellite ;"@fr,
+        "considérant que la mission du BIPM est d’assurer l’unification mondiale des mesures et leur traçabilité au Système international d’unités (SI) ;"@fr,
+        "considérant que les systèmes globaux de navigation par satellite actuellement utilisés disséminent des prédictions des échelles de temps locales stem:[\"UTC\" (k)] ; par exemple, le GPS dissémine des prédictions de la réalisation en temps réel de l’UTC maintenue par l’Observatoire naval des États-Unis d’Amérique, UTC(USNO), et le GLONASS celles de la réalisation en temps réel de l’UTC maintenue par le VNIIFTRI, UTC(SU) ;"@fr,
+        "considérant qu’à l’heure actuelle, deux systèmes globaux de navigation par satellite sont en fonctionnement et que d’autres sont en cours de mise au point ;"@fr .
+
+cctf:CCTF19-Rec1Action rb:hasActionText "*and asks* the CIPM for approval."@en,
+        """*recommends*
+
+that the following transition frequencies shall be included or updated in the list of recommended values of standard frequencies:
+
+* the unperturbed optical transition 3_s_^2^ ^1^S~0~ - 3_s_3_p_ ^3^P~0~ of the ^stem:[27^(Al)]+^ ion with a frequency of stem:[f]~27Al+~ = stem:[1 121 015 393 207 857.3 "Hz"] and an estimated relative standard uncertainty of 1.9 × 10^−15^. +
+ This radiation is recommended to be endorsed by the CIPM as a secondary representation of the second;
+* the unperturbed optical transition 5_d_^10^6_s_ ^2^S~1/2~ - 5_d_ ^9^6_s_^2^ ^2^D~5/2~ of the ^stem:[199^(Hg)]+^ ion with a frequency of stem:[f]~199Hg+~ = stem:[1 064 721 609 899 145.3 "Hz"] and an estimated relative standard uncertainty of 1.9 × 10^−15^ (this radiation is already endorsed by the CIPM as a secondary  +
+ representation of the second);
+* the unperturbed optical transition 6_s_^2^ ^1^S~0~ - 6_s_6_p_ ^3^P~0~ of the ^199^Hg neutral atom with a frequency of stem:[f]~199Hg~ = stem:[1 128 575 290 808 162 "Hz"] and an estimated relative standard uncertainty of 1.7 × 10^−14^;
+* the unperturbed optical transition 6_s_ ^2^S~1/2~ - 4_f_ ^13^6_s_^2^ ^2^stem:["F"]~7/2~ of the ^stem:[171^(Yb)]+^ ion with a frequency of stem:[f]~171Yb+~ (octupole) = stem:[642 121 496 772 645.6 "Hz"] and an estimated relative standard uncertainty of 1.3 × 10^−15^. +
+ This radiation is recommended to be endorsed by the CIPM as a secondary representation of the second;
+* the unperturbed optical transition 6_s_ ^2^S~1/2~ (stem:["F" = 0], stem:["m"_("F") = 0]) - 5_d_ ^2^D~3/2~ (stem:["F" = 2], stem:["m"_("F") = 0]) of the ^stem:[171^(Yb)]+^ ion with a frequency of stem:[f]~171Yb+~ (quadrupole) = stem:[688 358 979 309 307.1 "Hz"] and an estimated relative standard uncertainty of 3 × 10^−15^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 5_s_ ^2^S~1/2~ - 4_d_ ^2^D~5/2~ of the ^stem:[88^(Sr)]+^ ion with a frequency of stem:[f]~88Sr+~ = stem:[444 779 044 095 485.3 "Hz"] and an estimated relative standard uncertainty of 4.0 × 10^−15^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 4_s_ ^2^S~1/2~ - 3_d_ ^2^D~5/2~ of the ^stem:[40^(Ca)]+^ ion with a frequency of stem:[f]~40Ca+~ = stem:[411 042 129 776 395 "Hz"] and an estimated relative standard uncertainty of 1.5 × 10^−14^;
+* the unperturbed optical transition 1S - 2S of the stem:[""_(1) "H"] neutral atom with a frequency of stem:[f_(1H) = 1 233 030 706 593 518 "Hz"] and an estimated relative standard uncertainty of 1.2 × 10^−14^. +
+ Note: This frequency corresponds to half of the energy difference between the 1S and 2S states;
+* the unperturbed optical transition 5_s_^2^ ^1^S~0~ - 5_s_5_p_ ^3^P~0~ of the ^87^Sr neutral atom with a frequency of stem:[f_(87Sr) = 429 228 004 229 873.4 "Hz"] and an estimated relative standard uncertainty of 1 × 10^−15^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 6_s_^2^ ^1^S~0~ - 6_s_6_p_ ^3^P~0~ of the ^171^Yb neutral atom with a frequency of stem:[f]~171Yb~ = stem:[518 295 836 590 865.0 "Hz"] and an estimated relative standard uncertainty of 2.7 × 10^−15^. +
+ This radiation is recommended to be endorsed by the CIPM as a secondary representation of the second;
+* the unperturbed ground-state hyperfine transition of ^87^Rb with a frequency of stem:[f_(87Rb) = 6 834 682 610.904 312 "Hz"] and an estimated relative standard uncertainty of 1.3 × 10^−15^ (this radiation is already endorsed by the CIPM as a secondary representation of the second).
+
+Note: The value of the standard uncertainty is assumed to correspond to a confidence level of 68 %. However, given the very limited number of available data there is a possibility that in hindsight this might not prove to be exact."""@en,
+        "*et requiert* l'approbation du CIPM."@fr,
+        """*recommande*
+
+que les fréquences des transitions suivantes soient incluses ou mises à jour dans la liste des fréquences étalons recommandées :
+
+* la transition optique non perturbée 3_s_^2^ ^1^S~0~ - 3_s_3_p_ ^3^P~0~ de l'ion de ^stem:[27^(Al)]+^, à la fréquence de stem:[f]~27Al+~ = stem:[1 121 015 393 207 857","3 "Hz"] avec une incertitude-type relative estimée de 1,9 × 10^−15^. +
+ Il est recommandé que le CIPM approuve cette radiation comme représentation secondaire de la seconde ;
+* la transition optique non perturbée 5_d_^10^6_s_ ^2^S~1/2~ - 5_d_ ^9^6_s_^2^ ^2^D~5/2~ de l'ion de ^stem:[199^(Hg)]+^, à la fréquence de stem:[f]~199Hg+~ = stem:[1 064 721 609 899 145","3 "Hz"] avec une incertitude-type relative estimée de 1,9 × 10^−15^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 6_s_^2^ ^1^S~0~ - 6_s_6_p_ ^3^P~0~ de l'atome neutre de ^199^Hg, à la fréquence de stem:[f]~199Hg~ = stem:[1 128 575 290 808 162 "Hz"] avec une incertitude-type relative estimée de 1,7 × 10^−14^ ;
+* la transition optique non perturbée 6_s_ ^2^S~1/2~ - 4_f_ ^13^6_s_^2^ ^2^stem:["F"]~7/2~ de l'ion de ^stem:[171^(Yb)]+^, à la fréquence de stem:[f]~171Yb+~ (octupôle) = stem:[642 121 496 772 645","6 "Hz"] avec une incertitude-type relative estimée de 1,3 × 10^−15^. +
+ Il est recommandé que le CIPM approuve cette radiation comme représentation secondaire de la seconde ;
+* la transition optique non perturbée 6_s_ ^2^S~1/2~ (stem:["F" = 0], stem:["m"_("F") = 0]) - 5_d_ ^2^D~3/2~ (stem:["F" = 2], stem:["m"_("F") = 0]) de l'ion de ^stem:[171^(Yb)]+^, à la fréquence de stem:[f]~171Yb+~ (quadripôle) = stem:[688 358 979 309 307","1 "Hz"] avec une incertitude-type relative estimée de 3 × 10^−15^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 5_s_ ^2^S~1/2~ - 4_d_ ^2^D~5/2~ de l'ion de ^stem:[88^(Sr)]+^, à la fréquence de stem:[f]~88Sr+~ = stem:[444 779 044 095 485","3 "Hz"] avec une incertitude-type relative estimée de 4,0 × 10^−15^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 4_s_ ^2^S~1/2~ - 3_d_ ^2^D~5/2~ de l'ion de ^stem:[40^(Ca)]+^, à la fréquence de stem:[f]~40Ca+~ = stem:[411 042 129 776 395 "Hz"] avec une incertitude-type relative estimée de 1,5 × 10^−14^ ;
+* la transition optique non perturbée 1S - 2S de l'atome neutre de stem:[""_(1) "H"], à la fréquence de stem:[f_(1H) = 1 233 030 706 593 518 "Hz"] avec une incertitude-type relative estimée de 1,2 × 10^−14^. +
+ Remarque : Cette fréquence correspond à la moitié de l’écart en énergie entre les états 1S et 2S ;
+* la transition optique non perturbée 5_s_^2^ ^1^S~0~ - 5_s_5_p_ ^3^P~0~ de l'atome neutre de ^87^Sr, à la fréquence de stem:[f_(87Sr) = 429 228 004 229 873","4 "Hz"] avec une incertitude-type relative estimée de 1 × 10^−15^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 6_s_^2^ ^1^S~0~ - 6_s_6_p_ ^3^P~0~ de l'atome neutre de ^171^Yb, à la fréquence de stem:[f]~171Yb~ = stem:[518 295 836 590 865","0 "Hz"] vec une incertitude-type relative estimée de 2,7 × 10^−15^. +
+ Il est recommandé que le CIPM approuve cette radiation comme représentation secondaire de la seconde ;
+* la transition quantique hyperfine non perturbée de l’état fondamental de l’atome de ^87^Rb, à la fréquence de stem:[f_(87Rb) = 6 834 682 610","904 312 "Hz"] avec une incertitude-type relative estimée de 1,3 × 10^−15^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde).
+
+Remarque : La valeur de l'incertitude-type est supposée correspondre à un niveau de confiance de 68 %. Toutefois, étant donné le nombre très limité de résultats disponibles, il se peut que, rétrospectivement, cela ne s'avère pas exact."""@fr .
+
+cctf:CCTF19-Rec1Considering rb:hasConsideringText "considering that common list of “Recommended values of standard frequencies for applications including the practical realization of the metre and secondary representations of the second” has been established,"@en,
+        "considering that the CCL-CCTF Frequency Standards Working Group (FSWG) has reviewed several candidates for inclusion into the list,"@en,
+        "considérant que le Groupe de travail commun au CCL et au CCTF sur les étalons de fréquence a examiné plusieurs fréquences candidates en vue de leur inclusion dans cette liste,"@fr,
+        "considérant qu’une liste commune des « valeurs recommandées de fréquences étalons destinées à la mise en pratique de la définition du mètre et aux représentations secondaires de la seconde » a été établie,"@fr .
+
+cctf:CCTF19-Rec2Action rb:hasActionText """*recommends* to the International Committee for Weights and Measures (CIPM) that increased resources be allocated to the BIPM Time Department so that time and frequency internet services can continue to be improved and maintained so that
+
+* annual requests could be made for both general and specific comments on the information that should be made available, the internet file structure, nomenclature, and documentation, and those comments responded to,
+* additional and different types of data on the historical configuration of, and the observed performance of, relevant commercial equipment such as amplifiers, frequency standards, and time transfer hardware, both primary and redundant, could be gathered from laboratories that are able to supply the information."""@en,
+        """*recommande* au Comité international des poids et mesures (CIPM) d’accroître les ressources allouées au Département du temps du BIPM afin que ses services fondés sur l’utilisation d’internet dans le domaine du temps et des fréquences puissent continuer à être améliorés et maintenus de façon à :
+
+* recueillir chaque année des commentaires généraux et spécifiques concernant les informations qui devraient être mises à disposition, la structure des fichiers proposés sur internet, leur nomenclature et toute autre documentation, afin de prendre en compte ces commentaires,
+* rassembler des informations, de différents types et nouvelles, sur la configuration historique et les performances observées des équipements commerciaux d'intérêt, tels qu’amplificateurs, étalons de fréquences et équipements de comparaisons de temps, qu’ils soient primaires ou redondants, transmises par les laboratoires en mesure de fournir ce type de données."""@fr .
+
+cctf:CCTF19-Rec2Considering rb:hasConsideringText """*considering that*
+
+* the International Bureau of Weights and Measures (BIPM) has steadily improved the visibility of its time and frequency information in numerous ways, including via downloads from the BIPM website. This information includes:
+** Clock data from both primary and secondary standards,
+** Operational time transfer data,
+** Backup time transfer data,
+** Corrected, processed, reduced and combined forms of the above data,
+** Reports of time transfer calibrations,
+** Time scales and other products generated from the above,
+** Intermediate products used in the creation of official BIPM products,
+** Products and data of special, experimental, and/or unofficial projects, for example rapid Coordinated Universal Time (UTCr),
+** Other publications,
+* the information is frequently used for official, unofficial, published, informal and pedagogical studies,
+* the information is used by manufacturers seeking to assess and improve the quality of their products,
+* the public dissemination of information is very useful to the time and frequency community, and to the improvement of Coordinated Universal Time (UTC) itself,
+* detailed information on timekeeping infrastructure is very useful to laboratories when they begin to realize UTC for the first time,
+* the BIPM Time Department recently circulated a questionnaire that solicited advice about the BIPM’s web services, and created a database structure for password-protected distribution of descriptions of the timing infrastructure of contributing laboratories,
+* future improvements will continue to be well-received,"""@en,
+        """*considérant*
+
+* que le Bureau international des poids et mesures (BIPM) a amélioré de façon constante et par divers moyens la visibilité des informations qu’il fournit dans le domaine du temps et des fréquences, notamment en permettant leur téléchargement à partir du site internet du BIPM, ces informations comprenant :
+** les données horaires obtenues à partir d'étalons primaires et secondaires,
+** les données opérationnelles de comparaisons de temps,
+** les données de sauvegarde de comparaisons de temps,
+** les versions corrigées, traitées, synthétisées et combinées des données précédemment mentionnées,
+** les rapports sur les étalonnages des équipements de comparaison de temps,
+** les échelles de temps et autres produits créés à partir des données précédemment mentionnées,
+** les produits intermédiaires nécessaires à la création des produits officiels du BIPM,
+** les produits et données associés à des projets spécifiques, expérimentaux, et/ou non officiels, tels que le Temps universel coordonné rapide (UTCr),
+** d’autres publications,
+* que ces informations sont fréquemment utilisées dans le cadre d'études, qu’elles soient officielles, non officielles, publiées, informelles ou pédagogiques,
+* que ces informations sont utilisées par les fabricants souhaitant évaluer et améliorer la qualité de leurs produits,
+* que la diffusion publique de ces informations est très utile à la communauté du temps et des fréquences, et qu’elle est essentielle pour améliorer le Temps universel coordonné (UTC),
+* que des informations détaillées concernant l'infrastructure mise en oeuvre pour conserver le temps sont très utiles aux laboratoires lorsqu'ils réalisent pour la première fois leur UTC local,
+* que le Département du temps du BIPM a récemment distribué un questionnaire afin de recueillir des avis sur les services qu’il fournit sur internet et qu’il a créé une base de données donnant accès (avec protection par mot de passe) à des descriptions de l'infrastructure mise en oeuvre par les laboratoires participant au calcul de l'UTC pour conserver le temps
+* que les progrès à venir continueront à être accueillis favorablement,"""@fr .
+
+cctf:CCTF19-Rec3Action rb:hasActionText """*further recommends to the International Committee for Weights and Measures (CIPM) that*
+
+* efforts be made to improve the equipment at the BIPM involved in data exchange, calculation and distribution of results,
+* the human resources necessary for assuring the regular computation and publication of\\> UTCr be maintained.
+
+* * *
+
+^1^International Atomic Time (TAI)"""@en,
+        """*recommends to the BIPM that*
+
+* the evaluation of UTCr as a pilot project continues and that a report is sent to the CCTF Working Group on TAI^1^ (WGTAI) in 2013 to discuss the possibility of transforming UTCr into a routine operational product,
+* the dissemination of UTCr is pursued by ensuring timely availability of the results in a suitable and definitive format, so that widespread use of UTCr is supported and encouraged,"""@en,
+        """*recommande au BIPM*
+
+* de poursuivre le projet pilote d'évaluation de l'UTCr et de présenter un rapport au Groupe de travail du CCTF sur le Temps atomique international (TAI) en 2013 afin que la possibilité de transformer l'UTCr en un produit courant opérationnel soit examinée,
+* de continuer à disséminer l'UTCr en veillant à ce que les données soient publiées en temps voulu, dans un format approprié et définitif, de façon à ce que l'utilisation généralisée de l'UTCr soit soutenue et encouragée,"""@fr,
+        """*recommande par ailleurs au Comité international des poids et mesures (CIPM)*
+
+* que des efforts soient déployés afin d'améliorer les équipements du BIPM nécessaires à l'échange, au calcul et à la distribution des données,
+* que les ressources humaines nécessaires pour assurer le calcul et la publication de l'UTCr de façon régulière soient maintenues."""@fr .
+
+cctf:CCTF19-Rec3Considering rb:hasConsideringText "considering that a large number of laboratories that contribute to the computation of UTC also contribute data to UTCr,"@en,
+        "considering that the International Bureau of Weights and Measures (BIPM) has been successfully conducting a pilot experiment for producing a rapid Coordinated Universal Time (UTC) solution (rapid UTC or UTCr) on a weekly basis since January 2012,"@en,
+        "considering that the UTC contributing laboratories want UTCr to become a permanent product from the BIPM, respecting a regular weekly publication schedule,"@en,
+        "noting that by contributing to UTCr, time laboratories can better steer their respective stem:[\"UTC\" (k)] to the reference UTC,"@en,
+        "noting that the staff of the BIPM Time Department must continue to assure the monthly publication of BIPM _Circular T_, which is the only way of making local realizations stem:[\"UTC\" (k)] traceable to UTC,"@en,
+        "noting that the timely and regular production and publication of UTCr imposes real time constraints on the staff of the BIPM Time Department and requires a reliable means of dissemination,"@en,
+        "considérant qu'un grand nombre de laboratoires participant au calcul de l'UTC envoient également des données au BIPM pour le calcul de l'UTCr,"@fr,
+        "considérant que le Bureau international des poids et mesures (BIPM) a conduit avec succès une expérience pilote visant à produire chaque semaine depuis janvier 2012 une évaluation rapide du Temps universel coordonné (UTC), dénommée « UTC rapide » ou « UTCr »,"@fr,
+        "considérant que les laboratoires participant au calcul de l'UTC souhaitent que l'UTCr devienne un produit permanent du BIPM, publié de façon régulière une fois par semaine,"@fr,
+        "notant que la production et la publication de l'UTCr, de façon régulière et dans les délais, imposent des contraintes de temps significatives aux membres du personnel du Département du temps du BIPM et requièrent un moyen de dissémination fiable,"@fr,
+        "notant que le fait de contribuer à l'UTCr permet aux laboratoires du temps de mieux piloter leur réalisation locale stem:[\"UTC\" (k)] sur l’échelle de référence UTC,"@fr,
+        "notant que les membres du personnel du Département du temps du BIPM doivent continuer à assurer la publication mensuelle de la _Circulaire T_ du BIPM, qui constitue le seul moyen d'établir la traçabilité des réalisations locales stem:[\"UTC\" (k)] à l'UTC,"@fr .
+
+cctf:CCTF19-Rec4Action rb:hasActionText "recommends that all laboratories, especially those playing a unique role in International Atomic Time (TAI) computations, such as pivot laboratories and those contributing directly to Section 5 of the BIPM _Circular T_, to supply data from at least three GNSS receivers traceable to their local realization of UTC; this would help verify the stability of their hardware delays."@en,
+        "recommends that institutions developing software algorithms for time transfer work to upgrade their multi-constellation and multi-receiver solutions,"@en,
+        "recommends that the BIPM continues to organize and run campaigns to measure delays of this new GNSS equipment in laboratories, with the support of the RMOs within the frame of regional comparisons,"@en,
+        "recommends that the BIPM in collaboration with the regional metrology organizations (RMOs) develops calibration guidelines for new multi-frequency, multi-constellation equipment,"@en,
+        "recommends that the laboratories contributing to UTC upgrade their equipment towards multi-frequency, multi-constellation receiving systems providing code- and carrier-phase measurements,"@en,
+        "recommande au BIPM de continuer à organiser et conduire, dans les laboratoires, des campagnes de mesure des retards de ces nouveaux équipements du GNSS, avec le soutien des organisations régionales de métrologie pour ce qui concerne les comparaisons régionales,"@fr,
+        "recommande au BIPM d’élaborer en collaboration avec les organisations régionales de métrologie des directives concernant l’étalonnage des nouveaux équipements multifréquences et multiconstellations,"@fr,
+        "recommande aux laboratoires participant au calcul de l'UTC de mettre à niveau leurs équipements afin de passer à des systèmes de réception multifréquences et multiconstellations permettant d’effectuer des mesures de code et des mesures de phase des porteuses,"@fr,
+        "recommande aux organismes mettant au point des logiciels pour les comparaisons de temps de mettre à niveau leurs solutions multirécepteurs et multiconstellations,"@fr,
+        "recommande à l'ensemble des laboratoires, et en particulier à ceux jouant un rôle unique dans le calcul du Temps atomique international (TAI) tels que les laboratoires pivots et ceux contribuant directement à la Section 5 de la _Circulaire T_ du BIPM, de fournir des données obtenues à partir d'au moins trois récepteurs GNSS traçables à leur réalisation locale de l'UTC, ce qui permettrait de vérifier la stabilité des retards de leurs équipements."@fr .
+
+cctf:CCTF19-Rec4Considering rb:hasConsideringText "considering that GPS time transfer based on dual-frequency code and carrier-phase data is used in the operational computation of UTC for some time links,"@en,
+        "considering that atomic frequency standards have achieved unprecedented stability and accuracy, and that further advances in this field are under way,"@en,
+        "considering that data from Global Positioning System (GPS) satellites plays an important role in time and frequency transfer,"@en,
+        "considering that deployment of the European Galileo constellation started in 2011 and should be completed in the coming years,"@en,
+        "considering that present uncertainties in the calibration of equipment at timing laboratories currently have a significant impact on international time transfer in general and on the accuracy of the computation of UTC in particular,"@en,
+        "considering that the GLONASS constellation is now complete and a modernization of the GLONASS system is under way,"@en,
+        "considering that the People’s Republic of China has started launching BeiDou/COMPASS satellites for regional applications, and the global constellation will be operational in the coming years,"@en,
+        "considering that the ability to compare these standards for the realization of UTC is dependent on the accuracy and precision of time transfer methods based on GNSS,"@en,
+        "noting that many software algorithms using dual-frequency code and carrier-phase data are either available or under active development,"@en,
+        "noting that some of these algorithms already allow for the combination of GPS and GLONASS data,"@en,
+        "noting that the costs associated with equipment acquisition, installation, operation, and maintenance are less than the purchase price of a single caesium frequency standard,"@en,
+        "considérant que des comparaisons de temps fondées sur les mesures de code et de phase des porteuses aux deux fréquences du GPS sont utilisées pour certaines liaisons horaires dans le calcul de l'UTC,"@fr,
+        "considérant que la République populaire de Chine a commencé à lancer des satellites BeiDou/COMPASS dans le cadre d'applications régionales et que la constellation BeiDou/COMPASS déployée au niveau international sera opérationnelle dans les années à venir,"@fr,
+        "considérant que la constellation du GLONASS est désormais terminée et qu'une modernisation du système GLONASS est en cours,"@fr,
+        "considérant que le déploiement de la constellation européenne de Galileo a commencé en 2011 et devrait s'achever ces prochaines années,"@fr,
+        "considérant que le fait de pouvoir comparer ces étalons afin de réaliser l'UTC dépend de l'exactitude et de la précision des méthodes de comparaisons de temps fondées sur des équipements du GNSS,"@fr,
+        "considérant que les données des satellites du Global Positioning System (GPS) jouent un rôle important dans les comparaisons de temps et de fréquences,"@fr,
+        "considérant que les incertitudes résultant de l'étalonnage des équipements des laboratoires de temps ont un impact significatif sur les comparaisons internationales de temps et, plus particulièrement, sur l'exactitude du calcul de l'UTC,"@fr,
+        "considérant que les étalons atomiques de fréquence ont atteint une stabilité et une exactitude sans précédent et que d'autres progrès dans ce domaine sont en cours,"@fr,
+        "notant que certains de ces algorithmes permettent déjà de combiner les données des systèmes du GPS et du GLONASS,"@fr,
+        "notant que de nombreux logiciels capables de traiter les données de mesure de code et de phase des porteuses à deux fréquences existent ou sont en cours d'élaboration,"@fr,
+        "notant que les coûts associés à l'acquisition, l'installation, la mise en oeuvre et l'entretien des équipements sont inférieurs au prix d'achat d'un étalon de fréquence au césium,"@fr .
+
+cctf:CCTF19-Rec5Action rb:hasActionText """*recommends that*
+
+* national metrology institutes (NMIs), optical fibre network providers, space agencies, national governments, regional metrology organizations (RMOs), the International Committee for Weights and Measures (CIPM), International Telecommunications Union (ITU) and other relevant bodies:
+** vigorously pursue the development of continental-scale optical fibre time and frequency transfer networks,
+** actively encourage and support research aimed at significantly improving time and frequency transfer over intercontinental distances,
+** consult and coordinate with each other on access to the necessary infrastructures for new time and frequency transfer methods and on synergies with other applications of these infrastructures,
+* the BIPM participates actively in these developments, notably by making preparations for exploiting, in time scale realization, clock comparison data issued from new time and frequency transfer methods."""@en,
+        """*recommande*
+
+* aux laboratoires nationaux de métrologie, aux fournisseurs de réseaux à fibre optique, aux agences spatiales, aux gouvernements nationaux, aux organisations régionales de métrologie, au Comité international des poids et mesures (CIPM), à l'Union internationale des télécommunications (UIT) et aux autres organismes concernés :
+** de poursuivre avec vigueur le déploiement des réseaux de comparaisons de temps et de fréquences par fibre optique à l'échelle continentale,
+** d'encourager et de soutenir activement les travaux de recherche visant à améliorer de façon significative les comparaisons de temps et de fréquences sur des distances intercontinentales,
+** de se consulter et de coordonner leurs actions afin d’accéder aux infrastructures nécessaires pour mettre en œuvre les nouvelles méthodes de comparaisons de temps et de fréquences, et afin d’identifier les synergies de ces infrastructures avec d'autres applications,
+* au BIPM de participer activement à ces avancées, notamment en préparant les données de comparaisons d'horloges effectuées à l’aide des nouvelles méthodes de comparaisons de temps et de fréquences afin que ces données puissent être utilisées pour la réalisation des échelles de temps."""@fr .
+
+cctf:CCTF19-Rec5Considering rb:hasConsideringText "considering that optical fibre links improve the robustness of time and frequency transfer networks since they are independent of the global navigation satellite system (GNSS) and two-way satellite time and frequency transfer (TWSTFT) methods,"@en,
+        "considering that the stabilities of time and frequency transfer techniques currently and routinely used for comparisons around the world, i.e. for the production of International Atomic Time (TAI), are insufficient for comparisons between the best optical frequency standards,"@en,
+        "considering the continuing reduction in the uncertainty and instability of optical frequency standards developed in institutes around the world,"@en,
+        "considering the demonstrated capability of optical fibre links to realize frequency comparisons with the stability required for the best frequency standards, over distances of the order of stem:[1000 \"km\"],"@en,
+        "considering the existence of research projects concerning alternative time and frequency transfer methods with the potential to significantly improve intercontinental comparisons,"@en,
+        "considering the need for regular comparisons between these standards, as an essential part of the preparation for a redefinition of the second and for other applications such as contributions to time scales,"@en,
+        "considérant qu'il a été démontré que les liaisons par fibre optique permettent de réaliser des comparaisons des étalons de fréquence parmi les plus performants avec la stabilité requise, sur des distances de l'ordre de stem:[1000 \"km\"],"@fr,
+        "considérant que certains projets de recherche sont mis en œuvre afin d’étudier d'autres méthodes de comparaisons de temps et de fréquences qui permettraient d'améliorer de façon significative les comparaisons intercontinentales,"@fr,
+        "considérant que les liaisons par fibre optique améliorent la robustesse des réseaux de comparaisons de temps et de fréquences car ces liaisons sont indépendantes des systèmes globaux de navigation par satellite (GNSS) et des méthodes de comparaison de temps et de fréquences par aller et retour sur satellite,"@fr,
+        "considérant que les techniques de comparaison de temps et de fréquences utilisées de façon courante dans le monde entier afin de produire le Temps atomique international (TAI) ne présentent pas une stabilité suffisante pour comparer les étalons optiques de fréquence les plus performants,"@fr,
+        "considérant que l’exactitude et la stabilité des étalons optiques de fréquence mis au point dans des laboratoires partout dans le monde ne cessent de s’améliorer,"@fr,
+        "considérant qu’il est nécessaire d'effectuer des comparaisons régulières des étalons optiques de fréquence car elles jouent un rôle essentiel dans la préparation d'une redéfinition de la seconde, ainsi que dans d'autres applications telles que la participation au calcul des échelles de temps,"@fr .
+
+cctf:CCTF19-Rec6Action rb:hasActionText """*Recommends that the following facts be recognized in the implementation of a continuous time scale:*
+
+. a continuous time scale is indeed achievable, and that it has been realized and maintained by the International Bureau of Weights and Measures;
+. a continuous reference time scale corresponds to UTC without leap second discontinuities;
+. the concepts of continuity and uniformity should be applied strictly in a reference time scale;
+. the unit for any quantity in metrology is unique, and as such, a single time scale should also be unique;
+. in the event of a redefinition of any quantity in metrology, the unit should be invariant, and particularly for the second of the Système International the respective scale should be continuous and uniform;
+. the name “Coordinated Universal Time” be maintained in the case of a redefinition of UTC without leap second adjustments;
+. the term “Universal” in “Coordinated Universal Time” implies that the time scale is to be used throughout the world;
+. the term “Coordinated” in “Coordinated Universal Time” implies coordination among National Metrology Institutes and not a relationship to the direction of the Sun from a position on the surface of the Earth;
+. the angle UT1 used to relate celestial and terrestrial reference systems should not be considered as a time scale, but as the angle that characterizes the variable rotation of the Earth;
+. the International Earth Rotation and Reference Systems Service (IERS) provides a means of accessing UT1 in real-time by means of routinely available predictions of UT1-UTC with precision 100 000 times better that the coarse approximation UT1 = UTC currently provided by means of coding UTC to match UT1 within 0.9 second;
+. a wider dissemination of UT1-UTC is to be encouraged;"""@en,
+        """*and further recommends*
+
+that the International Committee for Weights and Measures (CIPM) and the International Telecommunication Union - Radiocommunication Sector (ITU-R) consider the formation of a joint working group to study the possibility of coordinating future actions in the definition of the continuous world-reference time scale."""@en,
+        "_“to bring this Resolution to the attention of relevant organizations such … the General Conference on Weights and Measures (CGPM), the Consultative Committee for Time and Frequency (CCTF), the Bureau International des Poids et Mesures (BIPM) …”_"@en,
+        """*recommande par ailleurs*
+
+au Comité international des poids et mesures (CIPM) et à l'Union internationale des télécommunications - secteur Radiocommunications (UIT-R) d'examiner la possibilité de former un groupe de travail commun afin d'étudier comment coordonner les actions qui seront nécessaires pour définir une échelle de temps continue de référence mondiale.
+
+^1^ Union internationale des télécommunications - secteur Radiocommunications"""@fr,
+        """*recommande que les points suivants soient pris en compte dans la mise en œuvre d'une échelle de temps continue*
+
+. il est possible d'obtenir une échelle de temps continue : le BIPM réalise et maintient une telle échelle de temps,
+. l'UTC sans discontinuités dues à l’insertion de secondes intercalaires constitue une échelle de temps de référence continue,
+. les concepts de continuité et d'uniformité doivent s’appliquer strictement aux échelles de temps de référence,
+. l'unité d'une grandeur métrologique quelle qu’elle soit est unique, c'est pourquoi une échelle de temps spécifique devrait être unique,
+. lors de la redéfinition d’une grandeur métrologique, l’invariance de son unité doit être assurée ; en ce qui concerne la seconde du Système international d'unités (SI), l'échelle correspondante doit être continue et uniforme,
+. le terme « coordonné » dans « Temps universel coordonné » implique que les laboratoires nationaux de métrologie coordonnent leurs efforts pour l’établir, et ne se réfère en rien à la direction du Soleil par rapport à une position donnée à la surface de la Terre,
+. le terme « universel » dans « Temps universel coordonné » signifie que l'échelle de temps doit être utilisée partout dans le monde,
+. la dénomination « Temps universel coordonné » doit être conservée dans le cas d'une nouvelle définition de l'UTC sans insertion de secondes intercalaires,
+. l'angle UT1 qui permet de relier les systèmes de référence terrestres et célestes ne doit pas être considéré comme une échelle de temps mais comme l'angle qui caractérise la rotation irrégulière de la Terre,
+. le Service international de la rotation terrestre et des systèmes de référence (IERS) permet d’accéder à UT1 en temps réel en mettant régulièrement à disposition des prédictions de UT1 - UTC avec une précision 100 000 fois supérieure à l'approximation brute UT1 = UTC actuellement établie en faisant correspondre UTC à UT1 à 0,9 seconde près,
+. il est nécessaire d'encourager une dissémination plus large d'UT1 - UTC,"""@fr .
+
+cctf:CCTF19-Rec6Considering rb:hasConsideringText "The CCTF, having analyzed the terms of WRC-12 Resolution 653 adopted by the World Radiocommunication Conference (WRC) 2012 on the Future of Coordinated Universal Time (UTC) which invites the ITU WRC 2015 to"@en,
+        """_“consider the feasibility of achieving a continuous reference time-scale, whether by the modification of UTC or some other method and take appropriate action, taking into account ITU-R studies,”_
+
+and instructs the ITU Secretary-General"""@en,
+        """*ayant examiné*
+
+les termes de la Résolution 653 (CMR-12) intitulée « Avenir de l'échelle de temps universel coordonné », adoptée par la Conférence mondiale des radiocommunications (CMR) en 2012, qui invite la CMR de l'Union internationale des télécommunications (UIT) en 2015"""@fr,
+        """_« à envisager la possibilité d'obtenir une échelle de temps de référence continue, en modifiant le temps UTC ou en utilisant une autre méthode, et à prendre les mesures voulues à cet égard, compte tenu des études de l'UIT-R^1^ »_
+
+et prie le secrétaire général de l'Union internationale des télécommunications"""@fr .
+
+cctf:CCTF20-Rec1Action rb:hasActionText "*and ask* the CIPM for adoption."@en,
+        """*recommend* that the following transition frequencies shall be updated in the list of recommended values of standard frequencies:
+
+(this radiation is already endorsed by the CIPM as a secondary representation of the second);
+
+* the unperturbed optical transition 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ of the ^199^Hg neutral atom with a frequency of stem:[f]~199Hg~ = stem:[1 128 575 290 808 154.8 "Hz"] and an estimated relative standard uncertainty of 6 × 10^−16^;
+* the unperturbed optical transition 6s ^2^S~1/2~ - 4f 13 6s^2^ ^2^stem:["F"]~7/2~ of the ^stem:[171^(Yb)]+^ ion with a frequency of stem:[f]~171Yb+ (octupole)~ = stem:[642 121 496 772 645.0 "Hz"] and an estimated relative standard uncertainty of 6 × 10^−16^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 6s ^2^S~1/2~ (stem:[F = 0], stem:[m_(F) = 0]) - 5d ^2^D~3/2~ (stem:[F = 2], stem:[m_(F) = 0]) of the ^stem:[171^(Yb)]+^ ion with a frequency of stem:[f]~171Yb+ (quadrupole)~ = stem:[688 358 979 309 308.3 "Hz"] and an estimated relative standard uncertainty of 6 × 10^−16^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 5s ^2^S~1/2~ - 4d ^2^D~5/2~ of the ^stem:[88^(Sr)]+^ ion with a frequency of stem:[f]~88Sr+~ = stem:[444 779 044 095 486.6 "Hz"] and an estimated relative standard uncertainty of 1.6 × 10^−15^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 4s ^2^S~1/2~ - 3d ^2^D~5/2~ of the ^stem:[40^(Ca)]+^ ion with a frequency of stem:[f]~40Ca+~ = stem:[411 042 129 776 398.4 "Hz"] and an estimated relative standard uncertainty of 1.2 × 10^−14^;
+* the unperturbed optical transition 1S - 2S of the stem:[""_(1) "H"] neutral atom with a frequency of stem:[f_(1H) = 1 233 030 706 593 514 "Hz"] and an estimated relative standard uncertainty of 9.0 × 10^−15^. +
+ Note: This frequency corresponds to half of the energy difference between the 1S and 2S states;
+* the unperturbed optical transition 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ of the ^87^Sr neutral atom with a frequency of stem:[f_(87Sr) = 429 228 004 229 873.2 "Hz"] and an estimated relative standard uncertainty of 5 × 10^−16^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ of the ^171^Yb neutral atom with a frequency of stem:[f]~171Yb~ = stem:[518 295 836 590 864.0 "Hz"] and an estimated relative standard uncertainty of 2 × 10^−15^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed ground-state hyperfine transition of ^87^Rb with a frequency of stem:[f_(87Rb) = 6 834 682 610.904 310 "Hz"] and an estimated relative standard uncertainty of 7 × 10^−16^ +
+ (this radiation is already endorsed by the CIPM as a secondary representation of the second).
+
+and *also recommend* that the following transition frequencies shall be included in the list of recommended values of standard frequencies:
+
+* absorbing molecule ^127^I~2~, saturated absorption a~1~ component, R(36) 32-0 transition; The values +
+stem:[f_(a1) = 564 074 632.42 "MHz"] +
+_λ_~a1~ = 531 476 582.65 fm +
+ with an estimated relative standard uncertainty of 1 × 10^−10^ apply to the radiation of a frequency-doubled diode DFB laser, stabilized with an iodine cell external to the laser;
+ +
+* absorbing atom ^87^Rb 5S~1/2~ - 5P~3/2~ crossover between the d and f hyperfine components of the saturated absorption at 780 nm (D2 transition); The values +
+stem:[f]~d/f crossover~ = stem:[384 227 981.9 "MHz"] +
+_λ_~d/f crossover~ = 780 246 291.6 fm +
+ with an estimated relative standard uncertainty of 5 × 10^−10^ apply to the radiation of a tunable External Cavity Diode Laser, stabilized to the d/f crossover in a rubidium cell external to the laser;
+
+Note: The value of the standard uncertainty is assumed to correspond to a confidence level of 68 %. However, given the limited availability of data there is a possibility that in hindsight this might not prove to be exact."""@en,
+        "*et requièrent* l’adoption de ces fréquences étalons recommandées par le CIPM."@fr,
+        """*recommandent*
+
+que les fréquences des transitions suivantes soient mises à jour dans la liste des fréquences étalons recommandées :
+
+* la transition optique non perturbée 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ de l’atome neutre de ^199^Hg, à la fréquence de stem:[f]~199Hg~ = stem:[1 128 575 290 808 154","8 "Hz"] avec une incertitude-type relative estimée de 6 × 10^−16^ ;
+* la transition optique non perturbée 6s ^2^S~1/2~ - 4f 13 6s^2^ ^2^stem:["F"]~7/2~ de l'ion de ^stem:[171^(Yb)]+^, à la fréquence de stem:[f]~171Yb+ ~(octupôle) = stem:[642 121 496 772 645","0 "Hz"] avec une incertitude-type relative estimée de 6 × 10^−16^ +
+ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 6s ^2^S~1/2~ (stem:[F = 0], stem:[m_(F) = 0]) - 5d ^2^D~3/2~ (stem:[F = 2], stem:[m_(F) = 0]) de l'ion de ^stem:[171^(Yb)]+^, à la fréquence de stem:[f]~171Yb+ ~(quadripôle) = stem:[688 358 979 309 308","3 "Hz"] avec une incertitude-type relative estimée de 6 × 10^−16^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 5s ^2^S~1/2~ - 4d ^2^D~5/2~ de l'ion de ^stem:[88^(Sr)]+^, à la fréquence de stem:[f]~88Sr+~ = stem:[444 779 044 095 486","6 "Hz"] avec une incertitude-type relative estimée de 1,6 × 10^−15^ +
+ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 4s ^2^S~1/2~ - 3d ^2^D~5/2~ de l'ion de ^stem:[40^(Ca)]+^, à la fréquence de stem:[f]~40Ca+~ = stem:[411 042 129 776 398","4 "Hz"] avec une incertitude-type relative estimée de 1,2 × 10^−14^ ;
+* la transition optique non perturbée 1S - 2S de l'atome neutre de stem:[""_(1) "H"], à la fréquence de stem:[f_(1H) = 1 233 030 706 593 514 "Hz"] avec une incertitude-type relative estimée de 9,0 × 10^−15^. +
+ Remarque : cette fréquence correspond à la moitié de l’écart en énergie entre les états 1S et 2S ;
+* la transition optique non perturbée 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ de l'atome neutre de ^87^Sr, à la fréquence de stem:[f_(87Sr) = 429 228 004 229 873","2 "Hz"] avec une incertitude-type relative estimée de 5 × 10^−16^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ de l'atome neutre de ^171^Yb, à la fréquence de stem:[f]~171Yb~ = stem:[518 295 836 590 864","0 "Hz"] avec une incertitude-type relative estimée de 2 × 10^−15^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition hyperfine non perturbée de l’état fondamental de l’atome de ^87^Rb, à la fréquence de stem:[f_(87Rb) = 6 834 682 610","904 310 "Hz"] avec une incertitude-type relative estimée de 7 × 10^−16^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;"""@fr,
+        """*recommandent* par ailleurs
+
+que les fréquences des transitions suivantes soient incluses dans la liste des fréquences étalons recommandées :
+
+* Molécule absorbante de ^127^I~2~, composante a~1~ du spectre d’absorption saturée, transition R(36) 32-0. Les valeurs +
+stem:[f_(a1) = 564 074 632","42 "MHz"] +
+_λ_~a1~ = 531 476 582,65 fm +
+ avec une incertitude-type relative estimée de 1 × 10^−10^ s’appliquent à la radiation d’un laser à diode à rétroaction répartie doublé en fréquence, asservi à l’aide d’une cellule d’iode située à l’extérieur du laser.
+ +
+* Atome absorbant de ^87^Rb, transition 5S~1/2~ - 5P~3/2~ , croisement de niveaux entre les composantes hyperfines d et f de l’absorption saturée à 780 nm (transition D2). Les valeurs +
+stem:[f]~d/f croisement~ = stem:[384 227 981","9 "MHz"] +
+_λ_~d/f croisement~ = 780 246 291,6 fm +
+ avec une incertitude-type relative estimée de 5 × 10^−10^ s’appliquent à la radiation d’un laser accordable à diode et à cavité externe, asservi sur la résonance de croisement de niveaux d/f dans une cellule de rubidium située à l’extérieur du laser.
+
+Remarque : La valeur de l’incertitude-type est supposée correspondre à un niveau de confiance de 68 %. Toutefois, étant donné le nombre très limité de résultats disponibles, il se peut que, rétrospectivement, cela ne s’avère pas exact."""@fr .
+
+cctf:CCTF20-Rec1Considering rb:hasConsideringText "considering that a common list of “Recommended values of standard frequencies for applications including the practical realization of the metre and secondary representations of the second” has been established,"@en,
+        "considering that the CCL-CCTF Frequency Standards Working Group (WGFS) has reviewed several candidates for updating the list,"@en,
+        "considérant que le Groupe de travail commun au CCL et au CCTF sur les étalons de fréquence a examiné plusieurs fréquences candidates afin de mettre à jour cette liste,"@fr,
+        "considérant qu’une liste commune des « valeurs recommandées de fréquences étalons destinées à la mise en pratique de la définition du mètre et aux représentations secondaires de la seconde » a été établie,"@fr .
+
+cctf:CCTF20-Rec2Action rb:hasActionText """*aims to*
+
+* facilitate access for any user to real-time predictions of UTC disseminated by existing and future GNSS;"""@en,
+        "recommends that Section 5 of BIPM Circular stem:[\"T\"] be retitled “Relations of UTC and TAI with predictions of UTC disseminated by GNSS”, and adds similar information on new GNSS as they become operational."@en,
+        "a pour objectif de faciliter l’accès des utilisateurs aux prédictions en temps réel de l’UTC disséminées à l’aide des systèmes GNSS actuels et à venir,"@fr,
+        "recommande que la Section 5 de la _Circulaire T_ du BIPM soit renommée « Relations of UTC and TAI with predictions of UTC disseminated by GNSS » (Relations entre l’UTC et le TAI avec prédictions de l’UTC disséminées à l’aide de systèmes GNSS) et que des informations similaires sur les nouveaux systèmes GNSS soient intégrées à la _Circulaire T_ à mesure que ces systèmes GNSS deviennent opérationnels."@fr .
+
+cctf:CCTF20-Rec2Considering rb:hasConsideringText "considering that Section 5 of BIPM _Circular T_ publishes the relationship between UTC/TAI and the predictions of stem:[\"UTC\" (k)] disseminated by GPS and GLONASS;"@en,
+        "considering that at least two additional GNSS - BeiDou and Galileo - currently offer or are close to offering services,"@en,
+        "considering that the task of the BIPM is to ensure world-wide uniformity of measurements and their traceability to the International System of Units (SI),"@en,
+        "considering that two GNSS already exist and others are under development,"@en,
+        "considérant que la Section 5 de la _Circulaire T_ du BIPM indique la relation UTC/TAI, ainsi que les prédictions d’UTC(k) disséminées à l’aide des systèmes GPS et GLONASS,"@fr,
+        "considérant que le BIPM a pour mission d’assurer l’uniformité mondiale des mesures et leur traçabilité au Système international d’unités (SI),"@fr,
+        "considérant qu’au moins deux autres systèmes GNSS, BeiDou et Galileo, offrent des services, ou sont sur le point d’en offrir,"@fr,
+        "considérant qu’à l’heure actuelle deux systèmes GNSS existent et que d’autres sont en cours de développement,"@fr .
+
+cctf:CCTF20-Rec3Action rb:hasActionText "recommends that the RMOs or laboratories contributing to RMOs periodically organize calibration trips for Group 2 laboratories,"@en,
+        "recommends that the trips be planned in close collaboration with the BIPM, aiming at a complete coverage of Group 2 laboratories,"@en,
+        "recommends that these calibrations follow the guidelines published by the BIPM."@en,
+        "recommande que ces étalonnages soient réalisés conformément aux directives publiées par le BIPM."@fr,
+        "recommande que les campagnes d’étalonnage soient planifiées en étroite collaboration avec le BIPM afin que l’ensemble des laboratoires du Groupe 2 en bénéficient,"@fr,
+        "recommande que les organisations régionales de métrologie ou les laboratoires membres d’une organisation régionale de métrologie organisent périodiquement des campagnes d’étalonnage pour les laboratoires du Groupe 2,"@fr .
+
+cctf:CCTF20-Rec3Considering rb:hasConsideringText "considering that periodic calibration campaigns are necessary to assure an uncertainty at or below 3 ns for the time links included in the computation of UTC,"@en,
+        "considering that the Consultative Committee for Time and Frequency (CCTF), in its Recommendation 2 (2009) and Recommendation 4 (2012), recommended that the Regional Metrology Organizations (RMOs) support the BIPM by organizing campaigns of delay measurements within the framework of regional comparisons to be linked to those conducted by the BIPM;"@en,
+        "considering that the Consultative Committee for the Definition of the Second (CCDS) and subsequently the Consultative Committee for Time and Frequency (CCTF) have stressed in past Recommendations the importance of calibrating the time transfer equipment in laboratories that contribute data for the calculation of UTC at the BIPM,"@en,
+        "considering that the ability to compare the atomic frequency standards for the realization of UTC is dependent on the accuracy and precision of time transfer methods based on Global Navigation Satellite Systems (GNSS) observations,"@en,
+        "considering that the characterization of the delays of GNSS time-transfer equipment is essential to ensure the accuracy of the time links for UTC,"@en,
+        "considering that uncompensated changes of the hardware delays in a time link may cause significant instability in UTC,"@en,
+        "noting that among laboratories contributing to UTC, a set of “Group1” laboratories was selected by the RMOs, for which the calibration is organized by the BIPM and from which the calibration of GNSS equipment of the other laboratories should be organized (named “Group 2”),"@en,
+        "noting that calibration guidelines ve been prepared by the BIPM and the CCTF WG on GNSS time transfer (WGGNSS) and published on the BIPM website,"@en,
+        "noting that significant improvement in time link accuracy is expected from the implementation of this new calibration scheme,"@en,
+        "noting that the BIPM has completed the first calibration of the GPS equipment in Group 1 laboratories and will soon organize the second measurement campaign;"@en,
+        "considérant que des campagnes périodiques d’étalonnage sont nécessaires pour que l’incertitude des liaisons horaires utilisées pour le calcul de l’UTC soit égale ou inférieure à 3 ns,"@fr,
+        "considérant que la caractérisation des retards des équipements GNSS de comparaison de temps est essentielle pour garantir l’exactitude des liaisons horaires utilisées pour le calcul de l’UTC,"@fr,
+        "considérant que le Comité consultatif du temps et des fréquences (CCTF), dans sa Recommandation 2 (2009) et dans sa Recommandation 4 (2012), a recommandé aux organisations régionales de métrologie d’apporter leur soutien au BIPM en organisant des campagnes de mesure des retards des équipements GNSS au niveau régional, qui seront liées à celles menées par le BIPM,"@fr,
+        "considérant que le Comité consultatif pour la définition de la seconde (CCDS) puis le Comité consultatif du temps et des fréquences (CCTF) ont souligné, dans les recommandations qu’ils ont formulées, l’importance d’étalonner les équipements de comparaison de temps dans les laboratoires qui envoient des données au BIPM pour le calcul de l’UTC,"@fr,
+        "considérant que l’aptitude à comparer des étalons atomiques de fréquence afin de réaliser l’UTC dépend de l’exactitude et de la précision des méthodes de comparaison de temps fondées sur des observations obtenues à l’aide de systèmes globaux de navigation par satellite (GNSS),"@fr,
+        "considérant que, pour une liaison horaire, toute variation due à des retards d’équipement qui n’est pas corrigée peut conduire à une instabilité conséquente de l’UTC,"@fr,
+        "notant que des directives d’étalonnage ont été préparées par le BIPM et le Groupe de travail du CCTF sur les comparaisons de temps par GNSS et qu’elles ont été publiées sur le site internet du BIPM,"@fr,
+        "notant que le BIPM a achevé la première campagne d’étalonnage des équipements GNSS des laboratoires du Groupe 1 et organisera sous peu la seconde,"@fr,
+        "notant que, parmi les laboratoires contribuant au calcul de l’UTC, un ensemble de laboratoires constituant le « Groupe 1 » a été sélectionné par les organisations régionales de métrologie : le BIPM organisera les étalonnages des laboratoires du Groupe 1 qui procéderont à leur tour à l’étalonnage des équipements GNSS des autres laboratoires, constituant le « Groupe 2 »,"@fr,
+        "notant qu’il est attendu que la mise en œuvre de ce nouveau schéma d’étalonnages permette d’améliorer de façon significative l’exactitude des liaisons horaires,"@fr .
+
+cctf:CCTF20-Rec4Action rb:hasActionText "recommends that the CCTF WG on GNSS Time Transfer (WGGNSS) interacts with manufacturers of timing receivers to request that they upgrade their firmware so as to provide version V2E of the CGGTTS,"@en,
+        "recommends that the software ‘R2CGGTTS’ be upgraded to generate the version V2E."@en,
+        "recommends that the time laboratories provide CGGTTS files to the BIPM in the V2E format,"@en,
+        "recommande que le Groupe de travail du CCTF sur les comparaisons de temps par GNSS coopère avec les fabricants de récepteurs de temps afin de leur demander de mettre à niveau leur logiciel interne pour qu’ils puissent fournir la version V2E du format CGGTTS,"@fr,
+        "recommande que le logiciel R2CGGTTS soit mis à niveau pour générer la version V2E."@fr,
+        "recommande que les laboratoires de temps fournissent au BIPM des fichiers CGGTTS au format V2E,"@fr .
+
+cctf:CCTF20-Rec4Considering rb:hasConsideringText "considering that several receiver manufacturers already provide Global Navigation Satellite Systems (GNSS) observations from the different constellations;"@en,
+        "considering that the CGGTTS format and standard is used by time laboratories to transfer the time of their clocks to the computation of UTC,"@en,
+        "considering that the deployment of the Galileo, QZSS and BeiDou constellations is in progress and should be completed in the coming years,"@en,
+        "considering that the software ‘R2CGGTTS’ is commonly used by UTC laboratories to generate CGGTTS data,"@en,
+        "noting that an extension of the CGGTTS format has been defined under the name V2E so as to include the time transfer results from the GPS, GLONASS, BeiDou, Galileo and QZSS satellites,"@en,
+        "noting that the complete description of the V2E standard has been made publicly available in _Metrologia_ 2015 *52* G1;"@en,
+        """*notant*
+
+* qu’une extension du format CGGTTS a été définie sous le nom V2E de façon à inclure les résultats de comparaisons de temps obtenus à partir des satellites GPS, GLONASS, BeiDou, Galileo et QZSS,
+* qu’une description complète du format V2E est disponible dans _Metrologia_ 2015 *52* G1
+,"""@fr,
+        "considérant que la procédure et le format CGGTTS sont utilisés par les laboratoires de temps pour transférer leurs données horaires afin de contribuer au calcul de l’UTC,"@fr,
+        "considérant que le déploiement des constellations de Galileo, QZSS et BeiDou progresse et devrait s’achever ces prochaines années,"@fr,
+        "considérant que le logiciel R2CGGTTS est couramment utilisé par les laboratoires participant au calcul de l’UTC pour générer des données CGGTTS,"@fr,
+        "considérant que plusieurs fabricants de récepteurs fournissent déjà des observations fondées sur des systèmes globaux de navigation par satellite (GNSS) de différentes constellations,"@fr .
+
+cctf:CCTF20-Rec5Action rb:hasActionText "recommends that the CCTF WG on GNSS time transfer (WGGNSS) interacts with manufacturers to request that they upgrade the design and firmware of receivers so that the absolute value of the latching time offset between the code and carrier phase measurements provided in the observation files is less than 100 ns. This should take into account all relevant receiver internal delays and this information should be included in the receiver specifications."@en,
+        "recommande au Groupe de travail du CCTF sur les comparaisons de temps GNSS de coopérer avec les fabricants de récepteurs pour leur demander de mettre à jour la conception des récepteurs et leur logiciel interne afin que la valeur absolue concernant le décalage du temps de verrouillage entre les mesures de phase et de code, telle que fournie dans les fichiers d’observation, soit inférieure à 100 ns. Les fabricants devraient prendre en considération toutes les données pertinentes relatives aux retards internes des récepteurs et les intégrer aux spécifications des récepteurs."@fr .
+
+cctf:CCTF20-Rec5Considering rb:hasConsideringText "considering that GNSS measurements are expected to be used by a greater number of applications that require greater precision, such as the comparison of optical frequency standards and atomic fountains,"@en,
+        "considering that the precision of the GNSS time and frequency transfer solution relies on the accurate knowledge of the latching time (effective reception time) of each measurement;"@en,
+        "considering that the use of a combination of code and carrier phase GNSS measurements enables time and frequency transfer with an extremely high precision,"@en,
+        "considering that this technique is routinely used for UTC generation,"@en,
+        "noting that some receivers produce code measurements corrected for a constant bias to account for internal hardware delays, inducing an apparent latching time offset between the code and carrier phase measurements,"@en,
+        "noting that the difference between the latching times of code and phase induces a Doppler increment in the carrier phase measurements relative to the codes, causing a frequency bias in the phase data and hence in the clock solution obtained from GNSS analysis,"@en,
+        "noting that this frequency bias results in a laboratory clock’s frequency appearing to be biased by 30 ps/day for every microsecond of latching offset;"@en,
+        "noting that while considered as synchronous, the latching times of phase and code data can be systematically offset by several microseconds,"@en,
+        "considérant que cette technique est couramment utilisée pour le calcul de l’UTC,"@fr,
+        "considérant que l’exactitude des comparaisons de temps et de fréquences à partir de systèmes GNSS repose sur la connaissance précise du temps de verrouillage (temps réel de réception) de chaque mesure,"@fr,
+        "considérant que l’utilisation combinée de mesures de phase et de code des signaux du GNSS permettent d’effectuer des comparaisons de temps et de fréquences de très haute précision,"@fr,
+        "considérant qu’il est attendu que les mesures GNSS soient utilisées par un plus grand nombre d’applications requérant un haut niveau de précision, telles que la comparaison d’étalons optiques de fréquence et de fontaines atomiques,"@fr,
+        "notant que certains récepteurs produisent des mesures de code corrigées pour un biais constant afin de tenir compte des retards internes dus au matériel, ce qui induit un décalage manifeste du temps de verrouillage entre les mesures de phase de la porteuse et les mesures de code,"@fr,
+        "notant que la différence entre les temps de verrouillage pour la phase et le code génère une variation de l’effet Doppler pour les mesures de phase de la porteuse par rapport aux mesures de code, ce qui crée un biais de fréquence pour les données de phase et donc pour la solution d’horloge obtenue par l’analyse GNSS,"@fr,
+        "notant que, bien que considérés comme synchrones, les temps de verrouillage des données de phase et de code peuvent être systématiquement décalés de quelques microsecondes,"@fr,
+        "notant qu’en raison de ce biais de fréquence, la fréquence de l’horloge de laboratoire apparaît biaisée de 30 ps par jour pour chaque microseconde de décalage du temps de verrouillage,"@fr .
+
+cctf:CCTF20-Rec6Action rb:hasActionText """*recommends that*
+
+* National metrology institutes (NMIs), optical fibre network providers, space agencies, national governments, regional metrology organizations (RMOs), International Telecommunication Union (ITU) and other relevant bodies:
+** vigorously support research and development of time and frequency transfer techniques matching the stability and uncertainty of the most advanced frequency standards. These techniques may include optical fibre links, advanced satellite microwave links, optical ground-to-space and space-to-space links and transportable frequency standards, and advanced space clocks,
+** help secure sustainable infrastructure of selected continental and intercontinental links forming a global time and frequency metrology backbone for these novel technologies,
+** make provisions for these novel technologies to be transferred with the relevant accuracy to other fields of science, industry and society,
+* the BIPM participates actively in these developments, notably by making preparations for exploiting, in time scale realization, clock comparison data issued from new time and frequency transfer methods,
+* those laboratories contributing to UTC and performing continuous time comparisons via fibre links regularly submit their results to the BIPM Time Department."""@en,
+        """*recommande*
+
+* aux laboratoires nationaux de métrologie, fournisseurs de réseaux de fibre optique, agences spatiales, gouvernements, organisations régionales de métrologie, ainsi qu’à l’Union internationale des télécommunications (UIT) et aux autres organismes pertinents :
+** de soutenir vigoureusement la recherche et le développement sur les techniques de comparaison de temps et de fréquence afin qu’elles présentent une stabilité et une incertitude similaires à celles des étalons de fréquence les plus avancés. Ces techniques peuvent concerner les liaisons par fibre optique, les liaisons micro-ondes par satellite avancées, les liaisons optiques sol-espace et espace-espace, les étalons de fréquence transportables et les horloges spatiales de pointe,
+** de contribuer à la mise en place d’une infrastructure pérenne de liaisons continentales et intercontinentales sélectionnées qui formeront la colonne vertébrale métrologique dans le domaine du temps et des fréquences pour ces nouvelles technologies,
+** de prendre les dispositions nécessaires afin que ces nouvelles technologies puissent être appliquées, avec le degré d’exactitude approprié, à d’autres domaines de la science, de l’industrie et de la société,
+* au BIPM de participer activement à ces développements, notamment en préparant, dans le cadre de l’établissement des échelles de temps, l’exploitation des données de comparaisons d’horloges obtenues à partir de nouvelles méthodes de comparaison de temps et de fréquence,
+* aux laboratoires contribuant au calcul de l’UTC et effectuant des comparaisons de temps en continu par fibre optique de soumettre régulièrement leurs résultats au Département du temps du BIPM."""@fr .
+
+cctf:CCTF20-Rec6Considering rb:hasConsideringText "considering that long-distance comparison with optical fibre links has been demonstrated with a stability and uncertainty that is compatible with the best present and future optical frequency standards,"@en,
+        "considering that some optical frequency standards have already demonstrated fractional uncertainties in the low stem:[10^(-18)] and that the reduction in the uncertainty and instability of optical frequency standards developed in institutes around the world will continue,"@en,
+        "considering the growing interest of the Earth science and geodesy scientific communities for chronometric geodesy, i.e. new applications of optical frequency standards for determining gravitational potential differences and improving Earth gravity models and reference systems with these measurements,"@en,
+        "considering the growing needs of industry for improving time and frequency capabilities using better transfer methods, in particular in the telecommunication and aerospace sectors,"@en,
+        "considering the need for regular comparisons between these standards as an essential part of the preparation for a redefinition of the second and for other applications such as contributions to time scales, that the stabilities of time and frequency transfer techniques currently and routinely used for comparisons around the world, i.e. for the production of International Atomic Time (TAI), are insufficient for comparisons between the best optical frequency standards,"@en,
+        "considérant que certains étalons optiques de fréquence ont déjà permis d’obtenir des incertitudes relatives de l’ordre de stem:[10^(-18)] et que l’incertitude et l’instabilité des étalons optiques de fréquence mis au point dans les laboratoires du monde entier vont continuer à être réduites,"@fr,
+        "considérant que la stabilité des techniques de comparaison de temps et de fréquence couramment utilisées dans le monde pour produire le Temps atomique international (TAI) n’est pas suffisante pour comparer les meilleurs étalons optiques de fréquence,"@fr,
+        "considérant que l’industrie, en particulier les secteurs des télécommunications et de l’aérospatiale, a de plus en plus besoin que soient améliorées les aptitudes dans le domaine du temps et des fréquences par l’utilisation de meilleures méthodes de comparaison,"@fr,
+        "considérant que l’intérêt des communautés scientifiques des sciences de la Terre et de la géodésie ne cesse de croître vis-à-vis de la géodésie chronométrique, c’est-à-dire vis-à-vis de nouvelles applications pour les étalons optiques de fréquence afin de déterminer les différences de potentiel gravitationnel et d’améliorer, grâce à ces mesures, les modèles de gravité de la Terre ainsi que les systèmes de référence,"@fr,
+        "considérant qu’il a été démontré qu’il était possible de comparer des horloges sur de longues distances avec des liaisons par fibre optique obtenant une stabilité et une incertitude compatibles avec les meilleurs étalons optiques de fréquence actuels et à venir,"@fr,
+        "considérant qu’il est nécessaire de comparer régulièrement ces étalons, ce qui est essentiel dans le cadre de la préparation d’une redéfinition de la seconde, ainsi que pour d’autres applications telles que l’établissement des échelles de temps,"@fr .
+
+cctf:CCTF20-Rec7Action rb:hasActionText """*recommends that*
+
+* institutes participating in UTC continue to support the TWSTFT activities, including continuous operation of the international TWSTFT network, restoration of the Asia-Europe TWSTFT links and periodic link calibrations,
+ +
+* new developments in TWSTFT be undertaken to significantly improve remote time and frequency comparisons especially over intercontinental distances and also to reduce costs through the use of new kinds of transmitted signals."""@en,
+        "recommande que de nouveaux travaux de développement soient entrepris dans le domaine des comparaisons de temps et de fréquences par aller et retour par satellite afin d’améliorer de façon significative les comparaisons à distance de temps et de fréquences, en particulier celles effectuées entre continents, et de réduire les coûts en utilisant de nouveaux types de signaux transmis."@fr,
+        "recommande que les laboratoires participant au calcul de l’UTC continuent à soutenir les activités de comparaison de temps et de fréquences par aller et retour par satellite, telles que la mise en œuvre continue du réseau international de comparaisons de temps, la restauration des liaisons entre l’Asie et l’Europe, et l’étalonnage périodique des liaisons,"@fr .
+
+cctf:CCTF20-Rec7Considering rb:hasConsideringText """*considering that*
+
+* TWSTFT has been used in the realization of UTC for 16 years,
+ +
+* about 20 institutes in Asia, Europe, and North America have contributed regularly to UTC with their TWSTFT data, most of them providing their data continuously on a daily basis,
+ +
+* the Asia-Europe TWSTFT links were interrupted in December 2014,
+ +
+* regular calibrations offer a time transfer uncertainty at the level of 1 ns, which is the best uncertainty achieved for operational international time transfer,
+ +
+* having redundant and independent measurement techniques increases the robustness of UTC,
+ +
+* recent developments in TWSTFT, e.stem:["g"]. employing the carrier phase or software defined receivers (SDR), may dramatically improve satellite based optical clock comparisons over long baselines,
+ +
+* fibre links are operational only over short distances;"""@en,
+        "and noting that TWSTFT operation relies on satellite services with substantial costs for the participating institutes;"@en,
+        "considérant que des comparaisons de temps et de fréquences par aller et retour par satellite (TWSTFT) sont effectuées depuis 16 ans pour réaliser l’UTC,"@fr,
+        "considérant que des étalonnages réguliers permettent d’obtenir une incertitude des comparaisons de temps de l’ordre de 1 ns, ce qui représente la meilleure incertitude atteinte pour les comparaisons de temps internationales opérationnelles,"@fr,
+        "considérant que les liaisons TWSTFT entre l’Asie et l’Europe ont été interrompues en décembre 2014,"@fr,
+        "considérant que les liaisons par fibre optique ne sont opérationnelles que sur de courtes distances,"@fr,
+        "considérant que les récents développements des comparaisons de temps et de fréquences par aller et retour par satellite, tels que l’utilisation de la phase de la porteuse ou de récepteurs à technique radio logicielle SDR, pourraient améliorer de façon spectaculaire les comparaisons d’horloges optiques effectuées sur de longues distances à l’aide de satellites,"@fr,
+        "considérant que les techniques de mesure redondantes et indépendantes accroissent la robustesse de l’UTC,"@fr,
+        "considérant qu’une vingtaine de laboratoires situés en Asie, en Europe et en Amérique du Nord participent régulièrement au calcul de l’UTC en fournissant des données de comparaisons de temps et de fréquences par aller et retour par satellite, de façon continue et quotidienne pour la plupart des laboratoires,"@fr,
+        "notant que la réalisation des comparaisons de temps par aller et retour par satellite repose sur les services satellitaires, ce qui représente des coûts conséquents pour les laboratoires participants,"@fr .
+
+cctf:CCTF21-Rec1Action rb:hasActionText """*recommends that*
+
+* the institutes put effort into operating their frequency standards to realize SRS in such a way that they routinely contribute to TAI via reporting to the BIPM,
+ +
+* the optical standards be compared with uncertainties that are comparable to the estimated uncertainties of the standards themselves,
+ +
+* the institutes measure the frequencies of the realizations of their SRS with respect to the best primary caesium standards as a necessary requirement for a possible future redefinition of the second in terms of optical transitions,
+ +
+* the relevant CCTF working groups finalize the milestones for a redefinition and regularly inform the CIPM about the progress towards meeting these milestones."""@en,
+        "recommande aux groupes de travail du CCTF concernés de finaliser les étapes majeures requises pour redéfinir la seconde et d’informer régulièrement le CIPM des progrès effectués en la matière."@fr,
+        "recommande aux laboratoires de mesurer les fréquences des réalisations de leurs représentations secondaires de la seconde par rapport aux meilleurs étalons primaires à césium, ce qui constitue une condition indispensable pour une éventuelle future redéfinition de la seconde fondée sur des transitions optiques,"@fr,
+        "recommande aux laboratoires de porter leurs efforts sur l’utilisation de leurs étalons de fréquence comme réalisation de représentations secondaires de la seconde de façon à ce qu’ils soient couramment transmis au BIPM et inclus au calcul du TAI,"@fr,
+        "recommande de comparer les étalons optiques avec des incertitudes comparables à celles estimées pour les étalons eux-mêmes,"@fr .
+
+cctf:CCTF21-Rec1Considering rb:hasConsideringText """*considering that*
+
+* a list of secondary representations of the second (SRS) has been maintained following the recommendations of the CIPM,
+ +
+* different optical SRS have estimated fractional frequency uncertainties nearly two orders of magnitude lower than those of the best caesium primary standards,
+ +
+* improvements in uncertainty associated with optical frequency standards are ongoing,
+ +
+* a roadmap for a future redefinition of the second using optical frequency standards has been agreed by the CCTF;"""@en,
+        "considérant différentes représentations secondaires optiques de la seconde permettent d’obtenir des incertitudes relatives de fréquence estimées d’environ deux ordres de grandeur inférieures à celles obtenues à l’aide des meilleurs étalons primaires à césium,"@fr,
+        "considérant la liste des représentations secondaires de la seconde est maintenue selon les recommandations du CIPM,"@fr,
+        "considérant le CCTF a approuvé une feuille de route concernant une future redéfinition de la seconde fondée sur des étalons de fréquence optique,"@fr,
+        "considérant l’incertitude associée aux étalons de fréquence optique continue d’être améliorée,"@fr .
+
+cctf:CCTF21-Rec2Action rb:hasActionText "*and informs* the CIPM accordingly."@en,
+        """*recommends that*
+
+the following transition frequencies shall be updated in the list of recommended values of standard frequencies:
+
+* the unperturbed optical transition 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ of the ^stem:[115^(In)]+^ ion with a frequency of stem:[f]~115In+~ = stem:[1 267 402 452 901 050 "Hz"] and an estimated relative standard uncertainty of stem:[1.6 * 10^(-14)];
+* the unperturbed optical transition 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ of the ^199^Hg neutral atom with a frequency of stem:[f]~199Hg~ = stem:[1 128 575 290 808 154.4 "Hz"] and an estimated relative standard uncertainty of stem:[5 * 10^(-16)]; +
+ This radiation is now endorsed as a secondary representation of the second;
+* the unperturbed optical transition 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ of the ^171^Yb neutral atom with a frequency of stem:[f]~171Yb~ = stem:[518 295 836 590 863.6 "Hz"] and an estimated relative standard uncertainty of stem:[5 * 10^(-16)] (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 5s ^2^S~1/2~ - 4d ^2^D~5/2~ of the ^stem:[88^(Sr)]+^ ion with a frequency of stem:[f]~88Sr+~ = stem:[444 779 044 095 486.5 "Hz"] and an estimated relative standard uncertainty of stem:[1.5 * 10^(-15)] (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ of the ^88^Sr neutral atom with a frequency of stem:[f_(88Sr) = 429 228 066 418 007.0 "Hz"] and an estimated relative standard uncertainty of 6 × 10^−16^;
+* the unperturbed optical transition 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ of the ^87^Sr neutral atom with a frequency of stem:[f_(87Sr) = 429 228 004 229 873.0 "Hz"] and an estimated relative standard uncertainty of stem:[4 * 10^(-16)] (this radiation is already endorsed by the CIPM as a secondary representation of the second);
+* the unperturbed optical transition 4s ^2^S~1/2~ - 3d ^2^D~5/2~ of the ^stem:[40^(Ca)]+^ ion with a frequency of stem:[f]~40Ca+~ = stem:[411 042 129 776 399.8 "Hz"] and an estimated relative standard uncertainty of stem:[2.4 * 10^(-15)];
+* the unperturbed ground-state hyperfine transition of ^87^Rb with a frequency of stem:[f_(87Rb) = 6 834 682 610.904 312 6 "Hz"] and an estimated relative standard uncertainty of 6 × 10^−16^ (this radiation is already endorsed by the CIPM as a secondary representation of the second);"""@en,
+        "*et en informe* le CIPM."@fr,
+        """*recommande*
+
+que les fréquences des transitions suivantes soient mises à jour dans la liste des fréquences étalons recommandées :
+
+* la transition optique non perturbée 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ de l'ion de ^stem:[115^(In)]+^, à la fréquence de stem:[f]~115In+~ = stem:[1 267 402 452 901 050 "Hz"] avec une incertitude-type relative estimée de stem:[1","6 * 10^(-14)] ;
+* la transition optique non perturbée 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ de l'atome neutre de ^199^Hg, à la fréquence de stem:[f]~199Hg~ = stem:[1 128 575 290 808 154","4 "Hz"] avec une incertitude-type relative estimée de stem:[5 * 10^(-16)] ; +
+ Cette radiation est désormais approuvée comme représentation secondaire de la seconde ;
+* la transition optique non perturbée 6s^2^ ^1^S~0~ - 6s6p ^3^P~0~ of the ^171^Yb, à la fréquence de stem:[f]~171Yb~ = stem:[518 295 836 590 863","6 "Hz"] avec une incertitude-type relative estimée de stem:[5 * 10^(-16)] (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 5s ^2^S~1/2~ - 4d ^2^D~5/2~ de l'ion de ^stem:[88^(Sr)]+^, à la fréquence de stem:[f]~88Sr+~ = stem:[444 779 044 095 486","5 "Hz"] avec une incertitude-type relative estimée de stem:[1","5 * 10^(-15)] (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ de l'atome neutre de ^88^Sr, à la fréquence de stem:[f_(88Sr) = 429 228 066 418 007","0 "Hz"] avec une incertitude-type relative estimée de 6 × 10^−16^ ;
+* la transition optique non perturbée 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ de l'atome neutre de ^87^Sr, à la fréquence de stem:[f_(87Sr) = 429 228 004 229 873","0 "Hz"] avec une incertitude-type relative estimée de stem:[4 * 10^(-16)] (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;
+* la transition optique non perturbée 4s ^2^S~1/2~ - 3d ^2^D~5/2~ de l'ion de ^stem:[40^(Ca)]+^, à la fréquence de stem:[f]~40Ca+~ = stem:[411 042 129 776 399","8 "Hz"] avec une incertitude-type relative estimée de stem:[2","4 * 10^(-15)] ;
+* la transition hyperfine non perturbée de l’état fondamental de l’atome de ^87^Rb, à la fréquence de stem:[f_(87Rb) = 6 834 682 610","904 312 6 "Hz"] avec une incertitude-type relative estimée de 6 × 10^−16^ (cette radiation a déjà été approuvée par le CIPM comme représentation secondaire de la seconde) ;"""@fr .
+
+cctf:CCTF21-Rec2Considering rb:hasConsideringText "considering that a common list of “Recommended values of standard frequencies for applications including the practical realization of the metre and secondary representations of the second” has been established,"@en,
+        "considering that the CCL-CCTF Frequency Standards Working Group (WGFS) has reviewed several candidates for updating the list;"@en,
+        "considérant que le Groupe de travail commun au CCL et au CCTF sur les étalons de fréquence a examiné plusieurs fréquences candidates afin de mettre à jour cette liste,"@fr,
+        "considérant qu’une liste commune des « valeurs recommandées de fréquences étalons destinées à la mise en pratique de la définition du mètre et aux représentations secondaires de la seconde » a été établie,"@fr .
+
+cctf:CCTF21-Rec3Action rb:hasActionText """*and further recommends that*
+
+* all relevant unions and organizations consider these definitions and work together to develop a common understanding on reference time scales, their realization and dissemination with a view to reconsidering the present limitation on the maximum magnitude of [stem:[UT1 - UTC]] so as to meet the needs of the current and future user communities,
+ +
+* all relevant unions and organizations work together to improve further the accuracy of the prediction of [stem:[UT1 - UTC]] and the method for its dissemination to satisfy the future requirements of the users.
+
+
+
+* * *
+
+*. The numerical value of stem:[L_(G)] was chosen to conform to the value stem:[W_(0) = 62 636 856.0 "m"^(2) * "s"]^−2^ for the gravity potential on the geoid as recommended by Special Commission 3 of the IAG in 1999.
+
+ """@en,
+        """*recommends the following definitions of TAI and UTC be adopted by the CIPM*
+
+* International Atomic Time (TAI) is a continuous time scale produced by the BIPM based on the best realizations of the SI second. TAI is a realization of Terrestrial Time stem:[("TT")] with the same rate as that of stem:["TT"], as defined by the IAU Resolution B1.9 (2000),
+ +
+* Coordinated Universal Time (UTC) is a time scale produced by the BIPM with the same rate as TAI, but differing from TAI only by an integral number of seconds,"""@en,
+        """*states that*
+
+* TAI is a continuous time scale produced by the BIPM based on the best realizations of the SI second, and is a realization of stem:["TT"] as defined by IAU Resolution B1.9 (2000),
+ +
+* in the transformation from the proper time of a clock to TAI, the relativistic rate shift is computed with respect to the conventionally adopted equipotential stem:[W_(0) = 62 636 856.0 "m"^(2) * "s"]^−2^ of the Earth’s gravity potential, which conforms to the constant stem:[L_(G)] defining the rate of stem:["TT"],
+ +
+* as stated in the IAU Resolution A4 (1991), [stem:[TT - TAI]] = stem:[32.184 "s"] exactly at 1 January 1977, 0h TAI at the geocentre, in order to ensure continuity of stem:["TT"] with Ephemeris Time,
+ +
+* UTC produced by the BIPM, based on TAI, is the only recommended time scale for international reference and the basis of civil time in most countries,
+ +
+* UTC differs from TAI only by an integral number of seconds as published by the BIPM,
+ +
+* users can derive the rotation angle of the Earth by applying to UTC the observed or predicted values of [stem:[UT1 - UTC]] as provided by the IERS,
+ +
+* UTC provides a means to measure time intervals and to disseminate the standard of frequency during intervals in which leap seconds do not occur,
+ +
+* traceability to UTC is obtained through local real-time realizations stem:["UTC" (k)] maintained by laboratories contributing data to the calculation of UTC, identified by “stem:[k]”,"""@en,
+        """*recommande par ailleurs*
+
+* à toutes les organisations et unions concernées de prendre en compte ces définitions et de travailler ensemble afin de parvenir à une compréhension commune des échelles de temps de référence, de leur réalisation et de leur dissémination, l’objectif étant d’examiner à nouveau les limites actuelles de l’amplitude maximale de UT1-UTC afin de répondre aux besoins des communautés d’utilisateurs actuelles et à venir,
+* à toutes les organisations et unions concernées de travailler ensemble pour améliorer davantage l’exactitude de la prédiction d’UT1-UTC et sa méthode de dissémination afin de satisfaire les futures exigences des utilisateurs.
+
+
+
+* * *
+
+*. La valeur numérique de stem:[L_(G)] a été choisie pour se conformer à la valeur de stem:[W_(0) = 62 636 856","0 "m"^(2) * "s"]^−2^ pour le potentiel de gravité sur le géoïde tel que recommandé par la Commission spéciale 3 de l’AIG en 1999.
+
+ """@fr,
+        """*recommande que les définitions suivantes du TAI et de l’UTC soient adoptées par le CIPM*
+
+* le Temps atomique international (TAI) est une échelle de temps continue produite par le BIPM à partir des meilleures réalisations de la seconde du SI. Le TAI est une réalisation du Temps terrestre stem:[("TT")] ayant la même marche que stem:["TT"], tel que défini par l’UAI dans sa Résolution B1.9 (2000),
+* le Temps universel coordonné (UTC) est une échelle de temps produite par le BIPM ayant la même marche que le TAI mais différant du TAI par un nombre entier de secondes seulement,"""@fr,
+        "déclare que la traçabilité à l’UTC est obtenue par l’intermédiaire des réalisations locales en temps réel maintenues par les laboratoires participant au calcul de l’UTC, dénommées stem:[\"UTC\" (k)] où « stem:[k] » identifie un laboratoire particulier,"@fr,
+        "déclare que le TAI est une échelle de temps continue produite par le BIPM à partir des meilleures réalisations de la seconde du SI et que c’est une réalisation de stem:[\"TT\"] comme défini dans la Résolution B1.9 (2000) de l’UAI,"@fr,
+        "déclare que les utilisateurs peuvent dériver l’angle de rotation de la Terre en appliquant à l’UTC les valeurs observées ou prédites de UT1-UTC telles que fournies par l’IERS,"@fr,
+        "déclare que l’UTC diffère du TAI seulement par un nombre entier de secondes, tel que publié par le BIPM,"@fr,
+        "déclare que l’UTC fournit un moyen de mesurer les intervalles de temps et de disséminer l’étalon de fréquence pendant les intervalles qui ne comprennent pas de secondes intercalaires,"@fr,
+        "déclare que l’UTC produit par le BIPM, fondé sur le TAI, est l’unique échelle de temps recommandée comme référence internationale et qu’il est à la base du temps civil dans la plupart des pays,"@fr,
+        "déclare que pour la conversion du temps propre d’une horloge en TAI, le décalage relativiste de fréquence est calculé par rapport à la surface équipotentielle stem:[W_(0) = 62 636 856\",\"0 \"m\"^(2) * \"s\"]^−2^ du potentiel de gravité de la Terre, adoptée de façon conventionnelle, en conformité avec la constante stem:[L_(G)] définissant la marche de stem:[\"TT\"],"@fr,
+        "déclare que, tel qu’indiqué dans la Résolution A4 (1991) de l’UAI, TT-TAI est égal à stem:[32\",\"184 \"s\"] exactement au 1^er^ janvier 1977, 0h TAI au géocentre, pour assurer une continuité de stem:[\"TT\"] avec le temps des éphémérides,"@fr .
+
+cctf:CCTF21-Rec3Considering rb:hasConsideringText """*noting that*
+
+* Resolution A4 (1991) of the IAU defined, in Recommendations I and II, the Geocentric Reference System as a system of space-time coordinates for the Earth within the framework of general relativity, and, in Recommendation III, named the time coordinate of that reference system “Geocentric Coordinate Time” (TCG),
+ +
+* Resolution A4 (1991) of the IAU further defined, in Recommendation IV, Terrestrial Time stem:[("TT")] as another time coordinate in the Geocentric Reference System, differing from TCG by a constant rate; the unit of measurement of stem:["TT"] being chosen to agree with the SI second on the geoid,
+ +
+* Resolution B1.9 (2000) of the IAU redefined stem:["TT"] to be a time scale differing from TCG by a constant rate: d_TT_/d_TCG_ = stem:[1 - L_(G)], where stem:[L_(G) = 6.969290134] × 10^−10^ is a defining constant*,
+ +
+* the redefinition of stem:["TT"] in 2000 introduced an ambiguity between stem:["TT"] and TAI as the CCDS had stated in 1980 that TAI was to have “the SI second as realized on the rotating geoid as the scale unit” while the definition of stem:["TT"] does not refer to the geoid;"""@en,
+        """*recognizing that*
+
+* the mission of the BIPM is to ensure and promote the global comparability of measurements, including and providing a coherent international system of units,
+ +
+* the International Astronomical Union (IAU) and the International Union of Geodesy and Geophysics (IUGG) with the International Association of Geodesy (IAG) are responsible for defining reference systems for Earth and space applications,
+ +
+* the International Telecommunication Union Radiocommunication Sector (ITU-R) is responsible for coordinating the dissemination of time and frequency signals and making relevant recommendations,
+ +
+* the International Earth Rotation and Reference Systems Service (IERS), a service of the IAU and IUGG, is responsible for providing information required to relate terrestrial and celestial reference systems, including time-varying measurements of the Earth’s rotation angle, [stem:[UT1 - UTC]], the low-precision prediction of [stem:[UT1 - UTC]] for time signal broadcasts, DUT1, and for deciding and announcing leap second insertions;"""@en,
+        """The Consultative Committee for Time and Frequency (CCTF), at its 21st session in 2017, considering that
+
+* Resolution 1 of the 14th CGPM (1971) requested the CIPM to define International Atomic Time (TAI),
+ +
+* no complete self-contained definition of TAI has been provided officially by the CIPM,
+ +
+* the Consultative Committee for the Definition of the Second (CCDS) proposed in its Recommendation S2 (1970) a definition which was extended by a Declaration of the CCDS in 1980,
+ +
+* the 15th CGPM (1975) noted that Coordinated Universal Time (UTC), derived from TAI, provides the basis of civil time, and strongly endorsed this usage;"""@en,
+        """Le Comité consultatif du temps et des fréquences (CCTF), à sa 21^e^ session en 2017,
+
+* que la Résolution 1 adoptée par la CGPM à sa 14^e^ réunion (1971) demande au CIPM de donner une définition du Temps atomique international (TAI),
+* qu’aucune définition exhaustive et autonome du TAI n’a été établie de façon officielle par le CIPM,
+* que le Comité consultatif pour la définition de la seconde (CCDS) a proposé dans sa Recommandation S2 (1970) une définition du TAI qui a été complétée en 1980 par une déclaration du CCDS,
+* que la CGPM lors de sa 15^e^ réunion (1975) a constaté que le Temps universel coordonné (UTC), dérivé du TAI, est à la base du temps civil et qu’elle a estimé son emploi parfaitement recommandable,"""@fr,
+        "notant que la Résolution A4 (1991) de l’UAI définit en outre, dans sa Recommandation IV, le Temps terrestre stem:[(\"TT\")] comme un autre temps-coordonnée dans le Système de référence géocentrique, différant du TCG par une marche constante, l’unité d’échelle de stem:[\"TT\"] étant choisie de sorte qu’elle s’accorde avec la seconde du SI sur le géoïde,"@fr,
+        "notant que la Résolution A4 (1991) de l’UAI définit, dans ses Recommandations I et II, le Système de référence géocentrique comme un système de coordonnées spatio-temporelles pour la Terre dans le cadre de la théorie de relativité générale, et nomme, dans sa Recommandation III, le temps-coordonnée de ce système de référence le « Temps-coordonnée géocentrique (TCG) »,"@fr,
+        "notant que la Résolution B1.9 (2000) de l’UAI redéfinit stem:[\"TT\"] comme une échelle de temps qui diffère du TCG par une marche constante : d_TT_/d_TCG_ = stem:[1 - L_(G)], où stem:[L_(G) = 6\",\"969290134] × 10^−10^ est une constante de définition*,"@fr,
+        "notant que la redéfinition de stem:[\"TT\"] en 2000 a introduit une ambiguïté entre stem:[\"TT\"] et le TAI car le CCDS avait déclaré en 1980 que le TAI avait « comme unité d’échelle la seconde du SI telle qu’elle est réalisée sur le géoïde en rotation » alors que la définition de stem:[\"TT\"] ne fait pas référence au géoïde,"@fr,
+        "reconnaissant que la mission du BIPM est d’assurer et de promouvoir la comparabilité mondiale des mesures, en fournissant notamment un système international d’unités cohérent,"@fr,
+        "reconnaissant que le Service international de la rotation terrestre et des systèmes de référence (IERS), un service de l’UAI et de l’UGGI, est responsable de fournir les informations requises afin de relier les systèmes de référence terrestre et céleste, parmi lesquelles : les mesures variant dans le temps de l’angle de rotation de la Terre, UT1-UTC ; la prédiction de faible précision d’UT1-UTC transmise par les signaux de temps, DUT1 ; et les données permettant de décider et d’annoncer l’insertion des secondes intercalaires,"@fr,
+        "reconnaissant que l’Union astronomique internationale (UAI) et l’Union géodésique et géophysique internationale (UGGI), ainsi que l’Association internationale de géodésie (AIG), ont pour responsabilité de définir des systèmes de référence pour les applications spatiales et terrestres,"@fr,
+        "reconnaissant que l’Union internationale des télécommunications - Secteur des radiocommunications (UIT-R) a pour responsabilité de coordonner la dissémination des signaux de temps et de fréquence et de formuler des recommandations pertinentes,"@fr .
+
+cctf:CCTF21-Rec4Action rb:hasActionText """*recommends* that laboratories participating in UTC generation
+
+* maintain at least two (three in the case of G1 laboratories) independent GNSS systems, some of which being state-of-the-art if resources are available,
+* provide all data from redundant GNSS systems to the BIPM,
+* monitor their CCDs and the internal characteristics of their laboratory reference signals, such as the shape of their pulse-per-second signal as seen at their time transfer systems, on an annual or other appropriate basis,
+* document all setup and configuration changes relevant to time transfer and report this data to the BIPM,
+* record and maintain both external and relevant internal temperature and humidity information and report this data to the BIPM,
+* evaluate the correlation between the time transfer solutions and the local temperature and humidity measurements,
+* calibrate at least one operational link every two years;"""@en,
+        """*recommends* that the BIPM
+
+* continue to publish its computed time transfer differences (links and link comparisons) on its web pages in computer files with self-explanatory names,
+* continue to publish the information about system configurations and calibration results on its web pages, along with the associated reports,
+* continue to study the use of redundant time transfer systems in UTC generation,
+* add the station temperature and humidity information to the Time Department database and make these data available to the WGs,
+* add the station setup and configuration changes relevant to time transfer to the Time Department database."""@en,
+        """*recommends* that the BIPM and the CCTF WGs on TWSTFT and on GNSS Time Transfer
+
+* coordinate TWSTFT and GNSS calibrations so that they can be compared and that the seasonal impacts can be studied and their effects minimized,
+* study the impact of introducing calibration results on the long-term CCD and DCD series,
+* define the format for the submissions of temperature and humidity information;"""@en,
+        """*recommande* au BIPM
+
+* de continuer à publier sur ses pages internet les différences de comparaison de temps qu’il calcule (liaisons horaires et comparaisons de liaisons) sous la forme de fichiers informatiques portant des noms explicites,
+* de continuer à publier sur ses pages internet des informations sur les configurations des systèmes et les résultats d’étalonnage, accompagnées des rapports associés,
+* de continuer à étudier l’utilisation de systèmes de comparaison de temps redondants pour calculer l’UTC,
+* d’ajouter dans la base de données du Département du temps les informations concernant la température et l’humidité et de mettre ces informations à la disposition des groupes de travail,
+* d’ajouter dans la base de données du Département du temps les changements de paramètres et de configuration de la station pertinents pour les comparaisons de temps."""@fr,
+        """*recommande* au BIPM, au Groupe de travail du CCTF sur les comparaisons de temps et de fréquences par aller et retour sur satellite et au Groupe de travail du CCTF sur les comparaisons de temps à l’aide de systèmes GNSS
+
+* de coordonner les étalonnages des liaisons horaires par aller et retour sur satellite et ceux des équipements GNSS de façon à ce qu’ils soient comparables et à ce que les impacts saisonniers puissent être étudiés afin d’en réduire les effets,
+* d’étudier l’impact de l’introduction des résultats d’étalonnage sur les séries de mesure CCD et DCD à long terme,
+* de définir le format pour soumettre les informations concernant la température et l’humidité,"""@fr,
+        """*recommande* aux laboratoires participant au calcul de l’UTC
+
+* de maintenir au moins deux (trois dans le cas des laboratoires G1) systèmes GNSS indépendants, dont un système représentant l’état de la technique si les ressources le permettent,
+* de fournir au BIPM l’ensemble des données obtenues à partir de systèmes GNSS redondants,
+* de contrôler leurs mesures CCD et les caractéristiques internes des signaux de référence de leur laboratoire, telles que la forme du signal de pulsation par seconde au niveau de leurs systèmes de comparaison de temps, tous les ans ou à une périodicité plus adéquate,
+* de documenter tous les changements de paramètres et de configuration concernant les comparaisons de temps et les transmettre aux BIPM,
+* d’enregistrer les informations pertinentes concernant la température et l’humidité, extérieures et intérieures, et de les transmettre au BIPM,
+* d’évaluer la corrélation entre les solutions de comparaison de temps et les mesures locales de température et d’humidité,
+* d’étalonner au moins une liaison opérationnelle tous les deux ans,"""@fr .
+
+cctf:CCTF21-Rec4Considering rb:hasConsideringText "considering that hardware delay variations limit the validity of calibration results, and random variations in measurements also limit the ability to combine data from redundant and complementary techniques;"@en,
+        "considering that regular TWSTFT time link calibrations and GNSS equipment calibrations have been carried out through cooperation of the BIPM, the Regional Metrology Organizations (RMOs) and the UTC-contributing laboratories, resulting in calibration uncertainties at the level of order of 1 ns to 1.5 ns,"@en,
+        "considering that time and frequency transfer data from the use of Global Navigation Satellite Systems (GNSS) signals and from Two-Way Satellite Time and Frequency Transfer (TWSTFT) systems play an important role in the realization of UTC,"@en,
+        "noting that Recommendation CCTF 4 (2012) recommended laboratories that contribute to UTC to upgrade their GNSS equipment towards multi-frequency multi-constellation receiving systems providing code- and carrier-phase measurements and to supply data from at least three receivers,"@en,
+        "noting that several ongoing studies consider ways to mitigate the effects of time transfer systems’ calibration variations;"@en,
+        "noting that the calibration of GNSS receivers of the Group One (G1) laboratories designated by the RMOs has special importance as they influence the calibrations or links of other multiple laboratories in a significant manner,"@en,
+        "noting that variations of the common clock differences (CCD) between GNSS systems and variations of the double clock differences (DCD) between Global Positioning System (GPS) and TWSTFT links, which exceed the combined calibration uncertainty of the most recent calibrations, have been observed,"@en,
+        "realizing that atomic frequency standards have achieved unprecedented accuracy, and that further rapid advances in this field are under way,"@en,
+        "realizing that the ability to compare these standards for the realization of UTC is limited by the accuracy and stability of time transfer equipment;"@en,
+        "considérant que des étalonnages réguliers des liaisons TWSTFT et des étalonnages des équipements GNSS, effectués dans le cadre d’une coopération entre le BIPM, les organisations régionales de métrologie et les laboratoires participant au calcul de l’UTC, ont permis d’obtenir des incertitudes d’étalonnage de l’ordre de 1 ns à 1,5 ns,"@fr,
+        "considérant que les données de comparaisons de temps et de fréquences obtenues à partir des signaux des systèmes globaux de navigation par satellite (GNSS) et des systèmes de comparaison de temps et de fréquences par aller et retour sur satellite (TWSTFT) jouent un rôle important dans la réalisation de l’UTC,"@fr,
+        "considérant que les variations des retards électriques des équipements limitent la validité des résultats d’étalonnage et que des variations aléatoires des mesures limitent également l’aptitude à combiner les données obtenues à partir de techniques complémentaires et redondantes,"@fr,
+        "notant que la Recommandation CCTF 4 (2012) recommandait aux laboratoires participant au calcul de l’UTC de mettre à niveau leurs équipements GNSS afin de passer à des systèmes de réception multifréquences et multiconstellations permettant d’effectuer des mesures de code et des mesures de phase des porteuses et leur demandait de fournir des données obtenues à partir d’au moins trois récepteurs,"@fr,
+        "notant que l’étalonnage des récepteurs GNSS des laboratoires du Groupe 1 (G1) désignés par les organisations régionales de métrologie revêt une importance particulière car ces récepteurs ont une influence significative sur les étalonnages ou les liaisons de nombreux autres laboratoires,"@fr,
+        "notant que plusieurs études en cours étudient comment réduire les effets des variations de l’étalonnage de systèmes de comparaison de temps,"@fr,
+        "notant qu’ont été observées des variations des mesures CCD (Common Clock Differences) entre les systèmes GNSS et des variations des mesures DCD (Double Clock Differences) entre les liaisons obtenues par le Global Positioning System (GPS) et les liaisons TWSTFT qui dépassent l’incertitude composée des étalonnages les plus récents,"@fr,
+        "réalisant que les étalons atomiques de fréquence ont atteint un niveau d’exactitude inégalé et que d’autres progrès rapides sont en cours dans ce domaine,"@fr,
+        "réalisant que l’aptitude à comparer ces étalons pour réaliser l’UTC est limitée par l’exactitude et la stabilité des équipements de comparaison de temps,"@fr .
+
+cctf:CCTF21-Rec5Action rb:hasActionText """*recommends* that laboratories operating TWSTFT stations
+
+* continue to study the SDR TWSTFT technique by maintaining SDR operation or installing SDR systems in stations, and providing SDR TWSTFT data to the BIPM in parallel to the data from the currently used TWSTFT equipment, with the aim of improving the uncertainty of time links with the current TWSTFT by a reduction of the diurnal noise,
+* support and participate in the test of new digital TWSTFT modems as they become available with the perspective of further improving the uncertainty of TWSTFT, potentially making it practical for the comparison of optical clocks at the level of their accuracies;"""@en,
+        """*recommends* that the BIPM
+
+* work towards implementing the use of SDR TWSTFT data in UTC generation,
+* support studies to improve TWSTFT with redundant measurements in the TWSTFT network and with digital modems when data becomes available."""@en,
+        """*recommande* au BIPM
+
+* de poursuivre les travaux visant à utiliser des données obtenues à l’aide de la technique TWSTFT SDR pour le calcul de l’UTC,
+* de soutenir les études visant à améliorer la technique TWSTFT par des mesures redondantes au sein du réseau TWSTFT et par des modems numériques lorsque les données seront disponibles."""@fr,
+        """*recommande* aux laboratoires disposant de stations TWSTFT
+
+* de continuer à étudier la technique TWSTFT SDR en maintenant des opérations fondées sur des récepteurs SDR ou en installant des systèmes SDR dans les stations, et en fournissant au BIPM des résultats de comparaisons réalisées à l’aide de la technique TWSTFT SDR en plus des données obtenues à partir des équipements TWSTFT actuellement utilisés, l’objectif étant d’améliorer par une réduction du bruit diurne l’incertitude des liaisons horaires obtenue lors des comparaisons TWSTFT actuelles,
+* de soutenir et de participer au test de nouveaux modems TWSTFT numériques lorsqu’ils seront disponibles dans le but d’améliorer davantage l’incertitude des comparaisons de temps et de fréquence par aller et retour sur satellite, potentiellement en les rendant utilisables pour la comparaison d’horloges optiques au niveau de leur exactitude,"""@fr .
+
+cctf:CCTF21-Rec5Considering rb:hasConsideringText "considering that a few digital TWSTFT modems have been under development in recent years, some of which are capable of supporting both code-phase and carrier-phase measurements, which could further improve the uncertainty of TWSTFT;"@en,
+        "considering that a pilot study on using SDR TWSTFT for UTC was organized by the BIPM and the CCTF Working Group on Two-Way Satellite Time and Frequency Transfer (WGTWSTFT) in February 2016 to investigate the impact of SDR TWSTFT for the Asia-Asia, Asia-Europe, Europe-Europe, Europe-US and US-US links using different geostationary satellites,"@en,
+        "considering that all UTC laboratories engaged in TWSTFT expressed their interest in participating in the pilot study and that twelve stations in Asia, Europe and the USA have installed SDR systems and carried out measurements contributing to the pilot study,"@en,
+        "considering that the BIPM global validation of the SDR TWSTFT results has revealed a significant reduction of the diurnal and measurement noise in the inner-continental TWSTFT links with a gain factor of two to three in the time link stability as compared to the currently used TWSTFT results,"@en,
+        "considering that the experimental use of Software Defined Radio (SDR) receivers in the Asia-Pacific region (SDR receivers measure the timing signals generated by the currently used TWSTFT equipment) demonstrated that SDR TWSTFT significantly reduced the diurnal and measurement noise,"@en,
+        "realizing that atomic frequency standards have achieved unprecedented accuracy, and that further rapid advances in this field are under way,"@en,
+        "realizing that the uncertainty of current TWSTFT systems for the realization of UTC is limited by technical constraints that can result in a daily variation (diurnal) in time transfer results;"@en,
+        "realizing that time and frequency transfer data from the use of TWSTFT systems plays an important role in realization of UTC,"@en,
+        "considérant que des modems TWSTFT numériques sont en cours de développement depuis quelques années et que certains peuvent supporter à la fois des mesures de code et des mesures de la phase des porteuses, ce qui pourrait améliorer davantage l’incertitude des comparaisons de temps et de fréquence par aller et retour sur satellite,"@fr,
+        "considérant que la validation par le BIPM des résultats de comparaisons à l’aide de la technique TWSTFT SDR a montré une réduction significative du bruit diurne et de mesure dans les liaisons TWSTFT intracontinentales avec un facteur de gain de deux à trois concernant la stabilité des liaisons horaires par rapport aux résultats de comparaisons fondées sur les équipements TWSTFT actuellement utilisés,"@fr,
+        "considérant que l’utilisation à titre expérimental de récepteurs SDR (Software Defined Radio) dans la région Asie-Pacifique (les récepteurs SDR mesurent les signaux horaires générés par les équipements TWSTFT actuellement utilisés) a montré que les récepteurs TWSTFT SDR réduisent de façon significative le bruit diurne et le bruit des mesures,"@fr,
+        "considérant que tous les laboratoires participant au calcul de l’UTC qui effectuent des comparaisons de temps et fréquences par aller et retour sur satellite se sont montrés intéressés à participer à cette étude pilote et que douze stations en Asie, en Europe et aux États-Unis ont installé des systèmes SDR puis effectué des mesures qui ont contribué à l’étude,"@fr,
+        "considérant qu’une étude pilote sur l’utilisation de la technique TWSTFT SDR pour l’UTC a été organisée en février 2016 par le BIPM et le Groupe de travail du CCTF sur les comparaisons de temps et de fréquences par aller et retour sur satellite afin d’étudier l’impact de cette technique sur les liaisons Asie-Asie, Asie-Europe, Europe-Europe, Europe-États-Unis et États-Unis-États-Unis à l’aide de différents satellites géostationnaires,"@fr,
+        "réalisant que les données de comparaisons de temps et de fréquences obtenues à partir des systèmes TWSTFT jouent un rôle important dans la réalisation de l’UTC,"@fr,
+        "réalisant que les étalons atomiques de fréquence ont atteint un niveau d’exactitude inégalé et que d’autres progrès rapides sont en cours dans ce domaine,"@fr,
+        "réalisant que l’incertitude des données obtenues à l’aide des systèmes TWSTFT actuels pour la réalisation de l’UTC est limitée par des contraintes techniques, ce qui peut générer une variation quotidienne (diurne) des résultats des comparaisons de temps,"@fr .
+
+cctf:CCTF22-1 a rb:Event ;
+    rb:hasEventDate "2020-10-29"^^xsd:date ;
+    rb:hasEventNr "22-1" ;
+    skos:hiddenLabel "CCTF22-1"^^xsd:string ;
+    skos:prefLabel "22nd meeting of the CCTF (Session I - online)"@en,
+        "22e réunion du CCTF (Session I - en ligne)"@fr .
+
+cctf:CCTF22-2 a rb:Event ;
+    rb:hasEventDate "2021-03-12"^^xsd:date ;
+    rb:hasEventNr "22-2" ;
+    skos:hiddenLabel "CCTF22-2"^^xsd:string ;
+    skos:prefLabel "22nd meeting of the CCTF (Session II - online)"@en,
+        "22e réunion du CCTF (Session II - en ligne)"@fr .
+
+cctf:CCTF23 a rb:Event ;
+    rb:hasEventDate "2022-07-01"^^xsd:date ;
+    rb:hasEventNr "23" ;
+    skos:hiddenLabel "CCTF23"^^xsd:string ;
+    skos:prefLabel "23rd meeting of the CCTF (online)"@en,
+        "23e réunion du CCTF (en ligne)"@fr .
+
+cctf:CCTF24-1 a rb:Event ;
+    rb:hasEventDate "2024-11-22"^^xsd:date ;
+    rb:hasEventNr "24-1" ;
+    skos:hiddenLabel "CCTF24-1"^^xsd:string ;
+    skos:prefLabel "24th meeting of the CCTF (Session I - online)"@en,
+        "24e réunion du CCTF (Session I - en ligne)"@fr .
+
+cctf:CCTF24-2 a rb:Event ;
+    rb:hasEventDate "2025-09-19"^^xsd:date ;
+    rb:hasEventNr "24-2" ;
+    skos:hiddenLabel "CCTF24-2"^^xsd:string ;
+    skos:prefLabel "24th meeting of the CCTF (Session II - BIPM Headquarters (Sèvres)) and CCTF Working Groups meetings from 8 to 17 September 2025"@en,
+        "24e réunion du CCTF (Session II - Siège du BIPM (Sèvres)) et réuninons des groupes de travail du CCTF du 8 au 17 septembre 2023"@fr .
+
+cctf:CCTF5-Rec1Action rb:hasActionText "*recommande* l'adoption d'une échelle de Temps Atomique International."@en,
+        "*recommande* l'adoption d'une échelle de Temps Atomique International."@fr .
+
+cctf:CCTF5-Rec1Considering rb:hasConsideringText "considérant 1'utilité d'une échelle de temps aussi uniforme que possible pour servir de base à la comparaison des étalons de fréquence opérant en des lieux et à des instants différents;"@en,
+        "considérant Le désir général de synchroniser ou de coordonner l'ensemble des émissions de signaux horaires diffusés dans le monde;"@en,
+        "considérant le besoin d'une référence de temps uniforme pour l'étude de la dynamique des systèmes et, en particulier, pour l'étude des mouvements des corps célestes naturels et artificiels;"@en,
+        "considérant 1'utilité d'une échelle de temps aussi uniforme que possible pour servir de base à la comparaison des étalons de fréquence opérant en des lieux et à des instants différents;"@fr,
+        "considérant Le désir général de synchroniser ou de coordonner l'ensemble des émissions de signaux horaires diffusés dans le monde;"@fr,
+        "considérant le besoin d'une référence de temps uniforme pour l'étude de la dynamique des systèmes et, en particulier, pour l'étude des mouvements des corps célestes naturels et artificiels;"@fr .
+
+cctf:CCTF5-Rec2Action rb:hasActionText "International Atomic Time (TAI) is the time reference coordinate established by the Bureau International de l'Heure on the basis of the readings of atomic clocks operating in various establishments in accordance with the definition of the second, the unit of time of the International System of Units."@en,
+        "Le Temps Atomique International est la coordonnée de repérage temporel établie par le Bureau International de l'Heure sur la base des indications d'horloges atomiques fonctionnant dans divers établissements conformément à la définition de la seconde, unité de temps du Système International d'Unités."@fr .
+
+cctf:CCTF15-Rec1 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF15-Rec1Action ;
+    rb:hasConsidering cctf:CCTF15-Rec1Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/15-2001/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/15-2001/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Secondary representations of the second"@en,
+        "Représentations secondaires de la seconde"@fr ;
+    rb:isOutcomeOf cctf:CCTF15 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF15-Rec1"^^xsd:string .
+
+cctf:CCTF15-Rec2 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF15-Rec2Action ;
+    rb:hasConsidering cctf:CCTF15-Rec2Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/15-2001/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/15-2001/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "Time and frequency comparisons using Global Positioning System (GPS) phase and code measurements"@en,
+        "Comparaison de temps et de fréquences utilisant des mesures de phase et de code des signaux du Global Positioning System (GPS)"@fr ;
+    rb:isOutcomeOf cctf:CCTF15 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF15-Rec2"^^xsd:string .
+
+cctf:CCTF15-Rec3 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF15-Rec3Action ;
+    rb:hasConsidering cctf:CCTF15-Rec3Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/15-2001/resolution-3"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/15-2001/resolution-3"@fr ;
+    rb:hasOutcomeNr 3 ;
+    rb:hasOutcomeTitle "The meaning of the designation \"<i>k</i>\" in UTC(<i>k</i>) and TAI(<i>k</i>)"@en,
+        "Signification de la notation « <i>k</i> » dans UTC(<i>k</i>) et TAI(<i>k</i>)"@fr ;
+    rb:isOutcomeOf cctf:CCTF15 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF15-Rec3"^^xsd:string .
+
+cctf:CCTF15-Rec4 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF15-Rec4Action ;
+    rb:hasConsidering cctf:CCTF15-Rec4Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/15-2001/resolution-4"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/15-2001/resolution-4"@fr ;
+    rb:hasOutcomeNr 4 ;
+    rb:hasOutcomeTitle "Calibration of time links for International Atomic Time"@en,
+        "Étalonnage des liaisons horaires du Temps atomique international"@fr ;
+    rb:isOutcomeOf cctf:CCTF15 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF15-Rec4"^^xsd:string .
+
+cctf:CCTF15-Rec5 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF15-Rec5Action ;
+    rb:hasConsidering cctf:CCTF15-Rec5Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/15-2001/resolution-5"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/15-2001/resolution-5"@fr ;
+    rb:hasOutcomeNr 5 ;
+    rb:hasOutcomeTitle "Technical guidelines for manufacturers of Global Navigation Satellite Systems receivers used for timing"@en,
+        "Instructions techniques à l’attention des fabricants de récepteurs du temps des systèmes de satellites de navigation à couverture globale"@fr ;
+    rb:isOutcomeOf cctf:CCTF15 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF15-Rec5"^^xsd:string .
+
+cctf:CCTF16-Rec1 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF16-Rec1Action ;
+    rb:hasConsidering cctf:CCTF16-Rec1Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/16-2004/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/16-2004/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Concerning secondary representations of the second"@en,
+        "Au sujet des représentations secondaires de la seconde"@fr ;
+    rb:isOutcomeOf cctf:CCTF16 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF16-Rec1"^^xsd:string .
+
+cctf:CCTF16-Rec2 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF16-Rec2Action ;
+    rb:hasConsidering cctf:CCTF16-Rec2Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/16-2004/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/16-2004/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "Concerning the reporting and use of primary frequency standards"@en,
+        "Au sujet de l’utilisation des étalons primaires de fréquence et de la publication de leurs résultats"@fr ;
+    rb:isOutcomeOf cctf:CCTF16 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF16-Rec2"^^xsd:string .
+
+cctf:CCTF16-Rec3 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF16-Rec3Action ;
+    rb:hasConsidering cctf:CCTF16-Rec3Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/16-2004/resolution-3"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/16-2004/resolution-3"@fr ;
+    rb:hasOutcomeNr 3 ;
+    rb:hasOutcomeTitle "Concerning the steering of International Atomic Time (TAI)"@en,
+        "Au sujet du pilotage du Temps atomique international (TAI)"@fr ;
+    rb:isOutcomeOf cctf:CCTF16 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF16-Rec3"^^xsd:string .
+
+cctf:CCTF17-Rec1 a rb:Recommendation ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/17-2006/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/17-2006/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Recommended values of standard frequencies for applications including the practical realization  of the metre and secondary representations of the second"@en,
+        "Valeurs recommandées des fréquences étalons destinées à la mise en pratique de la définition du mètre et aux représentations secondaires de la seconde"@fr ;
+    rb:isOutcomeOf cctf:CCTF17 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF17-Rec1"^^xsd:string .
+
+cctf:CCTF17-Rec2 a rb:Recommendation ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/17-2006/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/17-2006/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "Concerning secondary representations of the second"@en,
+        "Au sujet des représentations secondaires de la seconde"@fr ;
+    rb:isOutcomeOf cctf:CCTF17 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF17-Rec2"^^xsd:string .
+
+cctf:CCTF17-Rec3 a rb:Recommendation ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/17-2006/resolution-3"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/17-2006/resolution-3"@fr ;
+    rb:hasOutcomeNr 3 ;
+    rb:hasOutcomeTitle "Concerning the use of measurements of the International Atomic Time (TAI) scale unit"@en,
+        "Au sujet de l’utilisation des mesures de l’unité d’échelle du Temps atomique international (TAI)"@fr ;
+    rb:isOutcomeOf cctf:CCTF17 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF17-Rec3"^^xsd:string .
+
+cctf:CCTF17-Rec4 a rb:Recommendation ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/17-2006/resolution-4"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/17-2006/resolution-4"@fr ;
+    rb:hasOutcomeNr 4 ;
+    rb:hasOutcomeTitle "Concerning the use of Global Navigation Satellite System (GNSS) carrier phase techniques for time and frequency transfer in International Atomic Time (TAI)"@en,
+        "Au sujet de l’utilisation des techniques de mesure de la phase de la porteuse du Global Navigation Satellite System (GNSS) pour les comparaisons de temps et de fréquence du Temps atomique international (TAI)"@fr ;
+    rb:isOutcomeOf cctf:CCTF17 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF17-Rec4"^^xsd:string .
+
+cctf:CCTF17-Rec5 a rb:Recommendation ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/17-2006/resolution-5"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/17-2006/resolution-5"@fr ;
+    rb:hasOutcomeNr 5 ;
+    rb:hasOutcomeTitle "Improvement to Global Navigation Satellite System (GNSS) time transfer"@en,
+        "Amélioration des comparaisons de temps utilisant le Global Navigation Satellite System (GNSS)"@fr ;
+    rb:isOutcomeOf cctf:CCTF17 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF17-Rec5"^^xsd:string .
+
+cctf:CCTF17-Rec6 a rb:Recommendation ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/17-2006/resolution-6"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/17-2006/resolution-6"@fr ;
+    rb:hasOutcomeNr 6 ;
+    rb:hasOutcomeTitle "Coordination of the development of advanced time and frequency transfer techniques"@en,
+        "Coordination de la mise au point de techniques avancées de comparaison de temps et de fréquences"@fr ;
+    rb:isOutcomeOf cctf:CCTF17 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF17-Rec6"^^xsd:string .
+
+cctf:CCTF18-Rec1 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF18-Rec1Action ;
+    rb:hasConsidering cctf:CCTF18-Rec1Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/18-2009/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Updates to the list of standard frequencies"@en,
+        "Mises à jour de la liste des fréquences étalons"@fr ;
+    rb:isOutcomeOf cctf:CCTF18 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF18-Rec1"^^xsd:string .
+
+cctf:CCTF18-Rec2 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF18-Rec2Action ;
+    rb:hasConsidering cctf:CCTF18-Rec2Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/18-2009/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "Characterization of delays of global navigation satellite system (GNSS) equipment in laboratories contributing to International Atomic Time (TAI)"@en,
+        "Caractérisation des retards des équipements de comparaison de temps par systèmes globaux de navigation par satellite (GNSS) des laboratoires contribuant au Temps atomique international (TAI)"@fr ;
+    rb:isOutcomeOf cctf:CCTF18 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF18-Rec2"^^xsd:string .
+
+cctf:CCTF18-Rec3 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF18-Rec3Action ;
+    rb:hasConsidering cctf:CCTF18-Rec3Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-3"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/18-2009/resolution-3"@fr ;
+    rb:hasOutcomeNr 3 ;
+    rb:hasOutcomeTitle "On the weakness of the present definition of UTC"@en,
+        "Au sujet de la faiblesse de la définition actuelle de l’UTC"@fr ;
+    rb:isOutcomeOf cctf:CCTF18 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF18-Rec3"^^xsd:string .
+
+cctf:CCTF18-Rec4 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF18-Rec4Action ;
+    rb:hasConsidering cctf:CCTF18-Rec4Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-4"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/18-2009/resolution-4"@fr ;
+    rb:hasOutcomeNr 4 ;
+    rb:hasOutcomeTitle "Concerning adoption of a common terrestrial reference system by the CGPM"@en,
+        "Concernant l’adoption d’un système de référence terrestre commun par la Conférence générale des poids et mesures"@fr ;
+    rb:isOutcomeOf cctf:CCTF18 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF18-Rec4"^^xsd:string .
+
+cctf:CCTF18-Rec5 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF18-Rec5Action ;
+    rb:hasConsidering cctf:CCTF18-Rec5Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-5"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/18-2009/resolution-5"@fr ;
+    rb:hasOutcomeNr 5 ;
+    rb:hasOutcomeTitle "Alignment of geodetic references and synchronization of time references to international standards"@en,
+        "Alignement des références géodésiques et synchronisation des références de temps par rapport aux références internationales"@fr ;
+    rb:isOutcomeOf cctf:CCTF18 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF18-Rec5"^^xsd:string .
+
+cctf:CCTF18-Rec6 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF18-Rec6Action ;
+    rb:hasConsidering cctf:CCTF18-Rec6Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/18-2009/resolution-6"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/18-2009/resolution-6"@fr ;
+    rb:hasOutcomeNr 6 ;
+    rb:hasOutcomeTitle "Relationship of predictions of local timescales UTC(<i>k</i>) as disseminated by Global Navigation Satellite Systems, to the international reference time scales Universal Coordinated Time (UTC) and International Atomic Time (TAI)"@en,
+        "Relation entre les prédictions des échelles de temps locales UTC(k), disséminées par les systèmes globaux de navigation par satellite (GNSS), et le Temps universel coordonné (UTC) et le Temps atomique international (TAI)"@fr ;
+    rb:isOutcomeOf cctf:CCTF18 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF18-Rec6"^^xsd:string .
+
+cctf:CCTF19-Rec1 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF19-Rec1Action ;
+    rb:hasConsidering cctf:CCTF19-Rec1Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/19-2012/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/19-2012/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Updates to the list of standard frequencies"@en,
+        "Mises à jour de la liste des fréquences étalons"@fr ;
+    rb:isOutcomeOf cctf:CCTF19 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF19-Rec1"^^xsd:string .
+
+cctf:CCTF19-Rec2 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF19-Rec2Action ;
+    rb:hasConsidering cctf:CCTF19-Rec2Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/19-2012/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/19-2012/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "On  improved  internet  services  provided  by  the  BIPM  Time  Department  and   their maintenance"@en,
+        "Concernant l’amélioration et la maintenance des services fournis par le Département du temps du BIPM sur internet"@fr ;
+    rb:isOutcomeOf cctf:CCTF19 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF19-Rec2"^^xsd:string .
+
+cctf:CCTF19-Rec3 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF19-Rec3Action ;
+    rb:hasConsidering cctf:CCTF19-Rec3Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/19-2012/resolution-3"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/19-2012/resolution-3"@fr ;
+    rb:hasOutcomeNr 3 ;
+    rb:hasOutcomeTitle "Regular calculation and publication of rapid UTC (UTCr)"@en,
+        "Calcul et publication d'un UTC rapide (UTCr) de façon régulière"@fr ;
+    rb:isOutcomeOf cctf:CCTF19 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF19-Rec3"^^xsd:string .
+
+cctf:CCTF19-Rec4 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF19-Rec4Action ;
+    rb:hasConsidering cctf:CCTF19-Rec4Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/19-2012/resolution-4"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/19-2012/resolution-4"@fr ;
+    rb:hasOutcomeNr 4 ;
+    rb:hasOutcomeTitle "Concerning the upgrade and calibration of global navigation satellite systems (GNSS) equipment in the timing laboratories contributing to Coordinated Universal Time (UTC) towards multi-frequency, multi-constellation receiving systems"@en,
+        "Sur la mise à niveau des équipements des systèmes globaux de navigation par satellite (GNSS) utilisés dans les laboratoires de temps contribuant au Temps universel coordonné (UTC) vers des systèmes de réception multifréquences et multiconstellations et leur étalonnage"@fr ;
+    rb:isOutcomeOf cctf:CCTF19 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF19-Rec4"^^xsd:string .
+
+cctf:CCTF19-Rec5 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF19-Rec5Action ;
+    rb:hasConsidering cctf:CCTF19-Rec5Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/19-2012/resolution-5"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/19-2012/resolution-5"@fr ;
+    rb:hasOutcomeNr 5 ;
+    rb:hasOutcomeTitle "Development of continental-scale optical fibre time and frequency transfer networks and support to studies of improved methods for intercontinental clock comparison"@en,
+        "Déploiement des réseaux de comparaisons de temps et de fréquences par fibre optique à l'échelle continentale et soutien vis-à-vis des études sur l’amélioration des comparaisons horaires intercontinentales"@fr ;
+    rb:isOutcomeOf cctf:CCTF19 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF19-Rec5"^^xsd:string .
+
+cctf:CCTF19-Rec6 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF19-Rec6Action ;
+    rb:hasConsidering cctf:CCTF19-Rec6Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/19-2012/resolution-6"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/19-2012/resolution-6"@fr ;
+    rb:hasOutcomeNr 6 ;
+    rb:hasOutcomeTitle "A  contribution  from  the  Consultative  Committee  on  Time  and  Frequency   (CCTF) on achieving a continuous reference time scale"@en,
+        "Contribution du Comité consultatif du temps et des fréquences (CCTF) à l’obtention d’une échelle de temps de référence continue"@fr ;
+    rb:isOutcomeOf cctf:CCTF19 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF19-Rec6"^^xsd:string .
+
+cctf:CCTF20-Rec1 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF20-Rec1Action ;
+    rb:hasConsidering cctf:CCTF20-Rec1Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/20-2015/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/20-2015/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Updates to the list of standard frequencies"@en,
+        "Mises à jour de la liste des fréquences étalons"@fr ;
+    rb:isOutcomeOf cctf:CCTF20 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF20-Rec1"^^xsd:string .
+
+cctf:CCTF20-Rec2 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF20-Rec2Action ;
+    rb:hasConsidering cctf:CCTF20-Rec2Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/20-2015/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/20-2015/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "Predictions of UTC disseminated by Global Navigation Satellite Systems (GNSS)"@en,
+        "Prédictions de l’UTC disséminées à l’aide de systèmes globaux de navigation par satellite (GNSS)"@fr ;
+    rb:isOutcomeOf cctf:CCTF20 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF20-Rec2"^^xsd:string .
+
+cctf:CCTF20-Rec3 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF20-Rec3Action ;
+    rb:hasConsidering cctf:CCTF20-Rec3Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/20-2015/resolution-3"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/20-2015/resolution-3"@fr ;
+    rb:hasOutcomeNr 3 ;
+    rb:hasOutcomeTitle "On the GNSS time transfer equipment calibration"@en,
+        "Sur l’étalonnage des équipements de comparaison de temps par GNSS"@fr ;
+    rb:isOutcomeOf cctf:CCTF20 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF20-Rec3"^^xsd:string .
+
+cctf:CCTF20-Rec4 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF20-Rec4Action ;
+    rb:hasConsidering cctf:CCTF20-Rec4Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/20-2015/resolution-4"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/20-2015/resolution-4"@fr ;
+    rb:hasOutcomeNr 4 ;
+    rb:hasOutcomeTitle "On the Common Generic GNSS Time Transfer Standard (CGGTTS)"@en,
+        "Sur la procédure « Common Generic GNSS Time Transfer Standard » (CGGTTS)"@fr ;
+    rb:isOutcomeOf cctf:CCTF20 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF20-Rec4"^^xsd:string .
+
+cctf:CCTF20-Rec5 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF20-Rec5Action ;
+    rb:hasConsidering cctf:CCTF20-Rec5Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/20-2015/resolution-5"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/20-2015/resolution-5"@fr ;
+    rb:hasOutcomeNr 5 ;
+    rb:hasOutcomeTitle "On the design of Global Navigation Satellite System (GNSS) receivers"@en,
+        "Sur la conception des récepteurs des systèmes globaux de navigation par satellite (GNSS)"@fr ;
+    rb:isOutcomeOf cctf:CCTF20 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF20-Rec5"^^xsd:string .
+
+cctf:CCTF20-Rec6 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF20-Rec6Action ;
+    rb:hasConsidering cctf:CCTF20-Rec6Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/20-2015/resolution-6"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/20-2015/resolution-6"@fr ;
+    rb:hasOutcomeNr 6 ;
+    rb:hasOutcomeTitle "Development of national and international time and frequency links to  improve methods for intercontinental clock comparisons and for  dissemination to stakeholder"@en,
+        "Développement des liaisons nationales et internationales afin d’améliorer les méthodes intercontinentales de comparaison d’horloges et de dissémination des données de temps et de fréquence aux parties prenantes"@fr ;
+    rb:isOutcomeOf cctf:CCTF20 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF20-Rec6"^^xsd:string .
+
+cctf:CCTF20-Rec7 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF20-Rec7Action ;
+    rb:hasConsidering cctf:CCTF20-Rec7Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/20-2015/resolution-7"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/20-2015/resolution-7"@fr ;
+    rb:hasOutcomeNr 7 ;
+    rb:hasOutcomeTitle "On the operation and maintenance of Two-Way Satellite Time and Frequency  Transfer  (TWSTFT)  networks  for  international  atomic  clock  and  time  scale  comparisons"@en,
+        "Sur la mise en oeuvre et la maintenance des réseaux de comparaison de temps et de fréquences par aller et retour par satellite (TWSTFT) pour les comparaisons internationales des horloges atomiques et des échelles de temps"@fr ;
+    rb:isOutcomeOf cctf:CCTF20 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF20-Rec7"^^xsd:string .
+
+cctf:CCTF21-Rec1 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF21-Rec1Action ;
+    rb:hasConsidering cctf:CCTF21-Rec1Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/21-2017/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/21-2017/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Recommendations for operating, comparing and reporting frequency standards as secondary representations of the second in preparation for a redefinition of the second by optical transitions"@en,
+        "Recommandations sur l’utilisation et la comparaison des étalons de fréquence comme représentations secondaires de la seconde, ainsi que sur la communication de leurs résultats, en vue d’une redéfinition de la seconde fondée sur des transitions optiques"@fr ;
+    rb:isOutcomeOf cctf:CCTF21 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF21-Rec1"^^xsd:string .
+
+cctf:CCTF21-Rec2 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF21-Rec2Action ;
+    rb:hasConsidering cctf:CCTF21-Rec2Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/21-2017/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/21-2017/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "Updates to the CIPM list of standard frequencies"@en,
+        "Mises à jour de la liste des fréquences étalons du CIPM"@fr ;
+    rb:isOutcomeOf cctf:CCTF21 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF21-Rec2"^^xsd:string .
+
+cctf:CCTF21-Rec3 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF21-Rec3Action ;
+    rb:hasConsidering cctf:CCTF21-Rec3Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/21-2017/resolution-3"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/21-2017/resolution-3"@fr ;
+    rb:hasOutcomeNr 3 ;
+    rb:hasOutcomeTitle "Recommendation on the definition of time scales"@en,
+        "Recommandation sur la définition des échelles de temps"@fr ;
+    rb:isOutcomeOf cctf:CCTF21 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF21-Rec3"^^xsd:string .
+
+cctf:CCTF21-Rec4 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF21-Rec4Action ;
+    rb:hasConsidering cctf:CCTF21-Rec4Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/21-2017/resolution-4"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/21-2017/resolution-4"@fr ;
+    rb:hasOutcomeNr 4 ;
+    rb:hasOutcomeTitle "On the utilization and monitoring of redundant time transfer equipment in the  timing laboratories contributing to UTC"@en,
+        "Sur l’utilisation et le contrôle des équipements de comparaison de temps redondants dans les laboratoires de temps participant au calcul de l’UTC"@fr ;
+    rb:isOutcomeOf cctf:CCTF21 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF21-Rec4"^^xsd:string .
+
+cctf:CCTF21-Rec5 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF21-Rec5Action ;
+    rb:hasConsidering cctf:CCTF21-Rec5Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/21-2017/resolution-5"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/21-2017/resolution-5"@fr ;
+    rb:hasOutcomeNr 5 ;
+    rb:hasOutcomeTitle "On  improving  the  uncertainty  of  Two-Way Satellite Time  and  Frequency   Transfer (TWSTFT) for UTC Generation"@en,
+        "Sur l’amélioration de l’incertitude des comparaisons de temps et de fréquence par aller et retour sur satellite (TWSTFT) dans le cadre du calcul de l’UTC"@fr ;
+    rb:isOutcomeOf cctf:CCTF21 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF21-Rec5"^^xsd:string .
+
+cctf:CCTF5-Rec1 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF5-Rec1Action ;
+    rb:hasConsidering cctf:CCTF5-Rec1Considering ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/5-1970/resolution-1"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/5-1970/resolution-1"@fr ;
+    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeTitle "Proposition d'adoption d'une échelle de Temps Atomique International"@en,
+        "Proposition d'adoption d'une échelle de Temps Atomique International"@fr ;
+    rb:isOutcomeOf cctf:CCTF5 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF5-Rec1"^^xsd:string .
+
+cctf:CCTF5-Rec2 a rb:Recommendation ;
+    rb:hasAction cctf:CCTF5-Rec2Action ;
+    rb:hasDOI "https://www.bipm.org/en/committees/cc/cctf/5-1970/resolution-2"@en,
+        "https://www.bipm.org/fr/committees/cc/cctf/5-1970/resolution-2"@fr ;
+    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeTitle "Definition of TAI"@en,
+        "Définition du Temps Atomique International"@fr ;
+    rb:isOutcomeOf cctf:CCTF5 ;
+    rb:wasAdoptedBy cctf:CCTF ;
+    skos:hiddenLabel "CCTF5-Rec2"^^xsd:string .
+
+cctf:CCTF5 a rb:Event ;
+    rb:hasEventDate "1970-06-19"^^xsd:date ;
+    rb:hasEventNr "5" ;
+    rb:hasOutcome cctf:CCTF5-Rec1,
+        cctf:CCTF5-Rec2 ;
+    skos:hiddenLabel "CCTF5"^^xsd:string ;
+    skos:prefLabel "5th meeting of the CCTF then CCDS"@en,
+        "5e réunion du CCTF à l'époque CCDS"@fr .
+
+cctf:CCTF16 a rb:Event ;
+    rb:hasEventDate "2004-04-02"^^xsd:date ;
+    rb:hasEventNr "16" ;
+    rb:hasOutcome cctf:CCTF16-Rec1,
+        cctf:CCTF16-Rec2,
+        cctf:CCTF16-Rec3 ;
+    skos:hiddenLabel "CCTF16"^^xsd:string ;
+    skos:prefLabel "16th meeting of the CCTF"@en,
+        "16e réunion du CCTF"@fr .
+
+cctf:CCTF15 a rb:Event ;
+    rb:hasEventDate "2001-06-21"^^xsd:date ;
+    rb:hasEventNr "15" ;
+    rb:hasOutcome cctf:CCTF15-Rec1,
+        cctf:CCTF15-Rec2,
+        cctf:CCTF15-Rec3,
+        cctf:CCTF15-Rec4,
+        cctf:CCTF15-Rec5 ;
+    skos:hiddenLabel "CCTF15"^^xsd:string ;
+    skos:prefLabel "15th meeting of the CCTF"@en,
+        "15e réunion du CCTF"@fr .
+
+cctf:CCTF21 a rb:Event ;
+    rb:hasEventDate "2017-06-09"^^xsd:date ;
+    rb:hasEventNr "21" ;
+    rb:hasOutcome cctf:CCTF21-Rec1,
+        cctf:CCTF21-Rec2,
+        cctf:CCTF21-Rec3,
+        cctf:CCTF21-Rec4,
+        cctf:CCTF21-Rec5 ;
+    skos:hiddenLabel "CCTF21"^^xsd:string ;
+    skos:prefLabel "21st meeting of the CCTF"@en,
+        "21e réunion du CCTF"@fr .
+
+cctf:CCTF17 a rb:Event ;
+    rb:hasEventDate "2006-09-15"^^xsd:date ;
+    rb:hasEventNr "17" ;
+    rb:hasOutcome cctf:CCTF17-Rec1,
+        cctf:CCTF17-Rec2,
+        cctf:CCTF17-Rec3,
+        cctf:CCTF17-Rec4,
+        cctf:CCTF17-Rec5,
+        cctf:CCTF17-Rec6 ;
+    skos:hiddenLabel "CCTF17"^^xsd:string ;
+    skos:prefLabel "17th meeting of the CCTF"@en,
+        "17e réunion du CCTF"@fr .
+
+cctf:CCTF18 a rb:Event ;
+    rb:hasEventDate "2009-06-05"^^xsd:date ;
+    rb:hasEventNr "18" ;
+    rb:hasOutcome cctf:CCTF18-Rec1,
+        cctf:CCTF18-Rec2,
+        cctf:CCTF18-Rec3,
+        cctf:CCTF18-Rec4,
+        cctf:CCTF18-Rec5,
+        cctf:CCTF18-Rec6 ;
+    skos:hiddenLabel "CCTF18"^^xsd:string ;
+    skos:prefLabel "18th meeting of the CCTF"@en,
+        "18e réunion du CCTF"@fr .
+
+cctf:CCTF19 a rb:Event ;
+    rb:hasEventDate "2012-09-14"^^xsd:date ;
+    rb:hasEventNr "19" ;
+    rb:hasOutcome cctf:CCTF19-Rec1,
+        cctf:CCTF19-Rec2,
+        cctf:CCTF19-Rec3,
+        cctf:CCTF19-Rec4,
+        cctf:CCTF19-Rec5,
+        cctf:CCTF19-Rec6 ;
+    skos:hiddenLabel "CCTF19"^^xsd:string ;
+    skos:prefLabel "19th meeting of the CCTF"@en,
+        "19e réunion du CCTF"@fr .
+
+cctf:CCTF20 a rb:Event ;
+    rb:hasEventDate "2015-09-18"^^xsd:date ;
+    rb:hasEventNr "20" ;
+    rb:hasOutcome cctf:CCTF20-Rec1,
+        cctf:CCTF20-Rec2,
+        cctf:CCTF20-Rec3,
+        cctf:CCTF20-Rec4,
+        cctf:CCTF20-Rec5,
+        cctf:CCTF20-Rec6,
+        cctf:CCTF20-Rec7 ;
+    skos:hiddenLabel "CCTF20"^^xsd:string ;
+    skos:prefLabel "20th meeting of the CCTF"@en,
+        "20e réunion du CCTF"@fr .
+
+cctf:CCTF a rb:ResBod ;
+    rb:hasAdopted cctf:CCTF15-Rec1,
+        cctf:CCTF15-Rec2,
+        cctf:CCTF15-Rec3,
+        cctf:CCTF15-Rec4,
+        cctf:CCTF15-Rec5,
+        cctf:CCTF16-Rec1,
+        cctf:CCTF16-Rec2,
+        cctf:CCTF16-Rec3,
+        cctf:CCTF17-Rec1,
+        cctf:CCTF17-Rec2,
+        cctf:CCTF17-Rec3,
+        cctf:CCTF17-Rec4,
+        cctf:CCTF17-Rec5,
+        cctf:CCTF17-Rec6,
+        cctf:CCTF18-Rec1,
+        cctf:CCTF18-Rec2,
+        cctf:CCTF18-Rec3,
+        cctf:CCTF18-Rec4,
+        cctf:CCTF18-Rec5,
+        cctf:CCTF18-Rec6,
+        cctf:CCTF19-Rec1,
+        cctf:CCTF19-Rec2,
+        cctf:CCTF19-Rec3,
+        cctf:CCTF19-Rec4,
+        cctf:CCTF19-Rec5,
+        cctf:CCTF19-Rec6,
+        cctf:CCTF20-Rec1,
+        cctf:CCTF20-Rec2,
+        cctf:CCTF20-Rec3,
+        cctf:CCTF20-Rec4,
+        cctf:CCTF20-Rec5,
+        cctf:CCTF20-Rec6,
+        cctf:CCTF20-Rec7,
+        cctf:CCTF21-Rec1,
+        cctf:CCTF21-Rec2,
+        cctf:CCTF21-Rec3,
+        cctf:CCTF21-Rec4,
+        cctf:CCTF21-Rec5,
+        cctf:CCTF5-Rec1,
+        cctf:CCTF5-Rec2 ;
+    rb:hasEvent cctf:CCTF14,
+        cctf:CCTF15,
+        cctf:CCTF16,
+        cctf:CCTF17,
+        cctf:CCTF18,
+        cctf:CCTF19,
+        cctf:CCTF20,
+        cctf:CCTF21,
+        cctf:CCTF22-1,
+        cctf:CCTF22-2,
+        cctf:CCTF23,
+        cctf:CCTF24-1,
+        cctf:CCTF24-2,
+        cctf:CCTF5 .
+

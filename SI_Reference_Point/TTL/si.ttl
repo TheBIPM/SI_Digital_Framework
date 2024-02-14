@@ -1,0 +1,493 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rb: <http://si-digital-framework.org/bodies#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix si: <http://si-digital-framework.org/SI#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+si: a owl:Ontology ;
+    dcterms:created "2023-12-22"^^xsd:date,
+        "2024-02-14"^^xsd:date ;
+    rdfs:comment "Ontology, part of the SI reference point, providing base concepts and their relations."^^xsd:string ;
+    skos:prefLabel "SI Reference Point - Base Ontology"^^xsd:string .
+
+si:QuantityKindPower a owl:Class ;
+    rdfs:label "quantitykind power"@en,
+        "quantité élevée à la puissance"@fr ;
+    rdfs:subClassOf si:CompoundQuantityKind .
+
+si:QuantityKindProduct a owl:Class ;
+    rdfs:label "quantitykind product"@en,
+        "produit de quantités"@fr ;
+    rdfs:subClassOf si:CompoundQuantityKind .
+
+si:UnitMultiple a owl:Class ;
+    rdfs:label "unit multiple"@en,
+        "multiple d'unité"@fr ;
+    rdfs:subClassOf si:CompoundUnit .
+
+si:correspondingResolution a owl:DatatypeProperty ;
+    rdfs:label "has corresponding resolution"@en,
+        "a pour résolution correspondante"@fr ;
+    rdfs:domain si:SIDecision .
+
+si:hasConversionFactor a owl:DatatypeProperty ;
+    rdfs:label "has a conversion factor"@en,
+        "a un facteur de conversion"@fr ;
+    rdfs:comment "The conversion factor between non-SI unit and an SI Unit (number SI unit contained in 1 non SI unit)"@en,
+        "Le facteur de conversion entre l'unité non SI et l'unité dans le SI (nombre d'unité de contenu dans l'unité non-SI)"@fr ;
+    rdfs:domain si:nonSIUnit ;
+    rdfs:range rdfs:Literal .
+
+si:hasConversionUnit a owl:ObjectProperty ;
+    rdfs:label "has conversion unit"@en,
+        "a une unité de conversion"@fr ;
+    rdfs:comment "SI unit to which the non SI unit can be converted"@en,
+        "Unité SI dans laquelle l'unité non SI peut être convertie"@fr ;
+    rdfs:domain si:nonSIUnit ;
+    rdfs:range si:MeasurementUnit .
+
+si:hasDatatype a owl:ObjectProperty ;
+    rdfs:label "has datatype"@en,
+        "a un type de données"@fr ;
+    rdfs:domain [ owl:oneOf ( si:Constant si:SIPrefix ) ] .
+
+si:hasDecision a owl:DatatypeProperty ;
+    rdfs:label "has decision"@en,
+        "a pour décision"@fr ;
+    rdfs:domain si:SIDecisionTarget ;
+    rdfs:range si:SIDecision ;
+    owl:inverseOf si:isDecisionOf .
+
+si:hasDefiningConstant a owl:ObjectProperty ;
+    rdfs:label "has defining constant"@en,
+        "a une constante de définition"@fr ;
+    rdfs:comment "Linking a definition to its defining constant."@en,
+        "Associer une définition à sa constante de définition."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range si:Constant .
+
+si:hasDefiningEquation a owl:DatatypeProperty ;
+    rdfs:label "has defining equation"@en,
+        "a une équation de définition"@fr ;
+    rdfs:comment "Linking a SI definition to its defining equation."@en,
+        "Associer une définition SI à son équation de définition."@fr ;
+    rdfs:domain [ owl:oneOf ( si:Definition si:Constant ) ] ;
+    rdfs:range rdfs:Literal .
+
+si:hasDefiningText a owl:DatatypeProperty ;
+    rdfs:label "has defining text"@en,
+        "a un texte de définition"@fr ;
+    rdfs:comment "Linking an SI definition to the defining text."@en,
+        "Associer une définition SI au texte de définition."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range rdfs:Literal .
+
+si:hasDefinition a owl:ObjectProperty ;
+    rdfs:label "has definition"@en,
+        "a une définition"@fr ;
+    rdfs:comment "Linking an SI base unit to its definition."@en,
+        "Associer une unité de base SI à sa définition."@fr ;
+    rdfs:domain si:SIBaseUnit ;
+    rdfs:range si:Definition .
+
+si:hasDefinitionNote a owl:ObjectProperty ;
+    rdfs:label "has definition note"@en,
+        "a une note de définition"@fr ;
+    rdfs:comment "Linking an SI definition to a definition note."@en,
+        "Associer une définition SI à une note de définition."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range si:DefinitionNote .
+
+si:hasEndValidity a owl:DatatypeProperty ;
+    rdfs:label "has end validity"@en,
+        "a fin de validité"@fr ;
+    rdfs:comment "Linking an SI definition to its ending validity date."@en,
+        "Associer une définition SI à sa date de fin de validité."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range xsd:date .
+
+si:hasLeftQuantityTerm a owl:ObjectProperty ;
+    rdfs:label "has left quantity term"@en,
+        "a pour terme de gauche cette quantité"@fr ;
+    rdfs:comment "preserve order of multiplication" ;
+    rdfs:domain si:QuantityProduct ;
+    rdfs:range si:QuantityKind ;
+    rdfs:subPropertyOf si:hasQuantityTerm .
+
+si:hasLeftUnitTerm a owl:ObjectProperty ;
+    rdfs:label "has left unit term"@en,
+        "a pour terme de gauche cette unité"@fr ;
+    rdfs:comment "preserve order of multiplication" ;
+    rdfs:domain si:UnitProduct ;
+    rdfs:range si:MeasurementUnit ;
+    rdfs:subPropertyOf si:hasUnitTerm .
+
+si:hasNonPrefixedUnit a owl:ObjectProperty ;
+    rdfs:label "has non prefixed unit"@en,
+        "a pour unité sans préfixe"@fr ;
+    rdfs:comment "<Prefix> and <NonPrefixedUnit> form a <PrefixedUnit>" ;
+    rdfs:domain si:PrefixedUnit ;
+    rdfs:range si:MeasurementUnit .
+
+si:hasNoteIndex a owl:DatatypeProperty ;
+    rdfs:label "has note index"@en,
+        "a un texte de note"@fr ;
+    rdfs:comment "The text of a definition note."@en,
+        "Le texte d'une note de définition."@fr ;
+    rdfs:domain si:DefinitionNote ;
+    rdfs:range rdfs:Literal .
+
+si:hasNoteText a owl:DatatypeProperty ;
+    rdfs:label "has note text"@en,
+        "a un index de notes"@fr ;
+    rdfs:comment "The order index of a definition note."@en,
+        "Index d'ordre d'une note de définition."@fr ;
+    rdfs:domain si:DefinitionNote ;
+    rdfs:range rdfs:Literal .
+
+si:hasNumericExponent a owl:DatatypeProperty ;
+    rdfs:label "has numeric exponent"@en,
+        "a pour exposant ce nombre"@fr ;
+    rdfs:comment "UnitBase ^ NumericExponent" ;
+    rdfs:domain si:UnitPower ;
+    rdfs:range xsd:short .
+
+si:hasNumericFactor a owl:DatatypeProperty ;
+    rdfs:label "has numeric factor"@en,
+        "a pour facteur ce nombre"@fr ;
+    rdfs:domain si:MeasurementUnit ;
+    rdfs:subPropertyOf si:hasTerm .
+
+si:hasNumericFactorAsString a owl:DatatypeProperty ;
+    rdfs:label "has numeric factor represented by this string"@en,
+        "a pour facteur le nombre correspondant à cette chaine"@fr ;
+    rdfs:domain si:MeasurementUnit ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf si:hasTerm .
+
+si:hasPrefix a owl:ObjectProperty ;
+    rdfs:label "has prefix"@en,
+        "a pour préfixe"@fr ;
+    rdfs:comment "<Prefix> and <NonPrefixedUnit> form a <PrefixedUnit>" ;
+    rdfs:domain si:PrefixedUnit ;
+    rdfs:range si:SIPrefix .
+
+si:hasQuantityBase a owl:ObjectProperty ;
+    rdfs:label "has quantity base"@en,
+        "a pour base cette quantité"@fr ;
+    rdfs:comment "QuantityBase ^ NumericExponent" ;
+    rdfs:domain si:QuantityPower ;
+    rdfs:range si:MeasurementUnit ;
+    rdfs:subPropertyOf si:hasBase .
+
+si:hasRightQuantityTerm a owl:ObjectProperty ;
+    rdfs:label "has right quantity term"@en,
+        "a pour terme de droite cette quantité"@fr ;
+    rdfs:comment "preserve order of multiplication" ;
+    rdfs:domain si:QuantityProduct ;
+    rdfs:range si:QuantityKind ;
+    rdfs:subPropertyOf si:hasQuantityTerm .
+
+si:hasRightUnitTerm a owl:ObjectProperty ;
+    rdfs:label "has right unit term"@en,
+        "a pour terme de droite cette unité"@fr ;
+    rdfs:comment "preserve order of multiplication" ;
+    rdfs:domain si:UnitProduct ;
+    rdfs:range si:MeasurementUnit ;
+    rdfs:subPropertyOf si:hasUnitTerm .
+
+si:hasStatus a owl:DatatypeProperty ;
+    rdfs:label "has status"@en,
+        "a l'état"@fr ;
+    rdfs:comment "Linking a SI definition to its status."@en,
+        "Associer une définition SI à son état."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range rdfs:Literal .
+
+si:hasSymbol a owl:DatatypeProperty ;
+    rdfs:label "has symbol"@en,
+        "a pour symbole"@fr ;
+    rdfs:comment "Linking a measurement unit or prefix to a symbol."@en,
+        "Associer une unité de mesure ou un préfixe à un symbole."@fr ;
+    rdfs:range xsd:string .
+
+si:hasTarget a owl:DatatypeProperty ;
+    rdfs:label "has target"@en,
+        "a pour cible"@fr ;
+    rdfs:domain si:SIDecisionScope ;
+    rdfs:range si:SIDecisionTarget ;
+    owl:inverseOf si:isTargetOf .
+
+si:hasUnit a owl:ObjectProperty ;
+    rdfs:label "has unit"@en,
+        "a l'unité"@fr ;
+    rdfs:comment "Linking a measurement unit to an object."@en,
+        "Associer une unité de mesure à un objet."@fr ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( si:Constant si:QuantityKind ) ] ;
+    rdfs:range si:MeasurementUnit .
+
+si:hasUnitBase a owl:ObjectProperty ;
+    rdfs:label "has unit base"@en,
+        "a pour base cette unité"@fr ;
+    rdfs:comment "UnitBase ^ NumericExponent" ;
+    rdfs:domain si:UnitPower ;
+    rdfs:range si:MeasurementUnit ;
+    rdfs:subPropertyOf si:hasBase .
+
+si:hasUnitTypeAsString a owl:DatatypeProperty ;
+    rdfs:label "unit type as a string"@en,
+        "type d'unité sous forme de chaîne"@fr ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( si:SIBaseUnit si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) ] ;
+    rdfs:range rdfs:Literal .
+
+si:hasUpdatedDate a owl:DatatypeProperty ;
+    rdfs:label "has updated date"@en,
+        "a mis à jour la date"@fr ;
+    rdfs:domain si:Constant ;
+    rdfs:range xsd:date .
+
+si:hasValue a owl:DatatypeProperty ;
+    rdfs:label "has value"@en,
+        "a de la valeur"@fr ;
+    rdfs:domain si:Constant ;
+    rdfs:range rdfs:Literal .
+
+si:hasValueAsString a owl:DatatypeProperty ;
+    rdfs:label "has value as a string"@en,
+        "a une valeur sous forme de chaîne"@fr ;
+    rdfs:domain si:Constant ;
+    rdfs:range xsd:string .
+
+si:inBaseSIUnits a owl:ObjectProperty ;
+    rdfs:label "can be expressed in base SI units as"@en,
+        "peut être exprimé en unités SI de base sous la forme"@fr ;
+    rdfs:range si:MeasurementUnit .
+
+si:inOtherSIUnits a owl:ObjectProperty ;
+    rdfs:label "can be expressed in other SI units as"@en,
+        "peut être exprimé dans d’autres unités SI sous la forme"@fr ;
+    rdfs:range si:MeasurementUnit .
+
+si:isDefiningResolutionOf a owl:ObjectProperty ;
+    rdfs:label "is defining resolution of"@en,
+        "définit la résolution de"@fr ;
+    rdfs:comment "Linking a resolution to the SI definition it defined."@en,
+        "Associer une résolution à la définition SI qu'elle a définie."@fr ;
+    rdfs:domain rb:Resolution ;
+    rdfs:range [ owl:oneOf ( si:Definition si:Constant ) ] ;
+    owl:inverseOf si:hasDefiningResolution .
+
+si:isUnitOfQtyKind a owl:ObjectProperty ;
+    rdfs:label "is unit of quantity kind"@en,
+        "est une unité de quantité"@fr ;
+    rdfs:comment "Linking a measurement unit to its quantity kind."@en,
+        "Associer une unité de mesure à son type de quantité."@fr ;
+    rdfs:domain si:MeasurementUnit ;
+    rdfs:range si:QuantityKind .
+
+si:prefixRestriction a owl:DataTypeProperty ;
+    rdfs:label "Limitation of the possible prefixes"@en,
+        "Limitation des préfixes possibles"@fr ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( si:SIBaseUnit si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) ] ;
+    rdfs:range xsd:Boolean .
+
+si:hasDefiningResolution a owl:ObjectProperty ;
+    rdfs:label "has defining resolution"@en,
+        "a une résolution déterminante"@fr ;
+    rdfs:comment "Linking an SI definition to the resolution by which it was adopted."@en,
+        "Associer une définition SI à la résolution par laquelle elle a été adoptée."@fr ;
+    rdfs:domain [ owl:oneOf ( si:Definition si:Constant ) ] ;
+    rdfs:range rb:Resolution .
+
+si:hasNextDefinition a owl:ObjectProperty ;
+    rdfs:label "has next definition"@en,
+        "a la prochaine définition"@fr ;
+    rdfs:comment "Linking an SI definition version to the next version."@en,
+        "Associer une version de définition SI à la version suivante."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range si:Definition ;
+    owl:inverseOf si:hasPreviousDefinition .
+
+si:hasPreviousDefinition a owl:ObjectProperty ;
+    rdfs:label "has previous definition"@en,
+        "a la définition précédente"@fr ;
+    rdfs:comment "Linking an SI definition version to the previous version."@en,
+        "Associer une version de définition SI à la version précédente."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range si:Definition ;
+    owl:inverseOf si:hasNextDefinition .
+
+si:hasScalingFactor a owl:DatatypeProperty ;
+    rdfs:label "has scaling factor"@en,
+        "a un facteur d'échelle"@fr ;
+    rdfs:comment "Linking an SI prefix to its scaling factor."@en,
+        "Associer un préfixe SI à son facteur d'échelle."@fr ;
+    rdfs:domain si:SIPrefix ;
+    rdfs:range rdfs:Literal .
+
+si:hasStartValidity a owl:DatatypeProperty ;
+    rdfs:label "has start validity"@en,
+        "a une validité de départ"@fr ;
+    rdfs:comment "Linking an SI definition to its starting validity date."@en,
+        "Associer une définition SI à sa date de début de validité."@fr ;
+    rdfs:domain si:Definition ;
+    rdfs:range xsd:date .
+
+si:isDecisionOf a owl:DatatypeProperty ;
+    rdfs:label "is decision of"@en,
+        "est la décision de"@fr ;
+    rdfs:domain si:SIDecision ;
+    rdfs:range si:SIDecisionTarget .
+
+si:isTargetOf a owl:DatatypeProperty ;
+    rdfs:label "is target of"@en,
+        "est la cible de"@fr ;
+    rdfs:domain si:DecisionTarget ;
+    rdfs:range si:SIDecisionScope .
+
+si:CompoundQuantityKind a owl:Class ;
+    rdfs:label "compound quantitykind"@en,
+        "quantité composée"@fr ;
+    rdfs:subClassOf si:QuantityKind .
+
+si:PrefixedUnit a owl:Class ;
+    rdfs:label "prefixed unit"@en,
+        "unité précédée d'un préfixe"@fr ;
+    rdfs:subClassOf si:CompoundUnit .
+
+si:SIDecisionScope rdfs:label "SI Decision scope"@en,
+        "Champ de la décision SI"@fr ;
+    rdfs:comment "The class for SI decisions scopes."@en,
+        "La classe pour les champs de décisions SI."@fr .
+
+si:UnitPower a owl:Class ;
+    rdfs:label "unit power"@en,
+        "unité élevée à la puissance"@fr ;
+    rdfs:subClassOf si:CompoundUnit .
+
+si:UnitProduct a owl:Class ;
+    rdfs:label "unit product"@en,
+        "produit d'unités"@fr ;
+    rdfs:subClassOf si:CompoundUnit .
+
+si:hasBase a owl:ObjectProperty ;
+    rdfs:label "has base"@en,
+        "a pour base"@fr ;
+    rdfs:comment "Base ^ NumericExponent" .
+
+si:hasQuantityTerm a owl:ObjectProperty ;
+    rdfs:label "has quantity term"@en,
+        "a pour terme cette quantité"@fr ;
+    rdfs:subPropertyOf si:hasTerm .
+
+si:hasUnitTerm a owl:ObjectProperty ;
+    rdfs:label "has unit term"@en,
+        "a cette unité pour terme"@fr ;
+    rdfs:subPropertyOf si:hasTerm .
+
+si:DefinitionNote a owl:Class ;
+    rdfs:label "unit definition note"@en,
+        "note de définition d'unité"@fr ;
+    rdfs:comment "The class for notes related SI unit definitions."@en,
+        "La classe pour les définitions d'unités SI liées aux notes."@fr .
+
+si:SIDecision a owl:Class ;
+    rdfs:label "SI Decision"@en,
+        "Décision SI"@fr ;
+    rdfs:comment "The class for SI decisions."@en,
+        "La classe pour les décisions SI."@fr .
+
+si:SIDecisionTarget a owl:Class ;
+    rdfs:label "SI Decision target"@en,
+        "Cible d'une décision SI"@fr ;
+    rdfs:comment "The class for SI decisions target."@en,
+        "La classe pour les cibles de décisions SI."@fr .
+
+si:CompoundUnit a owl:Class ;
+    rdfs:label "compound unit"@en,
+        "unité composée"@fr ;
+    rdfs:subClassOf si:MeasurementUnit .
+
+si:SIBaseUnit a owl:Class ;
+    rdfs:label "base unit"@en,
+        "unité de base"@fr ;
+    rdfs:comment "Class of SI base units. Several definitions can be attached to this class to represent definitions of the BaseUnit throughout time."@en,
+        "La classe des unités de base SI. Plusieurs définitions peuvent être attachées à cette classe pour représenter les définitions de l'unité de base en question à travers les temps."@fr ;
+    rdfs:isDefinedBy "VIM3 1.10" ;
+    rdfs:subClassOf si:MeasurementUnit ;
+    owl:disjointWith si:SISpecialNamedUnit,
+        si:nonSIUnit .
+
+si:SISpecialNamedUnit a owl:Class ;
+    rdfs:label "SI unit with special name"@en,
+        "unité SI avec nom spécial"@fr ;
+    rdfs:comment "Class for the units of the SI that are not base units but have a special name."@en,
+        "La classe des unités du SI qui ne sont pas des unités de base mais qui ont un nom spécial."@fr ;
+    rdfs:subClassOf si:MeasurementUnit ;
+    owl:disjointWith si:nonSIUnit .
+
+si:hasTerm a owl:ObjectProperty ;
+    rdfs:label "has a term"@en,
+        "a pour terme"@fr .
+
+si:SIPrefix a owl:Class ;
+    rdfs:label "SI prefix"@en,
+        "préfixe SI"@fr ;
+    rdfs:comment "The class for SI Prefixes."@en,
+        "La classe pour les préfixes SI."@fr ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:int ;
+            owl:onProperty si:hasScalingFactor ] .
+
+si:QuantityKind a owl:Class ;
+    rdfs:label "kind of quantity"@en,
+        "nature de grandeur"@fr ;
+    rdfs:comment "Class for the quantity kinds."@en,
+        "La classe pour les types de quantité."@fr ;
+    rdfs:isDefinedBy "VIM3 1.2"^^xsd:string .
+
+si:nonSIUnit a owl:Class ;
+    rdfs:label "non SI unit"@en,
+        "unité en dehors du SI"@fr ;
+    rdfs:comment "Non-SI units that are accepted for use with the SI"@en,
+        "Unités en dehors du SI dont l’usage est accepté avec le SI"@fr ;
+    rdfs:subClassOf si:MeasurementUnit .
+
+si:Constant a owl:Class ;
+    rdfs:label "defining constant"@en,
+        "définir la constante"@fr ;
+    rdfs:comment "Class for the seven defining constants of the SI."@en,
+        "La classe pour les sept constantes définissant le SI."@fr ;
+    owl:disjointWith si:QuantityKind .
+
+si:Definition a owl:Class ;
+    rdfs:label "definition of a base unit"@en,
+        "définition d'une unité de base"@fr ;
+    rdfs:comment "The class for definitions of an SI base unit."@en,
+        "La classe pour les notes sur les définitions des unités SI."@fr ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:int ;
+            owl:onProperty si:hasStartValidity ] .
+
+si:MeasurementUnit a owl:Class ;
+    rdfs:label "measurement unit"@en,
+        "unité de mesure"@fr ;
+    rdfs:comment "Class for all measurement units."@en,
+        "La classe pour toutes les unités de mesure."@fr ;
+    rdfs:isDefinedBy "VIM3 1.9" ;
+    owl:disjointWith si:Constant,
+        si:QuantityKind,
+        si:SIPrefix .
+
+[] rdf:first si:SIBaseUnit ;
+    rdf:rest ( si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) .
+
+[] rdf:first si:Constant ;
+    rdf:rest ( si:SIPrefix ) .
+
