@@ -6,7 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 rb: a owl:Ontology ;
-    dcterms:created "2024-02-14"^^xsd:date ;
+    dcterms:created "2024-02-22"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI Reference Point, covering the Responsible Bodies and their resolutions, decisions, etc"^^xsd:string ;
     skos:prefLabel "SI Reference Point - Responsible Bodies"^^xsd:string .
 

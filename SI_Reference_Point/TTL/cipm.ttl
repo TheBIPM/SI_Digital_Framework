@@ -7,7 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 cipm: a owl:Ontology ;
-    dcterms:created "2024-02-14"^^xsd:date ;
+    dcterms:created "2024-02-22"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI Reference Point, covering the resolutions, decisions, etc of the CIPM."^^xsd:string ;
     skos:prefLabel "SI Reference Point - CIPM meetings and outcomes"^^xsd:string .
 
@@ -486,11 +486,11 @@ cipm:CIPM102-1-Dec102-9Action rb:hasActionText "decided to charge the CIPM _ad h
 cipm:CIPM102-1-Rec1Action rb:hasActionText """*recommends* the following changes to the list of “Recommended values of standard frequencies for applications including the practical realization of the metre and secondary representations of the second”:
 
 * that the following transition frequency be added to the list:
-** the unperturbed optical transition 6s^2^ ^1^S~0~ - 6s 6p ^3^P~0~ of the ^199^ Hg neutral atom with a frequency of stem:[1 128 575 290 808 162 "Hz"] and an estimated relative standard uncertainty of 1.7  × stem:[10^(-14)];
+** the unperturbed optical transition 6s^2^ ^1^S~0~ - 6s 6p ^3^P~0~ of the ^199^ Hg neutral atom with a frequency of stem:[1 128 575 290 808 162 "Hz"] and an estimated relative standard uncertainty of 1.7 × stem:[10^(-14)];
 
 * that the following transition frequencies be updated in the list:
-** the unperturbed optical transition 4s ^2^S~1/2~ - 3d ^2^D~5/2~ of the ^stem:[40^(Ca)]+^ ion with a frequency of 411 stem:[042 129 776 395 "Hz"] and an estimated relative standard uncertainty of 1.5  × stem:[10^(-14)];
-** the unperturbed optical transition 1S - 2S of the stem:[""_(1) "H"] neutral atom with a frequency of 1 233 stem:[030 706 593 518 "Hz"] and an estimated relative standard uncertainty of stem:[1.2 * 10^(-14)];
+** the unperturbed optical transition 4s ^2^S~1/2~ - 3d ^2^D~5/2~ of the ^stem:[40^(Ca)]+^ ion with a frequency of 411 stem:[042 129 776 395 "Hz"] and an estimated relative standard uncertainty of 1.5 × stem:[10^(-14)];
+** the unperturbed optical transition 1S - 2S of the stem:[""_(1) "H"] neutral atom with a frequency of 1 233 stem:[030 706 593 518 "Hz"] and an estimated relative standard uncertainty of stem:[1.2 * 10^(-14)];
 
 Note: This frequency corresponds to half of the energy difference between the 1S and 2S states;
 
@@ -498,14 +498,14 @@ Note: This frequency corresponds to half of the energy difference between the 1S
 ** the unperturbed optical transition 6s ^2^S~1/2~ - 4f ^stem:[13^(6s)2]^ ^2^stem:["F"]~7/2~ of the ^stem:[171^(Yb)]+^ ion (octupole) with a frequency of stem:[642 121 496 772 645.6 "Hz"] and an estimated relative standard uncertainty of stem:[1.3 * 10^(-15)];
 ** the unperturbed optical transition 6s^2^ ^1^S~0~ - 6s 6p ^3^P~0~ of the ^171^Yb neutral atom with a frequency of stem:[518 295 836 590 865.0 "Hz"] and an estimated relative standard uncertainty of stem:[2.7 * 10^(-15)];
 * that the following transition frequency be added to the list and as a secondary representation of the second:
-** the unperturbed optical transition 3s^2^ ^1^S~0~ - 3s 3p ^3^P~0~ of the ^stem:[27^(Al)]+^ ion with a frequency of 1 stem:[121 015 393 207 857.3 "Hz"] and an estimated relative standard uncertainty of stem:[1.9 * 10^(-15)];
+** the unperturbed optical transition 3s^2^ ^1^S~0~ - 3s 3p ^3^P~0~ of the ^stem:[27^(Al)]+^ ion with a frequency of 1 stem:[121 015 393 207 857.3 "Hz"] and an estimated relative standard uncertainty of stem:[1.9 * 10^(-15)];
 * that the following transition frequencies be updated in the list and as secondary representations of the second:
 ** the unperturbed optical transition 5d ^10^6s ^2^S~1/2~ - 5d ^stem:[9^(6s)2]^ ^2^D~5/2~ of the ^stem:[199^(Hg)]+^ ion with a frequency of stem:[1 064 721 609 899 145.3 "Hz"] and an estimated relative standard uncertainty of stem:[1.9 * 10^(-15)];
 ** the unperturbed optical transition 6s ^2^S~1/2~ (stem:[F = 0], stem:[m_("F") = 0]) - 5d ^2^D~3/2~ (stem:[F = 2], stem:[m_("F") = 0]) of the ^stem:[171^(Yb)]+^ ion (quadrupole) with a frequency of stem:[688 358 979 309 307.1 "Hz"] and an estimated relative standard uncertainty of stem:[3 * 10^(-15)];
-** the unperturbed optical transition 5s ^2^S~1/2~ - 4d ^2^D~5/2~ of the ^stem:[88^(Sr)]+^ ion with a frequency of 444 stem:[779 044 095 485.3 "Hz"] and an estimated relative standard uncertainty of stem:[4.0 * 10^(-15)];
+** the unperturbed optical transition 5s ^2^S~1/2~ - 4d ^2^D~5/2~ of the ^stem:[88^(Sr)]+^ ion with a frequency of 444 stem:[779 044 095 485.3 "Hz"] and an estimated relative standard uncertainty of stem:[4.0 * 10^(-15)];
 ** the unperturbed optical transition 5s^2^ ^1^S~0~ - 5s5p ^3^P~0~ of the ^87^Sr neutral atom with a frequency of stem:[429 228 004 229 873.4 "Hz"] and an estimated relative standard uncertainty of stem:[1 * 10^(-15)];
 * that the following transition frequency be updated as a secondary representation of the second:
-** the unperturbed ground - state hyperfine transition of ^87^Rb with a frequency of 6 834 682 stem:[610.904 312 "Hz"] and an estimated relative standard uncertainty of stem:[1.3 * 10^(-15)].
+** the unperturbed ground - state hyperfine transition of ^87^Rb with a frequency of 6 834 682 stem:[610.904 312 "Hz"] and an estimated relative standard uncertainty of stem:[1.3 * 10^(-15)].
 
 Note: The value of the estimated standard uncertainty is assumed to correspond to a confidence level of 68 %. However, given the very limited number of available data there is a possibility that in hindsight this might not prove to be exact."""@en,
         """*recommande* d’apporter les changements suivant à la liste commune des « valeurs recommandées des fréquences étalons destinées à la mise en pratique de la définition du mètre et aux représentations secondaires de la seconde » :
@@ -6248,7 +6248,7 @@ cipm:CIPM102-1-Rec1 a rb:Recommendation ;
     rb:hasConsidering cipm:CIPM102-1-Rec1Considering ;
     rb:hasDOI "https://doi.org/10.59161/CIPM2013REC1E"@en,
         "https://doi.org/10.59161/CIPM2013REC1F"@fr ;
-    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeNr "1" ;
     rb:hasOutcomeTitle "Updates to the list of standard frequencies"@en,
         "Mises à jour de la liste des fréquences étalons"@fr ;
     rb:isOutcomeOf cipm:CIPM102-1 ;
@@ -7255,7 +7255,7 @@ cipm:CIPM104-1-Rec1 a rb:Recommendation ;
     rb:hasConsidering cipm:CIPM104-1-Rec1Considering ;
     rb:hasDOI "https://www.bipm.org/en/committees/ci/cipm/104-_1-2015/resolution-1"@en,
         "https://www.bipm.org/fr/committees/ci/cipm/104-_1-2015/resolution-1"@fr ;
-    rb:hasOutcomeNr 1 ;
+    rb:hasOutcomeNr "1" ;
     rb:hasOutcomeTitle "CIPM Recommendation to NMIs on managing the consequences of the corrections to the BIPM as-maintained mass unit"@en,
         "Recommandation du CIPM aux laboratoires nationaux de métrologie sur la façon de gérer les corrections apportées à l’unité de masse telle que maintenue par le BIPM"@fr ;
     rb:isOutcomeOf cipm:CIPM104-1 ;
@@ -7267,7 +7267,7 @@ cipm:CIPM104-1-Rec2 a rb:Recommendation ;
     rb:hasConsidering cipm:CIPM104-1-Rec2Considering ;
     rb:hasDOI "https://doi.org/10.59161/CIPM2015REC2E"@en,
         "https://doi.org/10.59161/CIPM2015REC2F"@fr ;
-    rb:hasOutcomeNr 2 ;
+    rb:hasOutcomeNr "2" ;
     rb:hasOutcomeTitle "Updates to the list of standard frequencies"@en,
         "Mises à jour de la liste des fréquences étalons"@fr ;
     rb:isOutcomeOf cipm:CIPM104-1 ;

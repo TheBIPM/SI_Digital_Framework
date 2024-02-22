@@ -8,15 +8,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 quantities: a owl:Ontology ;
-    dcterms:created "2024-02-14"^^xsd:date ;
+    dcterms:created "2024-02-22"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI reference point, covering quantities"^^xsd:string ;
     skos:prefLabel "SI Reference Point - Quantities"^^xsd:string .
 
 quantities:ABDO a si:QuantityKind ;
     si:hasUnit units:gray ;
     skos:altLabel "ABDO"^^xsd:string ;
-    skos:prefLabel "absorbed dose, kerma"@en,
-        "dose absorbée, kerma"@fr .
+    skos:prefLabel "absorbed dose"@en,
+        "dose absorbée"@fr .
 
 quantities:ABDR a si:QuantityKind ;
     si:hasUnit [ a si:UnitProduct ;
@@ -244,6 +244,18 @@ quantities:FLUE a si:QuantityKind ;
     skos:prefLabel "fluence"@en,
         "fluence"@fr .
 
+quantities:FLUR a si:QuantityKind ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-2"^^xsd:short ;
+                    si:hasUnitBase units:metre ] ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-1"^^xsd:short ;
+                    si:hasUnitBase units:second ] ] ;
+    skos:altLabel "FLUR"^^xsd:string ;
+    skos:prefLabel "fluence rate"@en,
+        "débit de fluence"@fr .
+
 quantities:FORC a si:QuantityKind ;
     si:hasUnit units:newton ;
     skos:altLabel "FORC"^^xsd:string ;
@@ -293,6 +305,34 @@ quantities:ITSK a si:QuantityKind ;
     skos:altLabel "ITSK"^^xsd:string ;
     skos:prefLabel "ITS-90 temperature (K)"@en,
         "température ITS-90 (K)"@fr .
+
+quantities:KIVI a si:QuantityKind ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "2"^^xsd:short ;
+                    si:hasUnitBase units:metre ] ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-1"^^xsd:short ;
+                    si:hasUnitBase units:second ] ] ;
+    skos:altLabel "KIVI"^^xsd:string ;
+    skos:prefLabel "kinematic viscosity"@en,
+        "viscosité cinématique "@fr .
+
+quantities:KRMA a si:QuantityKind ;
+    si:hasUnit units:gray ;
+    skos:altLabel "KRMA"^^xsd:string ;
+    skos:prefLabel "kerma"@en,
+        "kerma"@fr .
+
+quantities:KRMR a si:QuantityKind ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:gray ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-1"^^xsd:short ;
+                    si:hasUnitBase units:second ] ] ;
+    skos:altLabel "KRMR"^^xsd:string ;
+    skos:prefLabel "kerma rate"@en,
+        "kerma rate"@fr .
 
 quantities:LENG a si:QuantityKind ;
     si:hasUnit units:metre ;
@@ -383,6 +423,12 @@ quantities:MOEN a si:QuantityKind ;
     skos:altLabel "MOEN"^^xsd:string ;
     skos:prefLabel "molar entropy"@en,
         "entropie molaire"@fr .
+
+quantities:PHAS a si:QuantityKind ;
+    si:hasUnit units:radian ;
+    skos:altLabel "PHAS"^^xsd:string ;
+    skos:prefLabel "phase"@en,
+        "phase"@fr .
 
 quantities:PLTS a si:QuantityKind ;
     si:hasUnit units:kelvin ;

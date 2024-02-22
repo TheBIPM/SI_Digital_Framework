@@ -9,29 +9,15 @@
 
 si: a owl:Ontology ;
     dcterms:created "2023-12-22"^^xsd:date,
-        "2024-02-14"^^xsd:date ;
+        "2024-02-22"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI reference point, providing base concepts and their relations."^^xsd:string ;
     skos:prefLabel "SI Reference Point - Base Ontology"^^xsd:string .
-
-si:QuantityKindPower a owl:Class ;
-    rdfs:label "quantitykind power"@en,
-        "quantité élevée à la puissance"@fr ;
-    rdfs:subClassOf si:CompoundQuantityKind .
-
-si:QuantityKindProduct a owl:Class ;
-    rdfs:label "quantitykind product"@en,
-        "produit de quantités"@fr ;
-    rdfs:subClassOf si:CompoundQuantityKind .
-
-si:UnitMultiple a owl:Class ;
-    rdfs:label "unit multiple"@en,
-        "multiple d'unité"@fr ;
-    rdfs:subClassOf si:CompoundUnit .
 
 si:correspondingResolution a owl:DatatypeProperty ;
     rdfs:label "has corresponding resolution"@en,
         "a pour résolution correspondante"@fr ;
-    rdfs:domain si:SIDecision .
+    rdfs:domain si:SIDecision ;
+    rdfs:range rb:Resolution .
 
 si:hasConversionFactor a owl:DatatypeProperty ;
     rdfs:label "has a conversion factor"@en,
@@ -113,7 +99,7 @@ si:hasLeftQuantityTerm a owl:ObjectProperty ;
     rdfs:label "has left quantity term"@en,
         "a pour terme de gauche cette quantité"@fr ;
     rdfs:comment "preserve order of multiplication" ;
-    rdfs:domain si:QuantityProduct ;
+    rdfs:domain si:QuantityKindProduct ;
     rdfs:range si:QuantityKind ;
     rdfs:subPropertyOf si:hasQuantityTerm .
 
@@ -158,13 +144,13 @@ si:hasNumericExponent a owl:DatatypeProperty ;
 si:hasNumericFactor a owl:DatatypeProperty ;
     rdfs:label "has numeric factor"@en,
         "a pour facteur ce nombre"@fr ;
-    rdfs:domain si:MeasurementUnit ;
+    rdfs:domain si:UnitMultiple ;
     rdfs:subPropertyOf si:hasTerm .
 
 si:hasNumericFactorAsString a owl:DatatypeProperty ;
     rdfs:label "has numeric factor represented by this string"@en,
         "a pour facteur le nombre correspondant à cette chaine"@fr ;
-    rdfs:domain si:MeasurementUnit ;
+    rdfs:domain si:UnitMultiple ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf si:hasTerm .
 
@@ -179,7 +165,7 @@ si:hasQuantityBase a owl:ObjectProperty ;
     rdfs:label "has quantity base"@en,
         "a pour base cette quantité"@fr ;
     rdfs:comment "QuantityBase ^ NumericExponent" ;
-    rdfs:domain si:QuantityPower ;
+    rdfs:domain si:QuantityKindPower ;
     rdfs:range si:MeasurementUnit ;
     rdfs:subPropertyOf si:hasBase .
 
@@ -187,7 +173,7 @@ si:hasRightQuantityTerm a owl:ObjectProperty ;
     rdfs:label "has right quantity term"@en,
         "a pour terme de droite cette quantité"@fr ;
     rdfs:comment "preserve order of multiplication" ;
-    rdfs:domain si:QuantityProduct ;
+    rdfs:domain si:QuantityKindProduct ;
     rdfs:range si:QuantityKind ;
     rdfs:subPropertyOf si:hasQuantityTerm .
 
@@ -290,12 +276,17 @@ si:isUnitOfQtyKind a owl:ObjectProperty ;
     rdfs:domain si:MeasurementUnit ;
     rdfs:range si:QuantityKind .
 
-si:prefixRestriction a owl:DataTypeProperty ;
+si:prefixRestriction a owl:DatatypeProperty ;
     rdfs:label "Limitation of the possible prefixes"@en,
         "Limitation des préfixes possibles"@fr ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( si:SIBaseUnit si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) ] ;
-    rdfs:range xsd:Boolean .
+    rdfs:range xsd:boolean .
+
+si:QuantityKindPower a owl:Class ;
+    rdfs:label "quantitykind power"@en,
+        "quantité élevée à la puissance"@fr ;
+    rdfs:subClassOf si:CompoundQuantityKind .
 
 si:hasDefiningResolution a owl:ObjectProperty ;
     rdfs:label "has defining resolution"@en,
@@ -348,7 +339,7 @@ si:isDecisionOf a owl:DatatypeProperty ;
 si:isTargetOf a owl:DatatypeProperty ;
     rdfs:label "is target of"@en,
         "est la cible de"@fr ;
-    rdfs:domain si:DecisionTarget ;
+    rdfs:domain si:SIDecisionTarget ;
     rdfs:range si:SIDecisionScope .
 
 si:CompoundQuantityKind a owl:Class ;
@@ -360,6 +351,11 @@ si:PrefixedUnit a owl:Class ;
     rdfs:label "prefixed unit"@en,
         "unité précédée d'un préfixe"@fr ;
     rdfs:subClassOf si:CompoundUnit .
+
+si:QuantityKindProduct a owl:Class ;
+    rdfs:label "quantitykind product"@en,
+        "produit de quantités"@fr ;
+    rdfs:subClassOf si:CompoundQuantityKind .
 
 si:SIDecisionScope rdfs:label "SI Decision scope"@en,
         "Champ de la décision SI"@fr ;
@@ -389,6 +385,7 @@ si:hasQuantityTerm a owl:ObjectProperty ;
 si:hasUnitTerm a owl:ObjectProperty ;
     rdfs:label "has unit term"@en,
         "a cette unité pour terme"@fr ;
+    rdfs:domain si:UnitMultiple ;
     rdfs:subPropertyOf si:hasTerm .
 
 si:DefinitionNote a owl:Class ;
@@ -403,11 +400,10 @@ si:SIDecision a owl:Class ;
     rdfs:comment "The class for SI decisions."@en,
         "La classe pour les décisions SI."@fr .
 
-si:SIDecisionTarget a owl:Class ;
-    rdfs:label "SI Decision target"@en,
-        "Cible d'une décision SI"@fr ;
-    rdfs:comment "The class for SI decisions target."@en,
-        "La classe pour les cibles de décisions SI."@fr .
+si:UnitMultiple a owl:Class ;
+    rdfs:label "unit multiple"@en,
+        "multiple d'unité"@fr ;
+    rdfs:subClassOf si:CompoundUnit .
 
 si:CompoundUnit a owl:Class ;
     rdfs:label "compound unit"@en,
@@ -423,6 +419,12 @@ si:SIBaseUnit a owl:Class ;
     rdfs:subClassOf si:MeasurementUnit ;
     owl:disjointWith si:SISpecialNamedUnit,
         si:nonSIUnit .
+
+si:SIDecisionTarget a owl:Class ;
+    rdfs:label "SI Decision target"@en,
+        "Cible d'une décision SI"@fr ;
+    rdfs:comment "The class for SI decisions target."@en,
+        "La classe pour les cibles de décisions SI."@fr .
 
 si:SISpecialNamedUnit a owl:Class ;
     rdfs:label "SI unit with special name"@en,
@@ -485,9 +487,9 @@ si:MeasurementUnit a owl:Class ;
         si:QuantityKind,
         si:SIPrefix .
 
-[] rdf:first si:SIBaseUnit ;
-    rdf:rest ( si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) .
-
 [] rdf:first si:Constant ;
     rdf:rest ( si:SIPrefix ) .
+
+[] rdf:first si:SIBaseUnit ;
+    rdf:rest ( si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) .
 

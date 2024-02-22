@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 decisions: a owl:Ontology ;
-    dcterms:created "2024-02-14"^^xsd:date ;
+    dcterms:created "2024-02-22"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI reference point, covering decisions"^^xsd:string ;
     skos:prefLabel "SI Reference Point - Decisions"^^xsd:string .
 
