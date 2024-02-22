@@ -256,13 +256,6 @@ Janet Miles (Head of Digital Transformation, BIPM) thanks in particular the foll
 
 ## Annex 1:	List of Classes and Predicates
 
-A complete list of Classes and Predicates contained in the knowledge graphs 
-* SI/units.ttl
-* SI/prefixes.ttl
-* SI/decisions.ttl
-* constants.ttl
-* quantities.ttl
-
-will soon be available.
+See [this separate page](./vocabulary.md)
 
 
