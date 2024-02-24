@@ -199,7 +199,7 @@ Following standard practice, the TTL files are divided between a “T-box”, sp
 The web interface at https://si-digital-framework.org/SI is designed to simplify access to the knowledge graphs for a human reader. Underpinning the web pages are a set of pre-programmed calls to the TTL files, such as (expressed as words rather than data requests) “list all the SI units”, “list all the SI prefixes”, “what is the current definition of the metre”, etc. 
 
 The same pre-programmed queries (API calls) are documented in the Swagger interface at
-[https://si-digital-framework.org/api-docs/swagger-ui/](https://si-digital-framework.org/api-docs/swagger-ui)
+[https://si-digital-framework.org/api-docs/swagger-ui/](https://si-digital-framework.org/api-docs/swagger-ui/?urls.primaryName=SI%20REFERENCE%20POIN/)
 
 Select the service `SI REFERENCE POINT` from the drop-down menu at the top right of the screen.
 
