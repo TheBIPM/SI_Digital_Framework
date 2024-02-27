@@ -9,7 +9,7 @@
 
 si: a owl:Ontology ;
     dcterms:created "2023-12-22"^^xsd:date,
-        "2024-02-22"^^xsd:date ;
+        "2024-02-27"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI reference point, providing base concepts and their relations."^^xsd:string ;
     skos:prefLabel "SI Reference Point - Base Ontology"^^xsd:string .
 
@@ -18,6 +18,13 @@ si:correspondingResolution a owl:DatatypeProperty ;
         "a pour résolution correspondante"@fr ;
     rdfs:domain si:SIDecision ;
     rdfs:range rb:Resolution .
+
+si:hasAltSymbol a owl:DatatypeProperty ;
+    rdfs:label "has alternate symbol"@en,
+        "a pour symbole alternatif"@fr ;
+    rdfs:comment "Linking a measurement unit or prefix to an alternate symbol."@en,
+        "Associer une unité de mesure ou un préfixe à un symbole alternatif."@fr ;
+    rdfs:range xsd:string .
 
 si:hasConversionFactor a owl:DatatypeProperty ;
     rdfs:label "has a conversion factor"@en,
@@ -487,9 +494,9 @@ si:MeasurementUnit a owl:Class ;
         si:QuantityKind,
         si:SIPrefix .
 
-[] rdf:first si:Constant ;
-    rdf:rest ( si:SIPrefix ) .
-
 [] rdf:first si:SIBaseUnit ;
     rdf:rest ( si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) .
+
+[] rdf:first si:Constant ;
+    rdf:rest ( si:SIPrefix ) .
 

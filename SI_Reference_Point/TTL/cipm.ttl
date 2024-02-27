@@ -7,7 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 cipm: a owl:Ontology ;
-    dcterms:created "2024-02-22"^^xsd:date ;
+    dcterms:created "2024-02-27"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI Reference Point, covering the resolutions, decisions, etc of the CIPM."^^xsd:string ;
     skos:prefLabel "SI Reference Point - CIPM meetings and outcomes"^^xsd:string .
 

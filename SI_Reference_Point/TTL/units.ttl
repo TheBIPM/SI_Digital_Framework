@@ -12,7 +12,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 units: a owl:Ontology ;
-    dcterms:created "2024-02-22"^^xsd:date ;
+    dcterms:created "2024-02-27"^^xsd:date ;
     rdfs:comment "Ontology, part of the SI Reference Point, covering measurement units (SI base units and SI units with special names) and prefixes." ;
     skos:prefLabel "SI Reference Point - Units and Prefixes"^^xsd:string .
 
