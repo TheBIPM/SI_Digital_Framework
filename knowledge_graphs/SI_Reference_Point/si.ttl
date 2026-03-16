@@ -1,17 +1,42 @@
+@prefix activities: <https://si-digital-framework.org/SI/activities#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix entities: <https://si-digital-framework.org/SI/entities#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rb: <http://si-digital-framework.org/bodies#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rb: <https://si-digital-framework.org/bodies#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix si: <http://si-digital-framework.org/SI#> .
+@prefix si: <https://si-digital-framework.org/SI#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 si: a owl:Ontology ;
-    dcterms:created "2023-12-22"^^xsd:date,
-        "2024-02-27"^^xsd:date ;
-    rdfs:comment "Ontology, part of the SI reference point, providing base concepts and their relations."^^xsd:string ;
-    skos:prefLabel "SI Reference Point - Base Ontology"^^xsd:string .
+    dcterms:license <https://creativecommons.org/licenses/by/3.0/igo/> ;
+    rdfs:comment "Ontology, part of the SI Reference Point, covering measurement units (SI base units and SI units with special names) and prefixes."^^xsd:string,
+        """The SI Reference Point Ontology developed by the BIPM is
+licensed under CC-BY-3.0-IGO. You are free to share (copy and redistribute
+the material in any medium or format) and adapt (remix, transform, and
+build upon the material) for any purpose, even commercially, for any
+purpose, even commercially. The licensor cannot revoke these freedoms as
+long as you follow the license terms. You must give appropriate credit
+(by using the original ontology IRI for the whole ontology and original
+term IRIs for individual terms), provide a link to the license, and
+indicate if any changes were made. You may do so in any reasonable
+manner, but not in any way that suggests the licensor endorses you or
+your use."""@en,
+        """L'ontologie SI Reference Point developpée par le BIPM est sous
+licence CC-BY-3.0-IGO. Vous êtes autorisés à partager (copier, distribuer et communiquer
+le matériel par tous moyens et sous tous formats) et adapter (remixer, transformer
+et créer à partir du matériel) pour toute utilisation, y compris commerciale.
+L'Offrant ne peut retirer les autorisations concédées par la licence tant que
+vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre 
+(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière 
+et les IRIs originaux des termes individuels), intégrer un lien vers la licence 
+et indiquer si des modifications ont été effectuées à l'oeuvre.
+Vous devez indiquer ces informations par tous les moyens raisonnables, 
+sans toutefois suggérer que l'offrant vous soutient ou soutient 
+la façon dont vous avez utilisé son Oeuvre."""@fr ;
+    skos:prefLabel "SI Reference Point"^^xsd:string .
 
 si:correspondingResolution a owl:DatatypeProperty ;
     rdfs:label "has corresponding resolution"@en,
@@ -104,7 +129,7 @@ si:hasEndValidity a owl:DatatypeProperty ;
 
 si:hasLeftQuantityTerm a owl:ObjectProperty ;
     rdfs:label "has left quantity term"@en,
-        "a pour terme de gauche cette quantité"@fr ;
+        "a pour terme de gauche cette grandeur"@fr ;
     rdfs:comment "preserve order of multiplication" ;
     rdfs:domain si:QuantityKindProduct ;
     rdfs:range si:QuantityKind ;
@@ -170,7 +195,7 @@ si:hasPrefix a owl:ObjectProperty ;
 
 si:hasQuantityBase a owl:ObjectProperty ;
     rdfs:label "has quantity base"@en,
-        "a pour base cette quantité"@fr ;
+        "a pour base cette grandeur"@fr ;
     rdfs:comment "QuantityBase ^ NumericExponent" ;
     rdfs:domain si:QuantityKindPower ;
     rdfs:range si:MeasurementUnit ;
@@ -178,7 +203,7 @@ si:hasQuantityBase a owl:ObjectProperty ;
 
 si:hasRightQuantityTerm a owl:ObjectProperty ;
     rdfs:label "has right quantity term"@en,
-        "a pour terme de droite cette quantité"@fr ;
+        "a pour terme de droite cette grandeur"@fr ;
     rdfs:comment "preserve order of multiplication" ;
     rdfs:domain si:QuantityKindProduct ;
     rdfs:range si:QuantityKind ;
@@ -277,9 +302,9 @@ si:isDefiningResolutionOf a owl:ObjectProperty ;
 
 si:isUnitOfQtyKind a owl:ObjectProperty ;
     rdfs:label "is unit of quantity kind"@en,
-        "est une unité de quantité"@fr ;
+        "est une unité de grandeur"@fr ;
     rdfs:comment "Linking a measurement unit to its quantity kind."@en,
-        "Associer une unité de mesure à son type de quantité."@fr ;
+        "Associer une unité de mesure à son type de grandeur."@fr ;
     rdfs:domain si:MeasurementUnit ;
     rdfs:range si:QuantityKind .
 
@@ -290,14 +315,18 @@ si:prefixRestriction a owl:DatatypeProperty ;
             owl:unionOf ( si:SIBaseUnit si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) ] ;
     rdfs:range xsd:boolean .
 
+entities:si_20260303103150Z.ttl a prov:Entity ;
+    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> ;
+    prov:wasGeneratedBy activities:si_ttl_generation20260303103150Z.ttl_generation .
+
 si:QuantityKindPower a owl:Class ;
     rdfs:label "quantitykind power"@en,
-        "quantité élevée à la puissance"@fr ;
+        "grandeur élevée à la puissance"@fr ;
     rdfs:subClassOf si:CompoundQuantityKind .
 
 si:hasDefiningResolution a owl:ObjectProperty ;
     rdfs:label "has defining resolution"@en,
-        "a une résolution déterminante"@fr ;
+        "a résolution de définition"@fr ;
     rdfs:comment "Linking an SI definition to the resolution by which it was adopted."@en,
         "Associer une définition SI à la résolution par laquelle elle a été adoptée."@fr ;
     rdfs:domain [ owl:oneOf ( si:Definition si:Constant ) ] ;
@@ -349,9 +378,15 @@ si:isTargetOf a owl:DatatypeProperty ;
     rdfs:domain si:SIDecisionTarget ;
     rdfs:range si:SIDecisionScope .
 
+activities:si_ttl_generation20260303103150Z.ttl_generation a prov:Activity ;
+    prov:startedAtTime "2026-03-03T10:31:50+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> .
+
+<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
+
 si:CompoundQuantityKind a owl:Class ;
     rdfs:label "compound quantitykind"@en,
-        "quantité composée"@fr ;
+        "grandeur composée"@fr ;
     rdfs:subClassOf si:QuantityKind .
 
 si:PrefixedUnit a owl:Class ;
@@ -361,7 +396,7 @@ si:PrefixedUnit a owl:Class ;
 
 si:QuantityKindProduct a owl:Class ;
     rdfs:label "quantitykind product"@en,
-        "produit de quantités"@fr ;
+        "produit de grandeurs"@fr ;
     rdfs:subClassOf si:CompoundQuantityKind .
 
 si:SIDecisionScope rdfs:label "SI Decision scope"@en,
@@ -374,11 +409,6 @@ si:UnitPower a owl:Class ;
         "unité élevée à la puissance"@fr ;
     rdfs:subClassOf si:CompoundUnit .
 
-si:UnitProduct a owl:Class ;
-    rdfs:label "unit product"@en,
-        "produit d'unités"@fr ;
-    rdfs:subClassOf si:CompoundUnit .
-
 si:hasBase a owl:ObjectProperty ;
     rdfs:label "has base"@en,
         "a pour base"@fr ;
@@ -386,13 +416,14 @@ si:hasBase a owl:ObjectProperty ;
 
 si:hasQuantityTerm a owl:ObjectProperty ;
     rdfs:label "has quantity term"@en,
-        "a pour terme cette quantité"@fr ;
+        "a pour terme cette grandeur"@fr ;
     rdfs:subPropertyOf si:hasTerm .
 
 si:hasUnitTerm a owl:ObjectProperty ;
     rdfs:label "has unit term"@en,
         "a cette unité pour terme"@fr ;
-    rdfs:domain si:UnitMultiple ;
+    rdfs:domain [ owl:oneOf ( si:UnitProduct si:UnitMultiple ) ] ;
+    rdfs:range si:MeasurementUnit ;
     rdfs:subPropertyOf si:hasTerm .
 
 si:DefinitionNote a owl:Class ;
@@ -410,6 +441,11 @@ si:SIDecision a owl:Class ;
 si:UnitMultiple a owl:Class ;
     rdfs:label "unit multiple"@en,
         "multiple d'unité"@fr ;
+    rdfs:subClassOf si:CompoundUnit .
+
+si:UnitProduct a owl:Class ;
+    rdfs:label "unit product"@en,
+        "produit d'unités"@fr ;
     rdfs:subClassOf si:CompoundUnit .
 
 si:CompoundUnit a owl:Class ;
@@ -458,7 +494,7 @@ si:QuantityKind a owl:Class ;
     rdfs:label "kind of quantity"@en,
         "nature de grandeur"@fr ;
     rdfs:comment "Class for the quantity kinds."@en,
-        "La classe pour les types de quantité."@fr ;
+        "La classe pour les types de grandeur."@fr ;
     rdfs:isDefinedBy "VIM3 1.2"^^xsd:string .
 
 si:nonSIUnit a owl:Class ;
@@ -470,7 +506,7 @@ si:nonSIUnit a owl:Class ;
 
 si:Constant a owl:Class ;
     rdfs:label "defining constant"@en,
-        "définir la constante"@fr ;
+        "constante définissant le SI"@fr ;
     rdfs:comment "Class for the seven defining constants of the SI."@en,
         "La classe pour les sept constantes définissant le SI."@fr ;
     owl:disjointWith si:QuantityKind .
