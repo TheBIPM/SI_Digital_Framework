@@ -8,12 +8,12 @@
 @prefix units: <https://si-digital-framework.org/SI/units/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://si-digital-framework.org/SI/entities#quantities_20260303103151Z.ttl> a prov:Entity ;
-    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/quantities_abox.py> ;
-    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/quantities_core.yaml>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/quantities_other.yaml> ;
-    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#quantities_20260303103151Z.ttl_generation> .
+<https://si-digital-framework.org/SI/entities#quantities_20260320094832Z.ttl> a prov:Entity ;
+    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/cuq_tbox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/quantities_abox.py> ;
+    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_core.yaml>,
+        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_other.yaml> ;
+    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#quantities_20260320094832Z.ttl_generation> .
 
 quantities: a owl:Ontology ;
     dcterms:license <https://creativecommons.org/licenses/by/3.0/igo/> ;
@@ -78,6 +78,18 @@ quantities:ACCE a si:QuantityKind ;
             si:hasRightUnitTerm [ a si:UnitPower ;
                     si:hasNumericExponent "-2"^^xsd:short ;
                     si:hasUnitBase units:second ] ] .
+
+quantities:ACIM a si:QuantityKind ;
+    skos:altLabel "ACIM"^^xsd:string ;
+    skos:prefLabel "acoustic impedance"@en,
+        "impédance acoustique"@fr ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:pascal ;
+            si:hasRightUnitTerm [ a si:UnitProduct ;
+                    si:hasLeftUnitTerm units:second ;
+                    si:hasRightUnitTerm [ a si:UnitPower ;
+                            si:hasNumericExponent "-3"^^xsd:short ;
+                            si:hasUnitBase units:metre ] ] ] .
 
 quantities:ACTI a si:QuantityKind ;
     skos:altLabel "ACTI"^^xsd:string ;
@@ -210,25 +222,48 @@ quantities:DEWP a si:QuantityKind ;
         "point de rosée/givre"@fr ;
     si:hasUnit units:degreeCelsius .
 
+quantities:DGDE a si:QuantityKind ;
+    skos:altLabel "DGDE"^^xsd:string ;
+    skos:prefLabel "differential group delay"@en,
+        "retard différentiel de groupe"@fr ;
+    si:hasUnit units:second .
+
+quantities:DIRE a si:QuantityKind ;
+    skos:altLabel "DIRE"^^xsd:string ;
+    skos:prefLabel "directivity"@en,
+        "directivité"@fr .
+
 quantities:DISL a si:QuantityKind ;
     skos:altLabel "DISL"^^xsd:string ;
-    skos:prefLabel "dispersion slope"@en,
-        "pente de dispersion"@fr ;
+    skos:prefLabel "chromatic dispersion slope"@en,
+        "pente de dispersion chromatique"@fr ;
     si:hasUnit [ a si:UnitProduct ;
             si:hasLeftUnitTerm units:second ;
-            si:hasRightUnitTerm [ a si:UnitPower ;
-                    si:hasNumericExponent "-1"^^xsd:short ;
-                    si:hasUnitBase units:metre ] ] .
+            si:hasRightUnitTerm [ a si:UnitProduct ;
+                    si:hasLeftUnitTerm [ a si:UnitPower ;
+                            si:hasNumericExponent "-1"^^xsd:short ;
+                            si:hasUnitBase units:metre ] ;
+                    si:hasRightUnitTerm [ a si:UnitProduct ;
+                            si:hasLeftUnitTerm [ a si:UnitPower ;
+                                    si:hasNumericExponent "-1"^^xsd:short ;
+                                    si:hasUnitBase units:metre ] ;
+                            si:hasRightUnitTerm [ a si:UnitPower ;
+                                    si:hasNumericExponent "-1"^^xsd:short ;
+                                    si:hasUnitBase units:metre ] ] ] ] .
 
 quantities:DISP a si:QuantityKind ;
     skos:altLabel "DISP"^^xsd:string ;
-    skos:prefLabel "(chromatic) dispersion"@en,
-        "dispersion (chromatique)"@fr ;
+    skos:prefLabel "chromatic dispersion"@en,
+        "dispersion chromatique"@fr ;
     si:hasUnit [ a si:UnitProduct ;
             si:hasLeftUnitTerm units:second ;
-            si:hasRightUnitTerm [ a si:UnitPower ;
-                    si:hasNumericExponent "-1"^^xsd:short ;
-                    si:hasUnitBase units:metre ] ] .
+            si:hasRightUnitTerm [ a si:UnitProduct ;
+                    si:hasLeftUnitTerm [ a si:UnitPower ;
+                            si:hasNumericExponent "-1"^^xsd:short ;
+                            si:hasUnitBase units:metre ] ;
+                    si:hasRightUnitTerm [ a si:UnitPower ;
+                            si:hasNumericExponent "-1"^^xsd:short ;
+                            si:hasUnitBase units:metre ] ] ] .
 
 quantities:DOEQ a si:QuantityKind ;
     skos:altLabel "DOEQ"^^xsd:string ;
@@ -411,11 +446,27 @@ quantities:FORC a si:QuantityKind ;
         "force"@fr ;
     si:hasUnit units:newton .
 
+quantities:FORL a si:QuantityKind ;
+    skos:altLabel "FORL"^^xsd:string ;
+    skos:prefLabel "force response level (referenced to 1 V/N)"@en,
+        "niveau de réponse à la force (référence : 1 V/N)"@fr ;
+    si:hasUnit units:bel .
+
 quantities:FREQ a si:QuantityKind ;
     skos:altLabel "FREQ"^^xsd:string ;
     skos:prefLabel "frequency"@en,
         "fréquence"@fr ;
     si:hasUnit units:hertz .
+
+quantities:FSLT a si:QuantityKind ;
+    skos:altLabel "FSLT"^^xsd:string ;
+    skos:prefLabel "flicker severity index (long term)"@en,
+        "indicateur de flicker à long terme"@fr .
+
+quantities:FSST a si:QuantityKind ;
+    skos:altLabel "FSST"^^xsd:string ;
+    skos:prefLabel "flicker severity index (short term)"@en,
+        "indicateur de flicker à court terme"@fr .
 
 quantities:GLOS a si:QuantityKind ;
     skos:altLabel "GLOS"^^xsd:string ;
@@ -525,11 +576,6 @@ quantities:LENG a si:QuantityKind ;
         "longueur"@fr ;
     si:hasUnit units:metre .
 
-quantities:LERA a si:QuantityKind ;
-    skos:altLabel "LERA"^^xsd:string ;
-    skos:prefLabel "length ratio"@en,
-        "rapport de longueur"@fr .
-
 quantities:LOSS a si:QuantityKind ;
     skos:altLabel "LOSS"^^xsd:string ;
     skos:prefLabel "loss (attenuation)"@en,
@@ -617,6 +663,12 @@ quantities:MASS a si:QuantityKind ;
         "masse"@fr ;
     si:hasUnit units:kilogram .
 
+quantities:MEIL a si:QuantityKind ;
+    skos:altLabel "MEIL"^^xsd:string ;
+    skos:prefLabel "mechanical impedance (referenced to 1 N s m-2)"@en,
+        "impédance mécanique (référence : 1 N s m-2)"@fr ;
+    si:hasUnit units:bel .
+
 quantities:MGFD a si:QuantityKind ;
     skos:altLabel "MGFD"^^xsd:string ;
     skos:prefLabel "magnetic flux density"@en,
@@ -683,6 +735,11 @@ quantities:MTTE a si:QuantityKind ;
         "température de distribution"@fr ;
     si:hasUnit units:kelvin .
 
+quantities:NORM a si:QuantityKind ;
+    skos:altLabel "NORM"^^xsd:string ;
+    skos:prefLabel "normalized signal"@en,
+        "signal normalisé"@fr .
+
 quantities:NUMA a si:QuantityKind ;
     skos:altLabel "NUMA"^^xsd:string ;
     skos:prefLabel "numerical aperture"@en,
@@ -717,6 +774,12 @@ quantities:PHAS a si:QuantityKind ;
     skos:altLabel "PHAS"^^xsd:string ;
     skos:prefLabel "phase angle"@en,
         "angle de phase"@fr ;
+    si:hasUnit units:radian .
+
+quantities:PHSS a si:QuantityKind ;
+    skos:altLabel "PHSS"^^xsd:string ;
+    skos:prefLabel "phase shift"@en,
+        "déphasage"@fr ;
     si:hasUnit units:radian .
 
 quantities:PLTS a si:QuantityKind ;
@@ -762,6 +825,18 @@ quantities:PRMI a si:QuantityKind ;
             si:hasRightUnitTerm [ a si:UnitPower ;
                     si:hasNumericExponent "-1"^^xsd:short ;
                     si:hasUnitBase units:metre ] ] .
+
+quantities:PSNL a si:QuantityKind ;
+    skos:altLabel "PSNL"^^xsd:string ;
+    skos:prefLabel "pressure sensitivity level (referenced to 1 V/Pa)"@en,
+        "niveau de sensibilité à la pression (référence : 1 V/Pa)"@fr ;
+    si:hasUnit units:bel .
+
+quantities:PSNW a si:QuantityKind ;
+    skos:altLabel "PSNW"^^xsd:string ;
+    skos:prefLabel "pressure sensitivity level (referenced to 1 V/µPa)"@en,
+        "niveau de sensibilité à la pression (référence : 1 V/µPa)"@fr ;
+    si:hasUnit units:bel .
 
 quantities:QFAC a si:QuantityKind ;
     skos:altLabel "QFAC"^^xsd:string ;
@@ -894,6 +969,28 @@ quantities:SHLD a si:QuantityKind ;
         "taux de blindage"@fr ;
     si:hasUnit units:bel .
 
+quantities:SOIL a si:QuantityKind ;
+    skos:altLabel "SOIL"^^xsd:string ;
+    skos:prefLabel "sound intensity level (referenced to 1 pW m-2)"@en,
+        "niveau d'intensité acoustique (référence : 1 pW m-2)"@fr ;
+    si:hasUnit units:bel .
+
+quantities:SOIN a si:QuantityKind ;
+    skos:altLabel "SOIN"^^xsd:string ;
+    skos:prefLabel "sound intensity"@en,
+        "intensité acoustique"@fr ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:watt ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-2"^^xsd:short ;
+                    si:hasUnitBase units:metre ] ] .
+
+quantities:SOPL a si:QuantityKind ;
+    skos:altLabel "SOPL"^^xsd:string ;
+    skos:prefLabel "sound pressure level (referenced to 20 µPa)"@en,
+        "niveau de pression acoustique (référence : 20 µPa)"@fr ;
+    si:hasUnit units:bel .
+
 quantities:SPVO a si:QuantityKind ;
     skos:altLabel "SPVO"^^xsd:string ;
     skos:prefLabel "specific volume"@en,
@@ -942,6 +1039,12 @@ quantities:SUTE a si:QuantityKind ;
                     si:hasNumericExponent "-1"^^xsd:short ;
                     si:hasUnitBase units:metre ] ] .
 
+quantities:SYRL a si:QuantityKind ;
+    skos:altLabel "SYRL"^^xsd:string ;
+    skos:prefLabel "system response level (referenced to true level)"@en,
+        "niveau de réponse du système (référence : niveau réel)"@fr ;
+    si:hasUnit units:bel .
+
 quantities:TAND a si:QuantityKind ;
     skos:altLabel "TAND"^^xsd:string ;
     skos:prefLabel "dielectric loss tangent"@en,
@@ -961,6 +1064,20 @@ quantities:TCON a si:QuantityKind ;
                             si:hasNumericExponent "-1"^^xsd:short ;
                             si:hasUnitBase units:kelvin ] ] ] .
 
+quantities:TDDS a si:QuantityKind ;
+    skos:altLabel "TDDS"^^xsd:string ;
+    skos:prefLabel "total chromatic dispersion slope"@en,
+        "pente de dispersion chromatique totale"@fr ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:second ;
+            si:hasRightUnitTerm [ a si:UnitProduct ;
+                    si:hasLeftUnitTerm [ a si:UnitPower ;
+                            si:hasNumericExponent "-1"^^xsd:short ;
+                            si:hasUnitBase units:metre ] ;
+                    si:hasRightUnitTerm [ a si:UnitPower ;
+                            si:hasNumericExponent "-1"^^xsd:short ;
+                            si:hasUnitBase units:metre ] ] ] .
+
 quantities:TDIF a si:QuantityKind ;
     skos:altLabel "TDIF"^^xsd:string ;
     skos:prefLabel "thermal diffusivity"@en,
@@ -972,6 +1089,16 @@ quantities:TDIF a si:QuantityKind ;
             si:hasRightUnitTerm [ a si:UnitPower ;
                     si:hasNumericExponent "-1"^^xsd:short ;
                     si:hasUnitBase units:second ] ] .
+
+quantities:TDIS a si:QuantityKind ;
+    skos:altLabel "TDIS"^^xsd:string ;
+    skos:prefLabel "total chromatic dispersion"@en,
+        "dispersion chromatique totale"@fr ;
+    si:hasUnit [ a si:UnitProduct ;
+            si:hasLeftUnitTerm units:second ;
+            si:hasRightUnitTerm [ a si:UnitPower ;
+                    si:hasNumericExponent "-1"^^xsd:short ;
+                    si:hasUnitBase units:metre ] ] .
 
 quantities:TEMC a si:QuantityKind ;
     skos:altLabel "TEMC"^^xsd:string ;
@@ -1082,16 +1209,16 @@ quantities:XPOS a si:QuantityKind ;
                     si:hasNumericExponent "-1"^^xsd:short ;
                     si:hasUnitBase units:kilogram ] ] .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/quantities_core.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_core.yaml> a prov:Entity .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/quantities_other.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_other.yaml> a prov:Entity .
 
-<https://si-digital-framework.org/SI/activities#quantities_20260303103151Z.ttl_generation> a prov:Activity ;
-    prov:startedAtTime "2026-03-03T10:31:51+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/quantities_abox.py> .
+<https://si-digital-framework.org/SI/activities#quantities_20260320094832Z.ttl_generation> a prov:Activity ;
+    prov:startedAtTime "2026-03-20T09:48:32+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/cuq_tbox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/quantities_abox.py> .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/quantities_abox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/quantities_abox.py> a prov:Agent .
 
