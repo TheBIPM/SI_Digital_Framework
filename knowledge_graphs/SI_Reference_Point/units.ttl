@@ -9,15 +9,15 @@
 @prefix units: <https://si-digital-framework.org/SI/units/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://si-digital-framework.org/SI/entities#units_20260303103151Z.ttl> a prov:Entity ;
-    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/units_abox.py> ;
-    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/base_units_defs.yaml>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/def_collectors.yaml>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/non_si_units.yaml>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/notes.yaml>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/si_units_special_names.yaml> ;
-    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#units_20260303103151Z.ttl_generation> .
+<https://si-digital-framework.org/SI/entities#units_20260610152709Z.ttl> a prov:Entity ;
+    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/units_abox.py> ;
+    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/base_units_defs.yaml>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/def_collectors.yaml>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/non_si_units.yaml>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/notes.yaml>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/si_units_special_names.yaml> ;
+    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#units_20260610152709Z.ttl_generation> .
 
 units: a owl:Ontology ;
     dcterms:license <https://creativecommons.org/licenses/by/3.0/igo/> ;
@@ -38,13 +38,15 @@ licence CC-BY-3.0-IGO. Vous êtes autorisés à partager (copier, distribuer et 
 le matériel par tous moyens et sous tous formats) et adapter (remixer, transformer
 et créer à partir du matériel) pour toute utilisation, y compris commerciale.
 L'Offrant ne peut retirer les autorisations concédées par la licence tant que
-vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre 
-(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière 
-et les IRIs originaux des termes individuels), intégrer un lien vers la licence 
+vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre
+(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière
+et les IRIs originaux des termes individuels), intégrer un lien vers la licence
 et indiquer si des modifications ont été effectuées à l'oeuvre.
-Vous devez indiquer ces informations par tous les moyens raisonnables, 
-sans toutefois suggérer que l'offrant vous soutient ou soutient 
+Vous devez indiquer ces informations par tous les moyens raisonnables,
+sans toutefois suggérer que l'offrant vous soutient ou soutient
 la façon dont vous avez utilisé son Oeuvre."""@fr ;
+    owl:versionIRI <https://si-digital-framework.org/1.0.0/units/> ;
+    owl:versionInfo "1.0.0"^^xsd:string ;
     skos:prefLabel "SI Reference Point - Units and Prefixes"^^xsd:string .
 
 units:arcminute a si:nonSIUnit ;
@@ -54,7 +56,7 @@ units:arcminute a si:nonSIUnit ;
     si:hasUnitTypeAsString "Non-SI unit accepted for use with the SI"@en,
         "Unité en dehors du SI dont l'usage est accepté avec le SI"@fr ;
     si:inOtherSIUnits [ a si:UnitMultiple ;
-            si:hasNumericFactor "0.000290888208665722"^^xsd:float ;
+            si:hasNumericFactor 0.00029088820866572159615394846141476 ;
             si:hasNumericFactorAsString "(π \\; / \\; 10800)"^^xsd:string ;
             si:hasUnitTerm units:radian ] ;
     si:isUnitOfQtyKind quantities:ANGP ;
@@ -67,7 +69,7 @@ units:arcsecond a si:nonSIUnit ;
     si:hasUnitTypeAsString "Non-SI unit accepted for use with the SI"@en,
         "Unité en dehors du SI dont l'usage est accepté avec le SI"@fr ;
     si:inOtherSIUnits [ a si:UnitMultiple ;
-            si:hasNumericFactor "4.84813681109536e-06"^^xsd:float ;
+            si:hasNumericFactor 0.0000048481368110953599358991410235794 ;
             si:hasNumericFactorAsString "(π \\; / \\; 648000)"^^xsd:string ;
             si:hasUnitTerm units:radian ] ;
     si:isUnitOfQtyKind quantities:ANGP ;
@@ -115,8 +117,8 @@ units:dalton a si:nonSIUnit ;
     si:hasUnitTypeAsString "Non-SI unit accepted for use with the SI"@en,
         "Unité en dehors du SI dont l'usage est accepté avec le SI"@fr ;
     si:inOtherSIUnits [ a si:UnitMultiple ;
-            si:hasNumericFactor "1.6605390666e-27"^^xsd:float ;
-            si:hasNumericFactorAsString "1.660\\:539\\:066\\:60(50) \\times 10^{-27}"^^xsd:string ;
+            si:hasNumericFactor 0.00000000000000000000000000166053906892 ;
+            si:hasNumericFactorAsString "1.660\\:539\\:068\\:92(52) \\times 10^{-27}"^^xsd:string ;
             si:hasUnitTerm units:kilogram ] ;
     si:isUnitOfQtyKind quantities:MASS ;
     si:prefixRestriction false .
@@ -141,7 +143,7 @@ units:degree a si:nonSIUnit ;
     si:hasUnitTypeAsString "Non-SI unit accepted for use with the SI"@en,
         "Unité en dehors du SI dont l'usage est accepté avec le SI"@fr ;
     si:inOtherSIUnits [ a si:UnitMultiple ;
-            si:hasNumericFactor "0.0174532925199433"^^xsd:float ;
+            si:hasNumericFactor 0.017453292519943295769236907684886 ;
             si:hasNumericFactorAsString "(π \\; / \\; 180)"^^xsd:string ;
             si:hasUnitTerm units:radian ] ;
     si:isUnitOfQtyKind quantities:ANGP ;
@@ -151,7 +153,7 @@ units:degreeCelsius a si:SISpecialNamedUnit ;
     skos:prefLabel "degree Celsius"@en,
         "degré Celsius"@fr ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM9-Res7> ;
-    si:hasSymbol "℃"^^xsd:string ;
+    si:hasSymbol "°C"^^xsd:string ;
     si:hasUnitTypeAsString "Named SI derived unit"@en,
         "Unité SI dérivée ayant un nom spécial"@fr ;
     si:inBaseSIUnits units:kelvin ;
@@ -165,7 +167,7 @@ units:electronvolt a si:nonSIUnit ;
     si:hasUnitTypeAsString "Non-SI unit accepted for use with the SI"@en,
         "Unité en dehors du SI dont l'usage est accepté avec le SI"@fr ;
     si:inOtherSIUnits [ a si:UnitMultiple ;
-            si:hasNumericFactor "1.602176634e-19"^^xsd:float ;
+            si:hasNumericFactor 0.0000000000000000001602176634 ;
             si:hasNumericFactorAsString "1.602\\:176\\:634 \\times 10^{-19}"^^xsd:string ;
             si:hasUnitTerm units:joule ] ;
     si:isUnitOfQtyKind quantities:ENGY ;
@@ -316,7 +318,7 @@ units:litre a si:nonSIUnit ;
     si:hasUnitTypeAsString "Non-SI unit accepted for use with the SI"@en,
         "Unité en dehors du SI dont l'usage est accepté avec le SI"@fr ;
     si:inOtherSIUnits [ a si:UnitMultiple ;
-            si:hasNumericFactor "0.001"^^xsd:float ;
+            si:hasNumericFactor 0.001 ;
             si:hasNumericFactorAsString "0.001"^^xsd:string ;
             si:hasUnitTerm [ a si:UnitPower ;
                     si:hasNumericExponent "3"^^xsd:short ;
@@ -515,15 +517,15 @@ units:tonne a si:nonSIUnit ;
     si:isUnitOfQtyKind quantities:MASS ;
     si:prefixRestriction true .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/base_units_defs.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/base_units_defs.yaml> a prov:Entity .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/def_collectors.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/def_collectors.yaml> a prov:Entity .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/non_si_units.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/non_si_units.yaml> a prov:Entity .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/notes.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/notes.yaml> a prov:Entity .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/si_units_special_names.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/si_units_special_names.yaml> a prov:Entity .
 
 si:ampere1948note1 a si:DefinitionNote ;
     si:hasNoteIndex 1 ;
@@ -602,8 +604,8 @@ si:kelvin2018note4 a si:DefinitionNote ;
 
 si:kelvin2018note5 a si:DefinitionNote ;
     si:hasNoteIndex 5 ;
-    si:hasNoteText "The unit of Celsius temperature is the degree Celsius, symbol $\\rm{{^\\circ}{C}}$, which is by definition equal in magnitude to the unit kelvin. A difference or interval of temperature may be expressed in kelvins or in degrees Celsius, the numerical value of the temperature difference being the same in either case. However, the numerical value of a Celsius temperature expressed in degrees Celsius is related to the numerical value of the thermodynamic temperature expressed in kelvin by the relation $${{t}}/{\\rm{{^\\circ}{C}}} = {{T}}/{\\rm{K}} - {273.15}$$."@en,
-        "L’unité de température Celsius est le degré Celsius, symbole $\\rm{{^\\circ}{C}}$, qui par définition est égal en amplitude à l’unité « kelvin ». Une différence ou un intervalle de température peut s’exprimer aussi bien en kelvins qu’en degrés Celsius, la valeur numérique de la différence de température étant la même dans les deux cas. La valeur numérique de la température Celsius exprimée en degrés Celsius est liée à la valeur numérique de la température thermodynamique exprimée en kelvins par la relation : $${{t}}/{\\rm{{^\\circ}{C}}} = {{T}}/{\\rm{K}} - {273.15}$$."@fr .
+    si:hasNoteText "The unit of Celsius temperature is the degree Celsius, symbol ${^\\circ\\rm{C}}$, which is by definition equal in magnitude to the unit kelvin. A difference or interval of temperature may be expressed in kelvins or in degrees Celsius, the numerical value of the temperature difference being the same in either case. However, the numerical value of a Celsius temperature expressed in degrees Celsius is related to the numerical value of the thermodynamic temperature expressed in kelvin by the relation $${{t}}/{{^\\circ\\rm{C}}} = {{T}}/{\\rm{K}} - {273.15}$$."@en,
+        "L’unité de température Celsius est le degré Celsius, symbole ${^\\circ\\rm{C}}$, qui par définition est égal en amplitude à l’unité « kelvin ». Une différence ou un intervalle de température peut s’exprimer aussi bien en kelvins qu’en degrés Celsius, la valeur numérique de la différence de température étant la même dans les deux cas. La valeur numérique de la température Celsius exprimée en degrés Celsius est liée à la valeur numérique de la température thermodynamique exprimée en kelvins par la relation : $${{t}}/{{^\\circ\\rm{C}}} = {{T}}/{\\rm{K}} - {273.15}$$."@fr .
 
 si:kelvin2018note6 a si:DefinitionNote ;
     si:hasNoteIndex 6 ;
@@ -735,10 +737,10 @@ si:second2018note5 a si:DefinitionNote ;
     si:hasNoteText "The CIPM has adopted various secondary representations of the second, based on a selected number of spectral lines of atoms, ions or molecules. The unperturbed frequencies of these lines can be determined with a relative uncertainty not lower than that of the realization of the second based on the ${^{133}\\rm{Cs}}$ hyperfine transition frequency, but some can be reproduced with superior stability."@en,
         "Le CIPM a adopté différentes représentations secondaires de la seconde fondées sur un nombre choisi de raies spectrales d’atomes, ions ou molécules. Les fréquences non perturbées de ces raies peuvent être déterminées avec une incertitude relative qui n’est pas inférieure à celle de la réalisation de la seconde fondée sur la transition hyperfine de l’atome de ${^{133}\\rm{Cs}}$ mais certaines peuvent être reproduites avec une meilleure stabilité."@fr .
 
-<https://si-digital-framework.org/SI/activities#units_20260303103151Z.ttl_generation> a prov:Activity ;
-    prov:startedAtTime "2026-03-03T10:31:51+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/units_abox.py> .
+<https://si-digital-framework.org/SI/activities#units_20260610152709Z.ttl_generation> a prov:Activity ;
+    prov:startedAtTime "2026-06-10T15:27:09+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/units_abox.py> .
 
 units:coulomb a si:SISpecialNamedUnit ;
     skos:prefLabel "coulomb"@en,
@@ -819,9 +821,9 @@ units:watt a si:SISpecialNamedUnit ;
     si:isUnitOfQtyKind quantities:POWR ;
     si:prefixRestriction false .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> a prov:Agent .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/units_abox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/units_abox.py> a prov:Agent .
 
 si:ampere1948 a si:Definition ;
     skos:prefLabel "ampere1948"@en,

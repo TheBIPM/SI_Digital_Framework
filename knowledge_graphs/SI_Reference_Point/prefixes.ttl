@@ -7,11 +7,11 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://si-digital-framework.org/SI/entities#prefixes_20260303103151Z.ttl> a prov:Entity ;
-    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/prefixes_abox.py> ;
-    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/prefixes.yaml> ;
-    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#prefixes_20260303103151Z.ttl_generation> .
+<https://si-digital-framework.org/SI/entities#prefixes_20260610152711Z.ttl> a prov:Entity ;
+    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/prefixes_abox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> ;
+    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/prefixes.yaml> ;
+    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#prefixes_20260610152711Z.ttl_generation> .
 
 prefixes: a owl:Ontology ;
     dcterms:license <https://creativecommons.org/licenses/by/3.0/igo/> ;
@@ -32,22 +32,24 @@ licence CC-BY-3.0-IGO. Vous êtes autorisés à partager (copier, distribuer et 
 le matériel par tous moyens et sous tous formats) et adapter (remixer, transformer
 et créer à partir du matériel) pour toute utilisation, y compris commerciale.
 L'Offrant ne peut retirer les autorisations concédées par la licence tant que
-vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre 
-(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière 
-et les IRIs originaux des termes individuels), intégrer un lien vers la licence 
+vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre
+(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière
+et les IRIs originaux des termes individuels), intégrer un lien vers la licence
 et indiquer si des modifications ont été effectuées à l'oeuvre.
-Vous devez indiquer ces informations par tous les moyens raisonnables, 
-sans toutefois suggérer que l'offrant vous soutient ou soutient 
+Vous devez indiquer ces informations par tous les moyens raisonnables,
+sans toutefois suggérer que l'offrant vous soutient ou soutient
 la façon dont vous avez utilisé son Oeuvre."""@fr ;
+    owl:versionIRI <https://si-digital-framework.org/1.0.0/prefixes/> ;
+    owl:versionInfo "1.0.0"^^xsd:string ;
     skos:prefLabel "SI Reference Point - Prefixes"^^xsd:string .
 
 prefixes:atto a si:SIPrefix ;
     skos:prefLabel "atto"@en,
         "atto"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM12-Res8> ;
     si:hasExponent -18 ;
-    si:hasScalingFactor "1e-18"^^xsd:float ;
+    si:hasScalingFactor 0.000000000000000001 ;
     si:hasSymbol "a"^^xsd:string .
 
 prefixes:centi a si:SIPrefix ;
@@ -80,19 +82,19 @@ prefixes:deci a si:SIPrefix ;
 prefixes:exa a si:SIPrefix ;
     skos:prefLabel "exa"@en,
         "exa"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:integer ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM15-Res10> ;
     si:hasExponent 18 ;
-    si:hasScalingFactor "1e+18"^^xsd:float ;
+    si:hasScalingFactor 1000000000000000000 ;
     si:hasSymbol "E"^^xsd:string .
 
 prefixes:femto a si:SIPrefix ;
     skos:prefLabel "femto"@en,
         "femto"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM12-Res8> ;
     si:hasExponent -15 ;
-    si:hasScalingFactor "1e-15"^^xsd:float ;
+    si:hasScalingFactor 0.000000000000001 ;
     si:hasSymbol "f"^^xsd:string .
 
 prefixes:giga a si:SIPrefix ;
@@ -134,11 +136,11 @@ prefixes:mega a si:SIPrefix ;
 prefixes:micro a si:SIPrefix ;
     skos:prefLabel "micro"@en,
         "micro"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM11-Res12> ;
     si:hasExponent -6 ;
-    si:hasScalingFactor "1e-06"^^xsd:float ;
-    si:hasSymbol "µ"^^xsd:string .
+    si:hasScalingFactor 0.000001 ;
+    si:hasSymbol "μ"^^xsd:string .
 
 prefixes:milli a si:SIPrefix ;
     skos:prefLabel "milli"@en,
@@ -152,18 +154,18 @@ prefixes:milli a si:SIPrefix ;
 prefixes:nano a si:SIPrefix ;
     skos:prefLabel "nano"@en,
         "nano"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM11-Res12> ;
     si:hasExponent -9 ;
-    si:hasScalingFactor "1e-09"^^xsd:float ;
+    si:hasScalingFactor 0.000000001 ;
     si:hasSymbol "n"^^xsd:string .
 
 prefixes:none a si:SIPrefix ;
     skos:prefLabel "none"@en,
         "aucun"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasExponent 0 ;
-    si:hasScalingFactor "1e0"^^xsd:float .
+    si:hasScalingFactor 1.0 .
 
 prefixes:peta a si:SIPrefix ;
     skos:prefLabel "peta"@en,
@@ -177,46 +179,46 @@ prefixes:peta a si:SIPrefix ;
 prefixes:pico a si:SIPrefix ;
     skos:prefLabel "pico"@en,
         "pico"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM11-Res12> ;
     si:hasExponent -12 ;
-    si:hasScalingFactor "1e-12"^^xsd:float ;
+    si:hasScalingFactor 0.000000000001 ;
     si:hasSymbol "p"^^xsd:string .
 
 prefixes:quecto a si:SIPrefix ;
     skos:prefLabel "quecto"@en,
         "quecto"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM27-Res3> ;
     si:hasExponent -30 ;
-    si:hasScalingFactor "1e-30"^^xsd:float ;
+    si:hasScalingFactor 0.000000000000000000000000000001 ;
     si:hasSymbol "q"^^xsd:string .
 
 prefixes:quetta a si:SIPrefix ;
     skos:prefLabel "quetta"@en,
         "quetta"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:integer ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM27-Res3> ;
     si:hasExponent 30 ;
-    si:hasScalingFactor "1e+30"^^xsd:float ;
+    si:hasScalingFactor 1000000000000000000000000000000 ;
     si:hasSymbol "Q"^^xsd:string .
 
 prefixes:ronna a si:SIPrefix ;
     skos:prefLabel "ronna"@en,
         "ronna"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:integer ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM27-Res3> ;
     si:hasExponent 27 ;
-    si:hasScalingFactor "1e+27"^^xsd:float ;
+    si:hasScalingFactor 1000000000000000000000000000 ;
     si:hasSymbol "R"^^xsd:string .
 
 prefixes:ronto a si:SIPrefix ;
     skos:prefLabel "ronto"@en,
         "ronto"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM27-Res3> ;
     si:hasExponent -27 ;
-    si:hasScalingFactor "1e-27"^^xsd:float ;
+    si:hasScalingFactor 0.000000000000000000000000001 ;
     si:hasSymbol "r"^^xsd:string .
 
 prefixes:tera a si:SIPrefix ;
@@ -231,47 +233,47 @@ prefixes:tera a si:SIPrefix ;
 prefixes:yocto a si:SIPrefix ;
     skos:prefLabel "yocto"@en,
         "yocto"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM19-Res4> ;
     si:hasExponent -24 ;
-    si:hasScalingFactor "1e-24"^^xsd:float ;
+    si:hasScalingFactor 0.000000000000000000000001 ;
     si:hasSymbol "y"^^xsd:string .
 
 prefixes:yotta a si:SIPrefix ;
     skos:prefLabel "yotta"@en,
         "yotta"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:integer ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM19-Res4> ;
     si:hasExponent 24 ;
-    si:hasScalingFactor "1e+24"^^xsd:float ;
+    si:hasScalingFactor 1000000000000000000000000 ;
     si:hasSymbol "Y"^^xsd:string .
 
 prefixes:zepto a si:SIPrefix ;
     skos:prefLabel "zepto"@en,
         "zepto"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM19-Res4> ;
     si:hasExponent -21 ;
-    si:hasScalingFactor "1e-21"^^xsd:float ;
+    si:hasScalingFactor 0.000000000000000000001 ;
     si:hasSymbol "z"^^xsd:string .
 
 prefixes:zetta a si:SIPrefix ;
     skos:prefLabel "zetta"@en,
         "zetta"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:integer ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM19-Res4> ;
     si:hasExponent 21 ;
-    si:hasScalingFactor "1e+21"^^xsd:float ;
+    si:hasScalingFactor 1000000000000000000000 ;
     si:hasSymbol "Z"^^xsd:string .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/prefixes.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/prefixes.yaml> a prov:Entity .
 
-<https://si-digital-framework.org/SI/activities#prefixes_20260303103151Z.ttl_generation> a prov:Activity ;
-    prov:startedAtTime "2026-03-03T10:31:51+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/prefixes_abox.py> .
+<https://si-digital-framework.org/SI/activities#prefixes_20260610152711Z.ttl_generation> a prov:Activity ;
+    prov:startedAtTime "2026-06-10T15:27:11+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/prefixes_abox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/prefixes_abox.py> a prov:Agent .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/prefixes_abox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> a prov:Agent .
 

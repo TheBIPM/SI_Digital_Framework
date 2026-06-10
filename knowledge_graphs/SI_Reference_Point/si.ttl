@@ -29,13 +29,15 @@ licence CC-BY-3.0-IGO. Vous êtes autorisés à partager (copier, distribuer et 
 le matériel par tous moyens et sous tous formats) et adapter (remixer, transformer
 et créer à partir du matériel) pour toute utilisation, y compris commerciale.
 L'Offrant ne peut retirer les autorisations concédées par la licence tant que
-vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre 
-(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière 
-et les IRIs originaux des termes individuels), intégrer un lien vers la licence 
+vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre
+(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière
+et les IRIs originaux des termes individuels), intégrer un lien vers la licence
 et indiquer si des modifications ont été effectuées à l'oeuvre.
-Vous devez indiquer ces informations par tous les moyens raisonnables, 
-sans toutefois suggérer que l'offrant vous soutient ou soutient 
+Vous devez indiquer ces informations par tous les moyens raisonnables,
+sans toutefois suggérer que l'offrant vous soutient ou soutient
 la façon dont vous avez utilisé son Oeuvre."""@fr ;
+    owl:versionIRI <https://si-digital-framework.org/1.0.0/SI#> ;
+    owl:versionInfo "1.0.0"^^xsd:string ;
     skos:prefLabel "SI Reference Point"^^xsd:string .
 
 si:correspondingResolution a owl:DatatypeProperty ;
@@ -126,6 +128,13 @@ si:hasEndValidity a owl:DatatypeProperty ;
         "Associer une définition SI à sa date de fin de validité."@fr ;
     rdfs:domain si:Definition ;
     rdfs:range xsd:date .
+
+si:hasExponent a owl:DatatypeProperty ;
+    rdfs:label "has numeric exponent as power of 10"@en,
+        "a pour exposant de puissance 10 ce nombre"@fr ;
+    rdfs:comment "10 ^ Exponent (for prefixes)" ;
+    rdfs:domain si:SIPrefix ;
+    rdfs:range xsd:short .
 
 si:hasLeftQuantityTerm a owl:ObjectProperty ;
     rdfs:label "has left quantity term"@en,
@@ -315,9 +324,9 @@ si:prefixRestriction a owl:DatatypeProperty ;
             owl:unionOf ( si:SIBaseUnit si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) ] ;
     rdfs:range xsd:boolean .
 
-entities:si_20260303103150Z.ttl a prov:Entity ;
-    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> ;
-    prov:wasGeneratedBy activities:si_ttl_generation20260303103150Z.ttl_generation .
+entities:si_20260610152709Z.ttl a prov:Entity ;
+    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/tboxes/si_tbox.py> ;
+    prov:wasGeneratedBy activities:si_ttl_generation20260610152709Z.ttl_generation .
 
 si:QuantityKindPower a owl:Class ;
     rdfs:label "quantitykind power"@en,
@@ -378,11 +387,11 @@ si:isTargetOf a owl:DatatypeProperty ;
     rdfs:domain si:SIDecisionTarget ;
     rdfs:range si:SIDecisionScope .
 
-activities:si_ttl_generation20260303103150Z.ttl_generation a prov:Activity ;
-    prov:startedAtTime "2026-03-03T10:31:50+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> .
+activities:si_ttl_generation20260610152709Z.ttl_generation a prov:Activity ;
+    prov:startedAtTime "2026-06-10T15:27:09+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/tboxes/si_tbox.py> .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/tboxes/si_tbox.py> a prov:Agent .
 
 si:CompoundQuantityKind a owl:Class ;
     rdfs:label "compound quantitykind"@en,
@@ -530,9 +539,9 @@ si:MeasurementUnit a owl:Class ;
         si:QuantityKind,
         si:SIPrefix .
 
-[] rdf:first si:SIBaseUnit ;
-    rdf:rest ( si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) .
-
 [] rdf:first si:Constant ;
     rdf:rest ( si:SIPrefix ) .
+
+[] rdf:first si:SIBaseUnit ;
+    rdf:rest ( si:SISpecialNamedUnit si:nonSIUnit si:MeasurementUnit ) .
 

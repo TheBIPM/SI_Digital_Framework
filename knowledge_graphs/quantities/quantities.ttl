@@ -8,12 +8,12 @@
 @prefix units: <https://si-digital-framework.org/SI/units/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://si-digital-framework.org/SI/entities#quantities_20260320094832Z.ttl> a prov:Entity ;
-    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/quantities_abox.py> ;
-    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_core.yaml>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_other.yaml> ;
-    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#quantities_20260320094832Z.ttl_generation> .
+<https://si-digital-framework.org/SI/entities#quantities_20260610152710Z.ttl> a prov:Entity ;
+    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/quantities_abox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> ;
+    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/quantities_core.yaml>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/quantities_other.yaml> ;
+    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#quantities_20260610152710Z.ttl_generation> .
 
 quantities: a owl:Ontology ;
     dcterms:license <https://creativecommons.org/licenses/by/3.0/igo/> ;
@@ -34,13 +34,15 @@ licence CC-BY-3.0-IGO. Vous êtes autorisés à partager (copier, distribuer et 
 le matériel par tous moyens et sous tous formats) et adapter (remixer, transformer
 et créer à partir du matériel) pour toute utilisation, y compris commerciale.
 L'Offrant ne peut retirer les autorisations concédées par la licence tant que
-vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre 
-(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière 
-et les IRIs originaux des termes individuels), intégrer un lien vers la licence 
+vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre
+(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière
+et les IRIs originaux des termes individuels), intégrer un lien vers la licence
 et indiquer si des modifications ont été effectuées à l'oeuvre.
-Vous devez indiquer ces informations par tous les moyens raisonnables, 
-sans toutefois suggérer que l'offrant vous soutient ou soutient 
+Vous devez indiquer ces informations par tous les moyens raisonnables,
+sans toutefois suggérer que l'offrant vous soutient ou soutient
 la façon dont vous avez utilisé son Oeuvre."""@fr ;
+    owl:versionIRI <https://si-digital-framework.org/1.0.0/quantities/> ;
+    owl:versionInfo "1.0.0"^^xsd:string ;
     skos:prefLabel "SI Reference Point - Quantities"^^xsd:string .
 
 quantities:ABDO a si:QuantityKind ;
@@ -532,8 +534,8 @@ quantities:IRRA a si:QuantityKind ;
 
 quantities:ITSC a si:QuantityKind ;
     skos:altLabel "ITSC"^^xsd:string ;
-    skos:prefLabel "ITS-90 temperature (℃)"@en,
-        "température ITS-90 (℃)"@fr ;
+    skos:prefLabel "ITS-90 temperature (°C)"@en,
+        "température ITS-90 (°C)"@fr ;
     si:hasUnit units:degreeCelsius .
 
 quantities:ITSK a si:QuantityKind ;
@@ -834,8 +836,8 @@ quantities:PSNL a si:QuantityKind ;
 
 quantities:PSNW a si:QuantityKind ;
     skos:altLabel "PSNW"^^xsd:string ;
-    skos:prefLabel "pressure sensitivity level (referenced to 1 V/µPa)"@en,
-        "niveau de sensibilité à la pression (référence : 1 V/µPa)"@fr ;
+    skos:prefLabel "pressure sensitivity level (referenced to 1 V/μPa)"@en,
+        "niveau de sensibilité à la pression (référence : 1 V/μPa)"@fr ;
     si:hasUnit units:bel .
 
 quantities:QFAC a si:QuantityKind ;
@@ -987,8 +989,8 @@ quantities:SOIN a si:QuantityKind ;
 
 quantities:SOPL a si:QuantityKind ;
     skos:altLabel "SOPL"^^xsd:string ;
-    skos:prefLabel "sound pressure level (referenced to 20 µPa)"@en,
-        "niveau de pression acoustique (référence : 20 µPa)"@fr ;
+    skos:prefLabel "sound pressure level (referenced to 20 μPa)"@en,
+        "niveau de pression acoustique (référence : 20 μPa)"@fr ;
     si:hasUnit units:bel .
 
 quantities:SPVO a si:QuantityKind ;
@@ -1209,16 +1211,16 @@ quantities:XPOS a si:QuantityKind ;
                     si:hasNumericExponent "-1"^^xsd:short ;
                     si:hasUnitBase units:kilogram ] ] .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_core.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/quantities_core.yaml> a prov:Entity .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq_data/quantities_other.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/quantities_other.yaml> a prov:Entity .
 
-<https://si-digital-framework.org/SI/activities#quantities_20260320094832Z.ttl_generation> a prov:Activity ;
-    prov:startedAtTime "2026-03-20T09:48:32+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/cuq_tbox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/quantities_abox.py> .
+<https://si-digital-framework.org/SI/activities#quantities_20260610152710Z.ttl_generation> a prov:Activity ;
+    prov:startedAtTime "2026-06-10T15:27:10+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/quantities_abox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/quantities_abox.py> a prov:Agent .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/b665de3165114cbee2da9dd1dded77b8d97cccb4/src/si_ref_point/cuq/quantities_abox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> a prov:Agent .
 

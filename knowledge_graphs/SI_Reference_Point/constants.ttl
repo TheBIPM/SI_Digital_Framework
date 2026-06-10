@@ -8,11 +8,11 @@
 @prefix units: <https://si-digital-framework.org/SI/units/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://si-digital-framework.org/SI/entities#constants_20260303103151Z.ttl> a prov:Entity ;
-    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/constants_abox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> ;
-    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/si_constants.yaml> ;
-    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#constants_20260303103151Z.ttl_generation> .
+<https://si-digital-framework.org/SI/entities#constants_20260610152710Z.ttl> a prov:Entity ;
+    prov:wasAttributedTo <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/constants_abox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> ;
+    prov:wasDerivedFrom <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/si_constants.yaml> ;
+    prov:wasGeneratedBy <https://si-digital-framework.org/SI/activities#constants_20260610152710Z.ttl_generation> .
 
 constants: a owl:Ontology ;
     dcterms:license <https://creativecommons.org/licenses/by/3.0/igo/> ;
@@ -33,34 +33,36 @@ licence CC-BY-3.0-IGO. Vous êtes autorisés à partager (copier, distribuer et 
 le matériel par tous moyens et sous tous formats) et adapter (remixer, transformer
 et créer à partir du matériel) pour toute utilisation, y compris commerciale.
 L'Offrant ne peut retirer les autorisations concédées par la licence tant que
-vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre 
-(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière 
-et les IRIs originaux des termes individuels), intégrer un lien vers la licence 
+vous appliquez les termes de cette licence. Vous devez créditer l'oeuvre
+(en utilisant l'IRI de l'ontologie originale pour l'ontologie entière
+et les IRIs originaux des termes individuels), intégrer un lien vers la licence
 et indiquer si des modifications ont été effectuées à l'oeuvre.
-Vous devez indiquer ces informations par tous les moyens raisonnables, 
-sans toutefois suggérer que l'offrant vous soutient ou soutient 
+Vous devez indiquer ces informations par tous les moyens raisonnables,
+sans toutefois suggérer que l'offrant vous soutient ou soutient
 la façon dont vous avez utilisé son Oeuvre."""@fr ;
+    owl:versionIRI <https://si-digital-framework.org/1.0.0/constants/> ;
+    owl:versionInfo "1.0.0"^^xsd:string ;
     skos:prefLabel "SI Reference Point - Constants"^^xsd:string .
 
 constants:AvogadroConstant a si:Constant ;
     skos:hiddenLabel "Avogadro"^^xsd:string ;
     skos:prefLabel "Avogadro constant"@en,
         "constante d'Avogadro"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:integer ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM26-Res1> ;
     si:hasSymbol "${N_{\\rm{A}}}$"^^xsd:string ;
     si:hasUnit [ a si:UnitPower ;
             si:hasNumericExponent "-1"^^xsd:short ;
             si:hasUnitBase units:mole ] ;
     si:hasUpdatedDate "2019-05-20"^^xsd:date ;
-    si:hasValue "6.02214076e+23"^^xsd:float ;
+    si:hasValue 602214076000000000000000 ;
     si:hasValueAsString "6.022 140 76 x 10²³"^^xsd:string .
 
 constants:BoltzmannConstant a si:Constant ;
     skos:hiddenLabel "Boltzmann"^^xsd:string ;
     skos:prefLabel "Boltzmann constant"@en,
         "constante de Boltzmann"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM26-Res1> ;
     si:hasSymbol "${k}$"^^xsd:string ;
     si:hasUnit [ a si:UnitProduct ;
@@ -69,19 +71,19 @@ constants:BoltzmannConstant a si:Constant ;
                     si:hasNumericExponent "-1"^^xsd:short ;
                     si:hasUnitBase units:kelvin ] ] ;
     si:hasUpdatedDate "2019-05-20"^^xsd:date ;
-    si:hasValue "1.380649e-23"^^xsd:float ;
+    si:hasValue 0.00000000000000000000001380649 ;
     si:hasValueAsString "1.380 649 x 10⁻²³"^^xsd:string .
 
 constants:ElementaryCharge a si:Constant ;
     skos:hiddenLabel "ElementaryCharge"^^xsd:string ;
     skos:prefLabel "elementary charge"@en,
         "charge élementaire"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM26-Res1> ;
     si:hasSymbol "${e}$"^^xsd:string ;
     si:hasUnit units:coulomb ;
     si:hasUpdatedDate "2019-05-20"^^xsd:date ;
-    si:hasValue "1.602176634e-19"^^xsd:float ;
+    si:hasValue 0.0000000000000000001602176634 ;
     si:hasValueAsString "1.602 176 634 x 10⁻¹⁹"^^xsd:string .
 
 constants:HyperfineTransitionFrequencyOfCs-133 a si:Constant ;
@@ -116,14 +118,14 @@ constants:PlanckConstant a si:Constant ;
     skos:hiddenLabel "Planck"^^xsd:string ;
     skos:prefLabel "Planck constant"@en,
         "constante de Planck"@fr ;
-    si:hasDatatype xsd:float ;
+    si:hasDatatype xsd:decimal ;
     si:hasDefiningResolution <https://si-digital-framework.org/bodies/CGPM#CGPM26-Res1> ;
     si:hasSymbol "${h}$"^^xsd:string ;
     si:hasUnit [ a si:UnitProduct ;
             si:hasLeftUnitTerm units:joule ;
             si:hasRightUnitTerm units:second ] ;
     si:hasUpdatedDate "2019-05-20"^^xsd:date ;
-    si:hasValue "6.62607015e-34"^^xsd:float ;
+    si:hasValue 0.000000000000000000000000000000000662607015 ;
     si:hasValueAsString "6.626 070 15 x 10⁻³⁴"^^xsd:string .
 
 constants:SpeedOfLight a si:Constant ;
@@ -142,14 +144,14 @@ constants:SpeedOfLight a si:Constant ;
     si:hasValue 299792458 ;
     si:hasValueAsString "299 792 458"^^xsd:string .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq_data/si_constants.yaml> a prov:Entity .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/si/si_constants.yaml> a prov:Entity .
 
-<https://si-digital-framework.org/SI/activities#constants_20260303103151Z.ttl_generation> a prov:Activity ;
-    prov:startedAtTime "2026-03-03T10:31:51+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/constants_abox.py>,
-        <https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> .
+<https://si-digital-framework.org/SI/activities#constants_20260610152710Z.ttl_generation> a prov:Activity ;
+    prov:startedAtTime "2026-06-10T15:27:10+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/constants_abox.py>,
+        <https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/constants_abox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/constants_abox.py> a prov:Agent .
 
-<https://github.com/TheBIPM/SI-Reference-Point-2023/blob/e46202444e0aea2534679f620625af3f3fe1c3c4/src/si_ref_point/cuq/cuq_tbox.py> a prov:Agent .
+<https://github.com/TheBIPM/SI-Reference-Point-generation-scripts/blob/d5fc72153214a05391fe49a332b5466ffd12357e/src/si_ref_point/cuq/si_tbox.py> a prov:Agent .
 
