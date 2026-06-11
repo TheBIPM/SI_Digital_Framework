@@ -1,0 +1,2304 @@
+PREFIX bipm:       <https://si-digital-framework.org/bipm#>
+PREFIX dcat:       <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX extref:     <https://si-digital-framework.org/kcdb-sc/extref#>
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX quantities: <https://si-digital-framework.org/quantities/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc:         <https://si-digital-framework.org/kcdb-sc#>
+PREFIX scl:        <https://si-digital-framework.org/kcdb-sc/L/>
+PREFIX si:         <https://si-digital-framework.org/SI#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX units:      <https://si-digital-framework.org/SI/units/>
+PREFIX vann:       <http://purl.org/vocab/vann/>
+PREFIX voaf:       <http://purl.org/vocommons/voaf#>
+PREFIX xsd:        <http://www.w3.org/2001/XMLSchema#>
+
+# OWL Ontology
+<https://si-digital-framework.org/kcdb-sc/L>
+        rdf:type              skos:ConceptScheme , voaf:Vocabulary , owl:Ontology;
+        dcterms:issued        "2020/03/31"^^xsd:date;
+        dcterms:title         "Ccl Length Services Classification (dimvim)"@en;
+        voaf:specializes      <https://si-digital-framework.org/kcdb-sc>;
+        owl:versionInfo       "12";
+        prov:generatedAtTime  "2025-01-30T14:00:00Z"^^xsd:dateTime .
+
+# OWL Individuals
+# Dimensional metrology
+scl:DimMet  rdf:type          prov:Entity , sc:Branch , skos:Concept;
+        rdfs:label            "Dimensional metrology"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/DimMet";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasService         scl:DimMet-2 , scl:DimMet-6 , scl:DimMet-3 , scl:DimMet-4 , scl:DimMet-5;
+        sc:isBranchOf         scl:Length .
+
+# Linear dimensions
+scl:DimMet-2  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Linear dimensions"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/DimMet-2";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scl:DimMet-2.4 , scl:DimMet-2.1 , scl:DimMet-2.3 , scl:DimMet-2.5 , scl:DimMet-2.2;
+        sc:isServiceOf        scl:DimMet .
+
+# Length instruments
+scl:DimMet-2.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Length instruments"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-2.1";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-2.1.4 , scl:DimMet-2.1.5 , scl:DimMet-2.1.1 , scl:DimMet-2.1.6 , scl:DimMet-2.1.2 , scl:DimMet-2.1.7 , scl:DimMet-2.1.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-2 .
+
+# (Laser, length) interferometer (system, optics, refractometer)
+scl:DimMet-2.1.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "(Laser, length) interferometer (system, optics, refractometer)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "4-14.1";
+                                    dcterms:isPartOf    extref:ISO_80000_4;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-4:ed-2:v1:4-14.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-2";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-2"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-19";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-19"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-17.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-17.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "271";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.1.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.1;
+        sc:relatedSIQuantity      quantities:REFI , quantities:LENG , quantities:FREQ .
+
+# EDM instrument
+scl:DimMet-2.1.2  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "EDM instrument"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "272";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.1.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# One-dimension measuring machine
+scl:DimMet-2.1.3  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "One-dimension measuring machine"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "273";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.1.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Height measuring instrument
+scl:DimMet-2.1.4  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Height measuring instrument"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "274";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.1.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# One-dimension displacement transducer or actuator (LVDT, PZT, etc.)
+scl:DimMet-2.1.5  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "One-dimension displacement transducer or actuator (LVDT, PZT, etc.)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "275";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.1.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Gauge block comparators
+scl:DimMet-2.1.6  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Gauge block comparators"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "276";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.1.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Dial-indicator tester
+scl:DimMet-2.1.7  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Dial-indicator tester"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "277";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.1.7";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# End standards
+scl:DimMet-2.2  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "End standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-2.2";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-2.2.2 , scl:DimMet-2.2.3 , scl:DimMet-2.2.4 , scl:DimMet-2.2.5 , scl:DimMet-2.2.1 , scl:DimMet-2.2.6;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-2 .
+
+# Gauge block
+scl:DimMet-2.2.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Gauge block"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-2";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-2"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-3.1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-3.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "278";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.2.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.2;
+        sc:relatedSIQuantity      quantities:LENG , quantities:ITSC-1 , quantities:TEXL , quantities:ITSK-1 .
+
+# Length bar (long gauge block)
+scl:DimMet-2.2.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Length bar (long gauge block)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-3.1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-3.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-2";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-2"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "279";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.2.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.2;
+        sc:relatedSIQuantity      quantities:ITSC-1 , quantities:TEXL , quantities:ITSK-1 , quantities:LENG .
+
+# Plane or thread micrometer setting rod
+scl:DimMet-2.2.3  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Plane or thread micrometer setting rod"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "280";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.2.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Step gauge
+scl:DimMet-2.2.4  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Step gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-2";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-2"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-3.1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-3.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "281";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.2.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.2;
+        sc:relatedSIQuantity      quantities:LENG , quantities:ITSC-1 , quantities:TEXL , quantities:ITSK-1 .
+
+# Gap gauge
+scl:DimMet-2.2.5  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Gap gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "282";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.2.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Feeler (thickness) gauge
+scl:DimMet-2.2.6  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Feeler (thickness) gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "283";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.2.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Line standards
+scl:DimMet-2.3  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Line standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-2.3";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-2.3.3 , scl:DimMet-2.3.8 , scl:DimMet-2.3.4 , scl:DimMet-2.3.9 , scl:DimMet-2.3.5 , scl:DimMet-2.3.1 , scl:DimMet-2.3.6 , scl:DimMet-2.3.7 , scl:DimMet-2.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-2 .
+
+# Precision line scale
+scl:DimMet-2.3.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Precision line scale"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "284";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Stage micrometer
+scl:DimMet-2.3.2  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Stage micrometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "285";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Grid plate
+scl:DimMet-2.3.3  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Grid plate"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "286";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# One-dimension grating
+scl:DimMet-2.3.4  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "One-dimension grating"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "287";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Two-dimension grating
+scl:DimMet-2.3.5  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Two-dimension grating"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "288";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Linewidth standard
+scl:DimMet-2.3.6  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Linewidth standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "289";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# (Surveyor, engineer, pi) tape, (geodetic) wire
+scl:DimMet-2.3.7  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "(Surveyor, engineer, pi) tape, (geodetic) wire"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "290";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.7";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Surveyor levelling rod
+scl:DimMet-2.3.8  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Surveyor levelling rod"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "291";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.8";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Engineer or machinist scale, steel
+scl:DimMet-2.3.9  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Engineer or machinist scale, steel"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "292";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.3.9";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Diameter standards
+scl:DimMet-2.4  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Diameter standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-2.4";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-2.4.3 , scl:DimMet-2.4.2 , scl:DimMet-2.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-2 .
+
+# External cylinder (plug, piston, pin, wire)
+scl:DimMet-2.4.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "External cylinder (plug, piston, pin, wire)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "293";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.4.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Internal cylinder (ring)
+scl:DimMet-2.4.2  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Internal cylinder (ring)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "294";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.4.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Sphere (ball)
+scl:DimMet-2.4.3  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Sphere (ball)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-4";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-4"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "295";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.4.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.4;
+        sc:relatedSIQuantity      quantities:LENG , quantities:VOLU .
+
+# Standards of 1D Dimensions
+scl:DimMet-2.5  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Standards of 1D Dimensions"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-2.5";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-2.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-2 .
+
+# Standard of 1D point-to-point dimensions
+scl:DimMet-2.5.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Standard of 1D point-to-point dimensions "@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "1026";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-2.5.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-2.5;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Angle
+scl:DimMet-3  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Angle"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/DimMet-3";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scl:DimMet-3.2 , scl:DimMet-3.4 , scl:DimMet-3.1 , scl:DimMet-3.3 , scl:DimMet-3.5;
+        sc:isServiceOf        scl:DimMet .
+
+# Angle by circle dividers
+scl:DimMet-3.1  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Angle by circle dividers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-3.1";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-3.1.1 , scl:DimMet-3.1.2 , scl:DimMet-3.1.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-3 .
+
+# Optical polygon
+scl:DimMet-3.1.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Optical polygon"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "296";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.1.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.1;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Index table
+scl:DimMet-3.1.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Index table"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "297";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.1.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.1;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Rotary table, rotary encoder scale
+scl:DimMet-3.1.3  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Rotary table, rotary encoder scale"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "298";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.1.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.1;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Small-angle generators
+scl:DimMet-3.2  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Small-angle generators"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-3.2";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-3.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-3 .
+
+# Sine bar or table
+scl:DimMet-3.2.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Sine bar or table"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "299";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.2.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Angle instruments
+scl:DimMet-3.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Angle instruments"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-3.3";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-3.3.7 , scl:DimMet-3.3.2 , scl:DimMet-3.3.1 , scl:DimMet-3.3.6 , scl:DimMet-3.3.5 , scl:DimMet-3.3.4 , scl:DimMet-3.3.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-3 .
+
+# Autocollimator
+scl:DimMet-3.3.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Autocollimator"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "300";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.3.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.3;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Electronic level
+scl:DimMet-3.3.2  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Electronic level"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "301";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.3.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.3;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Clinometer
+scl:DimMet-3.3.3  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Clinometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "302";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.3.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.3;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Spirit (bubble) level
+scl:DimMet-3.3.4  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Spirit (bubble) level"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "303";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.3.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.3;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG , quantities:LENG.LENG-1 .
+
+# Theodolite
+scl:DimMet-3.3.5  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Theodolite"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "304";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.3.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.3;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# (Bevel) protractor
+scl:DimMet-3.3.6  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "(Bevel) protractor"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "305";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.3.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.3;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Squareness tester
+scl:DimMet-3.3.7  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Squareness tester"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "306";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.3.7";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.3;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Angle artefacts
+scl:DimMet-3.4  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Angle artefacts"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-3.4";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-3.4.1 , scl:DimMet-3.4.4 , scl:DimMet-3.4.3 , scl:DimMet-3.4.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-3 .
+
+# Angle block
+scl:DimMet-3.4.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Angle block"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "307";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.4.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.4;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# 90° (steel, granite, try) square
+scl:DimMet-3.4.2  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "90° (steel, granite, try) square"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "308";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.4.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.4;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# 90° cylinder square
+scl:DimMet-3.4.3  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "90° cylinder square"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "309";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.4.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.4;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Cone (taper) gauge
+scl:DimMet-3.4.4  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Cone (taper) gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "310";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.4.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.4;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Angle prisms
+scl:DimMet-3.5  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Angle prisms"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-3.5";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-3.5.2 , scl:DimMet-3.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-3 .
+
+# Optical square (pentaprism)
+scl:DimMet-3.5.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Optical square (pentaprism)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "311";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.5.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.5;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Retroreflection (cube-corner, cat-eye) prism
+scl:DimMet-3.5.2  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Retroreflection (cube-corner, cat-eye) prism"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "312";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-3.5.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-3.5;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Form
+scl:DimMet-4  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Form"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/DimMet-4";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scl:DimMet-4.4 , scl:DimMet-4.5 , scl:DimMet-4.2 , scl:DimMet-4.1 , scl:DimMet-4.3;
+        sc:isServiceOf        scl:DimMet .
+
+# Flatness standards
+scl:DimMet-4.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Flatness standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-4.1";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-4.1.1 , scl:DimMet-4.1.2 , scl:DimMet-4.1.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-4 .
+
+# Optical flat
+scl:DimMet-4.1.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Optical flat"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "313";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.1.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Optical parallel or wedge
+scl:DimMet-4.1.2  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Optical parallel or wedge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "314";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.1.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.1;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Surface plate
+scl:DimMet-4.1.3  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Surface plate"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "315";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.1.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Roundness standards
+scl:DimMet-4.2  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Roundness standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-4.2";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-4.2.4 , scl:DimMet-4.2.3 , scl:DimMet-4.2.2 , scl:DimMet-4.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-4 .
+
+# External cylinder
+scl:DimMet-4.2.1  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "External cylinder"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "316";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.2.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Internal cylinder
+scl:DimMet-4.2.2  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Internal cylinder"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "317";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.2.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Sphere (hemisphere)
+scl:DimMet-4.2.3  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Sphere (hemisphere)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "318";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.2.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Magnification standard (e.g. flick standard)
+scl:DimMet-4.2.4  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Magnification standard (e.g. flick standard)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "319";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.2.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Straightness standards
+scl:DimMet-4.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Straightness standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-4.3";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-4.3.2 , scl:DimMet-4.3.1 , scl:DimMet-4.3.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-4 .
+
+# Straight edge
+scl:DimMet-4.3.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Straight edge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "320";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.3.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Cylindrical straightness standard
+scl:DimMet-4.3.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Cylindrical straightness standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "321";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.3.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Straightness of guideway
+scl:DimMet-4.3.3  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Straightness of guideway"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "322";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.3.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Cylindricity standards
+scl:DimMet-4.4  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Cylindricity standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-4.4";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-4.4.1 , scl:DimMet-4.4.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-4 .
+
+# External cylinder
+scl:DimMet-4.4.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "External cylinder"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "323";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.4.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Internal cylinder
+scl:DimMet-4.4.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Internal cylinder"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "324";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.4.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Optical standards
+scl:DimMet-4.5  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Optical standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-4.5";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-4.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-4 .
+
+# Lens, radius standards
+scl:DimMet-4.5.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Lens, radius standards"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "325";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-4.5.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-4.5;
+        sc:relatedSIQuantity      quantities:LENG-1 .
+
+# Complex geometry
+scl:DimMet-5  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Complex geometry"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/DimMet-5";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scl:DimMet-5.4 , scl:DimMet-5.1 , scl:DimMet-5.5 , scl:DimMet-5.2 , scl:DimMet-5.6 , scl:DimMet-5.3;
+        sc:isServiceOf        scl:DimMet .
+
+# Surface texture standards
+scl:DimMet-5.1  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Surface texture standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-5.1";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-5.1.2 , scl:DimMet-5.1.1 , scl:DimMet-5.1.6 , scl:DimMet-5.1.5 , scl:DimMet-5.1.4 , scl:DimMet-5.1.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-5 .
+
+# (Groove) depth (step height) standard
+scl:DimMet-5.1.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "(Groove) depth (step height) standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "326";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.1.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Tip-condition standard
+scl:DimMet-5.1.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Tip-condition standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "327";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.1.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Spacing standard
+scl:DimMet-5.1.3  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Spacing standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "328";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.1.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Roughness standard
+scl:DimMet-5.1.4  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Roughness standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "329";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.1.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Profile coordinate standard
+scl:DimMet-5.1.5  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Profile coordinate standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "330";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.1.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.1;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Soft gauge standard
+scl:DimMet-5.1.6  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Soft gauge standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "331";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.1.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Screw standards
+scl:DimMet-5.2  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Screw standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-5.2";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-5.2.5 , scl:DimMet-5.2.4 , scl:DimMet-5.2.3 , scl:DimMet-5.2.2 , scl:DimMet-5.2.6 , scl:DimMet-5.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-5 .
+
+# Thread plug, plain
+scl:DimMet-5.2.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Thread plug, plain"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "332";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.2.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.2;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Thread plug, tapered
+scl:DimMet-5.2.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Thread plug, tapered"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "333";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.2.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.2;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Thread ring, plain
+scl:DimMet-5.2.3  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Thread ring, plain"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "334";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.2.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.2;
+        sc:relatedSIQuantity      quantities:LENG , quantities:ANGP .
+
+# Thread ring, tapered
+scl:DimMet-5.2.4  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Thread ring, tapered"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "335";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.2.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.2;
+        sc:relatedSIQuantity      quantities:LENG , quantities:LENG.LENG-1 , quantities:ANGP .
+
+# Internal API screw thread gauge
+scl:DimMet-5.2.5  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Internal API screw thread gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "336";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.2.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.2;
+        sc:relatedSIQuantity      quantities:LENG , quantities:LENG.LENG-1 , quantities:ANGP .
+
+# External API screw thread gauge
+scl:DimMet-5.2.6  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "External API screw thread gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "337";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.2.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.2;
+        sc:relatedSIQuantity      quantities:LENG , quantities:LENG.LENG-1 , quantities:ANGP .
+
+# Gear standards
+scl:DimMet-5.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Gear standards"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-5.3";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-5.3.2 , scl:DimMet-5.3.1 , scl:DimMet-5.3.5 , scl:DimMet-5.3.4 , scl:DimMet-5.3.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-5 .
+
+# Involute gear
+scl:DimMet-5.3.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Involute gear"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "338";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.3.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.3;
+        sc:relatedSIQuantity      quantities:LENG , quantities:ANGP .
+
+# Bevel gear
+scl:DimMet-5.3.2  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Bevel gear"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "339";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.3.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Gear pitch master
+scl:DimMet-5.3.3  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Gear pitch master"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "340";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.3.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Gear lead master
+scl:DimMet-5.3.4  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Gear lead master"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "341";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.3.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.3;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Gear involute master
+scl:DimMet-5.3.5  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Gear involute master"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "342";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.3.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Coordinate Measuring Machine (CMM) artefacts
+scl:DimMet-5.4  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Coordinate Measuring Machine (CMM) artefacts"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-5.4";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-5.4.1 , scl:DimMet-5.4.5 , scl:DimMet-5.4.4 , scl:DimMet-5.4.3 , scl:DimMet-5.4.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-5 .
+
+# Ball (hole, bore) plate
+scl:DimMet-5.4.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Ball (hole, bore) plate"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "343";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.4.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Ball bar
+scl:DimMet-5.4.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Ball bar"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "344";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.4.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Large CMM artefact
+scl:DimMet-5.4.3  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Large CMM artefact"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "345";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.4.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Reference software
+scl:DimMet-5.4.4  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Reference software"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "346";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.4.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.4;
+        sc:relatedSIQuantity      quantities:LENG.LENG-1 , quantities:ANGP , quantities:LENG .
+
+# Test circle for imaging probing systems
+scl:DimMet-5.4.5  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Test circle for imaging probing systems"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "347";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.4.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Two-dimension and three-dimension instruments
+scl:DimMet-5.5  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Two-dimension and three-dimension instruments"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-5.5";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-5.5.1 , scl:DimMet-5.5.8 , scl:DimMet-5.5.5 , scl:DimMet-5.5.2 , scl:DimMet-5.5.6 , scl:DimMet-5.5.3 , scl:DimMet-5.5.7 , scl:DimMet-5.5.4;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-5 .
+
+# Measuring projector
+scl:DimMet-5.5.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Measuring projector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "348";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:LENG , quantities:ANGP .
+
+# Measuring microscope
+scl:DimMet-5.5.2  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Measuring microscope"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "349";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# CMM
+scl:DimMet-5.5.3  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "CMM"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "350";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:LENG , quantities:ANGP .
+
+# Laser tracking measuring system
+scl:DimMet-5.5.4  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Laser tracking measuring system"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "351";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Motion (translation, angle) stage
+scl:DimMet-5.5.5  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Motion (translation, angle) stage"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "352";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:ANGP , quantities:LENG .
+
+# Profile instruments
+scl:DimMet-5.5.6  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Profile instruments"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "353";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:LENG , quantities:ANGP .
+
+# (Flatness, wavefront) interferometer
+scl:DimMet-5.5.7  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "(Flatness, wavefront) interferometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "354";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.7";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Form measuring machine
+scl:DimMet-5.5.8  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Form measuring machine"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "355";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.5.8";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.5;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Hardness
+scl:DimMet-5.6  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Hardness"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-5.6";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-5.6.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-5 .
+
+# Hardness indenter (Rockwell, Vickers)
+scl:DimMet-5.6.1  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Hardness indenter (Rockwell, Vickers)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "356";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-5.6.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-5.6;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Various dimensional
+scl:DimMet-6  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Various dimensional"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/DimMet-6";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scl:DimMet-6.4 , scl:DimMet-6.1 , scl:DimMet-6.5 , scl:DimMet-6.2 , scl:DimMet-6.6 , scl:DimMet-6.3 , scl:DimMet-6.7;
+        sc:isServiceOf        scl:DimMet .
+
+# Hand instruments
+scl:DimMet-6.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Hand instruments"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-6.1";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-6.1.1 , scl:DimMet-6.1.5 , scl:DimMet-6.1.4 , scl:DimMet-6.1.9 , scl:DimMet-6.1.8 , scl:DimMet-6.1.3 , scl:DimMet-6.1.7 , scl:DimMet-6.1.2 , scl:DimMet-6.1.6;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-6 .
+
+# External micrometer
+scl:DimMet-6.1.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "External micrometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "357";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Micrometer head
+scl:DimMet-6.1.2  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Micrometer head"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "358";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Depth micrometer
+scl:DimMet-6.1.3  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Depth micrometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "359";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.3";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Caliper
+scl:DimMet-6.1.4  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Caliper"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "360";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.4";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Depth gauge
+scl:DimMet-6.1.5  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Depth gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "361";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.5";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Internal two-point (bore) micrometer
+scl:DimMet-6.1.6  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Internal two-point (bore) micrometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "362";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.6";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Internal three-point (bore) micrometer
+scl:DimMet-6.1.7  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Internal three-point (bore) micrometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "363";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.7";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Dial gauge
+scl:DimMet-6.1.8  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Dial gauge"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "364";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.8";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Snap gauge (internal, external)
+scl:DimMet-6.1.9  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Snap gauge (internal, external)"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "365";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.1.9";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.1;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Pressure artefacts
+scl:DimMet-6.2  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Pressure artefacts"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-6.2";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-6.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-6 .
+
+# Piston - cylinder assembly
+scl:DimMet-6.2.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Piston - cylinder assembly"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "366";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.2.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Thermal expansivity
+scl:DimMet-6.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Thermal expansivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-6.3";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-6.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-6 .
+
+# Thermal expansion artefact
+scl:DimMet-6.3.1  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Thermal expansion artefact"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-2";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-2"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "5-3.1";
+                                    dcterms:isPartOf    extref:ISO_80000_5;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-5:ed-2:v1:5-3.1"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-5";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-5"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "367";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.3.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.3;
+        sc:relatedSIQuantity      quantities:ITSC-1 , quantities:TEXL , quantities:ITSK-1 .
+
+# Long distance
+scl:DimMet-6.4  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Long distance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-6.4";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-6.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-6 .
+
+# Geodesic baseline
+scl:DimMet-6.4.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Geodesic baseline"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "368";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.4.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.4;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Reference materials
+scl:DimMet-6.5  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Reference materials"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-6.5";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-6.5.1 , scl:DimMet-6.5.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-6 .
+
+# Standard particle
+scl:DimMet-6.5.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Standard particle"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "369";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.5.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.5;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Sieve or mesh opening
+scl:DimMet-6.5.2  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Sieve or mesh opening"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "370";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.5.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.5;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Layer thickness
+scl:DimMet-6.6  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Layer thickness"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-6.6";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-6.6.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:DimMet-6 .
+
+# Layer thickness standard
+scl:DimMet-6.6.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Layer thickness standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-1.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-1.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "371";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.6.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.6;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Not attributed 1
+scl:DimMet-6.7  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Not attributed 1"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/DimMet-6.7";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:DimMet-6.7.2 , scl:DimMet-6.7.1;
+        sc:hasStatus             sc:notYetAssigned;
+        sc:isSubserviceOf        scl:DimMet-6 .
+
+# Not attributed 2
+scl:DimMet-6.7.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Not attributed 2"@en;
+        skos:hiddenLabel          "372";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.7.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.7 .
+
+# Not attributed 1
+scl:DimMet-6.7.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Not attributed 1"@en;
+        skos:hiddenLabel          "373";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/DimMet-6.7.2";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scl:DimMet-6.7 .
+
+# Laser frequencies
+scl:Laser  rdf:type           prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Laser frequencies"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/Laser";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasService         scl:Laser-1;
+        sc:isBranchOf         scl:Length .
+
+# Radiations of the mise en pratique
+scl:Laser-1  rdf:type         skos:Concept , sc:Service;
+        rdfs:label            "Radiations of the mise en pratique"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation         "L/Laser-1";
+        prov:wasAttributedTo  bipm:CCL;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scl:Laser-1.2 , scl:Laser-1.1;
+        sc:isServiceOf        scl:Laser .
+
+# Laser radiations
+scl:Laser-1.1  rdf:type          skos:Concept , sc:Subservice;
+        rdfs:label               "Laser radiations"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/Laser-1.1";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:Laser-1.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:Laser-1 .
+
+# Frequency stabilized laser
+scl:Laser-1.1.1  rdf:type         sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Frequency stabilized laser"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-19";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-19"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-17.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-17.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "374";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/Laser-1.1.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:Laser-1.1;
+        sc:relatedSIQuantity      quantities:LENG , quantities:FREQ .
+
+# Lamp radiations
+scl:Laser-1.2  rdf:type          skos:Concept , sc:Subservice;
+        rdfs:label               "Lamp radiations"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation            "L/Laser-1.2";
+        prov:wasAttributedTo     bipm:CCL;
+        sc:hasIndividualService  scl:Laser-1.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scl:Laser-1 .
+
+# Spectral lamp
+scl:Laser-1.2.1  rdf:type         sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Spectral lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-19";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-19"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "3-17.1";
+                                    dcterms:isPartOf    extref:ISO_80000_3;
+                                    dcat:landingPage    "https://www.iso.org/obp/ui#iso:std:iso:80000:-3:ed-2:v1:3-17.1"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "375";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/L>;
+        skos:notation             "L/Laser-1.2.1";
+        prov:wasAttributedTo      bipm:CCL;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scl:Laser-1.2;
+        sc:relatedSIQuantity      quantities:LENG , quantities:FREQ .
+
+# Longueurs , Length
+scl:Length  rdf:type       prov:Entity , skos:Concept , sc:MetrologyArea;
+        rdfs:label         "Longueurs"@fr , "Length"@en;
+        skos:notation      "L";
+        skos:topConceptOf  <https://si-digital-framework.org/kcdb-sc/L>;
+        sc:hasBranch       scl:Laser , scl:DimMet .
+
+
+

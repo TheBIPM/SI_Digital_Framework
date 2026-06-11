@@ -1,0 +1,941 @@
+PREFIX bipm:       <https://si-digital-framework.org/bipm#>
+PREFIX dcat:       <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX extref:     <https://si-digital-framework.org/kcdb-sc/extref#>
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX quantities: <https://si-digital-framework.org/quantities/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc:         <https://si-digital-framework.org/kcdb-sc#>
+PREFIX sct:        <https://si-digital-framework.org/kcdb-sc/T/>
+PREFIX si:         <https://si-digital-framework.org/SI#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX units:      <https://si-digital-framework.org/SI/units/>
+PREFIX vann:       <http://purl.org/vocab/vann/>
+PREFIX voaf:       <http://purl.org/vocommons/voaf#>
+PREFIX xsd:        <http://www.w3.org/2001/XMLSchema#>
+
+# OWL Ontology
+<https://si-digital-framework.org/kcdb-sc/T>
+        rdf:type              skos:ConceptScheme , voaf:Vocabulary , owl:Ontology;
+        dcterms:issued        "2022/01/31"^^xsd:date;
+        dcterms:title         "Classification Of Services In Thermometry"@en;
+        voaf:specializes      <https://si-digital-framework.org/kcdb-sc>;
+        owl:versionInfo       "1.3";
+        prov:generatedAtTime  "2024-12-09T21:00:00Z"^^xsd:dateTime .
+
+# OWL Individuals
+# Humidity
+sct:H   rdf:type              prov:Entity , sc:Branch , skos:Concept;
+        rdfs:label            "Humidity"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/H";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasService         sct:H-5 , sct:H-4 , sct:H-3;
+        sc:isBranchOf         sct:Thermometry .
+
+# Hygrometers
+sct:H-3  rdf:type             sc:Service , skos:Concept;
+        rdfs:label            "Hygrometers"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/H-3";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      sct:H-3.3 , sct:H-3.2 , sct:H-3.1 , sct:H-3.4;
+        sc:isServiceOf        sct:H .
+
+# Dew-point hygrometers
+sct:H-3.1  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Dew-point hygrometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-3.1";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-3.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-3 .
+
+# Dew-point hygrometers
+sct:H-3.1.1  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Dew-point hygrometers"@en;
+        skos:hiddenLabel          "497";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-3.1.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-3.1;
+        sc:relatedSIQuantity      quantities:DEWP .
+
+# Psychrometers
+sct:H-3.2  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Psychrometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-3.2";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-3.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-3 .
+
+# Psychrometers
+sct:H-3.2.1  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Psychrometers"@en;
+        skos:hiddenLabel          "498";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-3.2.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-3.2;
+        sc:relatedSIQuantity      quantities:RHUM .
+
+# Relative humidity sensors
+sct:H-3.3  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Relative humidity sensors"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-3.3";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-3.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-3 .
+
+# Relative humidity sensors
+sct:H-3.3.1  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Relative humidity sensors"@en;
+        skos:hiddenLabel          "499";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-3.3.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-3.3;
+        sc:relatedSIQuantity      quantities:RHUM .
+
+# Other hygrometers
+sct:H-3.4  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Other hygrometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-3.4";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-3.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-3 .
+
+# Other hygrometers
+sct:H-3.4.1  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Other hygrometers"@en;
+        skos:hiddenLabel          "500";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-3.4.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-3.4;
+        sc:relatedSIQuantity      quantities:VOLU.VOLU-1 , quantities:MASS.MASS-1 , quantities:RHUM , quantities:AMSU.AMSU-1 .
+
+# Dynamic generators
+sct:H-4  rdf:type             sc:Service , skos:Concept;
+        rdfs:label            "Dynamic generators"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/H-4";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      sct:H-4.2 , sct:H-4.1 , sct:H-4.4 , sct:H-4.3;
+        sc:isServiceOf        sct:H .
+
+# Dew-point generators
+sct:H-4.1  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Dew-point generators"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-4.1";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-4.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-4 .
+
+# Dew-point generators
+sct:H-4.1.1  rdf:type             sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Dew-point generators"@en;
+        skos:hiddenLabel          "501";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-4.1.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-4.1;
+        sc:relatedSIQuantity      quantities:DEWP .
+
+# Relative humidity generators
+sct:H-4.2  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Relative humidity generators"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-4.2";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-4.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-4 .
+
+# Relative humidity generators
+sct:H-4.2.1  rdf:type             sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Relative humidity generators"@en;
+        skos:hiddenLabel          "502";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-4.2.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-4.2;
+        sc:relatedSIQuantity      quantities:RHUM .
+
+# Flow mixing
+sct:H-4.3  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Flow mixing"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-4.3";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-4.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-4 .
+
+# Flow mixing
+sct:H-4.3.1  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Flow mixing"@en;
+        skos:hiddenLabel          "503";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-4.3.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-4.3;
+        sc:relatedSIQuantity      quantities:MASS.MASS-1 , quantities:AMSU.AMSU-1 , quantities:RHUM , quantities:DEWP .
+
+# Permeation tube, diffusion tube
+sct:H-4.4  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Permeation tube, diffusion tube"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-4.4";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-4.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-4 .
+
+# Permeation tube, diffusion tube
+sct:H-4.4.1  rdf:type             sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Permeation tube, diffusion tube"@en;
+        skos:hiddenLabel          "504";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-4.4.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-4.4;
+        sc:relatedSIQuantity      quantities:DEWP , quantities:AMSU.AMSU-1 , quantities:RHUM , quantities:MASS.MASS-1 .
+
+# Static generators
+sct:H-5  rdf:type             sc:Service , skos:Concept;
+        rdfs:label            "Static generators"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/H-5";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      sct:H-5.2 , sct:H-5.1;
+        sc:isServiceOf        sct:H .
+
+# Salt solutions (saturated, unsaturated)
+sct:H-5.1  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Salt solutions (saturated, unsaturated)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-5.1";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-5.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-5 .
+
+# Salt solutions (saturated, unsaturated)
+sct:H-5.1.1  rdf:type             skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Salt solutions (saturated, unsaturated)"@en;
+        skos:hiddenLabel          "505";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-5.1.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-5.1;
+        sc:relatedSIQuantity      quantities:RHUM .
+
+# Reference gases
+sct:H-5.2  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Reference gases"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/H-5.2";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:H-5.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:H-5 .
+
+# Reference gases
+sct:H-5.2.1  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Reference gases"@en;
+        skos:hiddenLabel          "506";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/H-5.2.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:H-5.2;
+        sc:relatedSIQuantity      quantities:MASS.MASS-1 .
+
+# Temperature
+sct:T   rdf:type              sc:Branch , prov:Entity , skos:Concept;
+        rdfs:label            "Temperature"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/T";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasService         sct:T-1 , sct:T-7 , sct:T-2;
+        sc:isBranchOf         sct:Thermometry .
+
+# Items for defining ITS-90
+sct:T-1  rdf:type             skos:Concept , sc:Service;
+        rdfs:label            "Items for defining ITS-90"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/T-1";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      sct:T-1.2 , sct:T-1.1 , sct:T-1.4 , sct:T-1.3;
+        sc:isServiceOf        sct:T .
+
+# Primary fixed-point cells
+sct:T-1.1  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Primary fixed-point cells"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-1.1";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-1.1.1 , sct:T-1.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-1 .
+
+# Cells for contact thermometry
+sct:T-1.1.1  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Cells for contact thermometry"@en;
+        skos:hiddenLabel          "507";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-1.1.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-1.1;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Cells for radiation thermometry
+sct:T-1.1.2  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Cells for radiation thermometry"@en;
+        skos:hiddenLabel          "508";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-1.1.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-1.1;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Complete apparatus realizing fixed-points
+sct:T-1.2  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Complete apparatus realizing fixed-points"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-1.2";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-1.2.2 , sct:T-1.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-1 .
+
+# Apparatus for contact thermometry
+sct:T-1.2.1  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Apparatus for contact thermometry"@en;
+        skos:hiddenLabel          "509";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-1.2.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-1.2;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Apparatus for radiation thermometry
+sct:T-1.2.2  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Apparatus for radiation thermometry"@en;
+        skos:hiddenLabel          "510";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-1.2.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-1.2;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Standard platinum resistance therm. (SPRTs)
+sct:T-1.3  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Standard platinum resistance therm. (SPRTs)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-1.3";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-1.3.2 , sct:T-1.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-1 .
+
+# Capsule-type SPRTs
+sct:T-1.3.1  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Capsule-type SPRTs"@en;
+        skos:hiddenLabel          "511";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-1.3.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-1.3;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Long-stem SPRTs including HTSPRTs
+sct:T-1.3.2  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Long-stem SPRTs including HTSPRTs"@en;
+        skos:hiddenLabel          "512";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-1.3.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-1.3;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Standard radiation thermometers
+sct:T-1.4  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Standard radiation thermometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-1.4";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-1.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-1 .
+
+# Standard radiation thermometers
+sct:T-1.4.1  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Standard radiation thermometers"@en;
+        skos:hiddenLabel          "513";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-1.4.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-1.4;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Items for disseminating ITS-90 and PLTS 2000
+sct:T-2  rdf:type             skos:Concept , sc:Service;
+        rdfs:label            "Items for disseminating ITS-90 and PLTS 2000"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/T-2";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      sct:T-2.5 , sct:T-2.1 , sct:T-2.2 , sct:T-2.6 , sct:T-2.3 , sct:T-2.7 , sct:T-2.4 , sct:T-2.8;
+        sc:isServiceOf        sct:T .
+
+# Secondary fixed-point cells and apparatus
+sct:T-2.1  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Secondary fixed-point cells and apparatus"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.1";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Secondary fixed-points and apparatus for contact thermometry
+sct:T-2.1.1  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Secondary fixed-points and apparatus for contact thermometry"@en;
+        skos:hiddenLabel          "514";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.1.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.1;
+        sc:relatedSIQuantity      quantities:ITSC , quantities:ITSK .
+
+# Resistance thermometers
+sct:T-2.2  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Resistance thermometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.2";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.2.3 , sct:T-2.2.2 , sct:T-2.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Rhodium-iron resistance thermometers
+sct:T-2.2.1  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Rhodium-iron resistance thermometers"@en;
+        skos:hiddenLabel          "515";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.2.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.2;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Platinum resistance thermometers (PRTs)
+sct:T-2.2.2  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Platinum resistance thermometers (PRTs)"@en;
+        skos:hiddenLabel          "516";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.2.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.2;
+        sc:relatedSIQuantity      quantities:ITSC , quantities:ITSK .
+
+# Thermistors and other resistive thermometers
+sct:T-2.2.3  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Thermistors and other resistive thermometers"@en;
+        skos:hiddenLabel          "517";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.2.3";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.2;
+        sc:relatedSIQuantity      quantities:ITSC , quantities:ITSK .
+
+# Thermocouples
+sct:T-2.3  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Thermocouples"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.3";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.3.2 , sct:T-2.3.1 , sct:T-2.3.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Noble-metal thermocouples
+sct:T-2.3.1  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Noble-metal thermocouples"@en;
+        skos:hiddenLabel          "518";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.3.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.3;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Base-metal thermocouples
+sct:T-2.3.2  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Base-metal thermocouples"@en;
+        skos:hiddenLabel          "519";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.3.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.3;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Pure-metal thermocouples
+sct:T-2.3.3  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Pure-metal thermocouples"@en;
+        skos:hiddenLabel          "520";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.3.3";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.3;
+        sc:relatedSIQuantity      quantities:ITSC , quantities:ITSK .
+
+# Liquid-in-glass thermometers
+sct:T-2.4  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Liquid-in-glass thermometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.4";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Liquid-in-glass thermometers
+sct:T-2.4.1  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Liquid-in-glass thermometers"@en;
+        skos:hiddenLabel          "521";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.4.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.4;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Radiation thermometry
+sct:T-2.5  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Radiation thermometry"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.5";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.5.2 , sct:T-2.5.4 , sct:T-2.5.1 , sct:T-2.5.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Secondary fixed-point blackbody cells and apparatus
+sct:T-2.5.1  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Secondary fixed-point blackbody cells and apparatus"@en;
+        skos:hiddenLabel          "522";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.5.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.5;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Variable temperature blackbody radiation sources
+sct:T-2.5.2  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Variable temperature blackbody radiation sources"@en;
+        skos:hiddenLabel          "523";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.5.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.5;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Strip lamps
+sct:T-2.5.3  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Strip lamps"@en;
+        skos:hiddenLabel          "524";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.5.3";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.5;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Radiation thermometers and visual optical pyrometers
+sct:T-2.5.4  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Radiation thermometers and visual optical pyrometers"@en;
+        skos:hiddenLabel          "525";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.5.4";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.5;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Other thermometers
+sct:T-2.6  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Other thermometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.6";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.6.2 , sct:T-2.6.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Air temperature sensors
+sct:T-2.6.1  rdf:type             sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Air temperature sensors"@en;
+        skos:hiddenLabel          "526";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.6.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.6;
+        sc:relatedSIQuantity      quantities:ITSC , quantities:ITSK .
+
+# Other thermometers
+sct:T-2.6.2  rdf:type             skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Other thermometers"@en;
+        skos:hiddenLabel          "527";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.6.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.6;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Temperature sensors with display unit
+sct:T-2.7  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Temperature sensors with display unit"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.7";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.7.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Temperature sensors with display unit
+sct:T-2.7.1  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Temperature sensors with display unit"@en;
+        skos:hiddenLabel          "528";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.7.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.7;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Other measurement services
+sct:T-2.8  rdf:type              sc:Subservice , skos:Concept;
+        rdfs:label               "Other measurement services"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-2.8";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-2.8.5 , sct:T-2.8.2 , sct:T-2.8.6 , sct:T-2.8.3 , sct:T-2.8.4 , sct:T-2.8.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-2 .
+
+# Bridge linearity
+sct:T-2.8.1  rdf:type             skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Bridge linearity"@en;
+        skos:hiddenLabel          "529";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.8.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.8 .
+
+# Compensation wires for cold junction
+sct:T-2.8.2  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Compensation wires for cold junction"@en;
+        skos:hiddenLabel          "530";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.8.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.8;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Wires for melting-point measurements for thermocouples
+sct:T-2.8.3  rdf:type             sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Wires for melting-point measurements for thermocouples"@en;
+        skos:hiddenLabel          "531";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.8.3";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.8 .
+
+# Temperature indicators
+sct:T-2.8.4  rdf:type             skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Temperature indicators"@en;
+        skos:hiddenLabel          "532";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.8.4";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.8;
+        sc:relatedSIQuantity      quantities:ITSC , quantities:ITSK .
+
+# Phase-transition temperature of reference materials
+sct:T-2.8.5  rdf:type             skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Phase-transition temperature of reference materials"@en;
+        skos:hiddenLabel          "533";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.8.5";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.8;
+        sc:relatedSIQuantity      quantities:ITSC , quantities:ITSK .
+
+# Dry-well block calibrators
+sct:T-2.8.6  rdf:type             sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Dry-well block calibrators"@en;
+        skos:hiddenLabel          "534";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-2.8.6";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-2.8;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ITSC .
+
+# Items used for disseminating thermodynamic temperature
+sct:T-7  rdf:type             skos:Concept , sc:Service;
+        rdfs:label            "Items used for disseminating thermodynamic temperature"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/T-7";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      sct:T-7.1;
+        sc:isServiceOf        sct:T .
+
+# Radiation thermometry
+sct:T-7.1  rdf:type              skos:Concept , sc:Subservice;
+        rdfs:label               "Radiation thermometry"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/T-7.1";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:T-7.1.2 , sct:T-7.1.1 , sct:T-7.1.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:T-7 .
+
+# Fixed-point blackbody cells and apparatus
+sct:T-7.1.1  rdf:type             sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Fixed-point blackbody cells and apparatus"@en;
+        skos:hiddenLabel          "1039";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-7.1.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-7.1;
+        sc:relatedSIQuantity      quantities:TEMC , quantities:TEMT .
+
+# Radiation thermometers
+sct:T-7.1.2  rdf:type             sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Radiation thermometers"@en;
+        skos:hiddenLabel          "1040";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-7.1.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-7.1;
+        sc:relatedSIQuantity      quantities:TEMT , quantities:TEMC .
+
+# Variable temperature blackbody radiation sources
+sct:T-7.1.3  rdf:type             sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Variable temperature blackbody radiation sources"@en;
+        skos:hiddenLabel          "1041";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/T-7.1.3";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:T-7.1;
+        sc:relatedSIQuantity      quantities:TEMT , quantities:TEMC .
+
+# Thermophysical quantities
+sct:TQ  rdf:type              prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Thermophysical quantities"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/TQ";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasService         sct:TQ-6;
+        sc:isBranchOf         sct:Thermometry .
+
+# Thermophysical quantities
+sct:TQ-6  rdf:type            sc:Service , skos:Concept;
+        rdfs:label            "Thermophysical quantities"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation         "T/TQ-6";
+        prov:wasAttributedTo  bipm:CCT;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      sct:TQ-6.3 , sct:TQ-6.4 , sct:TQ-6.1 , sct:TQ-6.2;
+        sc:isServiceOf        sct:TQ .
+
+# Thermal transport property
+sct:TQ-6.1  rdf:type             skos:Concept , sc:Subservice;
+        rdfs:label               "Thermal transport property"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/TQ-6.1";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:TQ-6.1.2 , sct:TQ-6.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:TQ-6 .
+
+# Thermal conductivity
+sct:TQ-6.1.1  rdf:type            sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Thermal conductivity"@en;
+        skos:hiddenLabel          "535";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.1.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.1;
+        sc:relatedSIQuantity      quantities:TCON .
+
+# Thermal diffusivity
+sct:TQ-6.1.2  rdf:type            skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Thermal diffusivity"@en;
+        skos:hiddenLabel          "536";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.1.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.1;
+        sc:relatedSIQuantity      quantities:TDIF .
+
+# Caloric property
+sct:TQ-6.2  rdf:type             skos:Concept , sc:Subservice;
+        rdfs:label               "Caloric property"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/TQ-6.2";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:TQ-6.2.2 , sct:TQ-6.2.1 , sct:TQ-6.2.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:TQ-6 .
+
+# Specific heat capacity
+sct:TQ-6.2.1  rdf:type            skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Specific heat capacity"@en;
+        skos:hiddenLabel          "537";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.2.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.2;
+        sc:relatedSIQuantity      quantities:SHEC .
+
+# Heat of fusion
+sct:TQ-6.2.2  rdf:type            skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Heat of fusion"@en;
+        skos:hiddenLabel          "538";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.2.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.2;
+        sc:relatedSIQuantity      quantities:ENGY .
+
+# Calorific value
+sct:TQ-6.2.3  rdf:type            skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Calorific value"@en;
+        skos:hiddenLabel          "539";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.2.3";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.2;
+        sc:relatedSIQuantity      quantities:ENGY.AMSU-1 , quantities:ENGY.VOLU-1 , quantities:ENGY.MASS-1 .
+
+# Radiative property
+sct:TQ-6.3  rdf:type             skos:Concept , sc:Subservice;
+        rdfs:label               "Radiative property"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/TQ-6.3";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:TQ-6.3.2 , sct:TQ-6.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:TQ-6 .
+
+# Spectral emissivity
+sct:TQ-6.3.1  rdf:type            sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Spectral emissivity"@en;
+        skos:hiddenLabel          "540";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.3.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.3;
+        sc:relatedSIQuantity      quantities:EMIS .
+
+# Total emissivity
+sct:TQ-6.3.2  rdf:type            sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Total emissivity"@en;
+        skos:hiddenLabel          "541";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.3.2";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.3;
+        sc:relatedSIQuantity      quantities:EMIS .
+
+# Thermo-mechanical property
+sct:TQ-6.4  rdf:type             skos:Concept , sc:Subservice;
+        rdfs:label               "Thermo-mechanical property"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation            "T/TQ-6.4";
+        prov:wasAttributedTo     bipm:CCT;
+        sc:hasIndividualService  sct:TQ-6.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        sct:TQ-6 .
+
+# Thermal expansion coefficient
+sct:TQ-6.4.1  rdf:type            skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Thermal expansion coefficient"@en;
+        skos:hiddenLabel          "542";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/T>;
+        skos:notation             "T/TQ-6.4.1";
+        prov:wasAttributedTo      bipm:CCT;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  sct:TQ-6.4;
+        sc:relatedSIQuantity      quantities:VOLU.VOLU-1.ITSK-1 , quantities:LENG.LENG-1.ITSK-1 , quantities:LENG.LENG-1.ITSC-1 , quantities:VOLU.VOLU-1.ITSC-1 .
+
+# Thermometry
+sct:Thermometry  rdf:type  prov:Entity , sc:MetrologyArea , skos:Concept;
+        rdfs:label         "Thermometry"@en , "Thermométrie"@fr;
+        skos:notation      "T";
+        skos:topConceptOf  <https://si-digital-framework.org/kcdb-sc/T>;
+        sc:hasBranch       sct:TQ , sct:T , sct:H .
+
+
+

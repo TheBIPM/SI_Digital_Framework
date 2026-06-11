@@ -1,0 +1,262 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc:      <https://si-digital-framework.org/kcdb-sc#>
+PREFIX si:      <https://si-digital-framework.org/SI#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX voaf:    <http://purl.org/vocommons/voaf#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+# OWL Ontology
+<https://si-digital-framework.org/kcdb-sc>
+        rdf:type            voaf:Vocabulary , skos:ConceptScheme , owl:Ontology;
+        dcterms:title       "KCDB Classification of services"@en;
+        skos:hasTopConcept  sc:MetrologyArea .
+
+# OWL classes
+# Analyte
+sc:Analyte  rdf:type      skos:Concept , owl:Class;
+        rdfs:label        "Analyte"@en;
+        owl:disjointWith  sc:ServiceCategory , sc:Source , sc:MetrologyArea , sc:Subservice , sc:Medium , sc:Nuclide , sc:Status , sc:Service , sc:Branch , sc:Quantity , sc:Section , sc:IndividualService;
+        skos:broader      sc:MetrologyArea;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc> .
+
+# Branch
+sc:Branch  rdf:type       owl:Class , skos:Concept;
+        rdfs:label        "Branch"@en;
+        owl:disjointWith  sc:Nuclide , sc:Medium , sc:Subservice , sc:Section , sc:Quantity , sc:MetrologyArea , sc:Status , sc:ServiceCategory , sc:IndividualService , sc:Source , sc:Service , sc:Analyte;
+        skos:broader      sc:MetrologyArea;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc>;
+        skos:narrower     sc:Source , sc:Medium , sc:Service , sc:Quantity , sc:Nuclide .
+
+# IndividualService
+sc:IndividualService  rdf:type  skos:Concept , owl:Class;
+        rdfs:label        "IndividualService"@en;
+        owl:disjointWith  sc:Quantity , sc:Service , sc:Medium , sc:Analyte , sc:MetrologyArea , sc:Branch , sc:Section , sc:ServiceCategory , sc:Subservice , sc:Status , sc:Nuclide , sc:Source;
+        skos:broader      sc:Subservice;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc> .
+
+# Medium
+sc:Medium  rdf:type       owl:Class , skos:Concept;
+        rdfs:label        "Medium"@en;
+        owl:disjointWith  sc:ServiceCategory , sc:Service , sc:Nuclide , sc:Branch , sc:Quantity , sc:IndividualService , sc:Status , sc:MetrologyArea , sc:Subservice , sc:Source , sc:Section , sc:Analyte;
+        skos:broader      sc:Section;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc> .
+
+# Metrology Area
+sc:MetrologyArea  rdf:type  owl:Class , skos:Concept;
+        rdfs:label         "Metrology Area"@en;
+        owl:disjointWith   sc:Nuclide , sc:Service , sc:ServiceCategory , sc:Section , sc:Status , sc:Analyte , sc:IndividualService , sc:Source , sc:Quantity , sc:Subservice , sc:Branch , sc:Medium;
+        skos:narrower      sc:Analyte , sc:ServiceCategory , sc:Branch;
+        skos:topConceptOf  <https://si-digital-framework.org/kcdb-sc> .
+
+# Nuclide
+sc:Nuclide  rdf:type      owl:Class , skos:Concept;
+        rdfs:label        "Nuclide"@en;
+        owl:disjointWith  sc:Subservice , sc:IndividualService , sc:MetrologyArea , sc:Quantity , sc:Section , sc:ServiceCategory , sc:Branch , sc:Analyte , sc:Medium , sc:Source , sc:Service , sc:Status;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc> .
+
+# Quantity
+sc:Quantity  rdf:type     owl:Class , skos:Concept;
+        rdfs:label        "Quantity"@en;
+        owl:disjointWith  sc:Source , sc:Medium , sc:Section , sc:MetrologyArea , sc:Analyte , sc:Branch , sc:Service , sc:Nuclide , sc:IndividualService , sc:Subservice , sc:ServiceCategory , sc:Status;
+        skos:broader      sc:Section;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc> .
+
+# Section
+sc:Section  rdf:type      owl:Class , skos:Concept;
+        rdfs:label        "Section"@en;
+        owl:disjointWith  sc:MetrologyArea , sc:Status , sc:Subservice , sc:Service , sc:Source , sc:Analyte , sc:Nuclide , sc:Branch , sc:Medium , sc:IndividualService , sc:ServiceCategory , sc:Quantity;
+        skos:broader      sc:MetrologyArea;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc>;
+        skos:narrower     sc:Quantity , sc:Medium , sc:Source , sc:Nuclide .
+
+# Service
+sc:Service  rdf:type      owl:Class , skos:Concept;
+        rdfs:label        "Service"@en;
+        owl:disjointWith  sc:Analyte , sc:Nuclide , sc:ServiceCategory , sc:Medium , sc:Subservice , sc:Source , sc:Quantity , sc:IndividualService , sc:MetrologyArea , sc:Status , sc:Section , sc:Branch;
+        skos:broader      sc:Branch;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc>;
+        skos:narrower     sc:Subservice .
+
+# Service Category
+sc:ServiceCategory  rdf:type  skos:Concept , owl:Class;
+        rdfs:label        "Service Category"@en;
+        owl:disjointWith  sc:MetrologyArea , sc:Service , sc:Analyte , sc:Section , sc:Source , sc:Medium , sc:IndividualService , sc:Nuclide , sc:Subservice , sc:Quantity , sc:Branch , sc:Status;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc> .
+
+# Source
+sc:Source  rdf:type       skos:Concept , owl:Class;
+        rdfs:label        "Source"@en;
+        owl:disjointWith  sc:Subservice , sc:Nuclide , sc:Section , sc:Medium , sc:ServiceCategory , sc:Service , sc:IndividualService , sc:MetrologyArea , sc:Analyte , sc:Quantity , sc:Status , sc:Branch;
+        skos:broader      sc:Section;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc> .
+
+
+sc:Status  rdf:type       owl:Class;
+        owl:disjointWith  sc:Medium , sc:IndividualService , sc:ServiceCategory , sc:Subservice , sc:Source , sc:Branch , sc:Service , sc:Quantity , sc:Nuclide , sc:MetrologyArea , sc:Analyte , sc:Section;
+        owl:oneOf         ( sc:notYetAssigned sc:previouslyAssigned sc:assigned ) .
+
+# Subservice
+sc:Subservice  rdf:type   skos:Concept , owl:Class;
+        rdfs:label        "Subservice"@en;
+        owl:disjointWith  sc:IndividualService , sc:Branch , sc:Section , sc:Service , sc:Status , sc:Analyte , sc:MetrologyArea , sc:Source , sc:Quantity , sc:Nuclide , sc:ServiceCategory , sc:Medium;
+        skos:broader      sc:Service;
+        skos:inScheme     <https://si-digital-framework.org/kcdb-sc>;
+        skos:narrower     sc:IndividualService .
+
+
+# OWL object properties
+# has branch
+sc:hasBranch  rdf:type      owl:ObjectProperty;
+        rdfs:comment        "Links a metrology area with its branches."@en;
+        rdfs:domain         sc:MetrologyArea;
+        rdfs:label          "has branch"@en;
+        rdfs:range          sc:Branch;
+        rdfs:subPropertyOf  skos:narrower;
+        owl:inverseOf       sc:isBranchOf .
+
+# has individual service
+sc:hasIndividualService
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Links a subservice with its individual services."@en;
+        rdfs:domain         sc:Subservice;
+        rdfs:label          "has individual service"@en;
+        rdfs:range          sc:IndividualService;
+        rdfs:subPropertyOf  skos:narrower;
+        owl:inverseOf       sc:isIndividualServiceOf .
+
+# has medium
+sc:hasMedium  rdf:type      owl:ObjectProperty;
+        rdfs:comment        "Links a metrology area with its branches."@en;
+        rdfs:domain         sc:ServiceCategory;
+        rdfs:label          "has medium"@en;
+        rdfs:range          sc:Medium;
+        rdfs:subPropertyOf  skos:broader;
+        owl:inverseOf       sc:isMediumOf .
+
+# has quantity
+sc:hasQuantity  rdf:type    owl:ObjectProperty;
+        rdfs:comment        "Links a section of the RI classification of service categories with its quantities."@en;
+        rdfs:domain         sc:ServiceCategory;
+        rdfs:label          "has quantity"@en;
+        rdfs:range          sc:Quantity;
+        rdfs:subPropertyOf  skos:broader;
+        owl:inverseOf       sc:isQuantityOf .
+
+# has radionuclide
+sc:hasRadionuclide  rdf:type  owl:ObjectProperty;
+        rdfs:comment  "A radionuclide of interest for a CCRI service category."@en;
+        rdfs:domain   sc:ServiceCategory;
+        rdfs:label    "has radionuclide"@en;
+        rdfs:range    sc:Nuclide .
+
+# has section
+sc:hasSection  rdf:type     owl:ObjectProperty;
+        rdfs:comment        "Links the RI metrology area with its sections."@en;
+        rdfs:domain         sc:ServiceCategory;
+        rdfs:label          "has section"@en;
+        rdfs:range          sc:Section;
+        rdfs:subPropertyOf  skos:broader;
+        owl:inverseOf       sc:isSectionOf .
+
+# has service
+sc:hasService  rdf:type     owl:ObjectProperty;
+        rdfs:comment        "Links a branch with its services."@en;
+        rdfs:domain         sc:Branch;
+        rdfs:label          "has service"@en;
+        rdfs:range          sc:Service;
+        rdfs:subPropertyOf  skos:narrower;
+        owl:inverseOf       sc:isServiceOf .
+
+# has source
+sc:hasSource  rdf:type      owl:ObjectProperty;
+        rdfs:domain         sc:ServiceCategory;
+        rdfs:label          "has source"@en;
+        rdfs:range          sc:Source;
+        rdfs:subPropertyOf  skos:broader;
+        owl:inverseOf       sc:isSourceOf .
+
+# has status
+sc:hasStatus  rdf:type  owl:ObjectProperty;
+        rdfs:comment  "The status of a service category: \"assigned\" (the category is part of the CC classification that is currently published), \"previously assigned\" (the category is part of a CC classification that was published in the past) or \"not yet assigned\" (e.g., the category identifier is reserved for future used)"@en;
+        rdfs:domain   sc:ServiceCategory;
+        rdfs:label    "has status"@en;
+        rdfs:range    sc:Status .
+
+# has subservice
+sc:hasSubService  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Links a service with its subservices."@en;
+        rdfs:domain         sc:Service;
+        rdfs:label          "has subservice"@en;
+        rdfs:range          sc:Subservice;
+        rdfs:subPropertyOf  skos:narrower;
+        owl:inverseOf       sc:isSubserviceOf .
+
+# is branch of
+sc:isBranchOf  rdf:type     owl:ObjectProperty;
+        rdfs:label          "is branch of"@en;
+        rdfs:subPropertyOf  skos:broader .
+
+# is individual service of
+sc:isIndividualServiceOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:label          "is individual service of"@en;
+        rdfs:subPropertyOf  skos:broader .
+
+# is medium of
+sc:isMediumOf  rdf:type     owl:ObjectProperty;
+        rdfs:label          "is medium of"@en;
+        rdfs:subPropertyOf  skos:narrower .
+
+# is quantity of
+sc:isQuantityOf  rdf:type   owl:ObjectProperty;
+        rdfs:label          "is quantity of"@en;
+        rdfs:subPropertyOf  skos:narrower .
+
+# is section of
+sc:isSectionOf  rdf:type    owl:ObjectProperty;
+        rdfs:label          "is section of"@en;
+        rdfs:subPropertyOf  skos:narrower .
+
+# is service of
+sc:isServiceOf  rdf:type    owl:ObjectProperty;
+        rdfs:label          "is service of"@en;
+        rdfs:subPropertyOf  skos:broader .
+
+# is source of
+sc:isSourceOf  rdf:type     owl:ObjectProperty;
+        rdfs:label          "is source of"@en;
+        rdfs:subPropertyOf  skos:narrower .
+
+# is subservice of
+sc:isSubserviceOf  rdf:type  owl:ObjectProperty;
+        rdfs:label          "is subservice of"@en;
+        rdfs:subPropertyOf  skos:broader .
+
+# related SI Quantity
+sc:relatedSIQuantity  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Links a service category with an SI quantity."@en;
+        rdfs:domain         sc:IndividualService;
+        rdfs:label          "related SI Quantity"@en;
+        rdfs:range          si:QuantityKind;
+        rdfs:subPropertyOf  skos:related .
+
+
+# OWL Individuals and other axioms
+# assigned
+sc:assigned  rdf:type  sc:Status;
+        rdfs:label  "assigned"@en .
+
+# not assigned
+sc:notYetAssigned  rdf:type  sc:Status;
+        rdfs:label  "not assigned"@en .
+
+# previously assigned
+sc:previouslyAssigned
+        rdf:type    sc:Status;
+        rdfs:label  "previously assigned"@en .
+
+
+

@@ -1,0 +1,2957 @@
+PREFIX bipm:       <https://si-digital-framework.org/bipm#>
+PREFIX dcat:       <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX extref:     <https://si-digital-framework.org/kcdb-sc/extref#>
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX quantities: <https://si-digital-framework.org/quantities/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc:         <https://si-digital-framework.org/kcdb-sc#>
+PREFIX scem:       <https://si-digital-framework.org/kcdb-sc/EM/>
+PREFIX si:         <https://si-digital-framework.org/SI#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX units:      <https://si-digital-framework.org/SI/units/>
+PREFIX vann:       <http://purl.org/vocab/vann/>
+PREFIX voaf:       <http://purl.org/vocommons/voaf#>
+PREFIX xsd:        <http://www.w3.org/2001/XMLSchema#>
+
+# OWL Ontology
+<https://si-digital-framework.org/kcdb-sc/EM>
+        rdf:type              skos:ConceptScheme , voaf:Vocabulary , owl:Ontology;
+        dcterms:issued        "2020/06/04"^^xsd:date;
+        dcterms:title         "Classification Of Services In Electricity And Magnetism"@en;
+        voaf:specializes      <https://si-digital-framework.org/kcdb-sc>;
+        owl:versionInfo       "9";
+        prov:generatedAtTime  "2025-01-22T14:00:00Z"^^xsd:dateTime .
+
+# OWL Individuals
+# AC voltage, current, and power
+scem:AC  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "AC voltage, current, and power"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/AC";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:AC-5 , scem:AC-6 , scem:AC-7;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# AC voltage (up to the MHz range)
+scem:AC-5  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "AC voltage (up to the MHz range)"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/AC-5";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:AC-5.2 , scem:AC-5.3 , scem:AC-5.1;
+        sc:isServiceOf        scem:AC .
+
+# AC-DC voltage transfer
+scem:AC-5.1  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "AC-DC voltage transfer"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/AC-5.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:AC-5.1.3 , scem:AC-5.1.2 , scem:AC-5.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:AC-5 .
+
+# AC-DC transfer difference at low voltages (<= 0.5 V)
+scem:AC-5.1.1  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "AC-DC transfer difference at low voltages (<= 0.5 V)"@en;
+        skos:hiddenLabel          "67";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-5.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-5.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# AC-DC transfer difference at medium voltages (0.5 V to 5 V)
+scem:AC-5.1.2  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "AC-DC transfer difference at medium voltages (0.5 V to 5 V)"@en;
+        skos:hiddenLabel          "68";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-5.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-5.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# AC-DC transfer difference at higher voltages (> 5 V)
+scem:AC-5.1.3  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "AC-DC transfer difference at higher voltages (> 5 V)"@en;
+        skos:hiddenLabel          "69";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-5.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-5.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# AC voltage up to 1100 V
+scem:AC-5.2  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "AC voltage up to 1100 V"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/AC-5.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:AC-5.2.2 , scem:AC-5.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:AC-5 .
+
+# Sources
+scem:AC-5.2.1  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Sources"@en;
+        skos:hiddenLabel          "70";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-5.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-5.2;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Meters
+scem:AC-5.2.2  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "71";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-5.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-5.2;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# AC voltage ratio up to 1100 V, atten & gain
+scem:AC-5.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "AC voltage ratio up to 1100 V, atten & gain"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/AC-5.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:AC-5.3.1 , scem:AC-5.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:AC-5 .
+
+# Real component and imaginary component
+scem:AC-5.3.1  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Real component and imaginary component"@en;
+        skos:hiddenLabel          "72";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-5.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-5.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD , quantities:PHAS .
+
+# Attenuation and gain
+scem:AC-5.3.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Attenuation and gain"@en;
+        skos:hiddenLabel          "73";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-5.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-5.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:RLGB .
+
+# AC current
+scem:AC-6  rdf:type           sc:Service , skos:Concept;
+        rdfs:label            "AC current"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/AC-6";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:AC-6.3 , scem:AC-6.2 , scem:AC-6.1;
+        sc:isServiceOf        scem:AC .
+
+# AC-DC current transfer
+scem:AC-6.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "AC-DC current transfer"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/AC-6.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:AC-6.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:AC-6 .
+
+# AC-DC transfer difference
+scem:AC-6.1.1  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "AC-DC transfer difference"@en;
+        skos:hiddenLabel          "74";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-6.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-6.1;
+        sc:relatedSIQuantity      quantities:ELCU , quantities:ELCU.ELCU-1 .
+
+# AC current up to 100 A
+scem:AC-6.2  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "AC current up to 100 A"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/AC-6.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:AC-6.2.1 , scem:AC-6.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:AC-6 .
+
+# Sources
+scem:AC-6.2.1  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Sources"@en;
+        skos:hiddenLabel          "75";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-6.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-6.2;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# Meters
+scem:AC-6.2.2  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "76";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-6.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-6.2;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# AC current ratio up to 100 A
+scem:AC-6.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "AC current ratio up to 100 A"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/AC-6.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:AC-6.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:AC-6 .
+
+# Real component and imaginary component
+scem:AC-6.3.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Real component and imaginary component"@en;
+        skos:hiddenLabel          "77";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-6.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-6.3;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:PHAS .
+
+# AC power
+scem:AC-7  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "AC power"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/AC-7";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:AC-7.1;
+        sc:isServiceOf        scem:AC .
+
+# AC power and energy
+scem:AC-7.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "AC power and energy"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/AC-7.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:AC-7.1.3 , scem:AC-7.1.1 , scem:AC-7.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:AC-7 .
+
+# Single phase power at frequencies <= 400 Hz
+scem:AC-7.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Single phase power at frequencies <= 400 Hz"@en;
+        skos:hiddenLabel          "78";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-7.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-7.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELCU , quantities:POWR.TIME , quantities:POWR.ELPD-1.ELCU-1 , quantities:ENGY , quantities:POWR .
+
+# Single phase power at frequencies > 400 Hz
+scem:AC-7.1.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Single phase power at frequencies > 400 Hz"@en;
+        skos:hiddenLabel          "79";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-7.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-7.1;
+        sc:relatedSIQuantity      quantities:POWR.ELPD-1.ELCU-1 , quantities:POWR .
+
+# Three phase
+scem:AC-7.1.3  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Three phase"@en;
+        skos:hiddenLabel          "80";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/AC-7.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:AC-7.1;
+        sc:relatedSIQuantity      quantities:POWR.ELPD-1.ELCU-1 , quantities:POWR .
+
+# DC voltage, current, and resistance
+scem:DC  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "DC voltage, current, and resistance"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/DC";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:DC-3 , scem:DC-1 , scem:DC-2;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# DC voltage (up to 1100 V)
+scem:DC-1  rdf:type           sc:Service , skos:Concept;
+        rdfs:label            "DC voltage (up to 1100 V)"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/DC-1";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:DC-1.2 , scem:DC-1.1 , scem:DC-1.3;
+        sc:isServiceOf        scem:DC .
+
+# DC voltage sources
+scem:DC-1.1  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "DC voltage sources"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-1.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-1.1.3 , scem:DC-1.1.2 , scem:DC-1.1.1 , scem:DC-1.1.4;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-1 .
+
+# Single values
+scem:DC-1.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Single values"@en;
+        skos:hiddenLabel          "81";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# Low values (below or equal to 10 V)
+scem:DC-1.1.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Low values (below or equal to 10 V)"@en;
+        skos:hiddenLabel          "82";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# Intermediate values (from above 10 V up to 1100 V)
+scem:DC-1.1.3  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Intermediate values (from above 10 V up to 1100 V)"@en;
+        skos:hiddenLabel          "83";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.1;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Noise voltages
+scem:DC-1.1.4  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Noise voltages"@en;
+        skos:hiddenLabel          "84";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.1.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.1;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# DC voltage meters
+scem:DC-1.2  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "DC voltage meters"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-1.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-1.2.2 , scem:DC-1.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-1 .
+
+# Very low values (below or equal to 1 mV)
+scem:DC-1.2.1  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Very low values (below or equal to 1 mV)"@en;
+        skos:hiddenLabel          "85";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.2;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Intermediate values (from above 1 mV up to 1100 V)
+scem:DC-1.2.2  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Intermediate values (from above 1 mV up to 1100 V)"@en;
+        skos:hiddenLabel          "86";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.2;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# DC voltage ratios
+scem:DC-1.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "DC voltage ratios"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-1.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-1.3.2 , scem:DC-1.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-1 .
+
+# Up to 1100 V
+scem:DC-1.3.1  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Up to 1100 V"@en;
+        skos:hiddenLabel          "87";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 .
+
+# Attenuation
+scem:DC-1.3.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Attenuation"@en;
+        skos:hiddenLabel          "88";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-1.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-1.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 .
+
+# DC resistance
+scem:DC-2  rdf:type           sc:Service , skos:Concept;
+        rdfs:label            "DC resistance"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/DC-2";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:DC-2.2 , scem:DC-2.1 , scem:DC-2.3;
+        sc:isServiceOf        scem:DC .
+
+# DC resistance standards and sources
+scem:DC-2.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "DC resistance standards and sources"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-2.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-2.1.5 , scem:DC-2.1.2 , scem:DC-2.1.6 , scem:DC-2.1.3 , scem:DC-2.1.4 , scem:DC-2.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-2 .
+
+# Low values (below or equal to 1 ohm)
+scem:DC-2.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Low values (below or equal to 1 ohm)"@en;
+        skos:hiddenLabel          "89";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.1;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# Intermediate values (from above 1 ohm up to 1 megaohm)
+scem:DC-2.1.2  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Intermediate values (from above 1 ohm up to 1 megaohm)"@en;
+        skos:hiddenLabel          "90";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.1;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# High values (above 1 megaohm)
+scem:DC-2.1.3  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "High values (above 1 megaohm)"@en;
+        skos:hiddenLabel          "91";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.1;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# Standards for high current
+scem:DC-2.1.4  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Standards for high current"@en;
+        skos:hiddenLabel          "92";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.1.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.1;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# Multiple ranges
+scem:DC-2.1.5  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Multiple ranges"@en;
+        skos:hiddenLabel          "93";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.1.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.1;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# Temperature, power and pressure coefficients
+scem:DC-2.1.6  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Temperature, power and pressure coefficients"@en;
+        skos:hiddenLabel          "94";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.1.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.1;
+        sc:relatedSIQuantity      quantities:ELRE.ELRE-1.PRES-1 , quantities:ELRE.ELRE-1.POWR-1 , quantities:HUCO , quantities:ELRE , quantities:ELRE.ITSK-1 , quantities:ELRE.POWR-1 , quantities:ELRE.PRES-1 , quantities:ELRE.ELRE-1.ITSK-1 , quantities:ELRE.ELRE-1 , quantities:ELRE.ELCU-1 , quantities:ELRE.ELRE-1.ITSK-2 .
+
+# DC resistance meters
+scem:DC-2.2  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "DC resistance meters"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-2.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-2.2.2 , scem:DC-2.2.3 , scem:DC-2.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-2 .
+
+# Low values (<= 1 ohm)
+scem:DC-2.2.1  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Low values (<= 1 ohm)"@en;
+        skos:hiddenLabel          "95";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.2;
+        sc:relatedSIQuantity      quantities:ELRE.ELRE-1 , quantities:ELRE .
+
+# Intermediate values (from above 1 ohm up to 1 gigaohm)
+scem:DC-2.2.2  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Intermediate values (from above 1 ohm up to 1 gigaohm)"@en;
+        skos:hiddenLabel          "96";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.2;
+        sc:relatedSIQuantity      quantities:ELRE.ELRE-1 , quantities:ELRE .
+
+# High values (above 1 gigaohm)
+scem:DC-2.2.3  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "High values (above 1 gigaohm)"@en;
+        skos:hiddenLabel          "97";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.2.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.2;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# DC resistance ratios
+scem:DC-2.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "DC resistance ratios"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-2.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-2.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-2 .
+
+# DC resistance ratios
+scem:DC-2.3.1  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "DC resistance ratios"@en;
+        skos:hiddenLabel          "98";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-2.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-2.3;
+        sc:relatedSIQuantity      quantities:ELRE.ELRE-1 .
+
+# DC current (up to 100 A)
+scem:DC-3  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "DC current (up to 100 A)"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/DC-3";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:DC-3.3 , scem:DC-3.2 , scem:DC-3.1;
+        sc:isServiceOf        scem:DC .
+
+# DC current sources
+scem:DC-3.1  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "DC current sources"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-3.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-3.1.5 , scem:DC-3.1.2 , scem:DC-3.1.3 , scem:DC-3.1.4 , scem:DC-3.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-3 .
+
+# Low values (below 0.1 mA)
+scem:DC-3.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Low values (below 0.1 mA)"@en;
+        skos:hiddenLabel          "99";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.1;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# Intermediate values (from above 0.1 mA to 20 A)
+scem:DC-3.1.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Intermediate values (from above 0.1 mA to 20 A)"@en;
+        skos:hiddenLabel          "100";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.1;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# High values (from above 20 A up to 100 A)
+scem:DC-3.1.3  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "High values (from above 20 A up to 100 A)"@en;
+        skos:hiddenLabel          "101";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.1;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# Transconductance ratio
+scem:DC-3.1.4  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Transconductance ratio"@en;
+        skos:hiddenLabel          "102";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.1.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.1;
+        sc:relatedSIQuantity      quantities:ELCO.ELCO-1 , quantities:ELRE , quantities:ELPD.ELCU-1 .
+
+# Noise currents
+scem:DC-3.1.5  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Noise currents"@en;
+        skos:hiddenLabel          "103";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.1.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.1;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# DC current meters
+scem:DC-3.2  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "DC current meters"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-3.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-3.2.1 , scem:DC-3.2.2 , scem:DC-3.2.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-3 .
+
+# Low values (below or equal to 0.1 mA)
+scem:DC-3.2.1  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Low values (below or equal to 0.1 mA)"@en;
+        skos:hiddenLabel          "104";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.2;
+        sc:relatedSIQuantity      quantities:ELCU , quantities:ELCU.ELCU-1 .
+
+# Intermediate values (from above 0.1 mA to 20 A)
+scem:DC-3.2.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Intermediate values (from above 0.1 mA to 20 A)"@en;
+        skos:hiddenLabel          "105";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.2;
+        sc:relatedSIQuantity      quantities:ELCU , quantities:ELCU.ELCU-1 .
+
+# High values (from above 20 A up to 100 A)
+scem:DC-3.2.3  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "High values (from above 20 A up to 100 A)"@en;
+        skos:hiddenLabel          "106";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.2.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.2;
+        sc:relatedSIQuantity      quantities:ELCU , quantities:ELCU.ELCU-1 .
+
+# DC current ratios
+scem:DC-3.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "DC current ratios"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/DC-3.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:DC-3.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:DC-3 .
+
+# Ratios up to 100 A
+scem:DC-3.3.1  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Ratios up to 100 A"@en;
+        skos:hiddenLabel          "107";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/DC-3.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:DC-3.3;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 .
+
+# Electricity and Magnetism
+scem:ElectricityAndMagnetism
+        rdf:type           skos:Concept , sc:MetrologyArea , prov:Entity;
+        rdfs:label         "Electricity and Magnetism"@en , "Électricité et magnétisme"@fr;
+        skos:notation      "EM";
+        skos:topConceptOf  <https://si-digital-framework.org/kcdb-sc/EM>;
+        sc:hasBranch       scem:Field , scem:DC , scem:Mater , scem:RF , scem:Imped , scem:AC , scem:OtherDC , scem:HV .
+
+# Electric and magnetic fields
+scem:Field  rdf:type          prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Electric and magnetic fields"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/Field";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:Field-10;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# Electric and magnetic fields
+scem:Field-10  rdf:type       sc:Service , skos:Concept;
+        rdfs:label            "Electric and magnetic fields"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/Field-10";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:Field-10.3 , scem:Field-10.1 , scem:Field-10.2;
+        sc:isServiceOf        scem:Field .
+
+# Electric fields at freq. below 50 kHz
+scem:Field-10.1  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Electric fields at freq. below 50 kHz"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Field-10.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Field-10.1.2 , scem:Field-10.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Field-10 .
+
+# Electrostatic field strength
+scem:Field-10.1.1  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Electrostatic field strength"@en;
+        skos:hiddenLabel          "108";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.1;
+        sc:relatedSIQuantity      quantities:ELPD.LENG-1 .
+
+# Electric field strength
+scem:Field-10.1.2  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Electric field strength"@en;
+        skos:hiddenLabel          "109";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.1;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:ELPD.LENG-1 .
+
+# Magnetic fields at freq. below 50 kHz
+scem:Field-10.2  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Magnetic fields at freq. below 50 kHz"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Field-10.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Field-10.2.6 , scem:Field-10.2.5 , scem:Field-10.2.8 , scem:Field-10.2.2 , scem:Field-10.2.4 , scem:Field-10.2.7 , scem:Field-10.2.1 , scem:Field-10.2.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Field-10 .
+
+# Magnetic flux
+scem:Field-10.2.1  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Magnetic flux"@en;
+        skos:hiddenLabel          "110";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:MGFL.MGFL-1 , quantities:MGFL .
+
+# DC magnetic flux density and applied magnetic field strength
+scem:Field-10.2.2  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "DC magnetic flux density and applied magnetic field strength"@en;
+        skos:hiddenLabel          "111";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:MGFD.MGFD-1 , quantities:MGFD , quantities:ELCU.LENG-1 .
+
+# AC magnetic flux density and applied magnetic field strength
+scem:Field-10.2.3  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "AC magnetic flux density and applied magnetic field strength"@en;
+        skos:hiddenLabel          "112";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:ELCU.LENG-1 , quantities:MGFD , quantities:RLGB , quantities:MGFD.MGFD-1 .
+
+# DC shielding factor (ratio of DC magnetic flux density)
+scem:Field-10.2.4  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "DC shielding factor (ratio of DC magnetic flux density)"@en;
+        skos:hiddenLabel          "113";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:SHLD .
+
+# AC shielding factor (ratio of AC magnetic flux density)
+scem:Field-10.2.5  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "AC shielding factor (ratio of AC magnetic flux density)"@en;
+        skos:hiddenLabel          "114";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:SHLD .
+
+# Turn area (ratio of magnetic flux and magnetic flux density)
+scem:Field-10.2.6  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Turn area (ratio of magnetic flux and magnetic flux density)"@en;
+        skos:hiddenLabel          "115";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:AREA , quantities:AREA.AREA-1 .
+
+# Magnetic flux density or magnetic field strength per unit current
+scem:Field-10.2.7  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Magnetic flux density or magnetic field strength per unit current"@en;
+        skos:hiddenLabel          "116";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:MGFD , quantities:MGFD.ELCU-1 , quantities:MGFD.MGFD-1 , quantities:ELCU.LENG-1 .
+
+# Magnetic field gradient
+scem:Field-10.2.8  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Magnetic field gradient"@en;
+        skos:hiddenLabel          "117";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.2.8";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.2;
+        sc:relatedSIQuantity      quantities:MGFD.LENG-1 .
+
+# Electromagnetic fields at freq. above 50 kHz
+scem:Field-10.3  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Electromagnetic fields at freq. above 50 kHz"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Field-10.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Field-10.3.5 , scem:Field-10.3.6 , scem:Field-10.3.2 , scem:Field-10.3.1 , scem:Field-10.3.3 , scem:Field-10.3.4;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Field-10 .
+
+# Electric field strength
+scem:Field-10.3.1  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Electric field strength"@en;
+        skos:hiddenLabel          "118";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.3;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:ELPD.LENG-1 .
+
+# Magnetic field strength
+scem:Field-10.3.2  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Magnetic field strength"@en;
+        skos:hiddenLabel          "119";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.3;
+        sc:relatedSIQuantity      quantities:ELCU.LENG-1 , quantities:RLGB .
+
+# Power flux density
+scem:Field-10.3.3  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Power flux density"@en;
+        skos:hiddenLabel          "120";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.3.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.3;
+        sc:relatedSIQuantity      quantities:POWR.AREA-1 , quantities:RLGB .
+
+# Magnetic flux density
+scem:Field-10.3.4  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Magnetic flux density"@en;
+        skos:hiddenLabel          "121";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.3.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.3;
+        sc:relatedSIQuantity      quantities:MGFD .
+
+# Magnetic field strength per unit current
+scem:Field-10.3.5  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Magnetic field strength per unit current"@en;
+        skos:hiddenLabel          "122";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.3.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.3;
+        sc:relatedSIQuantity      quantities:MGFD.ELCU-1 .
+
+# Turn area (ratio of magnetic flux and magnetic flux density)
+scem:Field-10.3.6  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Turn area (ratio of magnetic flux and magnetic flux density)"@en;
+        skos:hiddenLabel          "123";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Field-10.3.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Field-10.3;
+        sc:relatedSIQuantity      quantities:AREA .
+
+# High voltage and current
+scem:HV  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "High voltage and current"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/HV";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:HV-8;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# High voltage and current
+scem:HV-8  rdf:type           sc:Service , skos:Concept;
+        rdfs:label            "High voltage and current"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/HV-8";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:HV-8.5 , scem:HV-8.2 , scem:HV-8.6 , scem:HV-8.3 , scem:HV-8.7 , scem:HV-8.4 , scem:HV-8.1;
+        sc:isServiceOf        scem:HV .
+
+# High DC voltage
+scem:HV-8.1  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "High DC voltage"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/HV-8.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:HV-8.1.4 , scem:HV-8.1.3 , scem:HV-8.1.5 , scem:HV-8.1.2 , scem:HV-8.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:HV-8 .
+
+# High voltage sources
+scem:HV-8.1.1  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "High voltage sources"@en;
+        skos:hiddenLabel          "124";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# High voltage meters
+scem:HV-8.1.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "High voltage meters"@en;
+        skos:hiddenLabel          "125";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# Ratios
+scem:HV-8.1.3  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Ratios"@en;
+        skos:hiddenLabel          "126";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.1;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Average value of DC voltage
+scem:HV-8.1.4  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Average value of DC voltage"@en;
+        skos:hiddenLabel          "127";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.1.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.1;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# RMS value of DC voltage ripple
+scem:HV-8.1.5  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "RMS value of DC voltage ripple"@en;
+        skos:hiddenLabel          "128";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.1.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.1;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# High voltage impedance
+scem:HV-8.2  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "High voltage impedance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/HV-8.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:HV-8.2.2 , scem:HV-8.2.4 , scem:HV-8.2.1 , scem:HV-8.2.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:HV-8 .
+
+# Capacitance and dissipation factor
+scem:HV-8.2.1  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Capacitance and dissipation factor"@en;
+        skos:hiddenLabel          "129";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.2;
+        sc:relatedSIQuantity      quantities:ELCA , quantities:PHAS , quantities:ELCA.ELCA-1 , quantities:ELCO.ELCA-1.FREQ-1 .
+
+# Inductance and loss angle
+scem:HV-8.2.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Inductance and loss angle"@en;
+        skos:hiddenLabel          "130";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.2;
+        sc:relatedSIQuantity      quantities:ELIN.ELIN-1 , quantities:ELIN , quantities:PHAS , quantities:PHAS.PHAS-1 .
+
+# Burden: real and imaginary component (real component/imaginary component/modulus/argument)
+scem:HV-8.2.3  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Burden: real and imaginary component (real component/imaginary component/modulus/argument)"@en;
+        skos:hiddenLabel          "131";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.2.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.2;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 , quantities:ELPD.ELCU , quantities:PHAS .
+
+# Resistance
+scem:HV-8.2.4  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Resistance"@en;
+        skos:hiddenLabel          "132";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.2.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.2;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# AC high voltage and voltage transformers
+scem:HV-8.3  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "AC high voltage and voltage transformers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/HV-8.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:HV-8.3.5 , scem:HV-8.3.2 , scem:HV-8.3.4 , scem:HV-8.3.1 , scem:HV-8.3.3 , scem:HV-8.3.6;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:HV-8 .
+
+# Sources
+scem:HV-8.3.1  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Sources"@en;
+        skos:hiddenLabel          "133";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# Meters
+scem:HV-8.3.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "134";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# Peak values of high AC voltage
+scem:HV-8.3.3  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Peak values of high AC voltage"@en;
+        skos:hiddenLabel          "135";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.3.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.3;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Voltage transformers: ratio error and phase displacement
+scem:HV-8.3.4  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Voltage transformers: ratio error and phase displacement"@en;
+        skos:hiddenLabel          "136";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.3.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:PHAS .
+
+# RMS value for high AC voltage
+scem:HV-8.3.5  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "RMS value for high AC voltage"@en;
+        skos:hiddenLabel          "137";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.3.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.3;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Rectified average value of high AC voltage
+scem:HV-8.3.6  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Rectified average value of high AC voltage"@en;
+        skos:hiddenLabel          "138";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.3.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.3;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Pulsed high voltage and current
+scem:HV-8.4  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "Pulsed high voltage and current"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/HV-8.4";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:HV-8.4.7 , scem:HV-8.4.4 , scem:HV-8.4.8 , scem:HV-8.4.5 , scem:HV-8.4.9 , scem:HV-8.4.2 , scem:HV-8.4.1 , scem:HV-8.4.6 , scem:HV-8.4.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:HV-8 .
+
+# Parameters for lightning impulse voltage (see list in the bottom of KCDB home page)
+scem:HV-8.4.1  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Parameters for lightning impulse voltage (see list in the bottom of KCDB home page)"@en;
+        skos:hiddenLabel          "139";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.4;
+        sc:relatedSIQuantity      quantities:TIME.TIME-1 , quantities:TIME , quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Lightning impulse time parameters
+scem:HV-8.4.2  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Lightning impulse time parameters"@en;
+        skos:hiddenLabel          "140";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.4 .
+
+# Parameters for switching impulse voltage (see list in the bottom of KCDB home page)
+scem:HV-8.4.3  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Parameters for switching impulse voltage (see list in the bottom of KCDB home page)"@en;
+        skos:hiddenLabel          "141";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.4;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:TIME.TIME-1 , quantities:TIME , quantities:ELPD.ELPD-1 .
+
+# Switching impulse time parameters
+scem:HV-8.4.4  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Switching impulse time parameters"@en;
+        skos:hiddenLabel          "142";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.4 .
+
+# Parameters for impulse current (see list in the bottom of KCDB home page)
+scem:HV-8.4.5  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Parameters for impulse current (see list in the bottom of KCDB home page)"@en;
+        skos:hiddenLabel          "143";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.4;
+        sc:relatedSIQuantity      quantities:TIME , quantities:ELCU , quantities:ELCU.ELCU-1 , quantities:TIME.TIME-1 .
+
+# Impulse current time parameters
+scem:HV-8.4.6  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Impulse current time parameters"@en;
+        skos:hiddenLabel          "144";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.4 .
+
+# Impulse energy
+scem:HV-8.4.7  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Impulse energy"@en;
+        skos:hiddenLabel          "145";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.4 .
+
+# Response parameters: response time, overshoot, settling time
+scem:HV-8.4.8  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Response parameters: response time, overshoot, settling time"@en;
+        skos:hiddenLabel          "146";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.8";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.4 .
+
+# Parameters for other impulse voltage types (see list in the bottom of KCDB home page)
+scem:HV-8.4.9  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Parameters for other impulse voltage types (see list in the bottom of KCDB home page)"@en;
+        skos:hiddenLabel          "147";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.4.9";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.4;
+        sc:relatedSIQuantity      quantities:TIME , quantities:TIME.TIME-1 , quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Electric discharge
+scem:HV-8.5  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "Electric discharge"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/HV-8.5";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:HV-8.5.1 , scem:HV-8.5.2 , scem:HV-8.5.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:HV-8 .
+
+# Apparent charge
+scem:HV-8.5.1  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Apparent charge"@en;
+        skos:hiddenLabel          "148";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.5.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.5;
+        sc:relatedSIQuantity      quantities:ELCH , quantities:ELCH.ELCH-1 .
+
+# Response
+scem:HV-8.5.2  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Response"@en;
+        skos:hiddenLabel          "149";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.5.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.5;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:TIME .
+
+# Rise time of partial discharge pulse
+scem:HV-8.5.3  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Rise time of partial discharge pulse"@en;
+        skos:hiddenLabel          "150";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.5.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.5;
+        sc:relatedSIQuantity      quantities:TIME .
+
+# High AC current and current transformers
+scem:HV-8.6  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "High AC current and current transformers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/HV-8.6";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:HV-8.6.2 , scem:HV-8.6.6 , scem:HV-8.6.3 , scem:HV-8.6.4 , scem:HV-8.6.1 , scem:HV-8.6.5;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:HV-8 .
+
+# Sources
+scem:HV-8.6.1  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Sources"@en;
+        skos:hiddenLabel          "151";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.6.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.6 .
+
+# Meters
+scem:HV-8.6.2  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "152";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.6.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.6 .
+
+# Current transformers: ratio error and phase displacement
+scem:HV-8.6.3  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Current transformers: ratio error and phase displacement"@en;
+        skos:hiddenLabel          "153";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.6.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.6;
+        sc:relatedSIQuantity      quantities:PHAS , quantities:ELCU.ELCU-1 .
+
+# Pulsating current
+scem:HV-8.6.4  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Pulsating current"@en;
+        skos:hiddenLabel          "154";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.6.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.6 .
+
+# High AC current RMS value
+scem:HV-8.6.5  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "High AC current RMS value"@en;
+        skos:hiddenLabel          "155";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.6.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.6;
+        sc:relatedSIQuantity      quantities:ELCU , quantities:ELCU.ELCU-1 .
+
+# Other AC current parameters (see list in the bottom of KCDB home page)
+scem:HV-8.6.6  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Other AC current parameters (see list in the bottom of KCDB home page)"@en;
+        skos:hiddenLabel          "156";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.6.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.6;
+        sc:relatedSIQuantity      quantities:ELCU.TIME-1 , quantities:ENGY , quantities:ELCU .
+
+# High DC current
+scem:HV-8.7  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "High DC current"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/HV-8.7";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:HV-8.7.3 , scem:HV-8.7.4 , scem:HV-8.7.1 , scem:HV-8.7.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:HV-8 .
+
+# Sources
+scem:HV-8.7.1  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Sources"@en;
+        skos:hiddenLabel          "157";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.7.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.7 .
+
+# Meters
+scem:HV-8.7.2  rdf:type           sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "158";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.7.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:HV-8.7 .
+
+# High DC current ratio
+scem:HV-8.7.3  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "High DC current ratio"@en;
+        skos:hiddenLabel          "159";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.7.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.7;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 .
+
+# High DC current average value
+scem:HV-8.7.4  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "High DC current average value"@en;
+        skos:hiddenLabel          "160";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/HV-8.7.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:HV-8.7;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# Impedance up to the MHz range
+scem:Imped  rdf:type          prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Impedance up to the MHz range"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/Imped";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:Imped-4;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# Impedance (up to the MHz range)
+scem:Imped-4  rdf:type        sc:Service , skos:Concept;
+        rdfs:label            "Impedance (up to the MHz range)"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/Imped-4";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:Imped-4.1 , scem:Imped-4.3 , scem:Imped-4.2;
+        sc:isServiceOf        scem:Imped .
+
+# AC resistance
+scem:Imped-4.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "AC resistance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Imped-4.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Imped-4.1.3 , scem:Imped-4.1.4 , scem:Imped-4.1.5 , scem:Imped-4.1.2 , scem:Imped-4.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Imped-4 .
+
+# Real component and imaginary component
+scem:Imped-4.1.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Real component and imaginary component"@en;
+        skos:hiddenLabel          "161";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.1;
+        sc:relatedSIQuantity      quantities:TIME , quantities:ELRE , quantities:ELRE.ELRE-1 , quantities:PHAS .
+
+# AC-DC difference
+scem:Imped-4.1.2  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "AC-DC difference"@en;
+        skos:hiddenLabel          "162";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.1;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.ELRE-1 .
+
+# Resistors for high current
+scem:Imped-4.1.3  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Resistors for high current"@en;
+        skos:hiddenLabel          "163";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.1;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:PHAS , quantities:ELRE.ELRE-1 .
+
+# Meters
+scem:Imped-4.1.4  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "164";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.1.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.1;
+        sc:relatedSIQuantity      quantities:PHAS , quantities:ELIN.ELIN-1 , quantities:ELRE.ELRE-1 , quantities:ELRE , quantities:ELCA , quantities:ELCA.ELCA-1 , quantities:ELIN .
+
+# AC resistance ratios
+scem:Imped-4.1.5  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "AC resistance ratios"@en;
+        skos:hiddenLabel          "165";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.1.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.1;
+        sc:relatedSIQuantity      quantities:ELRE.ELRE-1 .
+
+# Capacitance
+scem:Imped-4.2  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Capacitance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Imped-4.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Imped-4.2.2 , scem:Imped-4.2.3 , scem:Imped-4.2.4 , scem:Imped-4.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Imped-4 .
+
+# Capacitance and dissipation factor for low loss capacitors
+scem:Imped-4.2.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Capacitance and dissipation factor for low loss capacitors"@en;
+        skos:hiddenLabel          "166";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.2;
+        sc:relatedSIQuantity      quantities:ELCO.ELCA-1.FREQ-1 , quantities:ELCA.ELCA-1 , quantities:PHAS , quantities:ELCA .
+
+# Capacitance and dissipation factor for dielectric capacitors
+scem:Imped-4.2.2  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Capacitance and dissipation factor for dielectric capacitors"@en;
+        skos:hiddenLabel          "167";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.2;
+        sc:relatedSIQuantity      quantities:ELCO.ELCA-1.FREQ-1 , quantities:PHAS , quantities:ELCA .
+
+# Capacitance and dissipation factor for transformed capacitors
+scem:Imped-4.2.3  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Capacitance and dissipation factor for transformed capacitors"@en;
+        skos:hiddenLabel          "168";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.2.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.2;
+        sc:relatedSIQuantity      quantities:ELCO.ELCA-1.FREQ-1 , quantities:ELCA .
+
+# Meters
+scem:Imped-4.2.4  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "169";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.2.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.2;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELCA.ELCA-1 , quantities:ELIN , quantities:ELCA .
+
+# Inductance
+scem:Imped-4.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Inductance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Imped-4.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Imped-4.3.4 , scem:Imped-4.3.1 , scem:Imped-4.3.5 , scem:Imped-4.3.2 , scem:Imped-4.3.6 , scem:Imped-4.3.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Imped-4 .
+
+# Self inductance, low values (below 1 mH)
+scem:Imped-4.3.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Self inductance, low values (below 1 mH)"@en;
+        skos:hiddenLabel          "170";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.3;
+        sc:relatedSIQuantity      quantities:ELRE.ELRE-1 , quantities:ELRE , quantities:ELIN.ELIN-1 , quantities:ELIN .
+
+# Self inductance, intermediate values (from 1 mH up to 1 H)
+scem:Imped-4.3.2  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Self inductance, intermediate values (from 1 mH up to 1 H)"@en;
+        skos:hiddenLabel          "171";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.3;
+        sc:relatedSIQuantity      quantities:ELIN.ELIN-1 , quantities:ELIN , quantities:ELRE.ELRE-1 , quantities:ELRE .
+
+# Self inductance, high values (above 1 H)
+scem:Imped-4.3.3  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Self inductance, high values (above 1 H)"@en;
+        skos:hiddenLabel          "172";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.3.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.3;
+        sc:relatedSIQuantity      quantities:ELIN.ELIN-1 , quantities:ELIN , quantities:ELRE.ELRE-1 , quantities:ELRE .
+
+# Mutual inductance
+scem:Imped-4.3.4  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Mutual inductance"@en;
+        skos:hiddenLabel          "173";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.3.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.3;
+        sc:relatedSIQuantity      quantities:ELIN.ELIN-1 , quantities:ELIN .
+
+# Meters
+scem:Imped-4.3.5  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "174";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.3.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.3;
+        sc:relatedSIQuantity      quantities:ELCA , quantities:ELIN .
+
+# Quality factor
+scem:Imped-4.3.6  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Quality factor"@en;
+        skos:hiddenLabel          "175";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Imped-4.3.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Imped-4.3;
+        sc:relatedSIQuantity      quantities:QFAC .
+
+# Materials
+scem:Mater  rdf:type          prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Materials"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/Mater";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:Mater-12;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# Measurements on materials
+scem:Mater-12  rdf:type       skos:Concept , sc:Service;
+        rdfs:label            "Measurements on materials"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/Mater-12";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:Mater-12.3 , scem:Mater-12.4 , scem:Mater-12.5 , scem:Mater-12.1 , scem:Mater-12.6 , scem:Mater-12.2 , scem:Mater-12.7;
+        sc:isServiceOf        scem:Mater .
+
+# Electrical conductivity
+scem:Mater-12.1  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Electrical conductivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Mater-12.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Mater-12.1.3 , scem:Mater-12.1.2 , scem:Mater-12.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Mater-12 .
+
+# Metallic materials
+scem:Mater-12.1.1  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Metallic materials"@en;
+        skos:hiddenLabel          "176";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.1;
+        sc:relatedSIQuantity      quantities:ELCO.LENG-1 .
+
+# Liquids
+scem:Mater-12.1.2  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Liquids"@en;
+        skos:hiddenLabel          "177";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.1;
+        sc:relatedSIQuantity      quantities:ELCO.LENG-1 .
+
+# Semiconducting and similar materials
+scem:Mater-12.1.3  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Semiconducting and similar materials"@en;
+        skos:hiddenLabel          "178";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.1;
+        sc:relatedSIQuantity      quantities:ELRE.LENG , quantities:ELCO.LENG-1 .
+
+# Dielectric properties
+scem:Mater-12.2  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Dielectric properties"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Mater-12.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Mater-12.2.2 , scem:Mater-12.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Mater-12 .
+
+# Relative permittivity: real and - or imaginary part
+scem:Mater-12.2.1  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Relative permittivity: real and - or imaginary part"@en;
+        skos:hiddenLabel          "179";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.2;
+        sc:relatedSIQuantity      quantities:RELP .
+
+# Dielectric loss tangent
+scem:Mater-12.2.2  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Dielectric loss tangent"@en;
+        skos:hiddenLabel          "180";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.2;
+        sc:relatedSIQuantity      quantities:TAND .
+
+# Soft magnetic sheet and powder materials
+scem:Mater-12.3  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Soft magnetic sheet and powder materials"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Mater-12.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Mater-12.3.2 , scem:Mater-12.3.9 , scem:Mater-12.3.10 , scem:Mater-12.3.4 , scem:Mater-12.3.1 , scem:Mater-12.3.8 , scem:Mater-12.3.3 , scem:Mater-12.3.7 , scem:Mater-12.3.6 , scem:Mater-12.3.5;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Mater-12 .
+
+# Specific total power loss
+scem:Mater-12.3.1  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Specific total power loss"@en;
+        skos:hiddenLabel          "181";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:POWR.MASS-1 .
+
+# Resistivity
+scem:Mater-12.3.10  rdf:type      skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Resistivity"@en;
+        skos:hiddenLabel          "182";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.10";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:ELRE.LENG .
+
+# Peak value of DC magnetic polarisation
+scem:Mater-12.3.2  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Peak value of DC magnetic polarisation"@en;
+        skos:hiddenLabel          "183";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:MGFD.MGFD-1 , quantities:MGFD .
+
+# Peak value of AC magnetic polarisation
+scem:Mater-12.3.3  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Peak value of AC magnetic polarisation"@en;
+        skos:hiddenLabel          "184";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:MGFD , quantities:MGFD.MGFD-1 .
+
+# Peak value of magnetic field strength
+scem:Mater-12.3.4  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Peak value of magnetic field strength"@en;
+        skos:hiddenLabel          "185";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:ELCU.LENG-1 .
+
+# RMS value of magnetic field strength
+scem:Mater-12.3.5  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "RMS value of magnetic field strength"@en;
+        skos:hiddenLabel          "186";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:ELCU.LENG-1 .
+
+# Specific apparent power
+scem:Mater-12.3.6  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Specific apparent power"@en;
+        skos:hiddenLabel          "187";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELCU.MASS-1 .
+
+# Relative peak permeability
+scem:Mater-12.3.7  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Relative peak permeability"@en;
+        skos:hiddenLabel          "188";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:REPE .
+
+# Complex relative permeability
+scem:Mater-12.3.8  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Complex relative permeability"@en;
+        skos:hiddenLabel          "189";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.8";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:REPE .
+
+# Density
+scem:Mater-12.3.9  rdf:type       sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Density"@en;
+        skos:hiddenLabel          "190";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.3.9";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.3;
+        sc:relatedSIQuantity      quantities:DENS .
+
+# Soft magnetic bulk material
+scem:Mater-12.4  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Soft magnetic bulk material"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Mater-12.4";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Mater-12.4.3 , scem:Mater-12.4.4 , scem:Mater-12.4.5 , scem:Mater-12.4.2 , scem:Mater-12.4.1 , scem:Mater-12.4.6;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Mater-12 .
+
+# Magnetic polarisation
+scem:Mater-12.4.1  rdf:type       sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Magnetic polarisation"@en;
+        skos:hiddenLabel          "191";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.4.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.4;
+        sc:relatedSIQuantity      quantities:MGPO .
+
+# Magnetic field strength
+scem:Mater-12.4.2  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Magnetic field strength"@en;
+        skos:hiddenLabel          "192";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.4.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.4;
+        sc:relatedSIQuantity      quantities:MAFD .
+
+# Remanent magnetic flux density
+scem:Mater-12.4.3  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Remanent magnetic flux density"@en;
+        skos:hiddenLabel          "193";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.4.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.4;
+        sc:relatedSIQuantity      quantities:MGFD .
+
+# Coercive magnetic field strength
+scem:Mater-12.4.4  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Coercive magnetic field strength"@en;
+        skos:hiddenLabel          "194";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.4.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.4;
+        sc:relatedSIQuantity      quantities:MAFD .
+
+# Magnetic saturation polarisation
+scem:Mater-12.4.5  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Magnetic saturation polarisation"@en;
+        skos:hiddenLabel          "195";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.4.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.4;
+        sc:relatedSIQuantity      quantities:MGPO .
+
+# Relative permeability
+scem:Mater-12.4.6  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Relative permeability"@en;
+        skos:hiddenLabel          "196";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.4.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.4;
+        sc:relatedSIQuantity      quantities:REPE .
+
+# Feebly magnetic, paramagnetic and diamagnetic material
+scem:Mater-12.5  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Feebly magnetic, paramagnetic and diamagnetic material"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Mater-12.5";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Mater-12.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Mater-12 .
+
+# DC magnetic susceptibility or relative magnetic permeability
+scem:Mater-12.5.1  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "DC magnetic susceptibility or relative magnetic permeability"@en;
+        skos:hiddenLabel          "197";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.5.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.5;
+        sc:relatedSIQuantity      quantities:MGSU , quantities:REPE .
+
+# Hard magnetic material
+scem:Mater-12.6  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Hard magnetic material"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Mater-12.6";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Mater-12.6.2 , scem:Mater-12.6.6 , scem:Mater-12.6.3 , scem:Mater-12.6.7 , scem:Mater-12.6.4 , scem:Mater-12.6.1 , scem:Mater-12.6.5;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Mater-12 .
+
+# Remanent magnetic flux density
+scem:Mater-12.6.1  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Remanent magnetic flux density"@en;
+        skos:hiddenLabel          "198";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.6.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.6;
+        sc:relatedSIQuantity      quantities:MGFD .
+
+# Coercive field strength
+scem:Mater-12.6.2  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Coercive field strength"@en;
+        skos:hiddenLabel          "199";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.6.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.6;
+        sc:relatedSIQuantity      quantities:MAFD .
+
+# Maximum energy product
+scem:Mater-12.6.3  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Maximum energy product"@en;
+        skos:hiddenLabel          "200";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.6.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.6;
+        sc:relatedSIQuantity      quantities:ENGY.VOLU-1 .
+
+# Magnetic moment
+scem:Mater-12.6.4  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Magnetic moment"@en;
+        skos:hiddenLabel          "201";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.6.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.6;
+        sc:relatedSIQuantity      quantities:ELCU.AREA .
+
+# Magnetic flux density
+scem:Mater-12.6.5  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Magnetic flux density"@en;
+        skos:hiddenLabel          "202";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.6.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.6;
+        sc:relatedSIQuantity      quantities:MGFD .
+
+# Magnetic polarisation
+scem:Mater-12.6.6  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Magnetic polarisation"@en;
+        skos:hiddenLabel          "203";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.6.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.6;
+        sc:relatedSIQuantity      quantities:MGPO .
+
+# Relative recoil permeability
+scem:Mater-12.6.7  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Relative recoil permeability"@en;
+        skos:hiddenLabel          "204";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.6.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.6;
+        sc:relatedSIQuantity      quantities:REPE .
+
+# Magnetic data storage media
+scem:Mater-12.7  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Magnetic data storage media"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/Mater-12.7";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:Mater-12.7.1 , scem:Mater-12.7.5 , scem:Mater-12.7.7 , scem:Mater-12.7.2 , scem:Mater-12.7.6 , scem:Mater-12.7.8 , scem:Mater-12.7.3 , scem:Mater-12.7.4;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:Mater-12 .
+
+# Signal amplitude of magnetic stripes
+scem:Mater-12.7.1  rdf:type       sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Signal amplitude of magnetic stripes"@en;
+        skos:hiddenLabel          "205";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7;
+        sc:relatedSIQuantity      quantities:MGFD .
+
+# Surface profile of magnetic stripes
+scem:Mater-12.7.2  rdf:type       sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Surface profile of magnetic stripes"@en;
+        skos:hiddenLabel          "206";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Reference field of diskettes
+scem:Mater-12.7.3  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Reference field of diskettes"@en;
+        skos:hiddenLabel          "207";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7;
+        sc:relatedSIQuantity      quantities:MAFD .
+
+# Signal amplitude of diskettes
+scem:Mater-12.7.4  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Signal amplitude of diskettes"@en;
+        skos:hiddenLabel          "208";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7;
+        sc:relatedSIQuantity      quantities:MAFD .
+
+# Resolution of diskettes
+scem:Mater-12.7.5  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Resolution of diskettes"@en;
+        skos:hiddenLabel          "209";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7;
+        sc:relatedSIQuantity      quantities:MAFD .
+
+# Peak shift of diskettes
+scem:Mater-12.7.6  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Peak shift of diskettes"@en;
+        skos:hiddenLabel          "210";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Overwrite of diskettes
+scem:Mater-12.7.7  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Overwrite of diskettes"@en;
+        skos:hiddenLabel          "211";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7 .
+
+# Video and audio tapes
+scem:Mater-12.7.8  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Video and audio tapes"@en;
+        skos:hiddenLabel          "212";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/Mater-12.7.8";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:Mater-12.7 .
+
+# Other DC and low frequency measurements
+scem:OtherDC  rdf:type        prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Other DC and low frequency measurements"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/OtherDC";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:OtherDC-9;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# Other DC and low frequency measurements
+scem:OtherDC-9  rdf:type      skos:Concept , sc:Service;
+        rdfs:label            "Other DC and low frequency measurements"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/OtherDC-9";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:OtherDC-9.1 , scem:OtherDC-9.3 , scem:OtherDC-9.2;
+        sc:isServiceOf        scem:OtherDC .
+
+# Electric charge
+scem:OtherDC-9.1  rdf:type       sc:Subservice , skos:Concept;
+        rdfs:label               "Electric charge"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/OtherDC-9.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:OtherDC-9.1.2 , scem:OtherDC-9.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:OtherDC-9 .
+
+# Sources
+scem:OtherDC-9.1.1  rdf:type      sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Sources"@en;
+        skos:hiddenLabel          "213";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.1;
+        sc:relatedSIQuantity      quantities:ELCH.ELCH-1 , quantities:ELCH .
+
+# Meters
+scem:OtherDC-9.1.2  rdf:type      sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "214";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.1;
+        sc:relatedSIQuantity      quantities:ELCU.TIME , quantities:ELCH.ELCH-1 , quantities:ELCH , quantities:ELCU.TIME.ELCU-1.TIME-1 .
+
+# Phase angle
+scem:OtherDC-9.2  rdf:type       skos:Concept , sc:Subservice;
+        rdfs:label               "Phase angle"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/OtherDC-9.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:OtherDC-9.2.2 , scem:OtherDC-9.2.3 , scem:OtherDC-9.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:OtherDC-9 .
+
+# Sources
+scem:OtherDC-9.2.1  rdf:type      sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Sources"@en;
+        skos:hiddenLabel          "215";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.2;
+        sc:relatedSIQuantity      quantities:PHAS .
+
+# Meters
+scem:OtherDC-9.2.2  rdf:type      sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Meters"@en;
+        skos:hiddenLabel          "216";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.2;
+        sc:relatedSIQuantity      quantities:PHAS , quantities:FREQ.TIME-1 , quantities:FREQ .
+
+# Phase shift
+scem:OtherDC-9.2.3  rdf:type      sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Phase shift"@en;
+        skos:hiddenLabel          "217";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.2.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.2;
+        sc:relatedSIQuantity      quantities:PHAS , quantities:ELCU .
+
+# Current and voltage waveform
+scem:OtherDC-9.3  rdf:type       skos:Concept , sc:Subservice;
+        rdfs:label               "Current and voltage waveform"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/OtherDC-9.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:OtherDC-9.3.3 , scem:OtherDC-9.3.7 , scem:OtherDC-9.3.4 , scem:OtherDC-9.3.5 , scem:OtherDC-9.3.1 , scem:OtherDC-9.3.6 , scem:OtherDC-9.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:OtherDC-9 .
+
+# Main frequency harmonics
+scem:OtherDC-9.3.1  rdf:type      skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Main frequency harmonics"@en;
+        skos:hiddenLabel          "218";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELCU , quantities:ELCU.ELCU-1 , quantities:ELPD .
+
+# Mains frequency harmonic distorsion
+scem:OtherDC-9.3.2  rdf:type      skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Mains frequency harmonic distorsion"@en;
+        skos:hiddenLabel          "219";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.3;
+        sc:relatedSIQuantity      quantities:HDIS , quantities:RLGB , quantities:ELPD .
+
+# Non sinusoidal waveforms, harmonic meas. for current waveforms, steady state
+scem:OtherDC-9.3.3  rdf:type      skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Non sinusoidal waveforms, harmonic meas. for current waveforms, steady state"@en;
+        skos:hiddenLabel          "220";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.3.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.3 .
+
+# Mains frequency fluctuating harmonics  (see list in the bottom of KCDB home page)
+scem:OtherDC-9.3.4  rdf:type      skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Mains frequency fluctuating harmonics  (see list in the bottom of KCDB home page)"@en;
+        skos:hiddenLabel          "221";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.3.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.3;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELCU , quantities:ELPD.ELPD-1 .
+
+# Mains frequency voltage fluctuations (see list in the bottom of KCDB home page)
+scem:OtherDC-9.3.5  rdf:type      sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Mains frequency voltage fluctuations (see list in the bottom of KCDB home page)"@en;
+        skos:hiddenLabel          "222";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.3.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.3;
+        sc:relatedSIQuantity      quantities:FSST , quantities:ELCU , quantities:FSLT , quantities:ELPD .
+
+# Flicker severity (Pst), complex modulation
+scem:OtherDC-9.3.6  rdf:type      sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Flicker severity (Pst), complex modulation"@en;
+        skos:hiddenLabel          "223";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.3.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.3 .
+
+# Mains frequency interharmonics
+scem:OtherDC-9.3.7  rdf:type      sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Mains frequency interharmonics"@en;
+        skos:hiddenLabel          "224";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/OtherDC-9.3.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:OtherDC-9.3;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 , quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# Radio frequency measurements
+scem:RF  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Radio frequency measurements"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/RF";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasService         scem:RF-11;
+        sc:isBranchOf         scem:ElectricityAndMagnetism .
+
+# Radio frequency measurements
+scem:RF-11  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Radio frequency measurements"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation         "EM/RF-11";
+        prov:wasAttributedTo  bipm:CCEM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scem:RF-11.4 , scem:RF-11.8 , scem:RF-11.3 , scem:RF-11.7 , scem:RF-11.2 , scem:RF-11.6 , scem:RF-11.1 , scem:RF-11.5 , scem:RF-11.9;
+        sc:isServiceOf        scem:RF .
+
+# RF power
+scem:RF-11.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "RF power"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.1";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.1.4 , scem:RF-11.1.2 , scem:RF-11.1.3 , scem:RF-11.1.1 , scem:RF-11.1.6 , scem:RF-11.1.5;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Absolute power in coaxial line
+scem:RF-11.1.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Absolute power in coaxial line"@en;
+        skos:hiddenLabel          "225";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.1.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.1;
+        sc:relatedSIQuantity      quantities:POWR.POWR-1 , quantities:POWR , quantities:RLGB .
+
+# Absolute power in waveguide
+scem:RF-11.1.2  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Absolute power in waveguide"@en;
+        skos:hiddenLabel          "226";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.1.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.1;
+        sc:relatedSIQuantity      quantities:POWR.POWR-1 , quantities:POWR .
+
+# Calibration factor and effective efficiency in coaxial line
+scem:RF-11.1.3  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Calibration factor and effective efficiency in coaxial line"@en;
+        skos:hiddenLabel          "227";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.1.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.1 .
+
+# Calibration factor and effective efficiency in waveguide
+scem:RF-11.1.4  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Calibration factor and effective efficiency in waveguide"@en;
+        skos:hiddenLabel          "228";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.1.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.1 .
+
+# Non-CW power (absolute or relative)
+scem:RF-11.1.5  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Non-CW power (absolute or relative)"@en;
+        skos:hiddenLabel          "229";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.1.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.1;
+        sc:relatedSIQuantity      quantities:POWR.POWR-1 , quantities:POWR .
+
+# Power measurements in balanced lines
+scem:RF-11.1.6  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Power measurements in balanced lines"@en;
+        skos:hiddenLabel          "230";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.1.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.1;
+        sc:relatedSIQuantity      quantities:POWR.POWR-1 , quantities:POWR .
+
+# Scalar RF reflection coef. and attenuation
+scem:RF-11.2  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Scalar RF reflection coef. and attenuation"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.2";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.2.3 , scem:RF-11.2.1 , scem:RF-11.2.4 , scem:RF-11.2.5 , scem:RF-11.2.6 , scem:RF-11.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Reflection coefficient in coaxial line (values in linear terms)
+scem:RF-11.2.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Reflection coefficient in coaxial line (values in linear terms)"@en;
+        skos:hiddenLabel          "231";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.2.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.2 .
+
+# Reflection coefficient in waveguide (values in linear terms)
+scem:RF-11.2.2  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Reflection coefficient in waveguide (values in linear terms)"@en;
+        skos:hiddenLabel          "232";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.2.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.2 .
+
+# Attenuation in coaxial line (values in dB)
+scem:RF-11.2.3  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Attenuation in coaxial line (values in dB)"@en;
+        skos:hiddenLabel          "233";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.2.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.2;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Attenuation in waveguide (values in dB)
+scem:RF-11.2.4  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Attenuation in waveguide (values in dB)"@en;
+        skos:hiddenLabel          "234";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.2.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.2;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Directivity, effective source match
+scem:RF-11.2.5  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Directivity, effective source match"@en;
+        skos:hiddenLabel          "235";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.2.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.2;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Reflection and attenuation measurements in balanced lines
+scem:RF-11.2.6  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Reflection and attenuation measurements in balanced lines"@en;
+        skos:hiddenLabel          "236";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.2.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.2 .
+
+# Scattering parameters (vectors)
+scem:RF-11.3  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Scattering parameters (vectors)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.3";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.3.6 , scem:RF-11.3.2 , scem:RF-11.3.7 , scem:RF-11.3.3 , scem:RF-11.3.8 , scem:RF-11.3.4 , scem:RF-11.3.9 , scem:RF-11.3.5 , scem:RF-11.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Reflection coefficient in coaxial line (real and imaginary)
+scem:RF-11.3.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Reflection coefficient in coaxial line (real and imaginary)"@en;
+        skos:hiddenLabel          "237";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:PHAS .
+
+# Reflection coefficient in waveguide (real and imaginary)
+scem:RF-11.3.2  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Reflection coefficient in waveguide (real and imaginary)"@en;
+        skos:hiddenLabel          "238";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:PHAS .
+
+# Transmission coefficient in coaxial line (real and imaginary)
+scem:RF-11.3.3  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Transmission coefficient in coaxial line (real and imaginary)"@en;
+        skos:hiddenLabel          "239";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:PHAS .
+
+# Transmission coefficient in waveguide (real and imaginary)
+scem:RF-11.3.4  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Transmission coefficient in waveguide (real and imaginary)"@en;
+        skos:hiddenLabel          "240";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:PHAS .
+
+# Directivity, effective source match
+scem:RF-11.3.5  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Directivity, effective source match"@en;
+        skos:hiddenLabel          "241";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:PHAS , quantities:RLGB .
+
+# Reflection coefficient for common mode systems
+scem:RF-11.3.6  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Reflection coefficient for common mode systems"@en;
+        skos:hiddenLabel          "242";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:PHAS , quantities:ELRE .
+
+# Transmission coefficient for common mode systems
+scem:RF-11.3.7  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Transmission coefficient for common mode systems"@en;
+        skos:hiddenLabel          "243";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:PHAS .
+
+# Reflection coefficient (Sii) in planar line systems
+scem:RF-11.3.8  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Reflection coefficient (Sii) in planar line systems"@en;
+        skos:hiddenLabel          "1025";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.8";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:PHAS .
+
+# Transmission coefficient (Sij) in planar line systems
+scem:RF-11.3.9  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Transmission coefficient (Sij) in planar line systems"@en;
+        skos:hiddenLabel          "1024";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.3.9";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.3;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:PHAS .
+
+# Noise
+scem:RF-11.4  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Noise"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.4";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.4.2 , scem:RF-11.4.3 , scem:RF-11.4.4 , scem:RF-11.4.5 , scem:RF-11.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Noise temperature or excess noise ratio in coaxial line
+scem:RF-11.4.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Noise temperature or excess noise ratio in coaxial line"@en;
+        skos:hiddenLabel          "244";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.4.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.4;
+        sc:relatedSIQuantity      quantities:ITSK.ITSK-1 , quantities:ITSK , quantities:RLGB .
+
+# Noise temperature or excess noise ratio in waveguide
+scem:RF-11.4.2  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Noise temperature or excess noise ratio in waveguide"@en;
+        skos:hiddenLabel          "245";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.4.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.4;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:RLGB , quantities:ITSK.ITSK-1 .
+
+# Amplifier noise parameters
+scem:RF-11.4.3  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Amplifier noise parameters"@en;
+        skos:hiddenLabel          "246";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.4.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.4;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Phase noise
+scem:RF-11.4.4  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Phase noise"@en;
+        skos:hiddenLabel          "247";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.4.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.4;
+        sc:relatedSIQuantity      quantities:RLGB.FREQ-1 , quantities:POWR.POWR-1.TIME-1 , quantities:RLGB .
+
+# Radio brightness temperature, spectral radiance in free space
+scem:RF-11.4.5  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Radio brightness temperature, spectral radiance in free space"@en;
+        skos:hiddenLabel          "248";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.4.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.4;
+        sc:relatedSIQuantity      quantities:POWR.LENG-2.ANGS-1.FREQ-1 , quantities:ITSK.ITSK-1 , quantities:ITSK , quantities:RLGB .
+
+# Antenna properties
+scem:RF-11.5  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Antenna properties"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.5";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.5.1 , scem:RF-11.5.2 , scem:RF-11.5.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Antenna factor
+scem:RF-11.5.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Antenna factor"@en;
+        skos:hiddenLabel          "249";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.5.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.5;
+        sc:relatedSIQuantity      quantities:RLGB.MGFD.ELPD-1 , quantities:RLGB.ELRE-1.LENG-1 , quantities:LENG-1 , quantities:RLGB , quantities:RLGB.LENG-1 .
+
+# Antenna gain
+scem:RF-11.5.2  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Antenna gain"@en;
+        skos:hiddenLabel          "250";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.5.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.5;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:POWR.POWR-1 .
+
+# Other properties (pattern, beam width, …)
+scem:RF-11.5.3  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Other properties (pattern, beam width, …)"@en;
+        skos:hiddenLabel          "251";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.5.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.5;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Signal and pulse characteristics
+scem:RF-11.6  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Signal and pulse characteristics"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.6";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.6.1 , scem:RF-11.6.4 , scem:RF-11.6.3 , scem:RF-11.6.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Pulse amplitude
+scem:RF-11.6.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Pulse amplitude"@en;
+        skos:hiddenLabel          "252";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.6.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.6;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# Pulse time parameters
+scem:RF-11.6.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Pulse time parameters"@en;
+        skos:hiddenLabel          "253";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.6.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.6;
+        sc:relatedSIQuantity      quantities:TIME , quantities:ELPD .
+
+# Modulation, AM and FM
+scem:RF-11.6.3  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Modulation, AM and FM"@en;
+        skos:hiddenLabel          "254";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.6.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.6;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:FREQ , quantities:FREQ.FREQ-1 .
+
+# Distorsion and harmonic content
+scem:RF-11.6.4  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Distorsion and harmonic content"@en;
+        skos:hiddenLabel          "255";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.6.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.6;
+        sc:relatedSIQuantity      quantities:ELPD , quantities:RLGB .
+
+# RF voltage and current
+scem:RF-11.7  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "RF voltage and current"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.7";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.7.8 , scem:RF-11.7.4 , scem:RF-11.7.7 , scem:RF-11.7.3 , scem:RF-11.7.6 , scem:RF-11.7.9 , scem:RF-11.7.2 , scem:RF-11.7.5 , scem:RF-11.7.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# RF-DC difference
+scem:RF-11.7.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "RF-DC difference"@en;
+        skos:hiddenLabel          "256";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:ELPD .
+
+# RF voltage sources
+scem:RF-11.7.2  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "RF voltage sources"@en;
+        skos:hiddenLabel          "257";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:RLGB , quantities:ELPD .
+
+# RF voltage meters
+scem:RF-11.7.3  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "RF voltage meters"@en;
+        skos:hiddenLabel          "258";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:RLGB , quantities:ELPD , quantities:ELPD.ELPD-1 .
+
+# RF current
+scem:RF-11.7.4  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "RF current"@en;
+        skos:hiddenLabel          "259";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:ELCU.ELCU-1 , quantities:ELCU .
+
+# RF transfer impedance
+scem:RF-11.7.5  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "RF transfer impedance"@en;
+        skos:hiddenLabel          "260";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.5";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:POWR.POWR-1 , quantities:RLGB , quantities:POWR .
+
+# RF voltage division factor
+scem:RF-11.7.6  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "RF voltage division factor"@en;
+        skos:hiddenLabel          "261";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.6";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 .
+
+# RF coupling factor
+scem:RF-11.7.7  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "RF coupling factor"@en;
+        skos:hiddenLabel          "262";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.7";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Flatness of RF voltage sources
+scem:RF-11.7.8  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Flatness of RF voltage sources"@en;
+        skos:hiddenLabel          "263";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.8";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Flatness of RF voltage meters
+scem:RF-11.7.9  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Flatness of RF voltage meters"@en;
+        skos:hiddenLabel          "264";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.7.9";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.7;
+        sc:relatedSIQuantity      quantities:RLGB .
+
+# Lumped impedance - admittance
+scem:RF-11.8  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Lumped impedance - admittance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.8";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.8.2 , scem:RF-11.8.4 , scem:RF-11.8.1 , scem:RF-11.8.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Resistance or conductance
+scem:RF-11.8.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Resistance or conductance"@en;
+        skos:hiddenLabel          "265";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.8.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.8;
+        sc:relatedSIQuantity      quantities:ELRE.ELRE-1 , quantities:ELRE .
+
+# Inductance
+scem:RF-11.8.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Inductance"@en;
+        skos:hiddenLabel          "266";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.8.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.8;
+        sc:relatedSIQuantity      quantities:ELIN.ELIN-1 , quantities:ELIN .
+
+# Capacitance
+scem:RF-11.8.3  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Capacitance"@en;
+        skos:hiddenLabel          "267";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.8.3";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.8;
+        sc:relatedSIQuantity      quantities:ELCA , quantities:ELCA.ELCA-1 .
+
+# Quality factor
+scem:RF-11.8.4  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Quality factor"@en;
+        skos:hiddenLabel          "268";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.8.4";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.8;
+        sc:relatedSIQuantity      quantities:QFAC .
+
+# RF characteristic impedance
+scem:RF-11.9  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "RF characteristic impedance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation            "EM/RF-11.9";
+        prov:wasAttributedTo     bipm:CCEM;
+        sc:hasIndividualService  scem:RF-11.9.2 , scem:RF-11.9.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scem:RF-11 .
+
+# Mechanical dimensions
+scem:RF-11.9.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Mechanical dimensions"@en;
+        skos:hiddenLabel          "269";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.9.1";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.9;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Electrical parameters
+scem:RF-11.9.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Electrical parameters"@en;
+        skos:hiddenLabel          "270";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/EM>;
+        skos:notation             "EM/RF-11.9.2";
+        prov:wasAttributedTo      bipm:CCEM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scem:RF-11.9;
+        sc:relatedSIQuantity      quantities:ELRE , quantities:PHAS .
+
+
+

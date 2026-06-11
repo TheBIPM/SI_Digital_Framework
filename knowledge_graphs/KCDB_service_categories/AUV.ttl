@@ -1,0 +1,2136 @@
+PREFIX bipm:       <https://si-digital-framework.org/bipm#>
+PREFIX dcat:       <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX extref:     <https://si-digital-framework.org/kcdb-sc/extref#>
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX quantities: <https://si-digital-framework.org/quantities/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc:         <https://si-digital-framework.org/kcdb-sc#>
+PREFIX scauv:      <https://si-digital-framework.org/kcdb-sc/AUV/>
+PREFIX si:         <https://si-digital-framework.org/SI#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX units:      <https://si-digital-framework.org/SI/units/>
+PREFIX vann:       <http://purl.org/vocab/vann/>
+PREFIX voaf:       <http://purl.org/vocommons/voaf#>
+PREFIX xsd:        <http://www.w3.org/2001/XMLSchema#>
+
+# OWL Ontology
+<https://si-digital-framework.org/kcdb-sc/AUV>
+        rdf:type              skos:ConceptScheme , voaf:Vocabulary , owl:Ontology;
+        dcterms:issued        "2018/06/30"^^xsd:date;
+        dcterms:title         "Classification Of Services In Acoustics, Ultrasound And Vibration"@en;
+        voaf:specializes      <https://si-digital-framework.org/kcdb-sc>;
+        prov:generatedAtTime  "2025-01-24T15:00:00Z"^^xsd:dateTime .
+
+# OWL Individuals
+# Sound in air
+scauv:A  rdf:type             sc:Branch , prov:Entity , skos:Concept;
+        rdfs:label            "Sound in air"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/A";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasService         scauv:A-6 , scauv:A-1 , scauv:A-5 , scauv:A-4 , scauv:A-3 , scauv:A-2;
+        sc:isBranchOf         scauv:AcousticsUltrasoundVibration .
+
+# Measurement microphones
+scauv:A-1  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Measurement microphones"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/A-1";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:A-1.4 , scauv:A-1.1 , scauv:A-1.2 , scauv:A-1.3;
+        sc:isServiceOf        scauv:A .
+
+# Pressure sensitivity level (air)
+scauv:A-1.1  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "Pressure sensitivity level (air)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-1.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-1.1.2 , scauv:A-1.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-1 .
+
+# Modulus
+scauv:A-1.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.1;
+        sc:relatedSIQuantity      quantities:PSNL .
+
+# Phase
+scauv:A-1.1.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "2";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Free-field sensitivity level (air)
+scauv:A-1.2  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Free-field sensitivity level (air)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-1.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-1.2.1 , scauv:A-1.2.3 , scauv:A-1.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-1 .
+
+# Modulus
+scauv:A-1.2.1  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "3";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.2;
+        sc:relatedSIQuantity      quantities:PSNL .
+
+# Phase
+scauv:A-1.2.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "4";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.2.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.2;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Directivity
+scauv:A-1.2.3  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Directivity"@en;
+        skos:hiddenLabel          "5";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.2.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.2;
+        sc:relatedSIQuantity      quantities:DIRE .
+
+# Diffuse field sensitivity level (air)
+scauv:A-1.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Diffuse field sensitivity level (air)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-1.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-1.3.2 , scauv:A-1.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-1 .
+
+# Modulus
+scauv:A-1.3.1  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "6";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.3;
+        sc:relatedSIQuantity      quantities:PSNL .
+
+# Phase
+scauv:A-1.3.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "7";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.3.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.3;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Electrostatic actuator normalized response
+scauv:A-1.4  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Electrostatic actuator normalized response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-1.4";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-1.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-1 .
+
+# Modulus
+scauv:A-1.4.1  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1089";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-1.4.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-1.4;
+        sc:relatedSIQuantity      quantities:NORM .
+
+# Sound calibrators
+scauv:A-2  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Sound calibrators"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/A-2";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:A-2.1 , scauv:A-2.2;
+        sc:isServiceOf        scauv:A .
+
+# Single frequency sound calibrators
+scauv:A-2.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Single frequency sound calibrators"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-2.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-2.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-2 .
+
+# Sound pressure level
+scauv:A-2.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Sound pressure level"@en;
+        skos:hiddenLabel          "8";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-2.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-2.1;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Multi-frequency sound calibrators
+scauv:A-2.2  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Multi-frequency sound calibrators"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-2.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-2.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-2 .
+
+# Sound pressure level
+scauv:A-2.2.1  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Sound pressure level"@en;
+        skos:hiddenLabel          "9";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-2.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-2.2;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Sound measuring instruments
+scauv:A-3  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Sound measuring instruments"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/A-3";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:A-3.1;
+        sc:isServiceOf        scauv:A .
+
+# Response of sound measuring instruments
+scauv:A-3.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Response of sound measuring instruments"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-3.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-3.1.1 , scauv:A-3.1.4 , scauv:A-3.1.3 , scauv:A-3.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-3 .
+
+# Sound pressure response level
+scauv:A-3.1.1  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Sound pressure response level"@en;
+        skos:hiddenLabel          "10";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-3.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-3.1;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Free-field response level
+scauv:A-3.1.2  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Free-field response level"@en;
+        skos:hiddenLabel          "11";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-3.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-3.1;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Diffuse field response level
+scauv:A-3.1.3  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Diffuse field response level"@en;
+        skos:hiddenLabel          "12";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-3.1.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-3.1;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Sound intensity response level
+scauv:A-3.1.4  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Sound intensity response level"@en;
+        skos:hiddenLabel          "13";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-3.1.4";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-3.1;
+        sc:relatedSIQuantity      quantities:SOIL .
+
+# Ear simulators
+scauv:A-4  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Ear simulators"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/A-4";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:A-4.2 , scauv:A-4.1 , scauv:A-4.4 , scauv:A-4.3;
+        sc:isServiceOf        scauv:A .
+
+# Reference couplers or artificial ears (air)
+scauv:A-4.1  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "Reference couplers or artificial ears (air)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-4.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-4.1.2 , scauv:A-4.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-4 .
+
+# System response level
+scauv:A-4.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "System response level"@en;
+        skos:hiddenLabel          "14";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.1;
+        sc:relatedSIQuantity      quantities:SOPL , quantities:SYRL .
+
+# Acoustic impedance
+scauv:A-4.1.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Acoustic impedance"@en;
+        skos:hiddenLabel          "15";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.1;
+        sc:relatedSIQuantity      quantities:ACIM .
+
+# Mechanical couplers (air)
+scauv:A-4.2  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "Mechanical couplers (air)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-4.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-4.2.1 , scauv:A-4.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-4 .
+
+# Force response level
+scauv:A-4.2.1  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Force response level"@en;
+        skos:hiddenLabel          "16";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.2;
+        sc:relatedSIQuantity      quantities:FORL .
+
+# Mechanical impedance
+scauv:A-4.2.2  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Mechanical impedance"@en;
+        skos:hiddenLabel          "17";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.2.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.2;
+        sc:relatedSIQuantity      quantities:MEIL .
+
+# Impedance head force transducer
+scauv:A-4.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Impedance head force transducer"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-4.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-4.3.1 , scauv:A-4.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-4 .
+
+# Modulus of charge sensitivity
+scauv:A-4.3.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus of charge sensitivity"@en;
+        skos:hiddenLabel          "18";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.3;
+        sc:relatedSIQuantity      quantities:ELCH.FORC-1 .
+
+# Phase shift of charge sensitivity
+scauv:A-4.3.2  rdf:type           skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Phase shift of charge sensitivity"@en;
+        skos:hiddenLabel          "19";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.3.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.3;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Impedance head force measuring chain
+scauv:A-4.4  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Impedance head force measuring chain"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-4.4";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-4.4.1 , scauv:A-4.4.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-4 .
+
+# Modulus of voltage sensitivity
+scauv:A-4.4.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus of voltage sensitivity"@en;
+        skos:hiddenLabel          "20";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.4.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.4;
+        sc:relatedSIQuantity      quantities:ELPD.FORC-1 .
+
+# Phase shift of voltage sensitivity
+scauv:A-4.4.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase shift of voltage sensitivity"@en;
+        skos:hiddenLabel          "21";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-4.4.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-4.4;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Reference sound sources
+scauv:A-5  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Reference sound sources"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/A-5";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:A-5.1;
+        sc:isServiceOf        scauv:A .
+
+# Output of reference sound sources
+scauv:A-5.1  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "Output of reference sound sources"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-5.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-5.1.1 , scauv:A-5.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-5 .
+
+# Sound power level
+scauv:A-5.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Sound power level"@en;
+        skos:hiddenLabel          "22";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-5.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-5.1;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Directivity
+scauv:A-5.1.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Directivity"@en;
+        skos:hiddenLabel          "23";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-5.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-5.1;
+        sc:relatedSIQuantity      quantities:DIRE .
+
+# Audiometers
+scauv:A-6  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Audiometers"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/A-6";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:A-6.1;
+        sc:isServiceOf        scauv:A .
+
+# Response of audiometers
+scauv:A-6.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Response of audiometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/A-6.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:A-6.1.1 , scauv:A-6.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:A-6 .
+
+# Air-conduction response level
+scauv:A-6.1.1  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Air-conduction response level"@en;
+        skos:hiddenLabel          "24";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-6.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-6.1;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Bone-conduction response level
+scauv:A-6.1.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Bone-conduction response level"@en;
+        skos:hiddenLabel          "25";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/A-6.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:A-6.1;
+        sc:relatedSIQuantity      quantities:SOPL .
+
+# Acoustics, Ultrasound and Vibration
+scauv:AcousticsUltrasoundVibration
+        rdf:type           prov:Entity , sc:MetrologyArea , skos:Concept;
+        rdfs:label         "Acoustics, Ultrasound and Vibration"@en , "Acoustique, ultrasons et vibrations"@fr;
+        skos:notation      "AUV";
+        skos:topConceptOf  <https://si-digital-framework.org/kcdb-sc/AUV>;
+        sc:hasBranch       scauv:A , scauv:V , scauv:W .
+
+# Vibration
+scauv:V  rdf:type             skos:Concept , prov:Entity , sc:Branch;
+        rdfs:label            "Vibration"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasService         scauv:V-45 , scauv:V-35 , scauv:V-31 , scauv:V-36 , scauv:V-21 , scauv:V-32 , scauv:V-37 , scauv:V-22 , scauv:V-33 , scauv:V-38 , scauv:V-23 , scauv:V-34 , scauv:V-30;
+        sc:isBranchOf         scauv:AcousticsUltrasoundVibration .
+
+# Linear vibration
+scauv:V-21  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Linear vibration"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-21";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:previouslyAssigned;
+        sc:hasSubService      scauv:V-21.3 , scauv:V-21.2 , scauv:V-21.1 , scauv:V-21.4;
+        sc:isServiceOf        scauv:V .
+
+# Acceleration measuring instrument
+scauv:V-21.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Acceleration measuring instrument"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-21.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-21.1.2 , scauv:V-21.1.1;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-21 .
+
+# Frequency response (modulus or phase)
+scauv:V-21.1.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Frequency response (modulus or phase)"@en;
+        skos:hiddenLabel          "26";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.1;
+        sc:relatedSIQuantity      quantities:ACCE , quantities:PHSS .
+
+# Shock response (modulus)
+scauv:V-21.1.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Shock response (modulus)"@en;
+        skos:hiddenLabel          "27";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.1;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Acceleration calibrator
+scauv:V-21.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Acceleration calibrator"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-21.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-21.2.1 , scauv:V-21.2.2;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-21 .
+
+# Acceleration output (modulus)
+scauv:V-21.2.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Acceleration output (modulus)"@en;
+        skos:hiddenLabel          "28";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.2;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Shock output (modulus)
+scauv:V-21.2.2  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Shock output (modulus)"@en;
+        skos:hiddenLabel          "29";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.2.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.2;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Acceleration measuring chain / accelerometer
+scauv:V-21.3  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Acceleration measuring chain / accelerometer"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-21.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-21.3.4 , scauv:V-21.3.1 , scauv:V-21.3.5 , scauv:V-21.3.2 , scauv:V-21.3.3;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-21 .
+
+# Charge sensitivity (modulus or phase)
+scauv:V-21.3.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Charge sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "30";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.3;
+        sc:relatedSIQuantity      quantities:PHSS , quantities:ELCH.ACCE-1 .
+
+# Shock charge sensitivity (modulus)
+scauv:V-21.3.2  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Shock charge sensitivity (modulus)"@en;
+        skos:hiddenLabel          "31";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.3.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.3;
+        sc:relatedSIQuantity      quantities:ELCH.ACCE-1 .
+
+# Voltage sensitivity (modulus or phase)
+scauv:V-21.3.3  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "32";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.3.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.3;
+        sc:relatedSIQuantity      quantities:PHSS , quantities:ELPD.ACCE-1 .
+
+# Shock voltage sensitivity (modulus or phase)
+scauv:V-21.3.4  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Shock voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "33";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.3.4";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.3;
+        sc:relatedSIQuantity      quantities:ELPD.ACCE-1 , quantities:PHSS .
+
+# Current sensitivity (modulus or phase)
+scauv:V-21.3.5  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Current sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "34";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.3.5";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-21.3;
+        sc:relatedSIQuantity      quantities:PHSS , quantities:ELCU.ACCE-1 .
+
+# Acceleration measuring chain
+scauv:V-21.4  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Acceleration measuring chain"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-21.4";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-21.4.1 , scauv:V-21.4.2;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-21 .
+
+# Voltage sensitivity (modulus or phase)
+scauv:V-21.4.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "35";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.4.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-21.4;
+        sc:relatedSIQuantity      quantities:ELPD.ACCE-1 , quantities:PHSS .
+
+# Shock sensitivity (modulus)
+scauv:V-21.4.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Shock sensitivity (modulus)"@en;
+        skos:hiddenLabel          "36";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-21.4.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-21.4;
+        sc:relatedSIQuantity      quantities:ELPD.ACCE-1 .
+
+# Angular vibration
+scauv:V-22  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Angular vibration"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-22";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:previouslyAssigned;
+        sc:hasSubService      scauv:V-22.3 , scauv:V-22.4 , scauv:V-22.2 , scauv:V-22.1;
+        sc:isServiceOf        scauv:V .
+
+# Angular acceleration measuring instrument
+scauv:V-22.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Angular acceleration measuring instrument"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-22.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-22.1.1 , scauv:V-22.1.2;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-22 .
+
+# Angular acceleration response (modulus)
+scauv:V-22.1.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Angular acceleration response (modulus)"@en;
+        skos:hiddenLabel          "37";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-22.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-22.1;
+        sc:relatedSIQuantity      quantities:ACCA .
+
+# Shock response (modulus)
+scauv:V-22.1.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Shock response (modulus)"@en;
+        skos:hiddenLabel          "38";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-22.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-22.1;
+        sc:relatedSIQuantity      quantities:ACCA .
+
+# Angular acceleration calibrator
+scauv:V-22.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Angular acceleration calibrator"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-22.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-22.2.1;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-22 .
+
+# Angular acceleration output (modulus)
+scauv:V-22.2.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Angular acceleration output (modulus)"@en;
+        skos:hiddenLabel          "39";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-22.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-22.2;
+        sc:relatedSIQuantity      quantities:ACCA .
+
+# Angular acceleration measuring chain / accelerometer
+scauv:V-22.3  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Angular acceleration measuring chain / accelerometer"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-22.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-22.3.1 , scauv:V-22.3.5 , scauv:V-22.3.3;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-22 .
+
+# Charge sensitivity (modulus or phase)
+scauv:V-22.3.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Charge sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "40";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-22.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-22.3;
+        sc:relatedSIQuantity      quantities:PHSS , quantities:ELCH.ACCA-1 .
+
+# Voltage sensitivity (modulus or phase)
+scauv:V-22.3.3  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "41";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-22.3.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-22.3;
+        sc:relatedSIQuantity      quantities:PHSS , quantities:ELPD.ACCA-1 .
+
+# Current sensitivity (modulus or phase)
+scauv:V-22.3.5  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Current sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "42";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-22.3.5";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-22.3;
+        sc:relatedSIQuantity      quantities:PHSS , quantities:ELCU.ACCE-1 .
+
+# Angular acceleration measuring chain
+scauv:V-22.4  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Angular acceleration measuring chain"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-22.4";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-22.4.1;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-22 .
+
+# Voltage sensitivity (modulus or phase)
+scauv:V-22.4.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "43";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-22.4.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-22.4;
+        sc:relatedSIQuantity      quantities:ELPD.ACCA-1 , quantities:PHSS .
+
+# Dynamic force
+scauv:V-23  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Dynamic force"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-23";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:previouslyAssigned;
+        sc:hasSubService      scauv:V-23.2 , scauv:V-23.1;
+        sc:isServiceOf        scauv:V .
+
+# Force measuring instrument for mechanical impedance and mobility measurements or modal testing
+scauv:V-23.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Force measuring instrument for mechanical impedance and mobility measurements or modal testing"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-23.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-23.1.2 , scauv:V-23.1.1;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-23 .
+
+# Frequency response (modulus or phase)
+scauv:V-23.1.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Frequency response (modulus or phase)"@en;
+        skos:hiddenLabel          "44";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-23.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-23.1;
+        sc:relatedSIQuantity      quantities:FORC , quantities:PHSS .
+
+# Shock response (modulus)
+scauv:V-23.1.2  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Shock response (modulus)"@en;
+        skos:hiddenLabel          "45";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-23.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-23.1;
+        sc:relatedSIQuantity      quantities:FORC .
+
+# Force measuring chain /force transducer for mechanical impedance and mobility measurements…
+scauv:V-23.2  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Force measuring chain /force transducer for mechanical impedance and mobility measurements…"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-23.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-23.2.2 , scauv:V-23.2.3 , scauv:V-23.2.4 , scauv:V-23.2.1;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-23 .
+
+# Charge sensitivity (modulus or phase)
+scauv:V-23.2.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Charge sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "46";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-23.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-23.2;
+        sc:relatedSIQuantity      quantities:ELCH.FORC-1 , quantities:PHSS .
+
+# Shock charge sensitivity (modulus or phase)
+scauv:V-23.2.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Shock charge sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "47";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-23.2.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-23.2;
+        sc:relatedSIQuantity      quantities:ELCH.FORC-1 , quantities:PHSS .
+
+# Voltage sensitivity (modulus or phase)
+scauv:V-23.2.3  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "48";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-23.2.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-23.2;
+        sc:relatedSIQuantity      quantities:ELPD.FORC-1 , quantities:PHSS .
+
+# Shock voltage sensitivity (modulus or phase)
+scauv:V-23.2.4  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Shock voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "49";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-23.2.4";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-23.2;
+        sc:relatedSIQuantity      quantities:ELPD.FORC-1 , quantities:PHSS .
+
+# AUV auxilary instruments and/or services
+scauv:V-30  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "AUV auxilary instruments and/or services"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-30";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:previouslyAssigned;
+        sc:hasSubService      scauv:V-30.1;
+        sc:isServiceOf        scauv:V .
+
+# Vibration signal conditionner
+scauv:V-30.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Vibration signal conditionner"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-30.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-30.1.2 , scauv:V-30.1.1 , scauv:V-30.1.3;
+        sc:hasStatus             sc:previouslyAssigned;
+        sc:isSubserviceOf        scauv:V-30 .
+
+# Charge sensitivity (modulus or phase)
+scauv:V-30.1.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Charge sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "50";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-30.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-30.1;
+        sc:relatedSIQuantity      quantities:PHSS , quantities:ELPD.ELCH-1 .
+
+# Voltage sensitivity (modulus or phase)
+scauv:V-30.1.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Voltage sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "51";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-30.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-30.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 , quantities:PHSS .
+
+# Current sensitivity (modulus or phase)
+scauv:V-30.1.3  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Current sensitivity (modulus or phase)"@en;
+        skos:hiddenLabel          "52";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-30.1.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:previouslyAssigned;
+        sc:isIndividualServiceOf  scauv:V-30.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELCU-1 , quantities:PHSS .
+
+# Acceleration measuring instrument
+scauv:V-31  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Acceleration measuring instrument"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-31";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-31.2 , scauv:V-31.1;
+        sc:isServiceOf        scauv:V .
+
+# Frequency response
+scauv:V-31.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Frequency response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-31.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-31.1.1 , scauv:V-31.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-31 .
+
+# Modulus
+scauv:V-31.1.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1044";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-31.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-31.1;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Phase
+scauv:V-31.1.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1045";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-31.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-31.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock response
+scauv:V-31.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-31.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-31.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-31 .
+
+# Modulus
+scauv:V-31.2.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1046";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-31.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-31.2;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Acceleration calibrator
+scauv:V-32  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Acceleration calibrator"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-32";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-32.1 , scauv:V-32.2;
+        sc:isServiceOf        scauv:V .
+
+# Acceleration output
+scauv:V-32.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Acceleration output"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-32.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-32.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-32 .
+
+# Modulus
+scauv:V-32.1.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1047";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-32.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-32.1;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Shock output
+scauv:V-32.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock output"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-32.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-32.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-32 .
+
+# Modulus
+scauv:V-32.2.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1048";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-32.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-32.2;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Acceleration measuring chain / accelerometer
+scauv:V-33  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Acceleration measuring chain / accelerometer"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-33";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-33.3 , scauv:V-33.6 , scauv:V-33.2 , scauv:V-33.5 , scauv:V-33.1 , scauv:V-33.4;
+        sc:isServiceOf        scauv:V .
+
+# Charge sensitivity
+scauv:V-33.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Charge sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-33.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-33.1.1 , scauv:V-33.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-33 .
+
+# Modulus
+scauv:V-33.1.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1049";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.1;
+        sc:relatedSIQuantity      quantities:ELCH.ACCE-1 .
+
+# Phase
+scauv:V-33.1.2  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1050";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock charge sensitivity
+scauv:V-33.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock charge sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-33.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-33.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-33 .
+
+# Modulus
+scauv:V-33.2.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1051";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.2;
+        sc:relatedSIQuantity      quantities:ELCH.ACCE-1 .
+
+# Voltage sensitivity
+scauv:V-33.3  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Voltage sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-33.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-33.3.1 , scauv:V-33.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-33 .
+
+# Modulus
+scauv:V-33.3.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1052";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.3;
+        sc:relatedSIQuantity      quantities:ELPD.ACCE-1 .
+
+# Phase
+scauv:V-33.3.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1053";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.3.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.3;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock voltage sensitivity
+scauv:V-33.4  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock voltage sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-33.4";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-33.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-33 .
+
+# Modulus
+scauv:V-33.4.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1054";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.4.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.4;
+        sc:relatedSIQuantity      quantities:ELPD.ACCE-1 .
+
+# Current sensitivity
+scauv:V-33.5  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Current sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-33.5";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-33.5.1 , scauv:V-33.5.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-33 .
+
+# Modulus
+scauv:V-33.5.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1055";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.5.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.5;
+        sc:relatedSIQuantity      quantities:ELCU.ACCE-1 .
+
+# Phase
+scauv:V-33.5.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1056";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.5.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.5;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock current sensitivity
+scauv:V-33.6  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock current sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-33.6";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-33.6.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-33 .
+
+# Modulus
+scauv:V-33.6.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1057";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-33.6.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-33.6;
+        sc:relatedSIQuantity      quantities:ELCU.ACCE-1 .
+
+# Angular acceleration measuring instrument
+scauv:V-34  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Angular acceleration measuring instrument"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-34";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-34.1 , scauv:V-34.2;
+        sc:isServiceOf        scauv:V .
+
+# Angular acceleration response
+scauv:V-34.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Angular acceleration response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-34.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-34.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-34 .
+
+# Modulus
+scauv:V-34.1.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1058";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-34.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-34.1;
+        sc:relatedSIQuantity      quantities:ACCA .
+
+# Shock response
+scauv:V-34.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-34.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-34.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-34 .
+
+# Modulus
+scauv:V-34.2.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1081";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-34.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-34.2;
+        sc:relatedSIQuantity      quantities:ACCA .
+
+# Angular acceleration calibrator
+scauv:V-35  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Angular acceleration calibrator"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-35";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-35.1 , scauv:V-35.2;
+        sc:isServiceOf        scauv:V .
+
+# Angular acceleration output
+scauv:V-35.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Angular acceleration output"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-35.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-35.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-35 .
+
+# Modulus
+scauv:V-35.1.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1059";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-35.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-35.1;
+        sc:relatedSIQuantity      quantities:ACCA .
+
+# Angular shock output
+scauv:V-35.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Angular shock output"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-35.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-35.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-35 .
+
+# Modulus
+scauv:V-35.2.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1082";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-35.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-35.2;
+        sc:relatedSIQuantity      quantities:ACCA .
+
+# Angular acceleration measuring chain / accelerometer
+scauv:V-36  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Angular acceleration measuring chain / accelerometer"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-36";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-36.1 , scauv:V-36.6 , scauv:V-36.2 , scauv:V-36.3 , scauv:V-36.4 , scauv:V-36.5;
+        sc:isServiceOf        scauv:V .
+
+# Charge sensitivity
+scauv:V-36.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Charge sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-36.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-36.1.2 , scauv:V-36.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-36 .
+
+# Modulus
+scauv:V-36.1.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1060";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.1;
+        sc:relatedSIQuantity      quantities:ELCH.ACCA-1 .
+
+# Phase
+scauv:V-36.1.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1061";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock charge sensitivity
+scauv:V-36.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock charge sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-36.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-36.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-36 .
+
+# Modulus
+scauv:V-36.2.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1083";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.2;
+        sc:relatedSIQuantity      quantities:ELCH.ACCA-1 .
+
+# Voltage sensitivity
+scauv:V-36.3  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Voltage sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-36.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-36.3.1 , scauv:V-36.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-36 .
+
+# Modulus
+scauv:V-36.3.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1062";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.3;
+        sc:relatedSIQuantity      quantities:ELPD.ACCA-1 .
+
+# Phase
+scauv:V-36.3.2  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1063";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.3.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.3;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock voltage sensitivity
+scauv:V-36.4  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock voltage sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-36.4";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-36.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-36 .
+
+# Modulus
+scauv:V-36.4.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1084";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.4.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.4;
+        sc:relatedSIQuantity      quantities:ELPD.ACCA-1 .
+
+# Current sensitivity
+scauv:V-36.5  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Current sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-36.5";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-36.5.2 , scauv:V-36.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-36 .
+
+# Modulus
+scauv:V-36.5.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1064";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.5.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.5;
+        sc:relatedSIQuantity      quantities:ELCU.ACCA-1 .
+
+# Phase
+scauv:V-36.5.2  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1065";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.5.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.5;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock current sensitivity
+scauv:V-36.6  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock current sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-36.6";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-36.6.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-36 .
+
+# Modulus
+scauv:V-36.6.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1085";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-36.6.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-36.6;
+        sc:relatedSIQuantity      quantities:ELCU.ACCA-1 .
+
+# Force measuring instrument for mechanical impedance and mobility measurements or modal testing
+scauv:V-37  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Force measuring instrument for mechanical impedance and mobility measurements or modal testing"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-37";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-37.1 , scauv:V-37.2;
+        sc:isServiceOf        scauv:V .
+
+# Frequency response
+scauv:V-37.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Frequency response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-37.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-37.1.2 , scauv:V-37.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-37 .
+
+# Modulus
+scauv:V-37.1.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1066";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-37.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-37.1;
+        sc:relatedSIQuantity      quantities:FORC .
+
+# Phase
+scauv:V-37.1.2  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1067";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-37.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-37.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock response
+scauv:V-37.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-37.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-37.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-37 .
+
+# Modulus
+scauv:V-37.2.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1068";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-37.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-37.2;
+        sc:relatedSIQuantity      quantities:FORC .
+
+# Force measuring chain or force transducer for mechanical impedance and mobility measurements or modal testing
+scauv:V-38  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Force measuring chain or force transducer for mechanical impedance and mobility measurements or modal testing"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-38";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-38.1 , scauv:V-38.6 , scauv:V-38.2 , scauv:V-38.3 , scauv:V-38.4 , scauv:V-38.5;
+        sc:isServiceOf        scauv:V .
+
+# Charge sensitivity
+scauv:V-38.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Charge sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-38.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-38.1.1 , scauv:V-38.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-38 .
+
+# Modulus
+scauv:V-38.1.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1069";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.1;
+        sc:relatedSIQuantity      quantities:ELCH.FORC-1 .
+
+# Phase
+scauv:V-38.1.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1070";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock charge sensitivity
+scauv:V-38.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock charge sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-38.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-38.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-38 .
+
+# Modulus
+scauv:V-38.2.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1071";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.2;
+        sc:relatedSIQuantity      quantities:ELCH.FORC-1 .
+
+# Voltage sensitivity
+scauv:V-38.3  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Voltage sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-38.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-38.3.2 , scauv:V-38.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-38 .
+
+# Modulus
+scauv:V-38.3.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1072";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.3;
+        sc:relatedSIQuantity      quantities:ELPD.FORC-1 .
+
+# Phase
+scauv:V-38.3.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1073";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.3.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.3;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock voltage sensitivity
+scauv:V-38.4  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock voltage sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-38.4";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-38.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-38 .
+
+# Modulus
+scauv:V-38.4.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1074";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.4.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.4;
+        sc:relatedSIQuantity      quantities:ELPD.FORC-1 .
+
+# Current sensitivity
+scauv:V-38.5  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Current sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-38.5";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-38.5.2 , scauv:V-38.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-38 .
+
+# Modulus
+scauv:V-38.5.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1086";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.5.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.5;
+        sc:relatedSIQuantity      quantities:ELCU.FORC-1 .
+
+# Phase
+scauv:V-38.5.2  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1087";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.5.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.5;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Shock Current sensitivity
+scauv:V-38.6  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Shock Current sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-38.6";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-38.6.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-38 .
+
+# Modulus
+scauv:V-38.6.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1088";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-38.6.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-38.6;
+        sc:relatedSIQuantity      quantities:ELCU.FORC-1 .
+
+# Vibration signal conditioner
+scauv:V-45  rdf:type          sc:Service , skos:Concept;
+        rdfs:label            "Vibration signal conditioner"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/V-45";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:V-45.2 , scauv:V-45.3 , scauv:V-45.1;
+        sc:isServiceOf        scauv:V .
+
+# Charge sensitivity
+scauv:V-45.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Charge sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-45.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-45.1.1 , scauv:V-45.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-45 .
+
+# Modulus
+scauv:V-45.1.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1075";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-45.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-45.1;
+        sc:relatedSIQuantity      quantities:ELPD.ELCH-1 .
+
+# Phase
+scauv:V-45.1.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1076";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-45.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-45.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Voltage sensitivity
+scauv:V-45.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Voltage sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-45.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-45.2.1 , scauv:V-45.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-45 .
+
+# Modulus
+scauv:V-45.2.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1077";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-45.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-45.2;
+        sc:relatedSIQuantity      quantities:ELPD.ELPD-1 .
+
+# Phase
+scauv:V-45.2.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1078";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-45.2.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-45.2;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Current Sensitivity
+scauv:V-45.3  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Current Sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/V-45.3";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:V-45.3.2 , scauv:V-45.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:V-45 .
+
+# Modulus
+scauv:V-45.3.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "1079";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-45.3.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-45.3;
+        sc:relatedSIQuantity      quantities:ELPD.ELCU-1 .
+
+# Phase
+scauv:V-45.3.2  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "1080";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/V-45.3.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:V-45.3;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Sound in water
+scauv:W  rdf:type             skos:Concept , prov:Entity , sc:Branch;
+        rdfs:label            "Sound in water"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/W";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasService         scauv:W-12 , scauv:W-11 , scauv:W-14 , scauv:W-13;
+        sc:isBranchOf         scauv:AcousticsUltrasoundVibration .
+
+# Hydrophones (medical ultrasonic)
+scauv:W-11  rdf:type          sc:Service , skos:Concept;
+        rdfs:label            "Hydrophones (medical ultrasonic)"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/W-11";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:W-11.2 , scauv:W-11.1;
+        sc:isServiceOf        scauv:W .
+
+# Free-field sensitivity
+scauv:W-11.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Free-field sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/W-11.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:W-11.1.1 , scauv:W-11.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:W-11 .
+
+# Modulus
+scauv:W-11.1.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "53";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-11.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-11.1;
+        sc:relatedSIQuantity      quantities:ELPD.PRES-1 .
+
+# Phase
+scauv:W-11.1.2  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "54";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-11.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-11.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Pressure sensitivity
+scauv:W-11.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Pressure sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/W-11.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:W-11.2.1 , scauv:W-11.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:W-11 .
+
+# Modulus
+scauv:W-11.2.1  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "55";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-11.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-11.2;
+        sc:relatedSIQuantity      quantities:PSNW , quantities:ELPD.PRES-1 .
+
+# Phase
+scauv:W-11.2.2  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "56";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-11.2.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-11.2;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Hydrophones (underwater acoustics)
+scauv:W-12  rdf:type          sc:Service , skos:Concept;
+        rdfs:label            "Hydrophones (underwater acoustics)"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/W-12";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:W-12.1 , scauv:W-12.2;
+        sc:isServiceOf        scauv:W .
+
+# Free-field sensitivity
+scauv:W-12.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Free-field sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/W-12.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:W-12.1.1 , scauv:W-12.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:W-12 .
+
+# Modulus
+scauv:W-12.1.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "57";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-12.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-12.1;
+        sc:relatedSIQuantity      quantities:ELPD.PRES-1 , quantities:PSNW .
+
+# Phase
+scauv:W-12.1.2  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "58";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-12.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-12.1;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Pressure sensitivity
+scauv:W-12.2  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Pressure sensitivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/W-12.2";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:W-12.2.1 , scauv:W-12.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:W-12 .
+
+# Modulus
+scauv:W-12.2.1  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Modulus"@en;
+        skos:hiddenLabel          "59";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-12.2.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-12.2;
+        sc:relatedSIQuantity      quantities:ELPD.PRES-1 , quantities:PSNW .
+
+# Phase
+scauv:W-12.2.2  rdf:type          skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Phase"@en;
+        skos:hiddenLabel          "60";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-12.2.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-12.2;
+        sc:relatedSIQuantity      quantities:PHSS .
+
+# Ultrasound transducer with generator
+scauv:W-13  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Ultrasound transducer with generator"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/W-13";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:W-13.1;
+        sc:isServiceOf        scauv:W .
+
+# Output from ultrasound transducer with generator
+scauv:W-13.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Output from ultrasound transducer with generator"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/W-13.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:W-13.1.1 , scauv:W-13.1.2 , scauv:W-13.1.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:W-13 .
+
+# Ultrasonic power
+scauv:W-13.1.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Ultrasonic power"@en;
+        skos:hiddenLabel          "61";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-13.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-13.1;
+        sc:relatedSIQuantity      quantities:POWR .
+
+# Directivity
+scauv:W-13.1.2  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Directivity"@en;
+        skos:hiddenLabel          "62";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-13.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-13.1;
+        sc:relatedSIQuantity      quantities:DIRE .
+
+# Ultrasonic pressure
+scauv:W-13.1.3  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Ultrasonic pressure"@en;
+        skos:hiddenLabel          "63";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-13.1.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-13.1;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Ultrasound transducer
+scauv:W-14  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Ultrasound transducer"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation         "AUV/W-14";
+        prov:wasAttributedTo  bipm:CCAUV;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scauv:W-14.1;
+        sc:isServiceOf        scauv:W .
+
+# Output from ultrasound transducer
+scauv:W-14.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Output from ultrasound transducer"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation            "AUV/W-14.1";
+        prov:wasAttributedTo     bipm:CCAUV;
+        sc:hasIndividualService  scauv:W-14.1.3 , scauv:W-14.1.1 , scauv:W-14.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scauv:W-14 .
+
+# Electroacoustic radiation conductance
+scauv:W-14.1.1  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Electroacoustic radiation conductance"@en;
+        skos:hiddenLabel          "64";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-14.1.1";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-14.1;
+        sc:relatedSIQuantity      quantities:ELCO .
+
+# Directivity
+scauv:W-14.1.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Directivity"@en;
+        skos:hiddenLabel          "65";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-14.1.2";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-14.1;
+        sc:relatedSIQuantity      quantities:DIRE .
+
+# Ultrasonic power
+scauv:W-14.1.3  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Ultrasonic power"@en;
+        skos:hiddenLabel          "66";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/AUV>;
+        skos:notation             "AUV/W-14.1.3";
+        prov:wasAttributedTo      bipm:CCAUV;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scauv:W-14.1;
+        sc:relatedSIQuantity      quantities:POWR .
+
+
+

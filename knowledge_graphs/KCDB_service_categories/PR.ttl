@@ -1,0 +1,2965 @@
+PREFIX bipm:       <https://si-digital-framework.org/bipm#>
+PREFIX dcat:       <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX extref:     <https://si-digital-framework.org/kcdb-sc/extref#>
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX quantities: <https://si-digital-framework.org/quantities/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc:         <https://si-digital-framework.org/kcdb-sc#>
+PREFIX scpr:       <https://si-digital-framework.org/kcdb-sc/PR/>
+PREFIX si:         <https://si-digital-framework.org/SI#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX units:      <https://si-digital-framework.org/SI/units/>
+PREFIX vann:       <http://purl.org/vocab/vann/>
+PREFIX voaf:       <http://purl.org/vocommons/voaf#>
+PREFIX xsd:        <http://www.w3.org/2001/XMLSchema#>
+
+# OWL Ontology
+<https://si-digital-framework.org/kcdb-sc/PR>
+        rdf:type              skos:ConceptScheme , owl:Ontology , voaf:Vocabulary;
+        rdfs:comment          "The services numbering given in this text is the one which is used by National Metrology Institutes for drawing up their CMC files in the field of Photometry and Radiometry. To facilitate the selection of services via the database search engine, this metrology area is split up into four different branches: \"Photometry\", \"Properties of detectors and sources\", \"Properties of materials\", and \"Fiber optics\". It follows that services corresponding to number \"5\", which are relevant to detectors and sources, are given here before services corresponding to number \"4\", which are relevant to materials." , "In the following, the service numbered as \"a.b.c\" is described under the form:\na. Field\na.b Measured quantity\na.b.c Instrument or artefact: parameter(s) in italic\nor - for BRANCH: FIBRE OPTICS:\na.b.c Sub-quantity (if any), instrument, or artefact: parameter(s) in italic";
+        dcterms:issued        "2023/07/10"^^xsd:date;
+        dcterms:title         "Classification Of Services In Photometry And Radiometry"@en;
+        voaf:specializes      <https://si-digital-framework.org/kcdb-sc>;
+        owl:versionInfo       "17";
+        prov:generatedAtTime  "2025-01-16T10:00:00Z"^^xsd:dateTime .
+
+# OWL Individuals
+# Properties of detectors and sources
+scpr:Detector  rdf:type       sc:Branch , prov:Entity , skos:Concept;
+        rdfs:label            "Properties of detectors and sources"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Detector";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasService         scpr:Detector-5 , scpr:Detector-3 , scpr:Detector-2;
+        sc:isBranchOf         scpr:PhotometryAndRadiometry .
+
+# Properties of detectors
+scpr:Detector-2  rdf:type     skos:Concept , sc:Service;
+        rdfs:label            "Properties of detectors"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Detector-2";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scpr:Detector-2.6 , scpr:Detector-2.3 , scpr:Detector-2.11 , scpr:Detector-2.7 , scpr:Detector-2.4 , scpr:Detector-2.12 , scpr:Detector-2.8 , scpr:Detector-2.1 , scpr:Detector-2.5 , scpr:Detector-2.9 , scpr:Detector-2.10 , scpr:Detector-2.2;
+        sc:isServiceOf        scpr:Detector .
+
+# Responsivity, spectral, power
+scpr:Detector-2.1  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, spectral, power"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.1";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# Broad band detector
+scpr:Detector-2.1.1  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Broad band detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-063";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-063"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "405";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.1.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.1;
+        sc:relatedSIQuantity      quantities:RAFL-1 .
+
+# Responsivity, UV, broadband radiant exposure
+scpr:Detector-2.10  rdf:type     skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, UV, broadband radiant exposure"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.10";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.10.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# UV radiometer
+scpr:Detector-2.10.0  rdf:type    sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "UV radiometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-008";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-008"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-071";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-071"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "406";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.10.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.10;
+        sc:relatedSIQuantity      quantities:REXP-1 .
+
+# Responsitivity, solar, spectral, irradiance
+scpr:Detector-2.11  rdf:type     skos:Concept , sc:Subservice;
+        rdfs:label               "Responsitivity, solar, spectral, irradiance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.11";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.11.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# Solar spectroradiometer
+scpr:Detector-2.11.0  rdf:type    sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Solar spectroradiometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-056";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-056"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-29-096";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-29-096"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "407";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.11.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.11;
+        sc:relatedSIQuantity      quantities:IRRA-1.LENG-1 .
+
+# Responsivity, terrestrial irradiance
+scpr:Detector-2.12  rdf:type     skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, terrestrial irradiance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.12";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.12.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# Broadband detector
+scpr:Detector-2.12.1  rdf:type    sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Broadband detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "1043";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.12.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.12;
+        sc:relatedSIQuantity      quantities:IRRA-1 .
+
+# Responsivity, spectral, irradiance
+scpr:Detector-2.2  rdf:type      sc:Subservice , skos:Concept;
+        rdfs:label               "Responsivity, spectral, irradiance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.2";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.2.3 , scpr:Detector-2.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# Broad band detector
+scpr:Detector-2.2.2  rdf:type     skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Broad band detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-063";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-063"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "408";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.2.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.2;
+        sc:relatedSIQuantity      quantities:IRRA-1 .
+
+# Spectroradiometer
+scpr:Detector-2.2.3  rdf:type     skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Spectroradiometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-056";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-056"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "409";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.2.3";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.2;
+        sc:relatedSIQuantity      quantities:IRRA-1.LENG-1 .
+
+# Responsivity, spectral, radiance
+scpr:Detector-2.3  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, spectral, radiance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.3";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.3.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# Spectroradiometer
+scpr:Detector-2.3.0  rdf:type     skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Spectroradiometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-052";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-052"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "410";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.3.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.3;
+        sc:relatedSIQuantity      quantities:RADI-1.LENG-1 .
+
+# Responsivity, laser, power
+scpr:Detector-2.4  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, laser, power"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.4";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.4.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# General detector
+scpr:Detector-2.4.0  rdf:type     sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "General detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "845-27-136";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=845-27-136"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "411";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.4.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.4;
+        sc:relatedSIQuantity      quantities:RAFL-1 .
+
+# Responsivity, laser, energy
+scpr:Detector-2.5  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, laser, energy"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.5";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.5.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# General detector
+scpr:Detector-2.5.0  rdf:type     sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "General detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "845-27-136";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=845-27-136"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-041";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-041"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "412";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.5.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.5;
+        sc:relatedSIQuantity      quantities:RAFL-1.TIME-1 .
+
+# Responsivity, solar, power
+scpr:Detector-2.6  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, solar, power"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.6";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.6.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# General detector
+scpr:Detector-2.6.0  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "General detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-29-096";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-29-096"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "413";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.6.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.6;
+        sc:relatedSIQuantity      quantities:RAFL-1 .
+
+# Responsivity, solar, irradiance
+scpr:Detector-2.7  rdf:type      sc:Subservice , skos:Concept;
+        rdfs:label               "Responsivity, solar, irradiance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.7";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.7.0 , scpr:Detector-2.7.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# General detector
+scpr:Detector-2.7.0  rdf:type     sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "General detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-29-096";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-29-096"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "414";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.7.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.7;
+        sc:relatedSIQuantity      quantities:IRRA-1 .
+
+# Broadband detector
+scpr:Detector-2.7.1  rdf:type     skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Broadband detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-29-096";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-29-096"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "415";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.7.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.7;
+        sc:relatedSIQuantity      quantities:IRRA-1 .
+
+# Responsivity, blackbody, total irradiance
+scpr:Detector-2.8  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, blackbody, total irradiance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.8";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.8.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# Broadband detector
+scpr:Detector-2.8.0  rdf:type     sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Broadband detector"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-004";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-004"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "416";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.8.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.8;
+        sc:relatedSIQuantity      quantities:IRRA-1 .
+
+# Responsivity, UV, broadband irradiance
+scpr:Detector-2.9  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity, UV, broadband irradiance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-2.9";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-2.9.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-2 .
+
+# UV radiometer
+scpr:Detector-2.9.0  rdf:type     skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "UV radiometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-008";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-008"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "417";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-2.9.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-2.9;
+        sc:relatedSIQuantity      quantities:IRRA-1 .
+
+# Spectral emission properties of sources
+scpr:Detector-3  rdf:type     skos:Concept , sc:Service;
+        rdfs:label            "Spectral emission properties of sources"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Detector-3";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scpr:Detector-3.3 , scpr:Detector-3.4 , scpr:Detector-3.1 , scpr:Detector-3.5 , scpr:Detector-3.2;
+        sc:isServiceOf        scpr:Detector .
+
+# Irradiance, spectral
+scpr:Detector-3.1  rdf:type      sc:Subservice , skos:Concept;
+        rdfs:label               "Irradiance, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-3.1";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-3.1.2 , scpr:Detector-3.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-3 .
+
+# Tungsten lamp
+scpr:Detector-3.1.1  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-056";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-056"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "418";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.1.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.1;
+        sc:relatedSIQuantity      quantities:IRRA.LENG-1 .
+
+# Deuterium lamp
+scpr:Detector-3.1.2  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Deuterium lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-053";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-053"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-056";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-056"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "419";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.1.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.1;
+        sc:relatedSIQuantity      quantities:IRRA.LENG-1 .
+
+# Radiance, spectral
+scpr:Detector-3.2  rdf:type      sc:Subservice , skos:Concept;
+        rdfs:label               "Radiance, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-3.2";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-3.2.2 , scpr:Detector-3.2.3 , scpr:Detector-3.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-3 .
+
+# Tungsten lamp
+scpr:Detector-3.2.1  rdf:type     sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-052";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-052"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-049";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-049"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "420";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.2.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.2;
+        sc:relatedSIQuantity      quantities:RADI.LENG-1 .
+
+# Deuterium lamp
+scpr:Detector-3.2.2  rdf:type     sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Deuterium lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-052";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-052"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-049";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-049"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "421";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.2.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.2;
+        sc:relatedSIQuantity      quantities:RADI.LENG-1 .
+
+# General source
+scpr:Detector-3.2.3  rdf:type     sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "General source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-052";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-052"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-049";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-049"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "422";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.2.3";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.2;
+        sc:relatedSIQuantity      quantities:RADI.LENG-1 .
+
+# Power, spectral total radiant
+scpr:Detector-3.3  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Power, spectral total radiant"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-3.3";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-3.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-3 .
+
+# Laser
+scpr:Detector-3.3.1  rdf:type     sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Laser"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "423";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.3.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.3;
+        sc:relatedSIQuantity      quantities:RAFL .
+
+# Radiant intensity, spectral
+scpr:Detector-3.4  rdf:type      sc:Subservice , skos:Concept;
+        rdfs:label               "Radiant intensity, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-3.4";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-3.4.1 , scpr:Detector-3.4.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-3 .
+
+# Tungsten lamp
+scpr:Detector-3.4.1  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-044";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-044"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "424";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.4.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.4;
+        sc:relatedSIQuantity      quantities:RAIN.LENG-1 .
+
+# Deuterium lamp
+scpr:Detector-3.4.2  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Deuterium lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-044";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-044"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "425";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.4.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.4;
+        sc:relatedSIQuantity      quantities:RAIN.LENG-1 .
+
+# Radiant flux, spectral
+scpr:Detector-3.5  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Radiant flux, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-3.5";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-3.5.0 , scpr:Detector-3.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-3 .
+
+# General source
+scpr:Detector-3.5.0  rdf:type     skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "General source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "426";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.5.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.5;
+        sc:relatedSIQuantity      quantities:RAFL.LENG-1 .
+
+# Tungsten lamp
+scpr:Detector-3.5.1  rdf:type     skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-028";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-028"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "427";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-3.5.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-3.5;
+        sc:relatedSIQuantity      quantities:RAFL.LENG-1 .
+
+# Spectral.-int. meas. for sources and detectors
+scpr:Detector-5  rdf:type     skos:Concept , sc:Service;
+        rdfs:label            "Spectral.-int. meas. for sources and detectors"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Detector-5";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scpr:Detector-5.1 , scpr:Detector-5.5 , scpr:Detector-5.4 , scpr:Detector-5.8 , scpr:Detector-5.3 , scpr:Detector-5.7 , scpr:Detector-5.2 , scpr:Detector-5.6;
+        sc:isServiceOf        scpr:Detector .
+
+# Distribution temperature
+scpr:Detector-5.1  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Distribution temperature"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.1";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.1.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# Tungsten lamp
+scpr:Detector-5.1.0  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-017";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-017"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "428";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.1.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.1;
+        sc:relatedSIQuantity      quantities:MTTE .
+
+# Correlated colour temperature
+scpr:Detector-5.2  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Correlated colour temperature"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.2";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# Tungsten lamp
+scpr:Detector-5.2.1  rdf:type     sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-068";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-068"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "429";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.2.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.2;
+        sc:relatedSIQuantity      quantities:CCTE .
+
+# Correlated colour temperature response
+scpr:Detector-5.3  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Correlated colour temperature response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.3";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.3.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# Colour temperature meter
+scpr:Detector-5.3.0  rdf:type     skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Colour temperature meter"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-068";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-068"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "430";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.3.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.3;
+        sc:relatedSIQuantity      quantities:CCTE-1 .
+
+# Colour, emitted
+scpr:Detector-5.4  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Colour, emitted"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.4";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.4.3 , scpr:Detector-5.4.0 , scpr:Detector-5.4.1 , scpr:Detector-5.4.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# General source, colour space: x, y
+scpr:Detector-5.4.0  rdf:type     sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "General source, colour space: x, y"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-045";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-045"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-013";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-013"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "431";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.4.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.4 .
+
+# General source, colour space: u, v
+scpr:Detector-5.4.1  rdf:type     sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "General source, colour space: u, v"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-079";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-079"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-013";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-013"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "432";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.4.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.4 .
+
+# General source, colour space: u-prime, v-prime
+scpr:Detector-5.4.2  rdf:type     sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "General source, colour space: u-prime, v-prime"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-013";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-013"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-073";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-073"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "433";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.4.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.4 .
+
+# Display, colour space: L*a*b
+scpr:Detector-5.4.3  rdf:type     sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Display, colour space: L*a*b"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-013";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-013"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-076";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-076"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "434";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.4.3";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.4 .
+
+# Chromaticity response
+scpr:Detector-5.5  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Chromaticity response"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.5";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.5.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# Colorimeter
+scpr:Detector-5.5.0  rdf:type     skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Colorimeter"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-052";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-052"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "435";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.5.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.5 .
+
+# Colour rendering, Ra
+scpr:Detector-5.6  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Colour rendering, Ra"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.6";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.6.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# General source
+scpr:Detector-5.6.0  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "General source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-22-111";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-22-111"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "436";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.6.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.6 .
+
+# Radiance, total
+scpr:Detector-5.7  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Radiance, total"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.7";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.7.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# Blackbody
+scpr:Detector-5.7.0  rdf:type     sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Blackbody"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-049";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-049"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-004";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-004"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "437";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.7.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.7;
+        sc:relatedSIQuantity      quantities:RADI.LENG-1 .
+
+# Radiant flux, total
+scpr:Detector-5.8  rdf:type      skos:Concept , sc:Subservice;
+        rdfs:label               "Radiant flux, total"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Detector-5.8";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Detector-5.8.0 , scpr:Detector-5.8.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Detector-5 .
+
+# General source
+scpr:Detector-5.8.0  rdf:type     skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "General source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-29-046";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-29-046"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "438";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.8.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.8;
+        sc:relatedSIQuantity      quantities:RAFL .
+
+# LED
+scpr:Detector-5.8.1  rdf:type     sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "LED"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-038";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-038"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "439";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Detector-5.8.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Detector-5.8;
+        sc:relatedSIQuantity      quantities:RAFL .
+
+# Fibre optics
+scpr:Fibre  rdf:type          prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Fibre optics"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Fibre";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasService         scpr:Fibre-7;
+        sc:isBranchOf         scpr:PhotometryAndRadiometry .
+
+# Fibre optics
+scpr:Fibre-7  rdf:type        sc:Service , skos:Concept;
+        rdfs:label            "Fibre optics"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Fibre-7";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scpr:Fibre-7.3 , scpr:Fibre-7.8 , scpr:Fibre-7.5 , scpr:Fibre-7.1 , scpr:Fibre-7.10 , scpr:Fibre-7.2 , scpr:Fibre-7.11 , scpr:Fibre-7.7;
+        sc:isServiceOf        scpr:Fibre .
+
+# Responsivity
+scpr:Fibre-7.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Responsivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.1";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.1.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Fibre optic power meter
+scpr:Fibre-7.1.0  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Fibre optic power meter"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "731-06-36";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=731-06-36"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "440";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.1.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.1;
+        sc:relatedSIQuantity      quantities:POWM , quantities:RAFL-1 .
+
+# Length
+scpr:Fibre-7.10  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Length"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.10";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.10.1 , scpr:Fibre-7.10.2 , scpr:Fibre-7.10.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Length, optical fibre
+scpr:Fibre-7.10.0  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Length, optical fibre"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "441";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.10.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.10;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Location offset, OTDR
+scpr:Fibre-7.10.1  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Location offset, OTDR"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "442";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.10.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.10;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Distance scale deviation, OTDR
+scpr:Fibre-7.10.2  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Distance scale deviation, OTDR"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "1037";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.10.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.10;
+        sc:relatedSIQuantity      quantities:LENG.LENG-1 .
+
+# Fibre Polarization mode dispersion (inactive)
+scpr:Fibre-7.11  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Fibre Polarization mode dispersion (inactive)"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.11";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.11.0 , scpr:Fibre-7.11.1;
+        sc:hasStatus             sc:notYetAssigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Optical fibre
+scpr:Fibre-7.11.0  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Optical fibre"@en;
+        skos:hiddenLabel          "443";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.11.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.11;
+        sc:relatedSIQuantity      quantities:PMDP .
+
+# Polarization mode dispersion analyzer
+scpr:Fibre-7.11.1  rdf:type       sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Polarization mode dispersion analyzer"@en;
+        skos:hiddenLabel          "444";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.11.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:notYetAssigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.11;
+        sc:relatedSIQuantity      quantities:TIME .
+
+# Wavelength
+scpr:Fibre-7.2  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Wavelength"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.2";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.2.0 , scpr:Fibre-7.2.3 , scpr:Fibre-7.2.2 , scpr:Fibre-7.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Fibre optic source
+scpr:Fibre-7.2.0  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Fibre optic source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-025";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-025"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "445";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.2.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Optical spectrum analyser
+scpr:Fibre-7.2.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Optical spectrum analyser"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-025";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-025"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "446";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.2.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Wavelength meter
+scpr:Fibre-7.2.2  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Wavelength meter"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-025";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-025"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "447";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.2.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Wavelength standard
+scpr:Fibre-7.2.3  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Wavelength standard"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-025";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-025"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "1038";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.2.3";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.2;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Modal properties
+scpr:Fibre-7.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Modal properties"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.3";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.3.1 , scpr:Fibre-7.3.0 , scpr:Fibre-7.3.3 , scpr:Fibre-7.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Encircled flux, fibre optic source or fibre
+scpr:Fibre-7.3.0  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Encircled flux, fibre optic source or fibre"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "1027";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.3.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.3;
+        sc:relatedSIQuantity      quantities:ENCL .
+
+# Encircled flux, measuring instrument
+scpr:Fibre-7.3.1  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Encircled flux, measuring instrument"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "1028";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.3.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.3;
+        sc:relatedSIQuantity      quantities:ENCL .
+
+# Mode field diameter (MFD), optical fibre
+scpr:Fibre-7.3.2  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Mode field diameter (MFD), optical fibre"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "1029";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.3.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.3;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Numerical aperture, optical fibre
+scpr:Fibre-7.3.3  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Numerical aperture, optical fibre"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "1030";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.3.3";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.3;
+        sc:relatedSIQuantity      quantities:NUMA .
+
+# Attenuation
+scpr:Fibre-7.5  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Attenuation"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.5";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.5.1 , scpr:Fibre-7.5.2 , scpr:Fibre-7.5.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Spectral attenuation, optical fibre
+scpr:Fibre-7.5.0  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Spectral attenuation, optical fibre"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "845-24-082";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=845-24-082"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "731-01-48";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=731-01-48"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "448";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.5.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.5;
+        sc:relatedSIQuantity      quantities:LOSS.LENG-1 , quantities:LOSS , quantities:OPAB .
+
+# Loss, optical fibre component
+scpr:Fibre-7.5.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Loss, optical fibre component"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "845-24-082";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=845-24-082"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "731-01-48";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=731-01-48"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "449";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.5.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.5;
+        sc:relatedSIQuantity      quantities:LOSS .
+
+# Loss, measuring instrument
+scpr:Fibre-7.5.2  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Loss, measuring instrument"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "731-01-48";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=731-01-48"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "845-24-082";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=845-24-082"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "1042";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.5.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.5;
+        sc:relatedSIQuantity      quantities:LOSS .
+
+# Chromatic dispersion
+scpr:Fibre-7.7  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Chromatic dispersion"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.7";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.7.5 , scpr:Fibre-7.7.1 , scpr:Fibre-7.7.2 , scpr:Fibre-7.7.3 , scpr:Fibre-7.7.4 , scpr:Fibre-7.7.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Dispersion, optical fibre
+scpr:Fibre-7.7.0  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Dispersion, optical fibre"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "731-03-74";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=731-03-74"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "450";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.7.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.7;
+        sc:relatedSIQuantity      quantities:TDIS , quantities:DISP .
+
+# Zero dispersion wavelength, optical fibre
+scpr:Fibre-7.7.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Zero dispersion wavelength, optical fibre"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "451";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.7.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.7;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Dispersion slope, optical fibre
+scpr:Fibre-7.7.2  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Dispersion slope, optical fibre"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "452";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.7.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.7;
+        sc:relatedSIQuantity      quantities:DISL , quantities:TDDS .
+
+# Dispersion, measuring instrument
+scpr:Fibre-7.7.3  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Dispersion, measuring instrument"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "731-03-74";
+                                    dcterms:isPartOf    extref:IEV;
+                                    dcat:landingPage    "https://www.electropedia.org/iev/iev.nsf/display?openform&ievref=731-03-74"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "1034";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.7.3";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.7;
+        sc:relatedSIQuantity      quantities:DISP .
+
+# Zero dispersion wavelength, measuring instrument
+scpr:Fibre-7.7.4  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Zero dispersion wavelength, measuring instrument"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "1035";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.7.4";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.7;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Dispersion slope, measuring instrument
+scpr:Fibre-7.7.5  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Dispersion slope, measuring instrument"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "1036";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.7.5";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.7;
+        sc:relatedSIQuantity      quantities:DISL .
+
+# Polarization mode dispersion
+scpr:Fibre-7.8  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Polarization mode dispersion"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Fibre-7.8";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Fibre-7.8.0 , scpr:Fibre-7.8.1 , scpr:Fibre-7.8.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Fibre-7 .
+
+# Optical fibre
+scpr:Fibre-7.8.0  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Optical fibre"@en;
+        skos:hiddenLabel          "1031";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.8.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.8;
+        sc:relatedSIQuantity      quantities:DGDE .
+
+# Measuring instrument
+scpr:Fibre-7.8.1  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Measuring instrument"@en;
+        skos:hiddenLabel          "1032";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.8.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.8;
+        sc:relatedSIQuantity      quantities:DGDE .
+
+# Artefact
+scpr:Fibre-7.8.2  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Artefact"@en;
+        skos:hiddenLabel          "1033";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Fibre-7.8.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Fibre-7.8;
+        sc:relatedSIQuantity      quantities:DGDE .
+
+# Properties of materials
+scpr:Mater  rdf:type          prov:Entity , sc:Branch , skos:Concept;
+        rdfs:label            "Properties of materials"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Mater";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasService         scpr:Mater-6 , scpr:Mater-4;
+        sc:isBranchOf         scpr:PhotometryAndRadiometry .
+
+# Spectral properties of materials
+scpr:Mater-4  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Spectral properties of materials"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Mater-4";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scpr:Mater-4.18 , scpr:Mater-4.13 , scpr:Mater-4.1 , scpr:Mater-4.14 , scpr:Mater-4.6 , scpr:Mater-4.10 , scpr:Mater-4.2 , scpr:Mater-4.15 , scpr:Mater-4.11 , scpr:Mater-4.7 , scpr:Mater-4.3 , scpr:Mater-4.16 , scpr:Mater-4.9 , scpr:Mater-4.12 , scpr:Mater-4.4 , scpr:Mater-4.17 , scpr:Mater-4.5;
+        sc:isServiceOf        scpr:Mater .
+
+# Transmittance, regular, spectral
+scpr:Mater-4.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Transmittance, regular, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.1";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-neutral material
+scpr:Mater-4.1.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Spectrally-neutral material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-067";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-067"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-122";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-122"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "453";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.1.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.1;
+        sc:relatedSIQuantity      quantities:OPTR .
+
+# Emittance, spectral
+scpr:Mater-4.10  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Emittance, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.10";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.10.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# General material
+scpr:Mater-4.10.0  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "General material"@en;
+        skos:hiddenLabel          "454";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.10.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.10;
+        sc:relatedSIQuantity      quantities:OPEM .
+
+# BRDF
+scpr:Mater-4.11  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "BRDF"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.11";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.11.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# General material
+scpr:Mater-4.11.0  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-089";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-089"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "455";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.11.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.11;
+        sc:relatedSIQuantity      quantities:BRDF .
+
+# Reflectance factor
+scpr:Mater-4.12  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Reflectance factor"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.12";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.12.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# General material
+scpr:Mater-4.12.0  rdf:type       sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-070";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-070"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "456";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.12.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.12;
+        sc:relatedSIQuantity      quantities:OPRF .
+
+# Radiance factor
+scpr:Mater-4.13  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Radiance factor"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.13";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.13.0 , scpr:Mater-4.13.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# General material
+scpr:Mater-4.13.0  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-075";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-075"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "457";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.13.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.13;
+        sc:relatedSIQuantity      quantities:RADF .
+
+# Fluorescent material
+scpr:Mater-4.13.1  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Fluorescent material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-075";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-075"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-041";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-041"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "458";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.13.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.13;
+        sc:relatedSIQuantity      quantities:RADF .
+
+# Luminescent radiance factor
+scpr:Mater-4.14  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Luminescent radiance factor"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.14";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.14.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Fluorescent material
+scpr:Mater-4.14.0  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Fluorescent material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-041";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-041"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-100";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-100"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "459";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.14.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.14;
+        sc:relatedSIQuantity      quantities:RADF .
+
+# Wavelength
+scpr:Mater-4.15  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Wavelength"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.15";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.15.1 , scpr:Mater-4.15.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-selective transmitting material
+scpr:Mater-4.15.0  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Spectrally-selective transmitting material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-025";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-025"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "460";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.15.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.15;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Spectrally-selective reflecting material
+scpr:Mater-4.15.1  rdf:type       sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Spectrally-selective reflecting material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-025";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-025"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "461";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.15.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.15;
+        sc:relatedSIQuantity      quantities:LENG .
+
+# Refractive index, spectral
+scpr:Mater-4.16  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Refractive index, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.16";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.16.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Solid material
+scpr:Mater-4.16.0  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Solid material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-109";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-109"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "462";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.16.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.16;
+        sc:relatedSIQuantity      quantities:REFI .
+
+# Angle of rotation of polarization plane, spectral
+scpr:Mater-4.17  rdf:type        sc:Subservice , skos:Concept;
+        rdfs:label               "Angle of rotation of polarization plane, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.17";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.17.1 , scpr:Mater-4.17.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Solid material
+scpr:Mater-4.17.0  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Solid material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-020";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-020"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "463";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.17.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.17;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Liquid material
+scpr:Mater-4.17.1  rdf:type       sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Liquid material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-020";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-020"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "464";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.17.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.17;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Ellipsometric angles phi, delta, spectral
+scpr:Mater-4.18  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Ellipsometric angles phi, delta, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.18";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.18.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# General material
+scpr:Mater-4.18.0  rdf:type       skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-019";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-019"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "465";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.18.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.18;
+        sc:relatedSIQuantity      quantities:ANGP .
+
+# Transmittance, diffuse, spectral
+scpr:Mater-4.2  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Transmittance, diffuse, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.2";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-neutral material
+scpr:Mater-4.2.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Spectrally-neutral material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-069";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-069"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-122";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-122"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "466";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.2.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.2;
+        sc:relatedSIQuantity      quantities:OPTR .
+
+# Absorbance, regular, spectral
+scpr:Mater-4.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Absorbance, regular, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.3";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-neutral material
+scpr:Mater-4.3.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Spectrally-neutral material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-122";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-122"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-072";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-072"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "467";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.3.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.3;
+        sc:relatedSIQuantity      quantities:OPAB .
+
+# Absorbance, diffuse, spectral
+scpr:Mater-4.4  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Absorbance, diffuse, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.4";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-neutral material
+scpr:Mater-4.4.1  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Spectrally-neutral material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-122";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-122"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-072";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-072"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "468";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.4.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.4;
+        sc:relatedSIQuantity      quantities:OPAB .
+
+# Reflectance, diffuse, spectral
+scpr:Mater-4.5  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Reflectance, diffuse, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.5";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-neutral material
+scpr:Mater-4.5.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Spectrally-neutral material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-068";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-068"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-122";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-122"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "469";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.5.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.5;
+        sc:relatedSIQuantity      quantities:OPRE .
+
+# Reflectance, regular, spectral
+scpr:Mater-4.6  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Reflectance, regular, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.6";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.6.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-neutral material
+scpr:Mater-4.6.1  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Spectrally-neutral material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-066";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-066"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-122";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-122"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "470";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.6.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.6;
+        sc:relatedSIQuantity      quantities:OPRE .
+
+# Reflectance, hemispherical, spectral
+scpr:Mater-4.7  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Reflectance, hemispherical, spectral"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.7";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.7.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# Spectrally-neutral material
+scpr:Mater-4.7.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Spectrally-neutral material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-122";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-122"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-027";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-027"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-064";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-064"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "471";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.7.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.7;
+        sc:relatedSIQuantity      quantities:OPRE .
+
+# Emissivity
+scpr:Mater-4.9  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Emissivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-4.9";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-4.9.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-4 .
+
+# General material
+scpr:Mater-4.9.0  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-009";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-009"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "472";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-4.9.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-4.9;
+        sc:relatedSIQuantity      quantities:REXI .
+
+# Colour and other spectral.-int. meas. of materials
+scpr:Mater-6  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Colour and other spectral.-int. meas. of materials"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Mater-6";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scpr:Mater-6.4 , scpr:Mater-6.10 , scpr:Mater-6.9 , scpr:Mater-6.5 , scpr:Mater-6.12 , scpr:Mater-6.1 , scpr:Mater-6.6 , scpr:Mater-6.7 , scpr:Mater-6.2 , scpr:Mater-6.3;
+        sc:isServiceOf        scpr:Mater .
+
+# Colour, surface, x, y, Y
+scpr:Mater-6.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Colour, surface, x, y, Y"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.1";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.1.0 , scpr:Mater-6.1.2 , scpr:Mater-6.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.1.0  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-045";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-045"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-22-043";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-22-043"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-049";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-049"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "473";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.1.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.1 .
+
+# Fluorescent material
+scpr:Mater-6.1.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Fluorescent material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-049";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-049"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-045";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-045"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-22-043";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-22-043"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-041";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-041"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "474";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.1.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.1 .
+
+# Diffusely reflecting material
+scpr:Mater-6.1.2  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Diffusely reflecting material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-045";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-045"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-22-043";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-22-043"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-049";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-049"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "475";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.1.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.1 .
+
+# Luminance coefficient
+scpr:Mater-6.10  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Luminance coefficient"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.10";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.10.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.10.0  rdf:type       sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-079";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-079"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "476";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.10.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.10;
+        sc:relatedSIQuantity      quantities:LUCO .
+
+# Whiteness
+scpr:Mater-6.12  rdf:type        skos:Concept , sc:Subservice;
+        rdfs:label               "Whiteness"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.12";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.12.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.12.0  rdf:type       skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-045";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-045"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type  dcat:Resource ];
+        skos:hiddenLabel          "477";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.12.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.12;
+        sc:relatedSIQuantity      quantities:WHIT .
+
+# Colour, surface, Lab
+scpr:Mater-6.2  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Colour, surface, Lab"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.2";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.2.1 , scpr:Mater-6.2.0 , scpr:Mater-6.2.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.2.0  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-076";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-076"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-22-043";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-22-043"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "478";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.2.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.2 .
+
+# Fluorescent material
+scpr:Mater-6.2.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Fluorescent material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-076";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-076"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-22-043";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-22-043"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-041";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-041"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "479";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.2.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.2 .
+
+# Diffusely reflecting material
+scpr:Mater-6.2.2  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Diffusely reflecting material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-076";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-076"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-22-043";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-22-043"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "480";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.2.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.2 .
+
+# Colour, transmitted, x, y, Y
+scpr:Mater-6.3  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Colour, transmitted, x, y, Y"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.3";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.3.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.3.0  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-045";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-045"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-065";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-065"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "481";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.3.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.3 .
+
+# Colour, transmitted, Lab
+scpr:Mater-6.4  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Colour, transmitted, Lab"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.4";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.4.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.4.0  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-065";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-065"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-001";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-001"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-23-076";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-23-076"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "482";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.4.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.4 .
+
+# Retroreflectance
+scpr:Mater-6.5  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Retroreflectance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.5";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.5.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.5.0  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-064";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-064"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-105";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-105"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-099";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-099"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "483";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.5.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.5;
+        sc:relatedSIQuantity      quantities:OPRE .
+
+# Gloss
+scpr:Mater-6.6  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Gloss"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.6";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.6.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.6.0  rdf:type        sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-064";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-064"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-080";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-080"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-138";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-138"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "484";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.6.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.6;
+        sc:relatedSIQuantity      quantities:GLOS .
+
+# Haze
+scpr:Mater-6.7  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Haze"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.7";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.7.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.7.0  rdf:type        skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-127";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-127"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "485";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.7.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.7;
+        sc:relatedSIQuantity      quantities:OPTR.OPTR-1 .
+
+# Luminance factor
+scpr:Mater-6.9  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Luminance factor"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Mater-6.9";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Mater-6.9.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Mater-6 .
+
+# General material
+scpr:Mater-6.9.0  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "General material"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-24-077";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-24-077"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "486";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Mater-6.9.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Mater-6.9;
+        sc:relatedSIQuantity      quantities:LUFA .
+
+# Photometry
+scpr:Photo  rdf:type          prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Photometry"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Photo";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasService         scpr:Photo-1;
+        sc:isBranchOf         scpr:PhotometryAndRadiometry .
+
+# Photometry
+scpr:Photo-1  rdf:type        skos:Concept , sc:Service;
+        rdfs:label            "Photometry"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation         "PR/Photo-1";
+        prov:wasAttributedTo  bipm:CCPR;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scpr:Photo-1.7 , scpr:Photo-1.5 , scpr:Photo-1.8 , scpr:Photo-1.1 , scpr:Photo-1.6 , scpr:Photo-1.2 , scpr:Photo-1.3 , scpr:Photo-1.4;
+        sc:isServiceOf        scpr:Photo .
+
+# Luminous intensity
+scpr:Photo-1.1  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Luminous intensity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.1";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# Tungsten lamp
+scpr:Photo-1.1.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-045";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-045"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "487";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.1.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.1;
+        sc:relatedSIQuantity      quantities:LUIN .
+
+# Illuminance responsivity
+scpr:Photo-1.2  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Illuminance responsivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.2";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# Tungsten source
+scpr:Photo-1.2.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Tungsten source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-060";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-060"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "488";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.2.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.2;
+        sc:relatedSIQuantity      quantities:ILLU-1 .
+
+# Luminous flux
+scpr:Photo-1.3  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Luminous flux"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.3";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.3.1 , scpr:Photo-1.3.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# Tungsten lamp
+scpr:Photo-1.3.1  rdf:type        sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-039";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-039"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "489";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.3.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.3;
+        sc:relatedSIQuantity      quantities:LUFL .
+
+# LED
+scpr:Photo-1.3.2  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "LED"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-112";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-112"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-039";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-039"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "490";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.3.2";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.3;
+        sc:relatedSIQuantity      quantities:LUFL .
+
+# Illuminance
+scpr:Photo-1.4  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Illuminance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.4";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# Tungsten lamp
+scpr:Photo-1.4.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Tungsten lamp"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-060";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-060"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "491";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.4.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.4;
+        sc:relatedSIQuantity      quantities:ILLU .
+
+# Luminance
+scpr:Photo-1.5  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Luminance"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.5";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.5.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# Tungsten-based source
+scpr:Photo-1.5.1  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Tungsten-based source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-050";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-050"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "492";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.5.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.5;
+        sc:relatedSIQuantity      quantities:LUMA .
+
+# Luminance responsivity
+scpr:Photo-1.6  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Luminance responsivity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.6";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.6.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# Luminance meter
+scpr:Photo-1.6.0  rdf:type        sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Luminance meter"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-050";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-050"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "493";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.6.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.6;
+        sc:relatedSIQuantity      quantities:LUMA-1 .
+
+# Averaged luminous intensity
+scpr:Photo-1.7  rdf:type         skos:Concept , sc:Subservice;
+        rdfs:label               "Averaged luminous intensity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.7";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.7.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# LED
+scpr:Photo-1.7.1  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "LED"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-114";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-114"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "494";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.7.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.7;
+        sc:relatedSIQuantity      quantities:LUIN .
+
+# Luminous exposure
+scpr:Photo-1.8  rdf:type         sc:Subservice , skos:Concept;
+        rdfs:label               "Luminous exposure"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation            "PR/Photo-1.8";
+        prov:wasAttributedTo     bipm:CCPR;
+        sc:hasIndividualService  scpr:Photo-1.8.1 , scpr:Photo-1.8.0;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scpr:Photo-1 .
+
+# General source
+scpr:Photo-1.8.0  rdf:type        skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "General source"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-072";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-072"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "495";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.8.0";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.8;
+        sc:relatedSIQuantity      quantities:LUXP .
+
+# Flash photometer
+scpr:Photo-1.8.1  rdf:type        sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Flash photometer"@en;
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-21-072";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-21-072"^^xsd:anyURI
+                                  ];
+        dcterms:references        [ rdf:type            dcat:Resource;
+                                    dcterms:identifier  "17-25-061";
+                                    dcterms:isPartOf    extref:E_ILV;
+                                    dcat:landingPage    "https://cie.co.at/eilvterm/17-25-061"^^xsd:anyURI
+                                  ];
+        skos:hiddenLabel          "496";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/PR>;
+        skos:notation             "PR/Photo-1.8.1";
+        prov:wasAttributedTo      bipm:CCPR;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scpr:Photo-1.8;
+        sc:relatedSIQuantity      quantities:LUXP-1 .
+
+# Photométrie et radiométrie , Photometry and Radiometry
+scpr:PhotometryAndRadiometry
+        rdf:type           sc:MetrologyArea , prov:Entity , skos:Concept;
+        rdfs:label         "Photométrie et radiométrie"@fr , "Photometry and Radiometry"@en;
+        skos:notation      "PR";
+        skos:topConceptOf  <https://si-digital-framework.org/kcdb-sc/PR>;
+        sc:hasBranch       scpr:Mater , scpr:Fibre , scpr:Photo , scpr:Detector .
+
+
+

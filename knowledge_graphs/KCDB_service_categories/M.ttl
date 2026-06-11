@@ -1,0 +1,706 @@
+PREFIX bipm:       <https://si-digital-framework.org/bipm#>
+PREFIX dcat:       <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX extref:     <https://si-digital-framework.org/kcdb-sc/extref#>
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX quantities: <https://si-digital-framework.org/quantities/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sc:         <https://si-digital-framework.org/kcdb-sc#>
+PREFIX scm:        <https://si-digital-framework.org/kcdb-sc/M/>
+PREFIX si:         <https://si-digital-framework.org/SI#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX units:      <https://si-digital-framework.org/SI/units/>
+PREFIX vann:       <http://purl.org/vocab/vann/>
+PREFIX voaf:       <http://purl.org/vocommons/voaf#>
+PREFIX xsd:        <http://www.w3.org/2001/XMLSchema#>
+
+# OWL Ontology
+<https://si-digital-framework.org/kcdb-sc/M>
+        rdf:type              skos:ConceptScheme , voaf:Vocabulary , owl:Ontology;
+        dcterms:issued        "2022/01/04"^^xsd:date;
+        dcterms:title         "Classification Of Services In Mass And Related Quantities"@en;
+        voaf:specializes      <https://si-digital-framework.org/kcdb-sc>;
+        prov:generatedAtTime  "2024-12-09T21:00:00Z"^^xsd:dateTime .
+
+# OWL Individuals
+# Density
+scm:Dens  rdf:type            prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Density"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Dens";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Dens-2;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Density
+scm:Dens-2  rdf:type          sc:Service , skos:Concept;
+        rdfs:label            "Density"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Dens-2";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Dens-2.3 , scm:Dens-2.2 , scm:Dens-2.1;
+        sc:isServiceOf        scm:Dens .
+
+# Density of solid
+scm:Dens-2.1  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Density of solid"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Dens-2.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Dens-2.1.1 , scm:Dens-2.1.2;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Dens-2 .
+
+# Density of solid
+scm:Dens-2.1.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Density of solid"@en;
+        skos:hiddenLabel          "376";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Dens-2.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Dens-2.1;
+        sc:relatedSIQuantity      quantities:DENS .
+
+# Volume of solid
+scm:Dens-2.1.2  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Volume of solid"@en;
+        skos:hiddenLabel          "377";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Dens-2.1.2";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Dens-2.1;
+        sc:relatedSIQuantity      quantities:VOLU .
+
+# Density of liquid
+scm:Dens-2.2  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Density of liquid"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Dens-2.2";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Dens-2.2.2 , scm:Dens-2.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Dens-2 .
+
+# Density measuring device
+scm:Dens-2.2.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Density measuring device"@en;
+        skos:hiddenLabel          "378";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Dens-2.2.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Dens-2.2;
+        sc:relatedSIQuantity      quantities:DENS .
+
+# Density of liquid
+scm:Dens-2.2.2  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Density of liquid"@en;
+        skos:hiddenLabel          "379";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Dens-2.2.2";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Dens-2.2;
+        sc:relatedSIQuantity      quantities:DENS .
+
+# Refractive index of liquid
+scm:Dens-2.3  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Refractive index of liquid"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Dens-2.3";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Dens-2.3.3;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Dens-2 .
+
+# Refractive index of liquid
+scm:Dens-2.3.3  rdf:type          sc:IndividualService , skos:Concept , sc:ServiceCategory;
+        rdfs:label                "Refractive index of liquid"@en;
+        skos:hiddenLabel          "380";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Dens-2.3.3";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Dens-2.3;
+        sc:relatedSIQuantity      quantities:REFI .
+
+# Fluid flow
+scm:FF  rdf:type              prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Fluid flow"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/FF";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:FF-9;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Fluid flow
+scm:FF-9  rdf:type            skos:Concept , sc:Service;
+        rdfs:label            "Fluid flow"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/FF-9";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:FF-9.10;
+        sc:isServiceOf        scm:FF .
+
+# Fluid flow
+scm:FF-9.10  rdf:type            sc:Subservice , skos:Concept;
+        rdfs:label               "Fluid flow"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/FF-9.10";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:FF-9.10.5 , scm:FF-9.10.1 , scm:FF-9.10.6 , scm:FF-9.10.2 , scm:FF-9.10.3 , scm:FF-9.10.4;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:FF-9 .
+
+# Liquid flow
+scm:FF-9.10.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Liquid flow"@en;
+        skos:hiddenLabel          "381";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/FF-9.10.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:FF-9.10;
+        sc:relatedSIQuantity      quantities:MASS , quantities:MASS.TIME-1 , quantities:VOLU.TIME-1 , quantities:VOLU .
+
+# Gas flow
+scm:FF-9.10.2  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Gas flow"@en;
+        skos:hiddenLabel          "382";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/FF-9.10.2";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:FF-9.10;
+        sc:relatedSIQuantity      quantities:MASS , quantities:MASS.TIME-1 , quantities:VOLU.TIME-1 , quantities:PRES.VOLU.TIME-1 , quantities:VOLU , quantities:AMSU.TIME-1 .
+
+# Quantity of fluid
+scm:FF-9.10.3  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Quantity of fluid"@en;
+        skos:hiddenLabel          "383";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/FF-9.10.3";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:FF-9.10;
+        sc:relatedSIQuantity      quantities:VOLU , quantities:MASS .
+
+# Flow speed
+scm:FF-9.10.4  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Flow speed"@en;
+        skos:hiddenLabel          "384";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/FF-9.10.4";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:FF-9.10;
+        sc:relatedSIQuantity      quantities:VELO , quantities:LENG .
+
+# Multiphase flow
+scm:FF-9.10.5  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Multiphase flow"@en;
+        skos:hiddenLabel          "385";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/FF-9.10.5";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:FF-9.10;
+        sc:relatedSIQuantity      quantities:MASS.TIME-1 , quantities:MASS , quantities:VOLU.TIME-1 , quantities:VOLU .
+
+# Heat flow
+scm:FF-9.10.6  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Heat flow"@en;
+        skos:hiddenLabel          "386";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/FF-9.10.6";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:FF-9.10;
+        sc:relatedSIQuantity      quantities:ITSK , quantities:ENGY.TIME-1 .
+
+# Force
+scm:Force  rdf:type           prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Force"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Force";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Force-4;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Force
+scm:Force-4  rdf:type         sc:Service , skos:Concept;
+        rdfs:label            "Force"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Force-4";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Force-4.1 , scm:Force-4.2 , scm:Force-4.3;
+        sc:isServiceOf        scm:Force .
+
+# Tension
+scm:Force-4.1  rdf:type          skos:Concept , sc:Subservice;
+        rdfs:label               "Tension"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Force-4.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Force-4.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Force-4 .
+
+# Tension
+scm:Force-4.1.1  rdf:type         sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Tension"@en;
+        skos:hiddenLabel          "387";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Force-4.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Force-4.1;
+        sc:relatedSIQuantity      quantities:FORC .
+
+# Compression
+scm:Force-4.2  rdf:type          skos:Concept , sc:Subservice;
+        rdfs:label               "Compression"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Force-4.2";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Force-4.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Force-4 .
+
+# Compression
+scm:Force-4.2.1  rdf:type         skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Compression"@en;
+        skos:hiddenLabel          "388";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Force-4.2.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Force-4.2;
+        sc:relatedSIQuantity      quantities:FORC .
+
+# Tension and compression
+scm:Force-4.3  rdf:type          skos:Concept , sc:Subservice;
+        rdfs:label               "Tension and compression"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Force-4.3";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Force-4.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Force-4 .
+
+# Tension and compression
+scm:Force-4.3.1  rdf:type         sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Tension and compression"@en;
+        skos:hiddenLabel          "389";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Force-4.3.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Force-4.3;
+        sc:relatedSIQuantity      quantities:FORC .
+
+# Gravity
+scm:Gra  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Gravity"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Gra";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Gra-8;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Gravity
+scm:Gra-8  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Gravity"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Gra-8";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Gra-8.1;
+        sc:isServiceOf        scm:Gra .
+
+# Gravity
+scm:Gra-8.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Gravity"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Gra-8.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Gra-8.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Gra-8 .
+
+# Gravity
+scm:Gra-8.1.1  rdf:type           sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Gravity"@en;
+        skos:hiddenLabel          "404";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Gra-8.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Gra-8.1;
+        sc:relatedSIQuantity      quantities:ACCE .
+
+# Hardness
+scm:Har  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Hardness"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Har";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Har-7;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Hardness
+scm:Har-7  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Hardness"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Har-7";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Har-7.1;
+        sc:isServiceOf        scm:Har .
+
+# Hardness
+scm:Har-7.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Hardness"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Har-7.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Har-7.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Har-7 .
+
+# Hardness
+scm:Har-7.1.1  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Hardness"@en;
+        skos:hiddenLabel          "403";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Har-7.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Har-7.1 .
+
+# Mass, mass standards
+scm:Mass  rdf:type            prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Mass, mass standards"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Mass";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Mass-1;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Mass
+scm:Mass-1  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Mass"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Mass-1";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Mass-1.1;
+        sc:isServiceOf        scm:Mass .
+
+# Mass standard
+scm:Mass-1.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Mass standard"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Mass-1.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Mass-1.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Mass-1 .
+
+# Mass standard
+scm:Mass-1.1.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Mass standard"@en;
+        skos:hiddenLabel          "390";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Mass-1.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Mass-1.1;
+        sc:relatedSIQuantity      quantities:MASS .
+
+# Masse et grandeurs apparentées , Mass and Related Quantities
+scm:MassAndRelatedQuantities
+        rdf:type           sc:MetrologyArea , skos:Concept , prov:Entity;
+        rdfs:label         "Masse et grandeurs apparentées"@fr , "Mass and Related Quantities"@en;
+        skos:notation      "M";
+        skos:topConceptOf  <https://si-digital-framework.org/kcdb-sc/M>;
+        sc:hasBranch       scm:Gra , scm:Vis , scm:Dens , scm:Mass , scm:Har , scm:Force , scm:Tor , scm:Pres , scm:FF .
+
+# Pressure
+scm:Pres  rdf:type            prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Pressure"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Pres";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Pres-3;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Pressure
+scm:Pres-3  rdf:type          skos:Concept , sc:Service;
+        rdfs:label            "Pressure"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Pres-3";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Pres-3.3 , scm:Pres-3.4 , scm:Pres-3.1 , scm:Pres-3.2;
+        sc:isServiceOf        scm:Pres .
+
+# Absolute pressure
+scm:Pres-3.1  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Absolute pressure"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Pres-3.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Pres-3.1.2 , scm:Pres-3.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Pres-3 .
+
+# Gas medium
+scm:Pres-3.1.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Gas medium"@en;
+        skos:hiddenLabel          "391";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.1;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Liquid medium
+scm:Pres-3.1.2  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Liquid medium"@en;
+        skos:hiddenLabel          "392";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.1.2";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.1;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Gauge pressure
+scm:Pres-3.2  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Gauge pressure"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Pres-3.2";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Pres-3.2.2 , scm:Pres-3.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Pres-3 .
+
+# Gas medium
+scm:Pres-3.2.1  rdf:type          sc:ServiceCategory , skos:Concept , sc:IndividualService;
+        rdfs:label                "Gas medium"@en;
+        skos:hiddenLabel          "393";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.2.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.2;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Liquid medium
+scm:Pres-3.2.2  rdf:type          sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Liquid medium"@en;
+        skos:hiddenLabel          "394";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.2.2";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.2;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Differential pressure
+scm:Pres-3.3  rdf:type           sc:Subservice , skos:Concept;
+        rdfs:label               "Differential pressure"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Pres-3.3";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Pres-3.3.2 , scm:Pres-3.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Pres-3 .
+
+# Gas medium
+scm:Pres-3.3.1  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Gas medium"@en;
+        skos:hiddenLabel          "395";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.3.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.3;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Liquid medium
+scm:Pres-3.3.2  rdf:type          skos:Concept , sc:IndividualService , sc:ServiceCategory;
+        rdfs:label                "Liquid medium"@en;
+        skos:hiddenLabel          "396";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.3.2";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.3;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Dynamic pressure
+scm:Pres-3.4  rdf:type           skos:Concept , sc:Subservice;
+        rdfs:label               "Dynamic pressure"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Pres-3.4";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Pres-3.4.2 , scm:Pres-3.4.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Pres-3 .
+
+# Gas medium
+scm:Pres-3.4.1  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Gas medium"@en;
+        skos:hiddenLabel          "397";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.4.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.4;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Liquid medium
+scm:Pres-3.4.2  rdf:type          sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Liquid medium"@en;
+        skos:hiddenLabel          "398";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Pres-3.4.2";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Pres-3.4;
+        sc:relatedSIQuantity      quantities:PRES .
+
+# Torque
+scm:Tor  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Torque"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Tor";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Tor-5;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Torque
+scm:Tor-5  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Torque"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Tor-5";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Tor-5.1;
+        sc:isServiceOf        scm:Tor .
+
+# Torque
+scm:Tor-5.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Torque"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Tor-5.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Tor-5.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Tor-5 .
+
+# Torque
+scm:Tor-5.1.1  rdf:type           sc:IndividualService , sc:ServiceCategory , skos:Concept;
+        rdfs:label                "Torque"@en;
+        skos:hiddenLabel          "399";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Tor-5.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Tor-5.1;
+        sc:relatedSIQuantity      quantities:TORQ .
+
+# Viscosity
+scm:Vis  rdf:type             prov:Entity , skos:Concept , sc:Branch;
+        rdfs:label            "Viscosity"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Vis";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasService         scm:Vis-6;
+        sc:isBranchOf         scm:MassAndRelatedQuantities .
+
+# Viscosity
+scm:Vis-6  rdf:type           skos:Concept , sc:Service;
+        rdfs:label            "Viscosity"@en;
+        skos:inScheme         <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation         "M/Vis-6";
+        prov:wasAttributedTo  bipm:CCM;
+        sc:hasStatus          sc:assigned;
+        sc:hasSubService      scm:Vis-6.2 , scm:Vis-6.3 , scm:Vis-6.1;
+        sc:isServiceOf        scm:Vis .
+
+# Certified Newtonian reference liquids
+scm:Vis-6.1  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Certified Newtonian reference liquids"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Vis-6.1";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Vis-6.1.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Vis-6 .
+
+# Certified Newtonian reference liquids
+scm:Vis-6.1.1  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Certified Newtonian reference liquids"@en;
+        skos:hiddenLabel          "400";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Vis-6.1.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Vis-6.1;
+        sc:relatedSIQuantity      quantities:DYVI , quantities:KIVI .
+
+# Capillary viscometers
+scm:Vis-6.2  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Capillary viscometers"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Vis-6.2";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Vis-6.2.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Vis-6 .
+
+# Capillary viscometers
+scm:Vis-6.2.1  rdf:type           skos:Concept , sc:ServiceCategory , sc:IndividualService;
+        rdfs:label                "Capillary viscometers"@en;
+        skos:hiddenLabel          "401";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Vis-6.2.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Vis-6.2;
+        sc:relatedSIQuantity      quantities:VICO , quantities:KIVI .
+
+# Viscosity measurement of Newtonian liquids
+scm:Vis-6.3  rdf:type            skos:Concept , sc:Subservice;
+        rdfs:label               "Viscosity measurement of Newtonian liquids"@en;
+        skos:inScheme            <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation            "M/Vis-6.3";
+        prov:wasAttributedTo     bipm:CCM;
+        sc:hasIndividualService  scm:Vis-6.3.1;
+        sc:hasStatus             sc:assigned;
+        sc:isSubserviceOf        scm:Vis-6 .
+
+# Viscosity measurement of Newtonian liquids
+scm:Vis-6.3.1  rdf:type           sc:ServiceCategory , sc:IndividualService , skos:Concept;
+        rdfs:label                "Viscosity measurement of Newtonian liquids"@en;
+        skos:hiddenLabel          "402";
+        skos:inScheme             <https://si-digital-framework.org/kcdb-sc/M>;
+        skos:notation             "M/Vis-6.3.1";
+        prov:wasAttributedTo      bipm:CCM;
+        sc:hasStatus              sc:assigned;
+        sc:isIndividualServiceOf  scm:Vis-6.3;
+        sc:relatedSIQuantity      quantities:DYVI , quantities:KIVI .
+
+
+
